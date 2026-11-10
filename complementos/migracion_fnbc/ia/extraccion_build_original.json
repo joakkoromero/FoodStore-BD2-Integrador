@@ -1,0 +1,49 @@
+{
+  "source": "Actual OpenCode Build answer",
+  "answer_sha256": "d77dbb3183ee87b3a0797b8ee5159508924929861252961a53146dc6a5fd8f52",
+  "normalization": "Exact fenced contents preserved, CRLF read as LF and final newline normalized; no implementation edits at extraction.",
+  "files": [
+    {
+      "path": "complementos/migracion_fnbc/preparar.sql",
+      "original_path": "complementos/migracion_fnbc/ia/generacion_original/preparar.sql",
+      "sha256": "c098e4a3e292eeb085323360448f50eb4c43b535d3221cf4741225cf78b631f6",
+      "bytes": 6310,
+      "lines": 187,
+      "answer_heading_character_offset": 0
+    },
+    {
+      "path": "complementos/migracion_fnbc/migrar.sql",
+      "original_path": "complementos/migracion_fnbc/ia/generacion_original/migrar.sql",
+      "sha256": "ce96500b44174630964c396feabe91dbd7624e18896a608a32e4d7a2a51e2bd1",
+      "bytes": 6814,
+      "lines": 216,
+      "answer_heading_character_offset": 6373
+    },
+    {
+      "path": "complementos/migracion_fnbc/revertir.sql",
+      "original_path": "complementos/migracion_fnbc/ia/generacion_original/revertir.sql",
+      "sha256": "ed1f3126d0aeee1789c8503f93ae384188bc2dc3a1ab710ff40a5d86274c6980",
+      "bytes": 6735,
+      "lines": 200,
+      "answer_heading_character_offset": 13248
+    },
+    {
+      "path": "complementos/migracion_fnbc/reproducir.py",
+      "original_path": "complementos/migracion_fnbc/ia/generacion_original/reproducir.py",
+      "sha256": "73e70e8cac4df421e0b6cbf90358af2b5958d4d15b82884b56130b4f60cc8556",
+      "bytes": 59773,
+      "lines": 1416,
+      "answer_heading_character_offset": 20046
+    },
+    {
+      "path": "complementos/migracion_fnbc/README.md",
+      "original_path": "complementos/migracion_fnbc/ia/generacion_original/README.md",
+      "sha256": "d4ef944e43d10e2853fb0938a563e33329e466a38fcaae324e3517bb3b3e88f7",
+      "bytes": 13341,
+      "lines": 327,
+      "answer_heading_character_offset": 79886
+    }
+  ],
+  "genuine_spec_commit": "89f81022a2c103493d501b43e951eade62dde34f",
+  "database_execution_performed": false
+}

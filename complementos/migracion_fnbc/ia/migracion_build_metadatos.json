@@ -1,0 +1,83 @@
+{
+  "tool": "OpenCode",
+  "installed_version": "1.18.23",
+  "requested_model": "openai/gpt-6.1-sol",
+  "agent": "build",
+  "pure": true,
+  "permission_config": {
+    "permission": "deny"
+  },
+  "started_at_utc": "2026-11-10T17:32:43.660561+00:00",
+  "finished_at_utc": "2026-11-10T17:40:47.404352+00:00",
+  "prompt_sha256": "243e7f65ed13d9029133af0e8d56cf95a0009c6ae3267a5f845a6d03b8986ffb",
+  "attachments": [
+    {
+      "name": "requirements.md",
+      "sha256": "73dd83154d0d10a196b3ea559f4e9c64c5a1690677b001a42e9efa9bb82f1d2f",
+      "repository_path": "complementos/migracion_fnbc/ia/migracion_build_adjuntos/01_requirements.md",
+      "source_path_at_consultation": "docs/kiro_migracion/requirements.md"
+    },
+    {
+      "name": "design.md",
+      "sha256": "a8632b16d31f7a527d0d759978fc3e7765eaff811731e57db63486d182e2665d",
+      "repository_path": "complementos/migracion_fnbc/ia/migracion_build_adjuntos/02_design.md",
+      "source_path_at_consultation": "docs/kiro_migracion/design.md"
+    },
+    {
+      "name": "tasks.md",
+      "sha256": "47c560510e2eb5e87828ea1fa6d7625c8f170a7979f70ab2d35383ef62e7164b",
+      "repository_path": "complementos/migracion_fnbc/ia/migracion_build_adjuntos/03_tasks.md",
+      "source_path_at_consultation": "docs/kiro_migracion/tasks.md"
+    },
+    {
+      "name": "ACLARACIONES_CODEX.md",
+      "sha256": "060fddf885da66280e07bbad6cf2db29a1f59a6534f6ba7df51bc362bfb5885f",
+      "repository_path": "complementos/migracion_fnbc/ia/migracion_build_adjuntos/04_ACLARACIONES_CODEX.md",
+      "source_path_at_consultation": "docs/kiro_migracion/ACLARACIONES_CODEX.md"
+    },
+    {
+      "name": "DECISIONES_PREVIAS.md",
+      "sha256": "30b446115981efb55152453e8d210313f4d3b5245511fb94ca4ef6c89d77023a",
+      "repository_path": "complementos/migracion_fnbc/ia/migracion_build_adjuntos/05_DECISIONES_PREVIAS.md",
+      "source_path_at_consultation": "complementos/migracion_fnbc/DECISIONES_PREVIAS.md"
+    },
+    {
+      "name": "CONTRATO_PRUEBAS.json",
+      "sha256": "7ab24220dbcf2fae46f3d6002e153b3e866f064e21d55dfdc66a92a0ae1be0ad",
+      "repository_path": "complementos/migracion_fnbc/ia/migracion_build_adjuntos/06_CONTRATO_PRUEBAS.json",
+      "source_path_at_consultation": "complementos/migracion_fnbc/CONTRATO_PRUEBAS.json"
+    }
+  ],
+  "returncode": 0,
+  "timed_out": false,
+  "event_count": 3,
+  "unparsed_line_count": 0,
+  "error_event_count": 0,
+  "tool_event_count": 0,
+  "answer_sha256": "d77dbb3183ee87b3a0797b8ee5159508924929861252961a53146dc6a5fd8f52",
+  "raw_jsonl_sha256": "1332c15b362e52afa728e30ffe54c4220af2ed6762330fa5b1703ec7c2ce5129",
+  "raw_event_storage": "Private work directory outside deliverable repository",
+  "status": "completed",
+  "prior_failed_attempts": [],
+  "sql_executed": false,
+  "kiro_specification_commit": "89f81022a2c103493d501b43e951eade62dde34f",
+  "kiro_specs_frozen_before_call": [
+    {
+      "path": "docs/kiro_migracion/requirements.md",
+      "sha256": "73dd83154d0d10a196b3ea559f4e9c64c5a1690677b001a42e9efa9bb82f1d2f",
+      "bytes": 3764
+    },
+    {
+      "path": "docs/kiro_migracion/design.md",
+      "sha256": "a8632b16d31f7a527d0d759978fc3e7765eaff811731e57db63486d182e2665d",
+      "bytes": 6013
+    },
+    {
+      "path": "docs/kiro_migracion/tasks.md",
+      "sha256": "47c560510e2eb5e87828ea1fa6d7625c8f170a7979f70ab2d35383ef62e7164b",
+      "bytes": 8854
+    }
+  ],
+  "concurrency_lock": "work/integrador/private/opencode.global.lock",
+  "human_validation": "Pending; this consultation does not establish human approval"
+}
