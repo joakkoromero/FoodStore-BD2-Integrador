@@ -1,0 +1,190 @@
+{
+  "status": "design_contract_not_execution",
+  "expected_database": "foodstore_tpi_migracion_nov10",
+  "schema": "tpi_migracion",
+  "public_writes_allowed": false,
+  "implementation_generated": false,
+  "genuine_specs_required_before_build": true,
+  "evidence_output": "docs/evidencias_tpi/migracion_fnbc.json",
+  "expected_initial_rows": [
+    [
+      501,
+      30,
+      801
+    ],
+    [
+      502,
+      30,
+      801
+    ],
+    [
+      503,
+      31,
+      802
+    ]
+  ],
+  "expected_current_rows_before_and_after_down": [
+    [
+      501,
+      30,
+      803
+    ],
+    [
+      501,
+      31,
+      801
+    ],
+    [
+      502,
+      31,
+      801
+    ],
+    [
+      503,
+      31,
+      802
+    ]
+  ],
+  "required_evidence_sections": {
+    "provenance": [
+      "kiro_spec_commit",
+      "kiro_specs_sha256",
+      "codex_prebuild_notes_sha256",
+      "build_prompt_answer_metadata_hashes",
+      "plan_prompt_answer_metadata_hashes",
+      "executed_source_files_sha256",
+      "code_commit_before_execution",
+      "tool_events_zero",
+      "review_automated_not_human"
+    ],
+    "scope": [
+      "database_name_exact",
+      "schema_initially_absent",
+      "source_database_name",
+      "backup_manifest_success",
+      "backup_sha256",
+      "backup_bytes",
+      "public_fingerprints_before",
+      "public_fingerprints_after",
+      "official_source_fingerprints_before",
+      "official_source_fingerprints_after"
+    ],
+    "preparation": [
+      "legacy_relation_kind_table",
+      "legacy_three_rows",
+      "checkpoint_three_rows",
+      "checkpoint_sha_before",
+      "checkpoint_write_rejection_25006",
+      "no_sequences_created"
+    ],
+    "invalid_source": [
+      "invalid_tuple_501_31_801",
+      "observed_sqlstate_23514",
+      "explicit_rollback",
+      "legacy_hash_restored",
+      "no_partial_normalized_objects"
+    ],
+    "migration_rollback": [
+      "same_migration_body_sha_as_commit",
+      "bilateral_difference_count_zero_inside",
+      "three_rows_inside",
+      "rollback_completed",
+      "new_connection_observation",
+      "legacy_relation_kind_table_after",
+      "legacy_hash_unchanged",
+      "normalized_objects_absent_after"
+    ],
+    "migration_commit": [
+      "same_migration_body_sha_as_rollback",
+      "bilateral_difference_count_zero",
+      "three_join_rows",
+      "legacy_relation_kind_view",
+      "checkpoint_hash_preserved",
+      "keys_and_foreign_keys_catalog"
+    ],
+    "constraints": [
+      "R_duplicate_23505",
+      "LR_duplicate_23505",
+      "foreign_key_23503",
+      "cross_LD_insert_23505",
+      "cross_LD_master_update_23505",
+      "valid_master_update_accepted_then_rollback",
+      "fixture_three_rows_restored_before_concurrency"
+    ],
+    "concurrency": [
+      "different_connection_pids",
+      "writer_A_open_transaction",
+      "writer_B_waiting_Lock",
+      "A_pid_in_pg_blocking_pids_of_B",
+      "A_commit_succeeds",
+      "B_observed_sqlstate_23505",
+      "cross_LD_duplicates_zero",
+      "explicit_auxiliary_cleanup",
+      "fixture_three_rows_restored_after_concurrency"
+    ],
+    "confirmed_changes": [
+      "R801_D31",
+      "R803_D30",
+      "L501_R803",
+      "commit_succeeds",
+      "join_four_rows_exact",
+      "join_four_rows_hash",
+      "checkpoint_three_rows_unchanged"
+    ],
+    "down_injected_error": [
+      "declared_injected_sqlstate",
+      "observed_same_sqlstate",
+      "explicit_rollback",
+      "new_connection_observation",
+      "legacy_relation_kind_view_restored",
+      "archived_view_name_absent",
+      "reconstructed_table_name_absent",
+      "lifecycle_active_true_restored",
+      "normalized_four_rows_hash_unchanged",
+      "checkpoint_hash_unchanged"
+    ],
+    "down_commit": [
+      "tables_locked_before_join_capture",
+      "current_join_four_rows_snapshot",
+      "reconstructed_rows_four",
+      "bilateral_differences_zero",
+      "no_drop_or_cascade",
+      "view_renamed_control_legacy_fnbc_archivada",
+      "reconstructed_table_renamed_control_legacy",
+      "normalized_relations_retained",
+      "lifecycle_active_false",
+      "commit_succeeds"
+    ],
+    "final": [
+      "fresh_connection_validation",
+      "legacy_relation_kind_table",
+      "legacy_four_rows_exact",
+      "legacy_hash_matches_current_join_snapshot",
+      "archived_view_four_rows_exact",
+      "RD_LR_retained",
+      "RD_insert_rejected_25006",
+      "RD_update_rejected_25006",
+      "RD_delete_rejected_25006",
+      "LR_insert_rejected_25006",
+      "LR_update_rejected_25006",
+      "LR_delete_rejected_25006",
+      "checkpoint_three_rows_hash_same",
+      "public_fingerprints_unchanged",
+      "official_source_fingerprints_unchanged",
+      "no_personal_rows_exported",
+      "no_human_approval_claimed"
+    ]
+  },
+  "fail_closed_requirements": [
+    "Every failed expected-state assertion aborts the laboratory and marks status failed; use explicit checks, not assert that disappears under python -O.",
+    "Inspect actual DatabaseError.sqlstate; do not infer success from a nonzero exitcode alone.",
+    "Do not catch all exceptions as successful negative tests.",
+    "Each test uses fresh or intentionally persistent single-owner connections with bounded timeouts; writers and monitor use distinct connections.",
+    "Wait on observed pg_blocking_pids plus Lock before releasing A, with deadline and fail-close cleanup; no fixed sleep as the sole evidence.",
+    "No global source restores/drops; do not replace an existing named copy or schema silently.",
+    "Raw server diagnostics stay private and sanitized; evidence may contain IDs, test tuples, counts and aggregate hashes only.",
+    "No mutation of archived normalized data after down; verify rejected operations with25006 and unchanged hashes."
+  ],
+  "archive_lifecycle_is_codex_amendment": true,
+  "valid_master_update_rollback_before_concurrency_is_codex_amendment": true
+}

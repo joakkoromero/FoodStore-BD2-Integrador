@@ -1,0 +1,50 @@
+{
+  "recorded_utc": "2026-11-10T17:28:28.157323+00:00",
+  "response_file_saved_utc": "2026-11-10T17:25:44.501743+00:00",
+  "tool": "Kiro IDE",
+  "mode_displayed": "Plan",
+  "model_selection_displayed": "Auto",
+  "capture_method": "Copy Message as Markdown -> new editor -> Save As; exact response bytes retained",
+  "raw_response_path": "docs/kiro_migracion/especificaciones_finales_kiro.md",
+  "raw_response_sha256": "29653dc928fa9a11c1dc7bf625ca8c6b20d5a5a4c2f89312ee44e1e6decca848",
+  "raw_response_bytes": 22313,
+  "spec_extraction": "The actual response contains an incomplete requirements prelude followed by a complete restarted requirements block. Selected LAST complete named block for each file, without wording changes. CRLF normalized to LF. The incomplete prelude remains in the complete raw response.",
+  "specs": [
+    {
+      "path": "docs/kiro_migracion/requirements.md",
+      "bytes": 3764,
+      "sha256": "73dd83154d0d10a196b3ea559f4e9c64c5a1690677b001a42e9efa9bb82f1d2f",
+      "header_occurrences": 2,
+      "selected_header_line": 50
+    },
+    {
+      "path": "docs/kiro_migracion/design.md",
+      "bytes": 6013,
+      "sha256": "a8632b16d31f7a527d0d759978fc3e7765eaff811731e57db63486d182e2665d",
+      "header_occurrences": 1,
+      "selected_header_line": 112
+    },
+    {
+      "path": "docs/kiro_migracion/tasks.md",
+      "bytes": 8854,
+      "sha256": "47c560510e2eb5e87828ea1fa6d7625c8f170a7979f70ab2d35383ef62e7164b",
+      "header_occurrences": 1,
+      "selected_header_line": 183
+    }
+  ],
+  "first_response_path": "docs/kiro_migracion/borrador_original_kiro.md",
+  "first_response_sha256": "08cff5e5dcb6f90ed13ea8e75a3913902bdea0764458717bf911d027e9bc4522",
+  "initial_usage_observed": {
+    "credits": 0.69,
+    "elapsed_displayed": "1m",
+    "read_tool_calls_displayed": 2
+  },
+  "final_usage_observed": {
+    "credits": 0.73,
+    "elapsed_displayed": "1m 35s"
+  },
+  "migration_code_generated_or_executed_at_capture": false,
+  "human_review_claimed": false,
+  "consent": "docs/CONSENTIMIENTO_IA_TPI.md",
+  "technical_clarifications": "docs/kiro_migracion/ACLARACIONES_CODEX.md"
+}
