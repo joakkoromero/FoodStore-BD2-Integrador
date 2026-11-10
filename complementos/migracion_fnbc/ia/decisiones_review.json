@@ -1,9 +1,9 @@
 {
-  "status": "revision_tecnica_codex_final_sin_bloqueos_antes_de_ejecucion",
+  "status": "revision_tecnica_codex_cerrada_y_ensayo_real_SUCCESS",
   "human_review": "pending",
   "human_approval_claimed": false,
   "original_build_preserved": true,
-  "database_execution_performed": false,
+  "database_execution_performed": true,
   "decisions": [
     {
       "id": "FD01",
@@ -14,7 +14,8 @@
       "evidence": [
         "reproducir.py",
         "README.md",
-        "ia/generacion_original/reproducir.py"
+        "ia/generacion_original/reproducir.py",
+        "../../docs/evidencias_tpi/migracion_fnbc.json"
       ]
     },
     {
@@ -26,7 +27,8 @@
       "evidence": [
         "reproducir.py",
         "README.md",
-        "ia/generacion_original/reproducir.py"
+        "ia/generacion_original/reproducir.py",
+        "../../docs/evidencias_tpi/migracion_fnbc.json"
       ]
     },
     {
@@ -38,7 +40,8 @@
       "evidence": [
         "reproducir.py",
         "README.md",
-        "ia/migracion_build_metadatos.json"
+        "ia/migracion_build_metadatos.json",
+        "../../docs/evidencias_tpi/migracion_fnbc.json"
       ]
     },
     {
@@ -50,7 +53,8 @@
       "evidence": [
         "reproducir.py",
         "migrar.sql",
-        "ia/generacion_original/reproducir.py"
+        "ia/generacion_original/reproducir.py",
+        "../../docs/evidencias_tpi/migracion_fnbc.json"
       ]
     },
     {
@@ -62,7 +66,8 @@
       "evidence": [
         "preparar_proveniencia.py",
         "reproducir.py",
-        "README.md"
+        "README.md",
+        "../../docs/evidencias_tpi/migracion_fnbc.json"
       ]
     },
     {
@@ -73,7 +78,8 @@
       "action": "Informar categoria/producto/usuario/pedido/detalle_pedido individualmente y una sexta huella de extensiones/catalogo; conservar la proteccion mas amplia.",
       "evidence": [
         "reproducir.py",
-        "README.md"
+        "README.md",
+        "../../docs/evidencias_tpi/migracion_fnbc.json"
       ]
     },
     {
@@ -85,7 +91,8 @@
       "evidence": [
         "reproducir.py",
         "ia/migracion_plan_pre_respuesta.md",
-        "ia/migracion_plan_pre_metadatos.json"
+        "ia/migracion_plan_pre_metadatos.json",
+        "../../docs/evidencias_tpi/migracion_fnbc.json"
       ]
     }
   ],
@@ -105,5 +112,16 @@
     ],
     "blocking_findings": 0,
     "human_approval_claimed": false
+  },
+  "engine_evidence": "../../docs/evidencias_tpi/migracion_fnbc.json",
+  "engine_summary": {
+    "status": "SUCCESS",
+    "duration_seconds": 139.056,
+    "code_commit_before_execution": "c3711ccb7e0d75d6f2a1cd28d3af14478b44ef5e",
+    "public_fingerprints_unchanged": true,
+    "official_source_fingerprints_unchanged": true,
+    "six_source_hashes_still_match": true,
+    "new_tests_required": false,
+    "human_review_claimed": false
   }
 }

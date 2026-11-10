@@ -1,0 +1,55 @@
+{
+  "status": "approved_technical_closure_with_human_ratification_recorded",
+  "checked_utc": "2026-11-10T18:18:26.740501+00:00",
+  "reviewer": "Codex, consolidación automatizada offline de evidencias y verificación documental final",
+  "all_required_technical_checks_passed": true,
+  "independent_checks_passed": 24,
+  "recorded_engine_evidence_checks_passed": 12,
+  "inherited_files_exact": 456,
+  "inherited_bytes": 6084185,
+  "consigna_objectives_mapped": 14,
+  "fn_bc_migration": {
+    "status": "SUCCESS",
+    "rollback_commit_same_body": true,
+    "real_concurrency_test": true,
+    "down_current_rows": 4,
+    "immutable_checkpoint_rows": 3,
+    "final_write_rejections_25006": 12,
+    "public_and_official_source_fingerprints_unchanged": true
+  },
+  "daily_scheduler_fired_and_retired": true,
+  "latest_scheduled_backup_restored": true,
+  "rto_seconds": 13.4303715,
+  "backup_age_at_trial_start_seconds": 19.0739065,
+  "production_acl_recovery_claimed": false,
+  "report": {
+    "pages": 8,
+    "sha256": "1deedf54047292e796eb8d547e77bc93c6b5b85e27a8e4bdb64ff6a51199d90b",
+    "all_eight_pages_visually_inspected": true,
+    "status": "final",
+    "all_flowables_fit": true
+  },
+  "human_ratification": {
+    "record": "docs/REVISION_HUMANA.json",
+    "grouped_decisions": 62,
+    "actual_user_reply_recorded": true,
+    "signature_or_line_by_line_reading_certified": false
+  },
+  "source_evidence_sha256": {
+    "docs/evidencias_tpi/migracion_fnbc.json": "38c5532c4c360758ab0d6f2c39a90d7dc679337450a1d482be164d542c0b105a",
+    "docs/evidencias_tpi/qa_independiente_previa_ratificacion.json": "e9b810e72db53392edb6f88075d918e22e86ea3694b6193ba8b435b5d99c6d4d",
+    "docs/evidencias_tpi/qa_evidencia_previa_ratificacion.json": "fc5d4cc532a6afc7aa450dd5a013db86e9caf9fba939a577d34274e817a9d4b1",
+    "complementos/mantenimiento_programado/evidencias/control_cierre_complemento.json": "d4bfa7f2644b6220d2c3dbe00e7008277dd65ce59df8649dbbfc2ef7bd56dacf",
+    "complementos/mantenimiento_programado/evidencias/scheduler_ejecucion.json": "efede638d2cf2f154f9a39e6781919aee3d172e75f62762ca56b9a610ea32b73",
+    "complementos/mantenimiento_programado/evidencias/restauracion_tpi_resultado.json": "0f8bdd34ab23c6e5df667279c3de3dbe6f04761663b7d97f6bc49d3e537f7f42",
+    "docs/REVISION_HUMANA.json": "450114aec9d0df5ee275c15acba3f88dfb975d2dd1672e9f35268b1f8982bfa0",
+    "docs/DECISIONES_REVIEW.json": "c310dc03737cbcdb419d205c316431112665e0cab67f5e095ff2e1ed0637ab7d",
+    "output/pdf/TPI_FoodStore_Segunda_Entrega_Arancibia_Romero.pdf": "1deedf54047292e796eb8d547e77bc93c6b5b85e27a8e4bdb64ff6a51199d90b"
+  },
+  "scope_limits": [
+    "Las QA previas a la ratificación se conservan como snapshots históricos; sus pendientes no describen el cierre actual.",
+    "No se repitieron motores para esta consolidación; se verificaron las evidencias de los ensayos reales.",
+    "Los experimentos son de laboratorio; no se afirman ventas, recuperación productiva de ACL ni contención automática.",
+    "CRC, SHA256 de todos los archivos, privacidad e integridad del Git extraído se comprueban al empaquetar. El control externo final_entrega registra ese cierre."
+  ]
+}

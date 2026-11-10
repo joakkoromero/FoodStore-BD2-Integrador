@@ -76,3 +76,7 @@ Evidencia: `reproducir.py`, `ia/migracion_plan_pre_respuesta.md`, `ia/migracion_
 ## Cierre Plan final
 
 OpenCode Plan final leyo las seis fuentes completas y los rangos1-740/741-1480 del runner, sin truncado ni hallazgos bloqueantes adicionales. FD07 corregido. Es revision estatica automatizada; aun no acredita ejecucion ni revision humana. Los metadatos/respuesta originales se conservan en migracion_plan_final_*.
+
+## Validacion real cerrada
+
+El ensayo final termino SUCCESS,139.056s, con seis fuentes de bytes identicos al Plan final y al commit previo. Migracion/reversion, concurrencia, SQLSTATE y conservacion quedaron comprobados. Evidencia: ../../docs/evidencias_tpi/migracion_fnbc.json; detalle en ../RESULTADOS.md. La revision humana sigue pendiente de ratificacion del equipo; no se presume por el exito tecnico.

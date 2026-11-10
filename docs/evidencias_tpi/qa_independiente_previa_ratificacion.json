@@ -1,0 +1,137 @@
+{
+  "status": "approved_offline",
+  "checked_utc": "2026-11-10T18:14:50.794685+00:00",
+  "scope": "Final independent offline QA: six FNBC sources, actual Plan snapshots, recorded engine evidence, inherited456hashes and top local entries. No report Markdown/PDF content inspected.",
+  "database_connections": 0,
+  "database_mutations": 0,
+  "external_ai_calls": 0,
+  "git_commands_or_mutations": 0,
+  "repository_files_modified": false,
+  "report_written_only_in_work": true,
+  "checks": {
+    "six_current_sources_exact_execution_and_plan_map": {
+      "passed": true,
+      "detail": {
+        "files": 6,
+        "hashes": {
+          "complementos/migracion_fnbc/README.md": "b738dd3dfaaff4f206f9eb365dcdc47435db40f971fca36adb717e18e24b0c90",
+          "complementos/migracion_fnbc/migrar.sql": "ce96500b44174630964c396feabe91dbd7624e18896a608a32e4d7a2a51e2bd1",
+          "complementos/migracion_fnbc/preparar.sql": "c098e4a3e292eeb085323360448f50eb4c43b535d3221cf4741225cf78b631f6",
+          "complementos/migracion_fnbc/preparar_proveniencia.py": "7b32852202e07391e735bb7a2c2bb8bed3056c9bb1c6e23ca6fa060662c72d70",
+          "complementos/migracion_fnbc/reproducir.py": "e7ef5b74f4da77a15c8f1f27c559a0412df33c464558fdbadcbc7834f8f7ab11",
+          "complementos/migracion_fnbc/revertir.sql": "ed1f3126d0aeee1789c8503f93ae384188bc2dc3a1ab710ff40a5d86274c6980"
+        }
+      }
+    },
+    "actual_plan_completed_pure_zero_tools": {
+      "passed": true
+    },
+    "fourteen_actual_plan_snapshot_hashes": {
+      "passed": true,
+      "detail": {
+        "count": 14
+      }
+    },
+    "runner_plan_chunks_contiguous_complete_and_exact": {
+      "passed": true,
+      "detail": {
+        "ranges": [
+          [
+            1,
+            740
+          ],
+          [
+            741,
+            1480
+          ]
+        ],
+        "last_line": 1480
+      }
+    },
+    "direct_snapshot_README.md": {
+      "passed": true
+    },
+    "direct_snapshot_preparar.sql": {
+      "passed": true
+    },
+    "direct_snapshot_migrar.sql": {
+      "passed": true
+    },
+    "direct_snapshot_preparar_proveniencia.py": {
+      "passed": true
+    },
+    "direct_snapshot_revertir.sql": {
+      "passed": true
+    },
+    "plan_answer_reports_six_full_sources_and_ranges": {
+      "passed": true
+    },
+    "engine_success": {
+      "passed": true
+    },
+    "same_real_migration_body_negative_rollback_commit": {
+      "passed": true
+    },
+    "migration_rollback_three_and_commit_three_lossless": {
+      "passed": true
+    },
+    "actual_normalized_two_pk_four_fk_validated": {
+      "passed": true
+    },
+    "real_concurrency_blocking_pid_and_rejection": {
+      "passed": true
+    },
+    "current_four_survive_down_checkpoint_three_preserved": {
+      "passed": true
+    },
+    "injected_down_failure_rolls_back_catalog_view_four": {
+      "passed": true
+    },
+    "twelve_final_archive_and_checkpoint_rejections_25006": {
+      "passed": true,
+      "detail": {
+        "count": 12
+      }
+    },
+    "five_core_plus_extensions_copy_source_unchanged": {
+      "passed": true
+    },
+    "eleven_phase_scope_observations_unchanged": {
+      "passed": true
+    },
+    "execution_did_not_claim_human_review": {
+      "passed": true
+    },
+    "456_inherited_sources_and_copies_exact_sha256": {
+      "passed": true,
+      "detail": {
+        "count": 456,
+        "bytes": 6084185,
+        "mismatches": []
+      }
+    },
+    "root_readme_and_primary_local_entry_files_exist": {
+      "passed": true,
+      "detail": {
+        "count": 44,
+        "missing": []
+      }
+    },
+    "top_markdown_local_links_exist": {
+      "passed": true,
+      "detail": {
+        "documents_scanned": 7,
+        "local_links": 72,
+        "broken": []
+      }
+    }
+  },
+  "blockers": [],
+  "notes": [
+    "No additional engine tests were run.",
+    "Human ratification is a separate final step; automatic SUCCESS is not a human signature.",
+    "The original-copy manifest records the initial copy event; its git_initialized=false is historical, not a claim about current Git."
+  ],
+  "evidence_sha256": "38c5532c4c360758ab0d6f2c39a90d7dc679337450a1d482be164d542c0b105a",
+  "plan_answer_sha256": "157652895483d70918a1178d096550ada621d62f6d13ec3eae5b40de82a5934d"
+}

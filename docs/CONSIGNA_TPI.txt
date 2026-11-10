@@ -1,0 +1,53 @@
+Bases de Datos II - TPI Food Store - Segunda entrega parcial
+Consigna recibida de la persona solicitante el 10/11/2026.
+
+Motores de referencia: PostgreSQL 16+ con PL/pgSQL, MongoDB y SQLite.
+Unidades: 4 Normalizacion avanzada y redundancia; 5 Administracion y seguridad;
+6 Mantenimiento; 7 NoSQL; 8 Bases moviles e integracion.
+
+Objetivos obligatorios:
+1. Refactorizacion de un esquema heredado con redundancias, validada contra
+   las dependencias funcionales reales y llevada hasta FNBC.
+2. Migracion de datos sin perdida, ejecutada dentro de transacciones
+   reversibles y especificada en Kiro, con plan de reversion obligatorio.
+3. Decisiones de desnormalizacion controlada: cuando, por que y salvaguardas.
+4. Usuarios, roles y permisos segun el principio de minimo privilegio.
+5. Auditoria de accesos y operaciones activada y probada mediante un simulacro
+   de acceso indebido, reconstruido desde el log y con propuesta de contencion.
+6. Auditoria de seguridad de permisos asistida por IA y decision humana final.
+7. Plan completo de mantenimiento: respaldo programado, restauracion probada
+   y tareas rutinarias de estadisticas, limpieza e integridad, automatizado con
+   OpenCode y documentado.
+8. Simulacro de desastre: restauracion desde el ultimo respaldo contra reloj
+   e informe post-incidente.
+9. Modelado de parte del dominio en base documental, con consultas generadas
+   y verificadas sobre datos reales del proyecto.
+10. Comparacion practica documental/relacional y justificacion de tecnologia.
+11. SQLite del dominio con esquema y sincronizacion especificados en Kiro y
+    generados con OpenCode.
+12. Sincronizacion simulada contra servidor, conflictos y resolucion probados.
+13. Review final asistido por IA de todos los scripts de la cursada, con
+    decision humana documentada sobre cada hallazgo.
+14. Capa completa relacional/documental/movil, specs, fuentes versionadas en
+    Git, mantenimiento y bitacora de IA, lista para defensa.
+
+Condiciones de uso de IA:
+- Leer linea por linea y comprender los scripts, consultas y migraciones
+  antes de ejecutarlos; probar sobre una copia o transaccion reversible y
+  respaldar previamente cuando corresponda.
+- No enviar datos personales o sensibles a asistentes; usar prueba,
+  anonimizar y enmascarar.
+- Declarar todo uso de IA mediante DUIA: herramienta, finalidad, prompts/specs.
+- El alumno debe poder explicar los scripts y decisiones en defensa oral.
+
+Informe tecnico breve requerido:
+1. Elementos implementados por unidad 4 a 8.
+2. Como se probaron: reversibilidad, copias, simulacros y conflictos.
+3. Resultados, tiempo de restauracion e informe post-incidente.
+4. Decisiones sobre refactorizacion, desnormalizacion, roles y motores.
+5. Herramientas de IA, prompts/specs y propuestas aceptadas o descartadas,
+   con justificacion, bitacora y DUIA.
+
+Se admiten capturas/resultados de verificacion; no hace falta documentar cada
+instruccion ejecutada. Este archivo es una transcripcion resumida de la
+consigna recibida, sin agregar requisitos ni sustituir la consigna del campus.

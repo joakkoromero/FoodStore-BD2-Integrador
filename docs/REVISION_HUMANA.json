@@ -1,0 +1,44 @@
+{
+  "status": "ratificado",
+  "recorded_utc": "2026-11-10T18:15:44.548885+00:00",
+  "source": "Respuesta explícita del usuario en esta conversación, posterior a la presentación del informe y la matriz completos.",
+  "question_item": "request_user_input_async/call_4a1c86941efd452bad00ce8e363a4450/0",
+  "user_reply": "Sí, revisé y ratifico las conclusiones y todas las decisiones propuestas",
+  "scope": {
+    "report_conclusions": true,
+    "course_review_groups": 43,
+    "course_original_references": 64,
+    "security_decisions": 5,
+    "new_complement_findings": 14,
+    "total_grouped_decisions": 62
+  },
+  "review_materials_before_ratification": [
+    {
+      "path": "output/pdf/TPI_FoodStore_Segunda_Entrega_Arancibia_Romero.pdf",
+      "sha256": "826067ad51d635e636bc904647fb94c61fc106fab94ea731e062df293435e531",
+      "pages": 8,
+      "version": "PARA REVISIÓN HUMANA"
+    },
+    {
+      "path": "docs/DECISIONES_REVIEW.md",
+      "sha256": "b16b97c2291b8ce22d8876f260127d079078728382c02d18ba45cd6e27354452"
+    },
+    {
+      "path": "docs/DECISIONES_REVIEW.json",
+      "sha256": "1942f21ef0ab660f4b95aea8229d935e93c0321a8a6af4fe17a54ab24fdc1df5"
+    }
+  ],
+  "decision_basis": "El usuario ratificó expresamente todas las decisiones y sus fundamentos presentados. Los fundamentos técnicos y evidencias se mantienen en cada fila de DECISIONES_REVIEW; no se inventan motivos humanos adicionales.",
+  "confirmed_design": [
+    "Conservar el mínimo privilegio y rechazar ampliaciones generales.",
+    "Mantener PostgreSQL como autoridad y la sincronización móvil como simulación.",
+    "Conservar las decisiones de migración, reversión y mantenimiento documentadas.",
+    "Ante incidente real confirmado, preservar evidencia y evaluar contención responsable; sin ejecutar contención automáticamente."
+  ],
+  "limits": [
+    "Es una constancia de la respuesta del usuario, no una firma ni una certificación independiente.",
+    "No acredita lectura humana línea por línea ni una defensa oral de ambos integrantes.",
+    "La ratificación es posterior a las pruebas y no se reatribuye retroactivamente a los alumnos la revisión automatizada previa.",
+    "No modifica las fuentes, evidencias, prompts ni matrices históricas."
+  ]
+}

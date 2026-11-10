@@ -1,0 +1,74 @@
+# Declaración de Uso de IA - Integrador Food Store
+
+Equipo identificado: Exequiel Arancibia / Joaquin Romero. Bases de Datos II, UTN. Segunda entrega, unidades 4 a 8. Fecha de este registro: 10/11/2026.
+
+Este documento declara la asistencia utilizada y su procedencia. Fue redactado con asistencia técnica de Codex. No contiene firmas simuladas ni atribuye al equipo lectura humana de cada línea o una defensa oral no documentadas. La ratificación real posterior de conclusiones y decisiones se registra con su alcance en la sección final. La autorización de un envío a una herramienta es distinta de la revisión académica de sus resultados.
+
+## Herramientas y alcance efectivo
+
+| Herramienta | Uso realizado | Evidencia y límites |
+|---|---|---|
+| Codex | Inventario de antecedentes, integración, lectura y corrección de código, pruebas con herramientas locales, contraste de resultados, documentación y controles independientes. | Las ejecuciones y la elaboración de propuestas técnicas se identifican como asistencia automatizada; no se atribuyen retroactivamente a los alumnos ni se confunden con lo que ejecutó OpenCode. La ratificación posterior del usuario se registra aparte. |
+| Kiro IDE, Plan y selección Auto | En U5, planificación de roles. En U8, especificaciones móviles. En el TPI, dos respuestas para una nueva migración FNBC reversible, antes de generar su código. | Se conservan respuestas completas, prompts, documentos extraídos y proveniencia. El contenido se generó en el chat; Codex lo guardó y extrajo con las transformaciones expresamente registradas. |
+| OpenCode 1.18.23, modelo solicitado openai/gpt-6.1-sol | Generación de propuestas y revisiones estáticas. Los complementos nuevos emplearon Build para generar y Plan para revisar. Las consultas históricas conservan sus modos reales; por ejemplo, la generación U6 utilizó Plan. | Consultas sin herramientas ni ejecución SQL por OpenCode. Prompt, respuesta, metadatos y copias de adjuntos identifican exactamente qué material recibió cada consulta. Los originales no se sustituyen por las correcciones posteriores. |
+| Codex, subagente de comparación de U7 | Comparación de pedidos embebidos MongoDB frente al modelo relacional y dos afirmaciones comprobables. | El prompt y la respuesta exactos están en [consulta y contraste U7](../unidad7/docs/ia/consulta_respuesta.md). Se contrastaron con documentación oficial y el laboratorio; no se afirmó un benchmark. |
+
+## Continuidad de las unidades 4 a 8
+
+Se incorporaron **456 archivos de antecedentes con los mismos bytes**, sin modificar sus fuentes. El [manifiesto de procedencia](../PROCEDENCIA_UNIDADES.json) registra las correspondencias y hashes. Este número cuenta archivos incorporados, no consultas de IA ni scripts únicos. El repositorio local nuevo utiliza identidad técnica y commits reales; no se simulan commits de los estudiantes.
+
+- **Unidad 4:** se conservan el SQL, la reversión, los verificadores y los resultados históricos de FNBC y desnormalización. No se inventa una especificación histórica de Kiro anterior a esa ejecución. La brecha se aborda mediante el complemento nuevo del TPI, con Kiro auténtico antes de Build y un ensayo separado.
+- **Unidad 5:** Kiro produjo requirements/design reales; Codex implementó e integró permisos. OpenCode auditó el esquema y propuso consultas parametrizadas y reconstrucción del log. Se conservaron permisos puntuales y se rechazaron las dos alternativas amplias de soporte/reportes. La conformidad de cierre tiene sólo el alcance de [validacion_humana.md](../unidad5/docs/validacion_humana.md); no certifica lectura exhaustiva ni aprobación individual de ambos integrantes. Ver [bitácora U5](../unidad5/BITACORA.md).
+- **Unidad 6:** OpenCode recibió SPEC_U6 y AGENTS autorizados y generó propuestas de respaldo/restauración; Codex factorizó, corrigió y probó los scripts, e implementó el SQL final. El ensayo histórico del 03/11 obtuvo RTO 11,350 s y antigüedad 31,808 s. La [revisión humana documentada](../unidad6/docs/revision_humana.md) corresponde a las conclusiones y conformidad de entrega, no a cada línea de código. La programación periódica era una propuesta; se distingue del ensayo programado nuevo.
+- **Unidad 7:** las consultas y validadores se probaron con cinco pedidos existentes de la base acumulada y sus siete líneas. Los documentos contienen identificadores y alias de presentación, sin contactos reales. La comparación de IA se aceptó con límites estructurales; no se atribuye ventaja de rendimiento ni reemplazo de PostgreSQL.
+- **Unidad 8:** Kiro produjo las tres especificaciones antes de OpenCode Build. Se conservan generación original, correcciones de Codex, dos laboratorios C1-C7, revisiones Plan y el review acumulado. La [DUIA U8](../unidad8/docs/DUIA.md) y su [bitácora](../unidad8/docs/bitacora_ia.md) permanecen intactas. El review anterior cubrió 83 fuentes previas y siete finales U8, con 43 grupos y 64 referencias; los números no equivalen a los 456 archivos del paquete.
+
+## Complemento nuevo de migración FNBC
+
+Kiro se utilizó realmente en modo Plan con selección Auto. La primera respuesta mostró 0,69 créditos, 1 minuto y dos lecturas; la segunda, 0,73 créditos y 1 minuto 35 segundos. Esos valores son lo observado en la aplicación, no una medición independiente del modelo interno de Auto.
+
+La [respuesta final íntegra](kiro_migracion/especificaciones_finales_kiro.md), de 22.313 bytes, conserva un comienzo incompleto de requirements seguido de un reinicio completo. Codex seleccionó los **últimos tres bloques completos con sus nombres**, sin reescribir sus palabras; normalizó únicamente CRLF a LF. Se preservó también el [primer borrador](kiro_migracion/borrador_original_kiro.md). de 17.147 bytes. Los rangos y hashes están en [proveniencia_final.json](kiro_migracion/proveniencia_final.json).
+
+Las [aclaraciones de Codex](kiro_migracion/ACLARACIONES_CODEX.md) fueron una entrada separada y anterior a Build: omitir el DROP VIEW contradictorio y archivar por renombre; mantener checkpoint y archivos fuera de la interfaz activa; search_path=pg_catalog; revertir el UPDATE válido de la prueba; y observar bloqueo real en conexiones independientes. No se atribuyen esas correcciones a las palabras originales de Kiro.
+
+La especificación se congeló en el commit **89f8102**, antes de OpenCode Build. La consulta real de Build ocurrió el 10/11, de **17:32:43 a 17:40:47 UTC**, produjo 93.290 caracteres y tres eventos, sin herramientas. Se conservaron cinco archivos originales: tres SQL, un ejecutor Python y README, en [generacion_original](../complementos/migracion_fnbc/ia/generacion_original/). El commit **3791159** registra esa generación original; no acredita su ejecución.
+
+El complemento nuevo quedó probado con **SUCCESS** el 10/11, de **18:02:03 a 18:04:22 UTC**. La duración del ensayo completo fue **139,056 s; no es el RTO del simulacro de desastre**. Las correcciones y el Plan final se congelaron antes de ejecutar en **c3711ccb7e0d75d6f2a1cd28d3af14478b44ef5e**. La proveniencia verifica seis hashes de fuentes, snapshots de entradas y cobertura completa del runner en rangos 1-740/741-1480; las fuentes conservaron sus bytes al terminar. Ver [resultado detallado](../complementos/migracion_fnbc/RESULTADOS.md), [evidencia principal y proveniencia](evidencias_tpi/migracion_fnbc.json) y [decisiones FD01-FD07](../complementos/migracion_fnbc/ia/decisiones_review.json).
+
+Se usó el mismo cuerpo de migrar.sql para la precondición inválida rechazada con 23514, el ensayo con ROLLBACK y la migración con COMMIT. Las diferencias bilaterales fueron cero. La concurrencia real utilizó conexiones independientes y un monitor: B esperó Lock, A figuró en pg_blocking_pids, A confirmó y B recibió 23505. No se presenta una pausa fija como prueba de bloqueo ni se afirma haber ensayado otros aislamientos.
+
+La reversión se comprobó primero con error inyectado **P7501** y ROLLBACK, recuperando vista, catálogo, ciclo y datos. El down confirmado reconstruyó **cuatro filas desde la reunión actual**, mantuvo el checkpoint inicial de tres y archivó las relaciones normalizadas sin DROP. Doce intentos prohibidos de DML/TRUNCATE fueron rechazados con **25006**. Se conservaron las cinco huellas centrales y una huella adicional de extensiones/catálogo, tanto en la copia como en la fuente. La ejecución fue en una copia nueva y sólo escribió el esquema de ensayo; no se modificó public ni la base oficial. La lectura técnica, las correcciones y las pruebas son asistencia automatizada; la ratificación posterior del usuario se acredita por su respuesta expresa, no por el éxito de esas pruebas.
+
+## Complemento nuevo de mantenimiento programado
+
+OpenCode Build recibió únicamente una [SPEC nueva](../complementos/mantenimiento_programado/SPEC_SCHEDULER.md), sin fuentes originales U6. La respuesta generó dos PowerShell, plantilla XML y README. Codex leyó las fuentes y adaptó el consumidor al contrato real U6 local, manteniendo U6 intacto. Tres Plan completos y una microrevisión posterior documentan el cierre: runner de 747 líneas, creador final de 336 y XML de 47, sin truncamiento en sus consultas pertinentes.
+
+Las [decisiones SCH-01 a SCH-07](../complementos/mantenimiento_programado/ia/decisiones_review.md) explican las propuestas corregidas: contrato del manifiesto/MD5, ACL heredadas limitadas, validación previa de destinos internos, selección exclusiva de logs, patrón de basename, protección de ancestros y codificación COM. La corrección del fallo real 0x8004131A se revisó antes de repetir. El fallo posterior del verificador de RunLevel fue de Codex; Windows omitió el valor predeterminado en su exportación y se contrastó CIM, sin inventar un nodo.
+
+La tarea diaria real se disparó a las **14:37:41 UTC-03 del 10/11**, sin inicio manual, con token Interactive y nivel Limited, y resultado 0. Produjo un respaldo de **8.224.005 bytes**. Después se retiró sólo esa tarea temporal. Se restauró el mismo último respaldo en una copia nueva aislada: **RTO 13,4303715 s** y antigüedad de referencia **19,0739065 s**. La copia anterior se conservó por renombre y las cinco huellas fuente permanecieron iguales. Ver [ejecución programada](../complementos/mantenimiento_programado/evidencias/scheduler_ejecucion.json), [restauración](../complementos/mantenimiento_programado/evidencias/restauracion_tpi_resultado.json) y [post-incidente actual](../complementos/mantenimiento_programado/informe_post_incidente_tpi.md).
+
+No se presenta un servicio productivo permanente ni recuperación de ACL U5: las restauraciones de ensayo usan --no-owner --no-privileges y aislamiento. Los tiempos actuales no sustituyen las medidas históricas del 03/11.
+
+## Prompts y especificaciones empleados
+
+- Migración FNBC nueva: [contexto técnico para Kiro](kiro_migracion/contexto_tecnico.md), [prompt efectivamente enviado](kiro_migracion/prompt_enviado.txt), [requirements](kiro_migracion/requirements.md), [design](kiro_migracion/design.md) y [tasks](kiro_migracion/tasks.md). OpenCode recibió esos documentos, las aclaraciones y el contrato mediante el [prompt Build conservado](../complementos/migracion_fnbc/ia/migracion_build_prompt.txt). La revisión se conserva mediante los prompts [Plan previo](../complementos/migracion_fnbc/ia/migracion_plan_pre_prompt.txt) y [Plan final](../complementos/migracion_fnbc/ia/migracion_plan_final_prompt.txt), sus respuestas y metadatos.
+- Mantenimiento nuevo: [SPEC de Codex](../complementos/mantenimiento_programado/SPEC_SCHEDULER.md) y prompts de [Build](../complementos/mantenimiento_programado/ia/scheduler_build_prompt.txt), [primer Plan](../complementos/mantenimiento_programado/ia/scheduler_plan_prompt.txt), [segundo Plan](../complementos/mantenimiento_programado/ia/scheduler_plan_final_prompt.txt), [cierre completo](../complementos/mantenimiento_programado/ia/scheduler_plan_cierre_prompt.txt) y [microrevisión COM](../complementos/mantenimiento_programado/ia/scheduler_micro_codificacion_prompt.txt). Las respuestas y snapshots con el mismo prefijo permiten cotejar sus bytes.
+- Antecedentes: los prompts y decisiones se conservan en las bitácoras U5/U8 enlazadas; U6 mantiene [SPEC_U6](../unidad6/SPEC_U6.md), [AGENTS](../unidad6/AGENTS.md) y su [prompt real de generación](../unidad6/docs/ia/u6_generacion_prompt.txt). La consulta U7 conserva prompt y respuesta en el mismo archivo ya enlazado.
+
+## Datos compartidos y autorizaciones
+
+El [consentimiento específico del TPI](CONSENTIMIENTO_IA_TPI.md) registra la respuesta de la persona solicitante: «Sí, autorizo esos envíos del integrador». Comprende el contexto/prompt técnico de migración para Kiro y especificaciones/scripts nuevos para generación y revisión con OpenCode. No acredita ratificación humana de decisiones o lectura del código.
+
+Los intentos rechazados por revisión automática no se presentan como envíos realizados: no se compartieron las fuentes originales U6 del intento bloqueado; el programador se generó con una SPEC nueva genérica. Los envíos aceptados trabajaron con estructura técnica y datos ficticios o saneados. No se enviaron dumps, contraseñas, PGPASSFILE, SID reales del operador ni filas personales de clientes. Los datos privados de ejecución y los XML operativos originales permanecen fuera del repositorio; las evidencias entregadas usan agregados, hashes y copia XML saneada. Los hashes comprueban integridad y no certifican anonimato.
+
+## Revisión académica y entrega
+
+La persona solicitante recibió el informe completo de ocho páginas y la matriz de decisiones, antes del empaquetado definitivo. Su respuesta textual fue:
+
+> Sí, revisé y ratifico las conclusiones y todas las decisiones propuestas
+
+La [constancia de revisión humana](REVISION_HUMANA.md) y su [registro JSON](REVISION_HUMANA.json) documentan esa respuesta, registrada el **10/11/2026 a las 18:15:44 UTC**. El alcance comprende las conclusiones del informe y **62 decisiones agrupadas**: 43 grupos del review acumulado, que reúnen 64 referencias originales; cinco decisiones de seguridad; y catorce hallazgos de los complementos. Las propuestas fueron ratificadas sin cambios, conservando sus fundamentos y evidencias en [DECISIONES_REVIEW.md](DECISIONES_REVIEW.md). El JSON conserva los hashes de los materiales presentados antes de esa ratificación.
+
+Esta constancia no es una firma ni acredita lectura humana línea por línea, aprobación individual de ambos integrantes o defensa oral realizada. No cambia la autoría de las revisiones técnicas anteriores. Las conformidades históricas U5/U6 mantienen su alcance literal y se distinguen de esta ratificación posterior del integrador.
+
+Esta preparación genera archivos locales para que el equipo revise y entregue. No se acredita una defensa oral realizada, una publicación remota ni una subida del TPI al campus. La lectura, comprensión y defensa exigidas por la consigna corresponden al equipo.

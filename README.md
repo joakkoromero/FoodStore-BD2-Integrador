@@ -4,6 +4,19 @@ Equipo: Exequiel Arancibia / Joaquin Romero. Bases de Datos II, UTN. Unidades 4 
 
 Este repositorio reúne las fuentes y evidencias ya ejecutadas de las unidades 4 a 8. Los archivos históricos conservan sus bytes; no se presenta la compilación del integrador como una nueva ejecución de sus experimentos. La autoría técnica asistida y la procedencia de cada componente se declaran en la bitácora y DUIA.
 
+## Entrada del integrador y resultados nuevos
+
+El informe principal es [TPI Food Store, segunda entrega](output/pdf/TPI_FoodStore_Segunda_Entrega_Arancibia_Romero.pdf). La [cobertura de las 14 condiciones](docs/COBERTURA_CONSIGNA.md) relaciona cada objetivo con su evidencia. Completan la lectura la [DUIA](docs/DUIA_INTEGRADOR.md), la [bitácora de IA](docs/BITACORA_INTEGRADOR.md), la [matriz de decisiones](docs/DECISIONES_REVIEW.md) y la [guía para preparar la defensa](docs/GUIA_DEFENSA_INTEGRADOR.md).
+
+Esta integración añade dos complementos a las 456 fuentes y evidencias históricas conservadas:
+
+- [Migración FNBC](complementos/migracion_fnbc/RESULTADOS.md), especificada realmente en Kiro antes de OpenCode Build. En una copia nueva se probaron fuente inválida, migración con ROLLBACK y COMMIT, concurrencia con conexiones separadas y reversión. La reversión conserva las cuatro filas actuales, el checkpoint inicial de tres y los objetos normalizados archivados. El ensayo completo duró 139,056 s; ese valor no es el RTO.
+- [Respaldo programado y nuevo simulacro](complementos/mantenimiento_programado/README.md). Una tarea CalendarTrigger diaria fue registrada y se ejecutó por su horario, sin inicio manual, con resultado 0. Su respaldo de 8.224.005 bytes se restauró en una base aislada: RTO 13,430 s, antigüedad de copia al inicio 19,074 s y validaciones correctas. La tarea de laboratorio se retiró al terminar; no se deja un servicio permanente ni se recuperan roles/ACL productivos en esa restauración.
+
+La reproducción de los complementos requiere leer sus README y specs, usar carpetas/copias nuevas y suministrar privadamente el checkpoint y la autenticación del operador. Las fuentes ejecutadas quedaron revisadas y versionadas antes del ensayo. Los archivos de respaldo y contraseñas no forman parte de la entrega.
+
+El ZIP final contiene el informe PDF, los scripts y specs, las bases móviles de prueba, los resultados saneados, el manifiesto SHA256 y el repositorio Git local completo. `PROCEDENCIA_UNIDADES.json` verifica los bytes de las cinco unidades; `MANIFEST_TPI.json` verifica los archivos de esta entrega. La revisión humana del TPI se documenta por separado en `docs/REVISION_HUMANA.*`; las matrices históricas se conservan sin reatribuir su autoría.
+
 ## Lectura y estructura
 
 | Carpeta | Contenido principal | Entrada de lectura |
@@ -100,4 +113,4 @@ El Git del TPI debe ser único, con identidad técnica explícita. Las unidades 
 
 Los generadores de informes y empaquetadores históricos se preservan como fuentes revisadas, no como comandos para volver a empaquetar el integrador. Sus rutas de salida y supuestos Git corresponden a cada entrega original. Los informes históricos también pueden referir respaldos excluidos por privacidad: esta explicación del TPI aclara ese alcance sin cambiar sus bytes.
 
-El review U8 conserva 83 fuentes anteriores y siete finales, 43 grupos y 64 referencias con decisión técnica. La autoridad de esa matriz es Codex, no una firma humana. La ratificación humana del integrador se registra sólo tras revisión efectiva de las fuentes, fundamentos y evidencias; no se completa automáticamente a nombre del equipo. La defensa oral y su ensayo corresponden a los integrantes. Los guiones entregados son material para prepararla, no evidencia de una actividad ya realizada.
+El review U8 conserva 83 fuentes anteriores y siete finales, 43 grupos y 64 referencias con decisión técnica. La autoridad de esa matriz histórica es Codex. En el integrador se agregan cinco decisiones de seguridad y catorce hallazgos nuevos; el usuario ratificó expresamente las conclusiones y las 62 decisiones agrupadas. Su respuesta textual y el alcance se conservan en [REVISION_HUMANA](docs/REVISION_HUMANA.md), junto con los hashes de los materiales presentados. No se firma por los alumnos ni se acredita automáticamente lectura humana de cada línea. La defensa oral y su ensayo corresponden a los integrantes. Los guiones entregados son material para prepararla, no evidencia de una actividad ya realizada.

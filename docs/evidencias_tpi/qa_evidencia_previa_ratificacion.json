@@ -1,0 +1,31 @@
+{
+  "status": "technical_evidence_approved_for_human_review_not_final_delivery",
+  "captured_utc": "2026-11-10T18:10:31.316809+00:00",
+  "checks": {
+    "migration_success": true,
+    "six_executed_source_hashes_current": true,
+    "invalid_fd_same_body_23514": true,
+    "migration_rollback_and_commit_verified": true,
+    "concurrency_real_lock_and_rejection": true,
+    "down_error_restores_ddl_and_four_rows": true,
+    "down_commit_preserves_current_four_checkpoint_three": true,
+    "all_twelve_archive_checkpoint_rejections": true,
+    "public_copy_and_official_source_unchanged": true,
+    "six_fingerprints_per_phase": true,
+    "fresh_restore_timing_exact_for_report": true,
+    "human_matrix_scope_43_64_plus5_plus14": true
+  },
+  "passed_count": 12,
+  "migration_evidence_sha256": "38c5532c4c360758ab0d6f2c39a90d7dc679337450a1d482be164d542c0b105a",
+  "pdf_for_human_review_sha256": "826067ad51d635e636bc904647fb94c61fc106fab94ea731e062df293435e531",
+  "pdf_pages": 8,
+  "database_connections_by_reviewer": 0,
+  "external_sends_by_reviewer": 0,
+  "source_mutations_by_reviewer": 0,
+  "human_approval_claimed": false,
+  "pending": [
+    "Actual human ratification documented by root",
+    "Final PDF closure without review header",
+    "Final archive/Git/privacy verification"
+  ]
+}
