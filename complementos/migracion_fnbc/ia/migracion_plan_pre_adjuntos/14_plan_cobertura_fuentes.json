@@ -1,0 +1,41 @@
+{
+  "author": "Codex technical coverage map, distinct from original OpenCode metadata",
+  "human_review_claimed": false,
+  "reviewed_sources_sha256": {
+    "complementos/migracion_fnbc/preparar.sql": "c098e4a3e292eeb085323360448f50eb4c43b535d3221cf4741225cf78b631f6",
+    "complementos/migracion_fnbc/migrar.sql": "ce96500b44174630964c396feabe91dbd7624e18896a608a32e4d7a2a51e2bd1",
+    "complementos/migracion_fnbc/revertir.sql": "ed1f3126d0aeee1789c8503f93ae384188bc2dc3a1ab710ff40a5d86274c6980",
+    "complementos/migracion_fnbc/reproducir.py": "9d3756f21e75dbd78a471cb4b534b47076c4afb1d97878461495636e55d70454",
+    "complementos/migracion_fnbc/README.md": "268758fc8c556865be1cc30662ffb8eb7263f938c1d8d72f1a952e092da26a5a",
+    "complementos/migracion_fnbc/preparar_proveniencia.py": "dad6e364148611584bcb78f911b35f3ddc6b4d713bfd63f2e409e8dc57762744"
+  },
+  "source_line_counts": {
+    "preparar.sql": 187,
+    "migrar.sql": 216,
+    "revertir.sql": 200,
+    "reproducir.py": 1480,
+    "README.md": 75,
+    "preparar_proveniencia.py": 86
+  },
+  "chunks": [
+    {
+      "source_path": "complementos/migracion_fnbc/reproducir.py",
+      "source_sha256": "9d3756f21e75dbd78a471cb4b534b47076c4afb1d97878461495636e55d70454",
+      "path": "complementos/migracion_fnbc/ia/review_input_partes/reproducir_01.md",
+      "sha256": "1e149e1ff49296ee51796dc60f906973e9007c754d49b637cd91910c6cc5ca8f",
+      "start_line": 1,
+      "end_line": 740,
+      "bytes": 31042
+    },
+    {
+      "source_path": "complementos/migracion_fnbc/reproducir.py",
+      "source_sha256": "9d3756f21e75dbd78a471cb4b534b47076c4afb1d97878461495636e55d70454",
+      "path": "complementos/migracion_fnbc/ia/review_input_partes/reproducir_02.md",
+      "sha256": "9398e7142f3beaa4849c31f44a91ee1c240659793407ea6be5f4f295f04ad5e5",
+      "start_line": 741,
+      "end_line": 1480,
+      "bytes": 33229
+    }
+  ],
+  "purpose": "Exact input-source map for subsequent actual Plan; complete answer must confirm full reading before technical allow_execution."
+}

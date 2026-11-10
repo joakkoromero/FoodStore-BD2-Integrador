@@ -1,327 +1,75 @@
-# Complemento FNBC Food Store
+# Complemento nuevo FNBC del TPI
 
-Fuentes nuevas para revision automatizada OpenCodePlan y lectura tecnica antes
-de cualquier ejecucion. Este documento no acredita ejecucion, aprobacion humana
-ni resultados observados.
+Fecha de especificacion: 10/11/2026. Este procedimiento no atribuye a Kiro la migracion historica U4. Las respuestas reales, la generacion original y las decisiones de revision se conservan en docs/kiro_migracion e ia/. La ejecucion concreta se acredita solamente con el JSON de evidencias y su estado SUCCESS; este README no acredita firmas ni lectura humana.
 
-## Alcance
+## Alcance y origen de las fuentes
 
-- Python 3.12+, biblioteca estandar y PostgreSQL 16+.
-- Unica base de escritura: `foodstore_tpi_migracion_nov10`.
-- Unico esquema persistente de escritura: `tpi_migracion`.
-- La copia nueva debe existir y contener los maestros necesarios.
-- El esquema destino debe estar ausente.
-- `public` y la base fuente se consultan exclusivamente en lectura.
-- No se crean bases, roles, usuarios, permisos, maestros ni secuencias.
-- No hay eliminacion explicita de objetos ni limpieza automatica de esquemas.
-- El cliente existente `unidad5/tools/libpq_client.py` se importa sin modificar.
-- Importar `reproducir.py` no abre conexiones.
+PostgreSQL 16+ con PL/pgSQL; laboratorio observado sobre 17.11. Python 3.12+ y biblioteca estandar. El cliente reutilizado unidad5/tools/libpq_client.py requiere el libpq.dll de PostgreSQL instalado en Windows, en la ruta declarada por ese cliente; no se promete portabilidad sin adaptar ese requisito.
 
-Los archivos SQL son cuerpos transaccionales sin control transaccional externo.
-El runner decide la confirmacion o reversion de cada cuerpo.
+La unica base que se escribe es foodstore_tpi_migracion_nov10 y el unico esquema nuevo es tpi_migracion. La copia debe existir, conservar las tablas/maestros heredados y no tener ese esquema. No se crean ni borran bases, usuarios, permisos, maestros public o secuencias. El operador crea una copia nueva a partir del Food Store acumulado, conserva el respaldo previo verificado y evita escritores externos. El programa no reemplaza una copia existente ni limpia una instalacion parcial.
 
-## Archivos
-
-| Archivo | Responsabilidad |
+| Fuente | Origen y funcion |
 |---|---|
-| `preparar.sql` | Identidad, esquema nuevo, legacy, checkpoint protegido, hashes y precondicion |
-| `migrar.sql` | Descomposicion RD/LR, guardia, validacion y vista |
-| `revertir.sql` | Reconstruccion actual, archivo normalizado y lifecycle inactivo |
-| `reproducir.py` | Preflight, pruebas, concurrencia, verificaciones y evidencia |
-| `README.md` | Contrato operativo y limites |
+| preparar.sql | OpenCode Build: base/esquema, tabla heredada, checkpoint protegido, manifiesto y prevalidacion |
+| migrar.sql | OpenCode Build: cuerpo unico para ROLLBACK/COMMIT, RD/LR, guardia y vista |
+| revertir.sql | OpenCode Build: captura actual, reconstruccion, renombrado y archivo protegido |
+| reproducir.py | OpenCode Build, correcciones Codex registradas: orquestacion y evidencia |
+| README.md | OpenCode Build, adecuacion Codex al formato real de wrappers/respaldos |
+| preparar_proveniencia.py | Complemento Codex: construye indice de artefactos reales, sin conectar motores |
 
-## Datos
+Los SQL son cuerpos sin control transaccional propio de nivel superior. Los BEGIN/END de PL/pgSQL son normales. El runner abre y cierra las transacciones y verifica antes de confirmar. Se reutiliza el mismo archivo migrar.sql en el ensayo ROLLBACK y en el COMMIT.
 
-La fuente completa debe contener exactamente:
+## Datos y objetos conservados
 
-| lote_id | deposito_id | responsable_control_id |
-|---:|---:|---:|
-| 501 | 30 | 801 |
-| 502 | 30 | 801 |
-| 503 | 31 | 802 |
+La fuente public.control_lote_almacen_original debe tener exactamente (501,30,801), (502,30,801), (503,31,802), en orden de columnas lote_id,deposito_id,responsable_control_id. Los responsables ya existen en public.usuario; no se exportan nombres ni contactos.
 
-Se conservan:
+La preparacion confirma control_legacy (tabla) y control_legacy_checkpoint (tabla protegida) con tres filas. La migracion conserva la tabla anterior como control_legacy_pre_migracion, crea RD/LR, _migration_guard, funciones y triggers y deja control_legacy como vista. Tras probar reglas y concurrencia se confirman tres cambios validos: R801 pasa a D31, R803 pertenece a D30 y L501 se asigna tambien a R803. El JOIN actual tiene cuatro filas: (501,30,803), (501,31,801), (502,31,801), (503,31,802).
 
-- `control_legacy_checkpoint`: tres filas independientes, protegido.
-- `control_legacy_pre_migracion`: tabla operativa inicial renombrada.
-- `responsable_deposito`: RD, clave R.
-- `lote_responsable`: LR, clave LR.
-- `_migration_guard`: guardia compartida y estado del ciclo.
-- `migration_manifest`: hashes y fases.
-- `down_snapshot`: captura persistente del JOIN actual durante down.
-- `control_legacy_fnbc_archivada`: vista normalizada renombrada durante down.
-- `control_legacy`: tabla reconstruida final de cuatro filas.
+Down captura ese JOIN actual bajo bloqueo en down_snapshot y reconstruye control_legacy_new. Compara hash y EXCEPT ALL bilateral con las cuatro filas confirmadas. Renombra la vista a control_legacy_fnbc_archivada y la tabla nueva a control_legacy. NO hay DROP ni CASCADE: las relaciones normalizadas y los checkpoints se conservan. La marca active=false hace que los triggers rechacen DML posterior en RD/LR con 25006; el checkpoint tambien rechaza escrituras desde su preparacion. Un propietario capaz de alterar DDL puede cambiar estas protecciones: no se afirma lo contrario.
 
-La captura de down se conserva dentro de `tpi_migracion`, en lugar de crear
-objetos temporales fuera del esquema exclusivo. Se revierte tambien ante el
-error inyectado.
+## Respaldo y privacidad
 
-## Preparacion Externa
+Se requiere un manifiesto privado U6 autentico: status=SUCCESS, database=foodstore, file=basename seguro, size=bytes positivos, sha256=64 hex, startUtc/endUtc con zona y baseline con counts y fingerprints MD5 de 32 hex. El SHA256 corresponde al dump completo; las huellas MD5 de las tablas son otra receta y no se confunden.
 
-El operador debe entregar la copia nueva, credenciales privadas y un respaldo
-custom anterior al comienzo del ensayo.
+El manifiesto real puede estar en logs/ y el dump en el directorio hermano backups/, o ambos en la misma carpeta. Se exige un unico candidato, basename, formato custom PGDMP, bytes y SHA256 exactos. No se altera ni reescribe el manifiesto privado. Sus tiempos deben preceder al ensayo. Los archivos privados deben permanecer fuera del repositorio y con permisos adecuados; el runner no publica ni imprime sus contenidos.
 
-El runner no genera respaldos ni restaura bases. Antes de cada fase que escribe
-revalida el mismo respaldo privado inicial: contenido, formato custom, bytes,
-SHA256, manifiesto y tiempos. Esto no equivale a generar un respaldo actualizado
-de cada estado intermedio.
+Antes de cada fase se vuelve a validar EL MISMO respaldo fuente inicial. Esto no crea un respaldo nuevo del estado intermedio de cuatro filas. La reversion ensayada no elimina objetos y conserva tambien la version normalizada; cualquier uso posterior con operaciones destructivas exigiria un respaldo actualizado de esa copia. La restauracion real de ese respaldo se documenta por el simulacro de mantenimiento, no por la simple verificacion de su hash en este runner.
 
-El secreto y el manifiesto deben estar fuera del repositorio. El archivo dump
-debe estar junto al manifiesto.
+## Puerta de revision real
 
-Formato obligatorio del manifiesto privado:
+Se conservan los metadatos originales OpenCode sin inventarles campos. El wrapper real registra agent=build/plan, pure=true, permission_config.permission=deny, tool_event_count=0, error_event_count=0, returncode=0, status=completed y sql_executed=false. Tambien enlaza SHA256 de prompt, respuesta, snapshots y las tres specs congeladas en Git antes de consultar.
 
-```json
-{
-  "status": "SUCCESS",
-  "database": "foodstore",
-  "file": "respaldo_unico.dump",
-  "size": 123456,
-  "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-  "startUtc": "2026-11-10T10:00:00Z",
-  "endUtc": "2026-11-10T10:01:00Z",
-  "baseline": {
-    "counts": {
-      "public.lote": 3
-    },
-    "fingerprints": {
-      "public.lote": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
-    }
-  }
-}
-```
+La cobertura de codigo se registra aparte en ia/plan_cobertura_fuentes.json, como mapa tecnico Codex. Lista los seis hashes finales. Para el runner largo conserva partes de menos de 40 KB con rangos continuos y cuerpo SOURCE_BEGIN/SOURCE_END; se comprueba que los snapshots recibidos por Plan reconstruyan todas las lineas exactas del archivo. Los otros archivos se adjuntan completos. La respuesta real debe revisarse para confirmar cobertura completa y resolver sus hallazgos; el mapa no equivale a una firma humana ni a una aprobacion del proveedor inventada.
 
-Los valores son ilustrativos del formato, no evidencia de un respaldo existente.
-Todos deben reemplazarse por datos reales del respaldo privado.
+El indice de ejecucion enlaza tres specs, tres entradas Codex previas, prompt/respuesta/metadatos Build/Plan y ese mapa de cobertura. Las versiones deben estar en Git. La decision tecnica allow_execution pertenece a Codex y se distingue de la revision humana del equipo. Un cambio posterior de una fuente obliga a nuevo Plan y nuevos hashes; no se edita el historial real para aparentar que fue revisado.
 
-`file` debe ser un basename seguro. Se rechazan rutas y escapes mediante enlaces
-que resuelvan fuera de la carpeta del manifiesto. Los tiempos deben tener zona;
-el final debe preceder al comienzo del ensayo.
+## Reproducir
 
-Las huellas del manifiesto solo se validan estructuralmente. No se comparan con
-las nuevas huellas asumiendo una receta de agregacion desconocida.
-
-La evidencia no incluye contenido del secreto, rutas privadas, nombre del dump,
-filas personales ni diagnosticos brutos del servidor.
-
-## Puerta De Revision
-
-El runner exige `--provenance` como entrada adicional para no inventar
-proveniencia o declarar una revision que no existe.
-
-Es un indice JSON que enlaza artefactos reales previamente conservados. No lo
-genera este complemento. Los archivos referenciados deben estar dentro del
-repositorio; los paths son relativos a su raiz.
-
-Estructura del indice:
-
-```text
-code_commit_before_execution: commit completo que debe ser HEAD
-kiro_spec_commit: commit completo anterior, ancestro de HEAD
-kiro_specs: lista de exactamente tres registros path/sha256
-codex_prebuild_notes: lista de exactamente dos registros path/sha256
-build:
-  prompt: registro path/sha256
-  answer: registro path/sha256
-  metadata: registro path/sha256
-plan:
-  prompt: registro path/sha256
-  answer: registro path/sha256
-  metadata: registro path/sha256
-```
-
-Cada registro tiene exactamente las claves `path` y `sha256`.
-
-Las specs originales y las dos notas deben coincidir byte a byte con sus
-versiones en `kiro_spec_commit`. Los cinco archivos del complemento y los
-artefactos Build/Plan deben coincidir con `HEAD`.
-
-El cliente libpq debe coincidir con su version en ambos commits. Los cambios
-ajenos a estos archivos no se revierten ni limpian.
-
-Los metadatos JSON conservados de Build y Plan deben contener:
-
-| Campo | Valor requerido |
-|---|---|
-| `mode` | `pure` |
-| `permission` | `deny` |
-| `tool_events` | lista vacia |
-| `review_automated_not_human` | `true` |
-| `kiro_specs_sha256` | mapa path relativo a SHA256 de las tres specs |
-| `codex_prebuild_notes_sha256` | mapa path relativo a SHA256 de las dos notas |
-| `prompt_sha256` | SHA256 del prompt original enlazado |
-| `answer_sha256` | SHA256 de la respuesta original enlazada |
-
-Los metadatos Plan tambien deben contener:
-
-- `reviewed_sources_sha256`: mapa path relativo a SHA256 de los cinco archivos.
-- `decision`: `allow_execution`.
-
-Si el wrapper real produce otro formato, se requiere revisar explicitamente
-esta puerta y conservar los originales antes de ejecutar. No se deben editar
-metadatos originales para simular conformidad. Un indice o hash no demuestra
-por si solo la autenticidad del proveedor: el operador debe verificar la
-procedencia real de los artefactos.
-
-La revision Plan debe cubrir los bytes finales. Un cambio posterior exige
-nueva revision y nuevos hashes. El commit final incorpora fuentes y evidencia
-de revision; no se requiere que los metadatos incluyan su propio commit.
-
-## Invocacion
-
-Desde la raiz del repositorio:
+1. Leer specs, aclaraciones y las seis fuentes; revisar el Plan real y sus decisiones. Preparar PostgreSQL, copia NUEVA, secreto JSON externo compatible con el cliente U5 y manifiesto/dump privados. Evitar escritores externos.
+2. Confirmar en Git las fuentes finales y todos los artefactos de revision, antes de crear el indice. No ejecutar el generador ni el SQL original archivado en ia/generacion_original.
+3. Construir un indice nuevo con el helper (el flag representa una decision tecnica automatizada, no una firma humana):
 
 ```console
-python complementos/migracion_fnbc/reproducir.py --secret-file C:\privado\fnbc.secret --backup-manifest C:\privado\backup_manifest.json --provenance complementos/migracion_fnbc/ia/provenance.json
+python complementos/migracion_fnbc/preparar_proveniencia.py --output C:\privado\migracion_indice.json --plan-prefix migracion_plan_final --permitir-ejecucion-tecnica
 ```
 
-Valores predeterminados:
+4. Ejecutar desde la raiz, sin exponer el contenido del secreto:
 
-| Opcion | Valor |
-|---|---|
-| `--host` | `127.0.0.1` |
-| `--port` | `55605` |
-| `--user` | `u5_bootstrap` |
-| `--source-database` | `foodstore` |
-| `--evidence` | `docs/evidencias_tpi/migracion_fnbc.json` |
-
-No hay opcion para cambiar la base de escritura.
-
-La evidencia debe ser un JSON nuevo dentro del repositorio. El runner rechaza
-sobrescribir evidencia existente. Para conservar un intento anterior, elegir
-otro archivo con `--evidence`.
-
-La autenticacion depende del formato soportado por el cliente libpq existente.
-El runner no interpreta ni imprime el secreto.
-
-## Secuencia
-
-1. Verificar respaldo, hashes, commits y revision automatizada.
-2. Observar huellas de la copia y de la fuente.
-3. Preparar dentro de una transaccion; verificar antes de confirmar.
-4. Insertar el dato que viola R a D; observar 23514 y revertir.
-5. Ejecutar `migrar.sql`, verificar y revertir.
-6. Verificar desde conexion nueva catalogo, filas y hashes preparados.
-7. Ejecutar exactamente el mismo `migrar.sql`, verificar y confirmar.
-8. Probar PK, FK y LD a traves del JOIN con savepoints especificos.
-9. Aceptar un UPDATE maestro valido y revertirlo expresamente.
-10. Probar dos escritores independientes con monitor independiente.
-11. Confirmar limpieza auxiliar en una transaccion posterior.
-12. Confirmar los cambios validos que producen cuatro filas.
-13. Ejecutar down con error P7501 despues de reconstruir, renombrar y desactivar.
-14. Revertir y verificar desde conexion nueva DDL, lifecycle y cuatro filas.
-15. Ejecutar down nuevamente y confirmar.
-16. Probar rechazos 25006 sobre archivos y checkpoint.
-17. Verificar huellas, hashes y ausencia de secuencias; emitir SUCCESS.
-
-Las cinco huellas se verifican al finalizar cada fase completada. Ante fallo se
-intenta una observacion adicional independiente y se conserva estado FAILED.
-
-## Guardia Y Concurrencia
-
-Ambas tablas normalizadas tienen un trigger BEFORE STATEMENT que actualiza
-`turno = NOT turno` en la misma fila de `_migration_guard`. Los triggers AFTER
-STATEMENT validan LD a R sobre el JOIN completo.
-
-La prueba usa READ COMMITTED:
-
-- A inserta L503/R801.
-- B intenta insertar L503/R803, con R803 previamente asociado a D30.
-- El monitor observa `wait_event_type = 'Lock'` y A dentro de
-  `pg_blocking_pids(B)`.
-- Solo entonces se autoriza el COMMIT de A.
-- B debe observar exactamente 23505.
-- Una transaccion posterior elimina la asignacion auxiliar de A y R803.
-
-Cada hilo crea y cierra su propia conexion. Los PIDs de A, B y monitor deben
-ser diferentes. Los timeouts limitan conexion, sentencias, locks y coordinacion.
-
-El intervalo corto entre consultas solo regula el polling; nunca constituye
-prueba de bloqueo.
-
-REPEATABLE READ y SERIALIZABLE pueden producir 40001 por la actualizacion de
-la guardia. Se requiere reintento completo en esos niveles. Este laboratorio
-no los declara probados.
-
-## Huellas
-
-Se producen exactamente cinco entradas:
-
-1. `public.lote`.
-2. `public.deposito`.
-3. `public.usuario`.
-4. `public.control_lote_almacen_original`.
-5. `public.remaining_tables_and_catalog`.
-
-La quinta agrega todas las demas tablas ordinarias, particionadas y vistas
-materializadas de public, junto al inventario de esas relaciones y sus columnas.
-No se inventa el nombre de una quinta tabla no especificada.
-
-Cada tabla se resume dentro de PostgreSQL con cantidad y SHA256 del multiconjunto
-ordenado de hashes SHA256 de sus filas JSONB. Las filas de usuario nunca salen
-del servidor. La quinta entrada se resume desde esos agregados y metadatos.
-
-Las huellas se comparan con su propio before, por base. No se exige igualdad
-entre fuente y copia ni entre recetas historicas diferentes.
-
-Para las relaciones L/D/R del complemento se usa SHA256 de:
-
-```text
-L,D,R;L,D,R
+```console
+python complementos/migracion_fnbc/reproducir.py --secret-file C:\privado\secrets.json --backup-manifest C:\privado\logs\respaldo.manifest.json --provenance C:\privado\migracion_indice.json
 ```
 
-Las filas se ordenan numericamente por L, D y R. No hay salto final. Esta receta
-coincide entre SQL y Python y conserva multiplicidad.
+Los paths anteriores son ejemplos, no archivos de credenciales entregados. Defaults: host 127.0.0.1, puerto 55605, usuario u5_bootstrap, fuente foodstore. El nombre de la copia de escritura es fijo. El JSON final se escribe en docs/evidencias_tpi/migracion_fnbc.json; se rechaza sobrescribir evidencia. Conservar intentos fallidos con otro nombre si corresponde, sin borrar una instalacion parcial.
 
-## Reversion
+## Pruebas y limites
 
-Down bloquea RD/LR antes de capturar el JOIN actual. Compara cantidad, hash y
-EXCEPT ALL bilateral con el snapshot confirmado de cuatro filas.
-
-La tabla reconstruida tiene PK y las tres FKs a maestros existentes. La vista
-normalizada se renombra, no se elimina. El checkpoint inicial no se utiliza
-como fuente de reconstruccion.
-
-El error P7501 ocurre despues de reconstruir, renombrar, desactivar el lifecycle
-y registrar la fase. Su reversion debe restaurar el estado normalizado completo.
-
-Despues de down, los triggers rechazan INSERT, UPDATE, DELETE y TRUNCATE en
-RD/LR con 25006. Se prueba TRUNCATE de ambas tablas juntas porque truncar solo
-RD puede ser rechazado antes por su FK entrante. Tambien se prueba LR sola.
-
-El checkpoint rechaza las cuatro operaciones desde su preparacion.
-
-Estas protecciones son de aplicacion. No protegen frente a un propietario o
-administrador que altere triggers, funciones, guardia o DDL.
-
-## Fallos Y Limites
-
-- Solo se marca SUCCESS despues de todos los controles.
-- No se utilizan comprobaciones `assert` eliminables con `python -O`.
-- Los casos negativos comparan `DatabaseError.sqlstate`.
-- Las capturas generales solo marcan fallo, nunca exito de una prueba negativa.
-- No se imprimen respuestas brutas ni mensajes del servidor.
-- Un fallo posterior a un COMMIT no revierte ese COMMIT historico.
-- No hay reejecucion destructiva, reutilizacion de esquema ni recuperacion
-  automatica de un laboratorio incompleto.
-- Un ensayo fallido puede conservar auxiliares confirmados antes del fallo;
-  la evidencia FAILED no afirma limpieza global ni exito.
-- El operador debe impedir escritores externos durante el ensayo.
-- Las huellas detectan diferencias entre observaciones; no son auditoria de
-  modificaciones transitorias posteriormente deshechas por terceros.
-- Los agregados ordenados se calculan en memoria del servidor; revisar recursos
-  para bases grandes.
-- No se valida una restauracion real del dump: se validan su manifiesto,
-  integridad y firma de formato custom.
-- El runner no cambia permisos del sistema operativo; la privacidad efectiva
-  de los archivos externos corresponde al operador.
-- La persistencia del JSON final tambien puede fallar por permisos o disco lleno;
-  nunca debe interpretarse ausencia de evidencia como exito.
-
-## Decisiones Para Revision
-
-- Se conserva `down_snapshot` dentro del esquema exclusivo como evidencia.
-- La quinta huella cubre tablas restantes e inventario, sin suponer otro maestro.
-- `--provenance` es obligatorio para bloquear ejecucion sin revision verificable.
-- Se revalida el respaldo inicial antes de cada fase; no se generan respaldos.
-- Estas fuentes no han sido ejecutadas ni se presentan como aprobadas por humanos.
+- Precondicion negativa: INSERT valido para PK/FK pero que viola R->D y ejecucion del MISMO migrar.sql real; se espera 23514 y ROLLBACK sin objetos parciales.
+- Migracion completa con ROLLBACK y observacion desde conexion nueva: tabla y tres filas iniciales, catalogo exacto restaurado. Luego mismo cuerpo y COMMIT, vista y reunion equivalentes.
+- PK 23505, FK 23503 y duplicacion LD por INSERT o UPDATE maestro 23505. UPDATE maestro valido se acepta pero termina ROLLBACK antes de concurrencia.
+- Dos escritores independientes y un monitor: B espera Lock y pg_blocking_pids(B) incluye A antes del COMMIT de A. A confirma; B falla 23505. Se limpia lo confirmado con otra transaccion explicita, no con un SAVEPOINT antiguo.
+- Cambios validos confirmados producen las cuatro filas actuales. Down con error P7501 despues de reconstruir/renombrar/desactivar debe volver por ROLLBACK a la vista, catalogo, lifecycle activo y cuatro filas normalizadas. Luego el down se confirma.
+- Desde conexion nueva: tabla operativa de cuatro filas, checkpoint de tres, vista archivada y RD/LR presentes; rechazos 25006 y hashes intactos. TRUNCATE de RD sola puede fallar antes por FK entrante; el runner prueba ambas juntas y LR sola.
+- Cinco huellas PRINCIPALES individuales: categoria, producto, usuario, pedido y detalle_pedido. Una sexta entrada resume todas las extensiones/restantes y el inventario de public. Se comparan antes/despues por base y no entre recetas distintas. La fuente original se consulta en solo lectura; las filas personales se agregan dentro de PostgreSQL y no salen.
+- READ COMMITTED se prueba realmente. REPEATABLE READ/SERIALIZABLE pueden abortar 40001 por la guardia y requerir reintento completo; no se declaran ejecutados.
+- Se verifica ausencia de secuencias nuevas; las huellas no prueban inmutabilidad del cluster, secuencias ajenas ni cambios transitorios de terceros.
+- Todo error inesperado aborta y registra FAILED; una captura general nunca se usa como exito de una negativa. No hay assert eliminable con -O. La ausencia de un JSON exitoso no demuestra exito.

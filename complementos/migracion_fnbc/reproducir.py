@@ -28,11 +28,14 @@ INITIAL = [(501, 30, 801), (502, 30, 801), (503, 31, 802)]
 CURRENT = [(501, 30, 803), (501, 31, 801),
            (502, 31, 801), (503, 31, 802)]
 COLUMNS = "lote_id, deposito_id, responsable_control_id"
-SOURCE_TABLES = ("lote", "deposito", "usuario",
-                 "control_lote_almacen_original")
+SOURCE_TABLES = ("categoria", "producto", "usuario", "pedido",
+                 "detalle_pedido")
+REQUIRED_DOMAIN_TABLES = ("lote", "deposito",
+                          "control_lote_almacen_original")
 SOURCE_FILES = ("preparar.sql", "migrar.sql", "revertir.sql",
-                "reproducir.py", "README.md")
+                "reproducir.py", "README.md", "preparar_proveniencia.py")
 HEX64 = re.compile(r"^[0-9a-f]{64}$")
+HEX32 = re.compile(r"^[0-9a-f]{32}$")
 SAFE_NAME = re.compile(r"^[A-Za-z0-9_][A-Za-z0-9_.-]*$")
 
 
@@ -145,8 +148,15 @@ def verify_backup(args, started):
             and "/" not in filename and "\\" not in filename
             and ":" not in filename,
             "unsafe_backup_basename")
-    dump = (manifest_path.parent / filename).resolve(strict=True)
-    require(dump.parent == manifest_path.parent, "backup_path_escape")
+    # U6 writes manifests in logs/ and dumps in sibling backups/. The
+    # basename and digest remain authoritative; no private file is rewritten.
+    candidates = [manifest_path.parent / filename,
+                  manifest_path.parent.parent / "backups" / filename]
+    existing = [candidate.resolve(strict=True) for candidate in candidates
+                if candidate.is_file()]
+    require(len(existing) == 1, "backup_dump_missing_or_ambiguous")
+    dump = existing[0]
+    require(dump.name == filename, "backup_basename_mismatch")
     private_file(dump, "backup_dump")
     require(type(manifest["size"]) is int and manifest["size"] > 0,
             "invalid_backup_size")
@@ -172,7 +182,7 @@ def verify_backup(args, started):
         require(type(count) is int and count >= 0, "backup_count_invalid")
     for fingerprint in baseline["fingerprints"].values():
         require(isinstance(fingerprint, str)
-                and bool(HEX64.fullmatch(fingerprint.lower())),
+                and bool(HEX32.fullmatch(fingerprint.lower())),
                 "backup_baseline_fingerprint_invalid")
 
     return {
@@ -184,30 +194,28 @@ def verify_backup(args, started):
         "backup_end_utc": iso(end),
         "custom_format_magic_verified": True,
         "baseline_recipe_not_assumed_equal": True,
+        "baseline_fingerprint_algorithm": "MD5 (U6, distinct from dump SHA256)",
+        "private_layout": "manifest logs/; dump same directory or sibling backups/",
     }
 
 
 def verify_provenance(path, source_hashes):
-    """Verify an external review index against original files and Git."""
+    """Validate real wrapper artifacts plus a separate, explicit Codex coverage map.
+
+    Raw Build/Plan metadata are immutable. This does not insert invented fields
+    or claim that a technical decision is a human review.
+    """
     index = read_json(path.resolve(strict=True))
     require(isinstance(index, dict), "provenance_not_object")
     code_commit = git("rev-parse", "HEAD").decode("ascii").strip()
     require(index.get("code_commit_before_execution") == code_commit,
             "code_commit_mismatch")
-
     spec_commit = index.get("kiro_spec_commit")
     require(isinstance(spec_commit, str)
-            and re.fullmatch(r"[0-9a-f]{40,64}", spec_commit),
+            and re.fullmatch(r"[0-9a-f]{40}", spec_commit),
             "invalid_spec_commit")
     require(spec_commit != code_commit, "spec_commit_must_precede_code")
     git("merge-base", "--is-ancestor", spec_commit, code_commit)
-
-    specs = index.get("kiro_specs")
-    notes = index.get("codex_prebuild_notes")
-    require(isinstance(specs, list) and len(specs) == 3,
-            "three_original_specs_required")
-    require(isinstance(notes, list) and len(notes) == 2,
-            "two_codex_notes_required")
 
     def committed_records(records, commit):
         result = {}
@@ -225,49 +233,100 @@ def verify_provenance(path, source_hashes):
             result[name] = actual
         return result
 
+    specs = index.get("kiro_specs")
+    notes = index.get("codex_prebuild_notes")
+    require(isinstance(specs, list) and len(specs) == 3,
+            "three_original_specs_required")
+    require(isinstance(notes, list) and len(notes) == 3,
+            "three_codex_prebuild_inputs_required")
     spec_hashes = committed_records(specs, spec_commit)
     note_hashes = committed_records(notes, spec_commit)
-
     for name, expected in source_hashes.items():
         require(digest_bytes(git("show", f"{code_commit}:{name}")) == expected,
                 "executed_source_not_committed")
-
     client = repo_path("unidad5/tools/libpq_client.py")
     client_hash = digest_file(client)
-    require(digest_bytes(git("show", f"{spec_commit}:{relative(client)}"))
-            == client_hash, "client_changed_since_specs")
-    require(digest_bytes(git("show", f"{code_commit}:{relative(client)}"))
-            == client_hash, "client_not_committed_unchanged")
+    for commit in (spec_commit, code_commit):
+        require(digest_bytes(git("show", f"{commit}:{relative(client)}"))
+                == client_hash, "client_not_committed_unchanged")
+
+    coverage_record = index.get("plan_coverage")
+    require(isinstance(coverage_record, dict), "plan_coverage_record_missing")
+    committed_records([coverage_record], code_commit)
+    coverage = read_json(repo_path(coverage_record["path"]))
+    require(coverage.get("reviewed_sources_sha256") == source_hashes,
+            "plan_does_not_cover_executed_sources")
+    require(index.get("technical_decision_codex") == "allow_execution",
+            "technical_review_did_not_allow_execution")
+    require(index.get("human_review_claimed") is False,
+            "automated_provenance_must_not_claim_human_review")
 
     review_hashes = {}
-    for kind in ("build", "plan"):
-        bundle = index.get(kind)
+    for review_kind in ("build", "plan"):
+        bundle = index.get(review_kind)
         require(isinstance(bundle, dict)
                 and set(bundle) == {"prompt", "answer", "metadata"},
                 "review_bundle_missing")
         verified = committed_records(list(bundle.values()), code_commit)
         metadata = read_json(repo_path(bundle["metadata"]["path"]))
-        require(isinstance(metadata, dict)
-                and metadata.get("mode") == "pure"
-                and metadata.get("permission") == "deny"
-                and metadata.get("tool_events") == []
-                and metadata.get("review_automated_not_human") is True,
-                "review_not_pure_automated_zero_tools")
-        require(metadata.get("kiro_specs_sha256") == spec_hashes,
-                "review_spec_inputs_mismatch")
-        require(metadata.get("codex_prebuild_notes_sha256") == note_hashes,
-                "review_note_inputs_mismatch")
-        require(metadata.get("prompt_sha256")
-                == bundle["prompt"]["sha256"]
-                and metadata.get("answer_sha256")
-                == bundle["answer"]["sha256"],
+        require(metadata.get("status") == "completed"
+                and metadata.get("agent") == review_kind
+                and metadata.get("pure") is True
+                and metadata.get("permission_config") == {"permission": "deny"}
+                and metadata.get("tool_event_count") == 0
+                and metadata.get("error_event_count") == 0
+                and metadata.get("unparsed_line_count") == 0
+                and metadata.get("returncode") == 0
+                and metadata.get("sql_executed") is False,
+                "review_not_real_pure_zero_tools")
+        require(metadata.get("kiro_specification_commit") == spec_commit,
+                "review_spec_commit_mismatch")
+        frozen = metadata.get("kiro_specs_frozen_before_call", [])
+        require({record.get("path"): record.get("sha256") for record in frozen}
+                == spec_hashes, "review_frozen_specs_mismatch")
+        require(metadata.get("prompt_sha256") == bundle["prompt"]["sha256"]
+                and metadata.get("answer_sha256") == bundle["answer"]["sha256"],
                 "review_prompt_answer_link_mismatch")
-        if kind == "plan":
-            require(metadata.get("reviewed_sources_sha256") == source_hashes,
-                    "plan_does_not_cover_executed_sources")
-            require(metadata.get("decision") == "allow_execution",
-                    "plan_did_not_allow_execution")
-        review_hashes[kind] = verified
+        attached = {}
+        for item in metadata.get("attachments", []):
+            snapshot = repo_path(item["repository_path"])
+            require(digest_file(snapshot) == item.get("sha256"),
+                    "review_attachment_hash_mismatch")
+            require(digest_bytes(git("show", f"{code_commit}:{relative(snapshot)}"))
+                    == item.get("sha256"), "review_snapshot_not_committed")
+            attached[item.get("source_path_at_consultation")] = item.get("sha256")
+        for name, expected in (spec_hashes | note_hashes).items():
+            require(attached.get(name) == expected,
+                    "review_spec_or_note_not_attached")
+        if review_kind == "plan":
+            chunks = coverage.get("chunks", [])
+            for name, expected in source_hashes.items():
+                if attached.get(name) == expected:
+                    continue
+                pieces = sorted((item for item in chunks
+                                 if item.get("source_path") == name),
+                                key=lambda item: item["start_line"])
+                require(bool(pieces), "review_source_missing")
+                original_lines = repo_path(name).read_text(
+                    encoding="utf-8").splitlines(keepends=True)
+                next_line = 1
+                for piece in pieces:
+                    require(piece["source_sha256"] == expected
+                            and piece["start_line"] == next_line,
+                            "review_chunk_gap_or_source_mismatch")
+                    part = repo_path(piece["path"])
+                    require(attached.get(piece["path"]) == piece["sha256"]
+                            and digest_file(part) == piece["sha256"],
+                            "review_chunk_not_attached_exactly")
+                    body = part.read_text(encoding="utf-8").split(
+                        "SOURCE_BEGIN\n", 1)[1].rsplit("\nSOURCE_END", 1)[0]
+                    expected_body = "".join(original_lines[
+                        piece["start_line"] - 1:piece["end_line"]]).rstrip("\n")
+                    require(body == expected_body, "review_chunk_content_mismatch")
+                    next_line = piece["end_line"] + 1
+                require(next_line == len(original_lines) + 1,
+                        "review_chunk_does_not_reach_final_line")
+        review_hashes[review_kind] = verified
 
     return {
         "kiro_spec_commit": spec_commit,
@@ -278,8 +337,10 @@ def verify_provenance(path, source_hashes):
         "executed_source_files_sha256": source_hashes,
         "code_commit_before_execution": code_commit,
         "libpq_client_sha256": client_hash,
+        "plan_coverage_sha256": coverage_record["sha256"],
         "tool_events_zero": True,
         "review_automated_not_human": True,
+        "human_review_claimed": False,
         "provenance_index_sha256": digest_file(path),
     }
 
@@ -442,7 +503,8 @@ def public_fingerprints(connection):
         "ORDER BY c.relname"
     ).rows
     names = {row[0] for row in inventory}
-    require(set(SOURCE_TABLES) <= names, "required_public_relation_missing")
+    require(set(SOURCE_TABLES + REQUIRED_DOMAIN_TABLES) <= names,
+            "required_public_relation_missing")
     all_fingerprints = {}
     for table, _, _ in inventory:
         qualified = "public." + quote_identifier(table)
@@ -471,7 +533,8 @@ def public_fingerprints(connection):
             "inventory": inventory,
         })),
     }
-    require(len(result) == 5, "five_public_fingerprints_required")
+    require(len(result) == 6,
+            "five_primary_public_fingerprints_plus_extensions_required")
     return result
 
 
@@ -565,7 +628,7 @@ class Runner:
         return copy, source
 
     def expected_error(self, connection, name, statements, expected):
-        require(re.fullmatch(r"[a-z_]+", name), "unsafe_savepoint")
+        require(re.fullmatch(r"[a-z_][a-z0-9_]*", name), "unsafe_savepoint")
         connection.execute("SAVEPOINT " + name)
         observed = None
         try:
@@ -676,7 +739,7 @@ class Runner:
                 [
                     ("INSERT INTO tpi_migracion.control_legacy "
                      "VALUES (501,31,801)", None),
-                    ("SELECT tpi_migracion.fn_check_fd_rd()", None),
+                    (self.scripts["migrar.sql"], None),
                 ], "23514",
             )
             connection.execute("ROLLBACK")
@@ -689,6 +752,7 @@ class Runner:
         self.evidence["invalid_source"] = {
             "invalid_tuple_501_31_801": [501, 31, 801],
             "observed_sqlstate_23514": observed,
+            "actual_migration_body_sha256": digest_file(HERE / "migrar.sql"),
             "explicit_rollback": True,
             "legacy_hash_restored": True,
             "no_partial_normalized_objects": True,

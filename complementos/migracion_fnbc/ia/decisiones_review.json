@@ -1,0 +1,109 @@
+{
+  "status": "revision_tecnica_codex_final_sin_bloqueos_antes_de_ejecucion",
+  "human_review": "pending",
+  "human_approval_claimed": false,
+  "original_build_preserved": true,
+  "database_execution_performed": false,
+  "decisions": [
+    {
+      "id": "FD01",
+      "origin": "Codex y QA independiente sobre Build",
+      "finding": "El runner suponia dump junto al manifiesto; U6 real usa logs/ y backups/ hermanos.",
+      "decision_tecnica_codex": "corregido",
+      "action": "Resolver exclusivamente basename seguro en ubicaciones conocidas, exigir candidato unico y comprobar formato, bytes y SHA256; no modificar manifiesto real.",
+      "evidence": [
+        "reproducir.py",
+        "README.md",
+        "ia/generacion_original/reproducir.py"
+      ]
+    },
+    {
+      "id": "FD02",
+      "origin": "Codex y QA independiente sobre Build",
+      "finding": "El runner exigia64hex a baseline.fingerprints; la receta real U6 es MD5 de32, distinta del SHA256 del dump.",
+      "decision_tecnica_codex": "corregido",
+      "action": "Validar MD5 de32 en baseline y mantener SHA256 de64 para el dump. No comparar recetas diferentes ni falsificar hashes.",
+      "evidence": [
+        "reproducir.py",
+        "README.md",
+        "ia/generacion_original/reproducir.py"
+      ]
+    },
+    {
+      "id": "FD03",
+      "origin": "Codex y QA independiente sobre Build",
+      "finding": "La puerta de provenance exigia campos que el wrapper real no genera, como mode,tool_events y decision de Plan.",
+      "decision_tecnica_codex": "corregido",
+      "action": "Leer pure,permission_config,tool_event_count,kiro_specs_frozen_before_call y demas campos reales; mantener originales y separar cobertura/decision automatizada Codex de los metadatos del proveedor.",
+      "evidence": [
+        "reproducir.py",
+        "README.md",
+        "ia/migracion_build_metadatos.json"
+      ]
+    },
+    {
+      "id": "FD04",
+      "origin": "QA independiente sobre runner Build",
+      "finding": "La negativa FD invocaba solo fn_check_fd_rd, sin intentar el cuerpo real de migracion.",
+      "decision_tecnica_codex": "corregido",
+      "action": "Ejecutar el MISMO migrar.sql dentro del caso negativo; capturar23514 y verificar rollback/catalogo/objetos intactos.",
+      "evidence": [
+        "reproducir.py",
+        "migrar.sql",
+        "ia/generacion_original/reproducir.py"
+      ]
+    },
+    {
+      "id": "FD05",
+      "origin": "Codex, reproducibilidad complementaria",
+      "finding": "Construir manualmente el indice de revision real agregaba riesgo operativo de campos inventados o fuentes no coincidentes.",
+      "decision_tecnica_codex": "aceptado",
+      "action": "Agregar preparar_proveniencia.py, helper Codex sin conexiones, incluido entre las seis fuentes y en Plan. Exige flag tecnico explicito; no afirma revision humana.",
+      "evidence": [
+        "preparar_proveniencia.py",
+        "reproducir.py",
+        "README.md"
+      ]
+    },
+    {
+      "id": "FD06",
+      "origin": "Codex, precision de evidencia RF08",
+      "finding": "El Build agrupaba las cinco huellas como cuatro tablas de control y una agregacion del resto, lo que dificultaba verificar las cinco tablas centrales de Food Store por separado.",
+      "decision_tecnica_codex": "corregido",
+      "action": "Informar categoria/producto/usuario/pedido/detalle_pedido individualmente y una sexta huella de extensiones/catalogo; conservar la proteccion mas amplia.",
+      "evidence": [
+        "reproducir.py",
+        "README.md"
+      ]
+    },
+    {
+      "id": "FD07",
+      "origin": "OpenCode Plan pre, hallazgo1; cobertura completa de seis fuentes",
+      "finding": "La validacion de SAVEPOINT [a-z_]+ rechazaba los digitos presentes en nombres internos que incluyen SQLSTATE23505/25006, abortando las pruebas antes del SQL.",
+      "decision_tecnica_codex": "corregido",
+      "action": "Permitir [a-z_][a-z0-9_]* para identificadores internos, manteniendo exclusion de espacios/separadores y primer digito; renovar hashes y review FULL final antes de ejecutar.",
+      "evidence": [
+        "reproducir.py",
+        "ia/migracion_plan_pre_respuesta.md",
+        "ia/migracion_plan_pre_metadatos.json"
+      ]
+    }
+  ],
+  "plan_final": {
+    "metadata": "ia/migracion_plan_final_metadatos.json",
+    "answer": "ia/migracion_plan_final_respuesta.md",
+    "sources": 6,
+    "runner_ranges": [
+      [
+        1,
+        740
+      ],
+      [
+        741,
+        1480
+      ]
+    ],
+    "blocking_findings": 0,
+    "human_approval_claimed": false
+  }
+}

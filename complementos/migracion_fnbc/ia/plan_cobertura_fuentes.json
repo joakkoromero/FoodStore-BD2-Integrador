@@ -1,0 +1,41 @@
+{
+  "author": "Codex technical coverage map, distinct from original OpenCode metadata",
+  "human_review_claimed": false,
+  "reviewed_sources_sha256": {
+    "complementos/migracion_fnbc/preparar.sql": "c098e4a3e292eeb085323360448f50eb4c43b535d3221cf4741225cf78b631f6",
+    "complementos/migracion_fnbc/migrar.sql": "ce96500b44174630964c396feabe91dbd7624e18896a608a32e4d7a2a51e2bd1",
+    "complementos/migracion_fnbc/revertir.sql": "ed1f3126d0aeee1789c8503f93ae384188bc2dc3a1ab710ff40a5d86274c6980",
+    "complementos/migracion_fnbc/reproducir.py": "e7ef5b74f4da77a15c8f1f27c559a0412df33c464558fdbadcbc7834f8f7ab11",
+    "complementos/migracion_fnbc/README.md": "b738dd3dfaaff4f206f9eb365dcdc47435db40f971fca36adb717e18e24b0c90",
+    "complementos/migracion_fnbc/preparar_proveniencia.py": "7b32852202e07391e735bb7a2c2bb8bed3056c9bb1c6e23ca6fa060662c72d70"
+  },
+  "source_line_counts": {
+    "preparar.sql": 187,
+    "migrar.sql": 216,
+    "revertir.sql": 200,
+    "reproducir.py": 1480,
+    "README.md": 75,
+    "preparar_proveniencia.py": 86
+  },
+  "chunks": [
+    {
+      "source_path": "complementos/migracion_fnbc/reproducir.py",
+      "source_sha256": "e7ef5b74f4da77a15c8f1f27c559a0412df33c464558fdbadcbc7834f8f7ab11",
+      "path": "complementos/migracion_fnbc/ia/review_input_partes/reproducir_01.md",
+      "sha256": "767d21aa2244bef051f2c7452a25ccbc05ef858bd1871a466b4c80b71a154b78",
+      "start_line": 1,
+      "end_line": 740,
+      "bytes": 31051
+    },
+    {
+      "source_path": "complementos/migracion_fnbc/reproducir.py",
+      "source_sha256": "e7ef5b74f4da77a15c8f1f27c559a0412df33c464558fdbadcbc7834f8f7ab11",
+      "path": "complementos/migracion_fnbc/ia/review_input_partes/reproducir_02.md",
+      "sha256": "758a7557632b4b1424c916b528bc95ef4e7e872d6c2d31ea9879ee56b9a92cf4",
+      "start_line": 741,
+      "end_line": 1480,
+      "bytes": 33229
+    }
+  ],
+  "purpose": "Final actual Plan inputs after correcting FD07; exact source map, not human approval."
+}
