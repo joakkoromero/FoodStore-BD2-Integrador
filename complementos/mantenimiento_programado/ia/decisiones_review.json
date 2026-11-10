@@ -1,0 +1,97 @@
+{
+  "review_type": "Automated technical decisions by Codex, not human signature",
+  "decisions": [
+    {
+      "id": "SCH-01",
+      "origin": "Codex line-by-line integration review",
+      "finding": "El primer SPEC no enumeraba el contrato interno del manifiesto; Build adoptó explícitamente un esquema supuesto, incompatible con los campos U6 reales.",
+      "decision_tecnica_codex": "corregido",
+      "action": "El consumidor nuevo ahora usa database/file/size/sha256/startUtc/endUtc, subdirectorio backups y baseline de cinco MD5 de32 caracteres. No se modificó U6 ni se fabricaron manifiestos.",
+      "evidence": [
+        "SPEC_SCHEDULER.md",
+        "run_backup_job.ps1",
+        "ia/generacion_original/run_backup_job.ps1"
+      ]
+    },
+    {
+      "id": "SCH-02",
+      "origin": "Codex local compatibility/privacy review",
+      "finding": "La propuesta requería DACL protegida incluso cuando la herencia sólo concedía los tres SID autorizados. El PGPASSFILE anterior tiene herencia y tres entradas privadas.",
+      "decision_tecnica_codex": "corregido",
+      "action": "Se validan todas las concesiones efectivas, permitiendo herencia de esos mismos SID; no se cambian permisos ni contenidos del PGPASSFILE.",
+      "evidence": [
+        "run_backup_job.ps1",
+        "README.md"
+      ]
+    },
+    {
+      "id": "SCH-03",
+      "origin": "OpenCode scheduler_plan finding1",
+      "finding": "El consumidor no comprobaba previamente backups/logs existentes antes de delegar escrituras al backend opaco.",
+      "decision_tecnica_codex": "corregido",
+      "action": "Se requieren y verifican ambos directorios privados y sus cadenas antes de ejecutar U6 y justo antes de delegar. No se reparan ACL ajenas. No se observó una exposición real.",
+      "evidence": [
+        "run_backup_job.ps1",
+        "ia/scheduler_plan_respuesta.md"
+      ]
+    },
+    {
+      "id": "SCH-04",
+      "origin": "OpenCode scheduler_plan finding2",
+      "finding": "Inventarios recursivos de JSON fuera del directorio contractual de manifiestos.",
+      "decision_tecnica_codex": "corregido",
+      "action": "Ambos inventarios se limitan a logs/*.manifest.json, sin recursión ni JSON de terceros.",
+      "evidence": [
+        "run_backup_job.ps1",
+        "ia/scheduler_plan_respuesta.md"
+      ]
+    },
+    {
+      "id": "SCH-05",
+      "origin": "OpenCode scheduler_plan finding3",
+      "finding": "El patrón estricto de basename no estaba declarado en el primer contrato adjunto.",
+      "decision_tecnica_codex": "corregido",
+      "action": "Se confirmó localmente el patrón real New-RunToken de U6 y se agregó explícitamente a SPEC; se conserva la validación acotada. La corrección es del contrato/documentación, no de un nombre U6 defectuoso.",
+      "evidence": [
+        "SPEC_SCHEDULER.md",
+        "ia/scheduler_plan_respuesta.md"
+      ]
+    },
+    {
+      "id": "SCH-06",
+      "origin": "OpenCode scheduler_plan_final finding1",
+      "finding": "Comprobación de reparse points/Git en ancestros sin verificar ACL capaces de sustituir objetos protegidos.",
+      "decision_tecnica_codex": "corregido",
+      "action": "Validación de propietarios y derechos efectivos peligrosos de ancestros, distinguiendo lectura/tránsito y ACE InheritOnly. Excepción TrustedInstaller sólo para ancestros del sistema; destinos privados mantienen lista restringida. El entorno observado no mostró derechos de sustitución a terceros.",
+      "evidence": [
+        "run_backup_job.ps1",
+        "SPEC_SCHEDULER.md",
+        "ia/scheduler_plan_final_respuesta.md"
+      ]
+    },
+    {
+      "id": "SCH-07",
+      "origin": "Real Windows COM registration failure0x8004131A, then OpenCode microPlan",
+      "finding": "RegisterTask received a BSTR whose XML declaration said UTF-8, producing an encoding error before registration.",
+      "decision_tecnica_codex": "corregido",
+      "action": "Deep clone DOM and remove only XmlDeclaration for the COM BSTR; preserve private UTF-8 file. MicroPlan complete336lines, then real daily task registration+automatic backup succeeded.",
+      "evidence": [
+        "crear_tarea_diaria.ps1",
+        "ia/scheduler_micro_codificacion_respuesta.md",
+        "evidencias/intento_registro_fallido/fallo_registro.json",
+        "evidencias/scheduler_ejecucion.json"
+      ]
+    }
+  ],
+  "human_review": {
+    "state": "pending_review_of_integrator_by_requester",
+    "scope_note": "Prior U5 closure conformity and U6 conclusion review are separate and do not attest new code line-by-line reading."
+  },
+  "last_plan_status": "completed; scheduler_plan_cierre approved747/332/47 lines; subsequent micro approved full creator336 after real encoding correction",
+  "operator_verifier_note": {
+    "responsibility": "Codex operational verifier, not OpenCode source defect",
+    "failure": "Expected explicit RunLevel element in exported Windows XML; actual service omitted default while CIM showedLimited",
+    "correction": "Inspect actual CIMInteractive/Limited; preserve XML omission without inventing field",
+    "evidence": "evidencias/verificador_export_fallido/fallo_verificador.json"
+  }
+}

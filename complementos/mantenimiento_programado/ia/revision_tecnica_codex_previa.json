@@ -1,0 +1,50 @@
+{
+  "reviewer": "Codex automated line-by-line technical review",
+  "reviewed_original_lines": {
+    "run_backup_job.ps1": 723,
+    "crear_tarea_diaria.ps1": 332,
+    "tarea_diaria.template.xml": 47,
+    "README.md": 319
+  },
+  "human_review_claimed": false,
+  "original_U6_files_modified": false,
+  "corrections": [
+    {
+      "id": "SCH-01",
+      "kind": "integration contract precision absent from initial SPEC",
+      "change": "Adapt new runner to actual local U6 manifest keys/start/end, backup subdirectory, five MD5 fingerprints32 and two zero invalidations; do not modify U6."
+    },
+    {
+      "id": "SCH-02",
+      "kind": "privacy policy precision",
+      "change": "Allow inherited ACEs only when every Allow SID remains within permitted identities; avoid changing existing PGPASSFILE ACL."
+    },
+    {
+      "id": "SCH-03",
+      "kind": "OpenCode Plan high privacy preflight gap",
+      "change": "Require and validate preexisting backups/logs descendants before any U6 write; no automatic ACL changes."
+    },
+    {
+      "id": "SCH-04",
+      "kind": "OpenCode Plan manifest selection scope",
+      "change": "Inventory only private logs/*.manifest.json without recursive unrelated JSON."
+    },
+    {
+      "id": "SCH-05",
+      "kind": "OpenCode Plan contract precision",
+      "change": "Explicitly document locally verified actual U6 New-RunToken filename pattern; keep bounded basename guard."
+    },
+    {
+      "id": "SCH-06",
+      "kind": "OpenCode second Plan ancestor replacement protection",
+      "change": "Check ancestor owner and effective mutation/delete/DACL/ownership/WriteData Allow ACEs for untrusted identities; allow read/traverse and account for InheritOnly. Windows TrustedInstaller trusted only for OS ancestors, not private leaves. No ACL changed."
+    }
+  ],
+  "sources_current": {
+    "run_backup_job.ps1": "d1f5a8326b039a20fc3397296caac0c12e9ecd4fecfcf8352650b40df03c9401",
+    "crear_tarea_diaria.ps1": "825eb6e67b615092ea1ddfdc8f2afad48f1eac43a85fd27d6c26d5f5a0588f89",
+    "tarea_diaria.template.xml": "781916ae87127d9c6b4cc5a99146e6eddf73018c18edcddab09f141d7eac2523"
+  },
+  "checked_utc": "2026-11-10T17:08:22.931518+00:00",
+  "actual_runtime_followup": "COM encoding correction reviewed in scheduler_micro_codificacion before successful retry; see decisions SCH-07"
+}

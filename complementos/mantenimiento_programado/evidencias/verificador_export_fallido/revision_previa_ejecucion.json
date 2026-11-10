@@ -1,0 +1,16 @@
+{
+  "checked_utc": "2026-11-10T17:32:42.047440+00:00",
+  "scope": "retry after actual XML COM encoding failure; no other source changes",
+  "automated_review": "Codex complete line reading plus OpenCode full Plan and creator micro Plan",
+  "plan_full_runner_lines": 747,
+  "plan_micro_creator_lines": 336,
+  "plan_template_lines": 47,
+  "tools_executed_by_opencode": 0,
+  "all_reviewed_hashes_equal_current_before_execution": true,
+  "sources_sha256": {
+    "run_backup_job.ps1": "d1f5a8326b039a20fc3397296caac0c12e9ecd4fecfcf8352650b40df03c9401",
+    "crear_tarea_diaria.ps1": "825eb6e67b615092ea1ddfdc8f2afad48f1eac43a85fd27d6c26d5f5a0588f89",
+    "tarea_diaria.template.xml": "781916ae87127d9c6b4cc5a99146e6eddf73018c18edcddab09f141d7eac2523"
+  },
+  "human_reading_or_signature_claimed": false
+}

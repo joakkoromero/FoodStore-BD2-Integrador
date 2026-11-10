@@ -1,0 +1,34 @@
+{
+  "tool": "OpenCode",
+  "installed_version": "1.18.23",
+  "requested_model": "openai/gpt-6.1-sol",
+  "agent": "build",
+  "pure": true,
+  "permission_config": {
+    "permission": "deny"
+  },
+  "started_at_utc": "2026-11-10T16:58:10.702987+00:00",
+  "finished_at_utc": "2026-11-10T17:04:40.755467+00:00",
+  "prompt_sha256": "1b02e42a753089bae7ec4e55e365583348e7a8a85e2af55bc6f8800df2deef6b",
+  "attachments": [
+    {
+      "name": "SPEC_SCHEDULER.md",
+      "sha256": "e8afe7ab2fc4ad7205413e174a51a4db490c6e5cb1c986bd1c47e76ada5e5191",
+      "repository_path": "complementos/mantenimiento_programado/ia/scheduler_build_adjuntos/01_SPEC_SCHEDULER.md",
+      "source_path_at_consultation": "complementos/mantenimiento_programado/SPEC_SCHEDULER.md"
+    }
+  ],
+  "returncode": 0,
+  "timed_out": false,
+  "event_count": 3,
+  "unparsed_line_count": 0,
+  "error_event_count": 0,
+  "tool_event_count": 0,
+  "answer_sha256": "29a3895f7ab010d0a0dfdf8b2411bef983f284a08bbadb84fa560d7eeb58a082",
+  "raw_jsonl_sha256": "8e496474b160556356d5aee9309debe6e1d370fe2435c95d82e5bbfea3598499",
+  "raw_event_storage": "Private work directory outside deliverable repository",
+  "status": "completed",
+  "prior_failed_attempts": [],
+  "sql_executed": false,
+  "human_validation": "Pending; this consultation does not establish human approval"
+}

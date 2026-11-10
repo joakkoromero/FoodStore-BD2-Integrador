@@ -1,0 +1,59 @@
+{
+  "status": "SUCCESS",
+  "nativeExitCode": 0,
+  "sourceScheduledTask": "FoodStore-TPI-Lab-65c5639e969c414aa80c4fb71f4204ca",
+  "parentScheduledBackupSha256": "8067e36dca81ea6b8c5a870d1bddc2927634a33aad842d22d96bf09c1bd82b19",
+  "u6RestoreResult": {
+    "status": "SUCCESS",
+    "database": "foodstore_restore_test",
+    "file": "foodstore_20261110T1737454901207Z_9d3d04cfe0314790869966ed00a3cf6c.dump",
+    "backupStartUtc": "2026-11-10T17:37:48.6166613+00:00",
+    "trialStartUtc": "2026-11-10T17:38:07.6905678+00:00",
+    "validatedUtc": "2026-11-10T17:38:21.1495085+00:00",
+    "baseline": {
+      "counts": {
+        "pedido": 225000,
+        "usuario": 20001,
+        "producto": 50000,
+        "categoria": 2,
+        "detalle_pedido": 499997
+      },
+      "invalid": {
+        "detalles": 0,
+        "productos": 0
+      },
+      "fingerprints": {
+        "pedido": "929d9a0e8f52627628d709f82bf09fc5",
+        "usuario": "757779fa0dc72a031cfeccbe105a63f7",
+        "producto": "b7c392f36c79d7b070017310be9ebe61",
+        "categoria": "25255e04281b38e69a0639239f903ec1",
+        "detalle_pedido": "1047260be5b676fbca32f99b435d5361"
+      }
+    },
+    "actual": {
+      "counts": {
+        "pedido": 225000,
+        "usuario": 20001,
+        "producto": 50000,
+        "categoria": 2,
+        "detalle_pedido": 499997
+      },
+      "invalid": {
+        "detalles": 0,
+        "productos": 0
+      },
+      "fingerprints": {
+        "pedido": "929d9a0e8f52627628d709f82bf09fc5",
+        "usuario": "757779fa0dc72a031cfeccbe105a63f7",
+        "producto": "b7c392f36c79d7b070017310be9ebe61",
+        "categoria": "25255e04281b38e69a0639239f903ec1",
+        "detalle_pedido": "1047260be5b676fbca32f99b435d5361"
+      }
+    },
+    "rtoSeconds": 13.4303715,
+    "rpoReferenceSeconds": 19.0739065,
+    "isolated": true,
+    "roleAclRecovery": false
+  },
+  "noProductionAclRecoveryClaimed": true
+}

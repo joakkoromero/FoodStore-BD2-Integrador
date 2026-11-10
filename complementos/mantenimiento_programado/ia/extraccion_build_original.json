@@ -1,0 +1,26 @@
+[
+  {
+    "path": "run_backup_job.ps1",
+    "sha256": "293ba7a7bee3d97f00a2bed1176f78e460a3585b8a77c9b98df546c93e07582e",
+    "lines": 723,
+    "normalization": "UTF-8 LF; code fence removed"
+  },
+  {
+    "path": "crear_tarea_diaria.ps1",
+    "sha256": "93f9729f021387f6bf5fe6b802686d88619f7952741c7379ccf41d3df777ccff",
+    "lines": 332,
+    "normalization": "UTF-8 LF; code fence removed"
+  },
+  {
+    "path": "tarea_diaria.template.xml",
+    "sha256": "781916ae87127d9c6b4cc5a99146e6eddf73018c18edcddab09f141d7eac2523",
+    "lines": 47,
+    "normalization": "UTF-8 LF; code fence removed"
+  },
+  {
+    "path": "README.md",
+    "sha256": "f18c76045b48df661b3e8c2111c82ecc92116c7ff4a91e1b80fd195884e19861",
+    "lines": 319,
+    "normalization": "UTF-8 LF; code fence removed"
+  }
+]

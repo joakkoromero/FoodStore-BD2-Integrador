@@ -1,0 +1,14 @@
+{
+  "checked_utc": "2026-11-10T17:25:52.941738+00:00",
+  "automated_line_by_line_review": "Codex, complete original and every subsequent changed section",
+  "opencode_final_plan_complete": true,
+  "plan_tools_executed": 0,
+  "all_reviewed_source_hashes_equal_current_before_execution": true,
+  "sources_sha256": {
+    "run_backup_job.ps1": "d1f5a8326b039a20fc3397296caac0c12e9ecd4fecfcf8352650b40df03c9401",
+    "crear_tarea_diaria.ps1": "93f9729f021387f6bf5fe6b802686d88619f7952741c7379ccf41d3df777ccff",
+    "tarea_diaria.template.xml": "781916ae87127d9c6b4cc5a99146e6eddf73018c18edcddab09f141d7eac2523"
+  },
+  "powershell_parser_errors": 0,
+  "human_reading_or_signature_claimed": false
+}

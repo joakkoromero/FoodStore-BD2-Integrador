@@ -1,0 +1,30 @@
+{
+  "status": "SUCCESS",
+  "startedUtc": "2026-11-10T17:37:42.7318880+00:00",
+  "finishedUtc": "2026-11-10T17:37:54.2621007+00:00",
+  "sourceDatabase": "foodstore",
+  "backupFile": "foodstore_20261110T1737454901207Z_9d3d04cfe0314790869966ed00a3cf6c.dump",
+  "backupBytes": 8224005,
+  "backupSha256": "8067e36dca81ea6b8c5a870d1bddc2927634a33aad842d22d96bf09c1bd82b19",
+  "baseline": {
+    "counts": {
+      "categoria": 2,
+      "producto": 50000,
+      "usuario": 20001,
+      "pedido": 225000,
+      "detalle_pedido": 499997
+    },
+    "invalid": {
+      "productos": 0,
+      "detalles": 0
+    },
+    "fingerprints": {
+      "categoria": "25255e04281b38e69a0639239f903ec1",
+      "producto": "b7c392f36c79d7b070017310be9ebe61",
+      "usuario": "757779fa0dc72a031cfeccbe105a63f7",
+      "pedido": "929d9a0e8f52627628d709f82bf09fc5",
+      "detalle_pedido": "1047260be5b676fbca32f99b435d5361"
+    }
+  },
+  "nativeExitCode": 0
+}

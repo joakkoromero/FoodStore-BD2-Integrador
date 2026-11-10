@@ -1,0 +1,25 @@
+{
+  "privateExportedXmlSha256": "082e5e0f5b256c53f67fd386010d30d8a8d8ad79c5ff72175fbe3039876ad08f",
+  "privateExportEncoding": "UTF-16 serialization of Schedule API export",
+  "replacedFields": [
+    "UserId",
+    "Command",
+    "Arguments",
+    "WorkingDirectory"
+  ],
+  "removedOptionalFields": [
+    "Author",
+    "URI",
+    "SecurityDescriptor"
+  ],
+  "preserved": [
+    "StartBoundary",
+    "DaysInterval",
+    "LogonType",
+    "RunLevel",
+    "Settings"
+  ],
+  "sanitizedEncoding": "UTF-8",
+  "sanitizedXmlSha256": "7c0acce61bd0645d8fd1265945a8eeab9ab3557d7a5d02bbfdc05ae8b225cdef",
+  "personalValuesExported": false
+}

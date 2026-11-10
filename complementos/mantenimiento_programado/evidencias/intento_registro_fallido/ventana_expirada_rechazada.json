@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "validConfigValidateOnlyExitCode": 0,
+  "onlyConfigDifference": "WindowExpiresUtc",
+  "exitCode": 1,
+  "jobStatus": "FAILED",
+  "nativeExitCode": null,
+  "backupRuntimeContainsNoFiles": true,
+  "scope": "Rejected before PostgreSQL connection or backup; no SUCCESS fabricated"
+}

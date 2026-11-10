@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "fiveSourceTablesAndInvalidationsEqual": true,
+  "originalU6ScriptHashesUnchanged": true,
+  "originalU6Sha256": {
+    "backup_foodstore.ps1": "53612efb8f616d8cf1ff763d998d1155dce13d40b6aa1784e634d299404aa9f5",
+    "restore_test.ps1": "ab21a4341508d89aacc5fb5479d81f9042704ffb682d8705905ec58baeb7c8e9",
+    "validaciones.sql": "8198129eaf53a1e96e432a02c0659f5c4eb7d094de2e05ad9deb022e1cb53849",
+    "tools\\ps_common.ps1": "bc5a4e87493312e4954d2e4849d756576fe6566c0256e902b4d770f1add81392"
+  },
+  "taskRemoved": true,
+  "backupsRemainPrivate": true,
+  "sourceDatabasePreserved": "foodstore",
+  "newRestoreDatabase": "foodstore_restore_test",
+  "oldRestoreDatabasePreserved": "foodstore_restore_test_u6_conservada_20261110",
+  "postgresClusterLeftRunningForNextCoordinatedTest": true
+}

@@ -1,0 +1,15 @@
+{
+  "checked_utc": "2026-11-10T17:36:07.785653+00:00",
+  "scope": "repeat after correcting operator verifier of Windows default RunLevel normalization; no executable source changes",
+  "reviewed_runner_lines": 747,
+  "reviewed_creator_lines": 336,
+  "reviewed_template_lines": 47,
+  "tools_executed_by_opencode": 0,
+  "sources_sha256": {
+    "run_backup_job.ps1": "d1f5a8326b039a20fc3397296caac0c12e9ecd4fecfcf8352650b40df03c9401",
+    "crear_tarea_diaria.ps1": "825eb6e67b615092ea1ddfdc8f2afad48f1eac43a85fd27d6c26d5f5a0588f89",
+    "tarea_diaria.template.xml": "781916ae87127d9c6b4cc5a99146e6eddf73018c18edcddab09f141d7eac2523"
+  },
+  "all_reviewed_source_hashes_still_equal": true,
+  "human_signature_claimed": false
+}

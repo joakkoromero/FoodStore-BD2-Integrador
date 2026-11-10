@@ -1,0 +1,17 @@
+{
+  "before": {
+    "sourceOid": "16742",
+    "oldTestOid": "16743",
+    "archiveExists": false,
+    "oldTestSessions": 0
+  },
+  "after": {
+    "sourceOid": "16742",
+    "archiveOid": "16743",
+    "targetAbsent": true
+  },
+  "sourceDatabaseUnchanged": true,
+  "renamedOnly": "foodstore_restore_test",
+  "archiveName": "foodstore_restore_test_u6_conservada_20261110",
+  "noDropUsed": true
+}

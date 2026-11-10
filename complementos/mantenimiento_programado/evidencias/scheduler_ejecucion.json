@@ -1,0 +1,28 @@
+{
+  "status": "SUCCESS",
+  "taskName": "FoodStore-TPI-Lab-65c5639e969c414aa80c4fb71f4204ca",
+  "triggerType": "CalendarTrigger",
+  "daysInterval": 1,
+  "firstRunBoundary": "2026-11-10T14:37:41-03:00",
+  "registeredUtc": "2026-11-10T17:36:16.4441757+00:00",
+  "lastRunTimeWindowsLocal": "2026-11-10T14:37:41.0000000-03:00",
+  "lastTaskResult": 0,
+  "principalLogonTypeObserved": "Interactive",
+  "runLevelObserved": "Limited",
+  "xmlLogonType": "InteractiveToken",
+  "requestedXmlRunLevel": "LeastPrivilege",
+  "exportedXmlRunLevelPresent": false,
+  "runLevelVerifiedByCim": true,
+  "manualStartUsed": false,
+  "passwordStored": false,
+  "actionScript": "run_backup_job.ps1",
+  "jobStartedUtc": "2026-11-10T17:37:42.7318880+00:00",
+  "jobFinishedUtc": "2026-11-10T17:37:54.2621007+00:00",
+  "executedSourcesSha256": {
+    "run_backup_job.ps1": "d1f5a8326b039a20fc3397296caac0c12e9ecd4fecfcf8352650b40df03c9401",
+    "crear_tarea_diaria.ps1": "825eb6e67b615092ea1ddfdc8f2afad48f1eac43a85fd27d6c26d5f5a0588f89",
+    "tarea_diaria.template.xml": "781916ae87127d9c6b4cc5a99146e6eddf73018c18edcddab09f141d7eac2523"
+  },
+  "privateOriginalXmlSha256": "913dc6503620c1d0ba484aa2fb1f8e91bf3dbe437b1cddbbc7c197d83e9bfb67",
+  "scope": "Daily laboratory task registered, fired by time, then retired; no permanent service claimed"
+}

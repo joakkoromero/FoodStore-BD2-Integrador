@@ -1,0 +1,19 @@
+{
+  "status": "approved_technical_closure",
+  "checked_utc": "2026-11-10T17:43:33.990703+00:00",
+  "reviewer": "Codex automated file-only final check",
+  "database_connections_by_this_check": 0,
+  "daily_scheduler_fired_and_retired": true,
+  "same_programmed_backup_restored": true,
+  "current_rto_seconds": 13.4303715,
+  "current_backup_age_seconds": 19.0739065,
+  "source_fingerprints_equal": true,
+  "u6_sources_and_executed_new_sources_unchanged": true,
+  "public_json_and_xml_parse_ok": true,
+  "public_dump_files": 0,
+  "actual_user_sids_or_local_personal_path_labels": 0,
+  "final_plan_and_micro_complete": true,
+  "runlevel_export_default_omission_preserved": true,
+  "review_human_claimed": false,
+  "files_checked": 68
+}

@@ -1,0 +1,40 @@
+{
+  "tool": "OpenCode",
+  "installed_version": "1.18.23",
+  "requested_model": "openai/gpt-6.1-sol",
+  "agent": "plan",
+  "pure": true,
+  "permission_config": {
+    "permission": "deny"
+  },
+  "started_at_utc": "2026-11-10T17:30:44.597080+00:00",
+  "finished_at_utc": "2026-11-10T17:31:14.138399+00:00",
+  "prompt_sha256": "18cf28b31f0e35899fc766ab1bceea6eb6c614067c58cd2683cb95bc99b5c6dd",
+  "attachments": [
+    {
+      "name": "contexto_microcodificacion.md",
+      "sha256": "67c2a5302714e621b9548a83c02319cd4432e4d6babb80f214c07f504d6e5e36",
+      "repository_path": "complementos/mantenimiento_programado/ia/scheduler_micro_codificacion_adjuntos/01_contexto_microcodificacion.md",
+      "source_path_at_consultation": "complementos/mantenimiento_programado/ia/contexto_microcodificacion.md"
+    },
+    {
+      "name": "crear_tarea_diaria.ps1",
+      "sha256": "825eb6e67b615092ea1ddfdc8f2afad48f1eac43a85fd27d6c26d5f5a0588f89",
+      "repository_path": "complementos/mantenimiento_programado/ia/scheduler_micro_codificacion_adjuntos/02_crear_tarea_diaria.ps1",
+      "source_path_at_consultation": "complementos/mantenimiento_programado/crear_tarea_diaria.ps1"
+    }
+  ],
+  "returncode": 0,
+  "timed_out": false,
+  "event_count": 3,
+  "unparsed_line_count": 0,
+  "error_event_count": 0,
+  "tool_event_count": 0,
+  "answer_sha256": "19a1a26b80b04c99d55f00f86746f87460bb31ea9ade7a8a7406a1df98f6bdc6",
+  "raw_jsonl_sha256": "01499ac98260fe224aca2ecbe36879000e3b2e2e31922127e0d1b0757e8d2e1b",
+  "raw_event_storage": "Private work directory outside deliverable repository",
+  "status": "completed",
+  "prior_failed_attempts": [],
+  "sql_executed": false,
+  "human_validation": "Pending; this consultation does not establish human approval"
+}

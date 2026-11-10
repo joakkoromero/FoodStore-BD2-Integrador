@@ -1,0 +1,12 @@
+{
+  "captured_utc": "2026-11-10T17:31:46.719154+00:00",
+  "registration_script_exit_code": 1,
+  "task_count_after_attempt": 0,
+  "backup_manifests_created": 0,
+  "postgres_source_modified": false,
+  "diagnostic_disabled_task_registered": false,
+  "com_hresult": "0x8004131A",
+  "com_message": "(1,40)::ERROR: no se pudo cambiar la codificación",
+  "new_creator_correction": "Pass a declaration-free DOM clone to COM Unicode BSTR; keep the private file valid UTF-8",
+  "automatic_reexecution_before_review": false
+}
