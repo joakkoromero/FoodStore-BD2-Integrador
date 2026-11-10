@@ -1,0 +1,8 @@
+{
+  "started_utc": "2026-11-10T15:32:22.420699+00:00",
+  "finished_utc": "2026-11-10T15:32:55.992037+00:00",
+  "exit_code": 0,
+  "runtime": "Python3.12.14/SQLite3.53.1",
+  "stdout_public_summary": "Reproduccion completada; revise docs/evidencias.\r\nSIMULADO_APROBADO no es una venta.",
+  "stderr_has_content": false
+}

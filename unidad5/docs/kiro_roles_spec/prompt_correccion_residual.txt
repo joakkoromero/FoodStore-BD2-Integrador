@@ -1,0 +1,24 @@
+Tu revision central ya esta bien, pero quedaron DOS contradicciones
+residuales: en Contexto/Triggers heredados llamas recalcular_total_pedido
+SECURITY INVOKER propiedad de rol_propietario, y en Requirement7 la vuelves
+a listar como INVOKER. Ambas deben ser SECURITY DEFINER de rol_funciones.
+Es una de las CUATRO funciones puente; no puede aparecer entre las demas
+heredadas INVOKER en ningun lugar del documento final.
+
+Devolve requirements.md FINAL COMPLETO EN UN UNICO BLOQUE MARKDOWN,
+iniciando '# Requirements: seguridad-roles-foodstore'. Para evitar copiar
+prosa innecesaria, condensalo a 6000-9000 caracteres manteniendo todas las
+matrices, criterios esenciales y pruebas previstas de los once requisitos.
+No herramientas, no terminal, no SQL, no subagentes.
+
+La restriccion 'Toda implementacion requiere revision y aprobacion explicita
+de los integrantes' es demasiado amplia como gate de este flujo tecnico:
+reemplazala por 'Validacion humana de los integrantes pendiente para la
+entrega; la revision automatica de Codex no la sustituye'. El usuario ya
+autorizo continuar el trabajo tecnico. No inventes una aprobacion ocurrida.
+
+En invariantes, separa contratos: fn_autenticar valida bcrypt, devuelve id
+o NULL y registra sin secretos; fn_resetear_password resetea la credencial
+solo para admin_datos y su resultado se definira en design. No atribuyas
+devolucion id/NULL a ambas funciones. Resto igual a la revision anterior.
+Detente despues de este requirements final, sin implementar nada.

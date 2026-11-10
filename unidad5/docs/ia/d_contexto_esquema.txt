@@ -1,0 +1,23 @@
+CONTEXTO SANITIZADO DE ESQUEMA - NO CONTIENE FILAS, CREDENCIALES NI CONTACTOS REALES
+
+PostgreSQL 17. Tabla fuente heredada del proyecto Food Store:
+public.usuario (
+    id bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    nombre varchar(60) NOT NULL,
+    apellido varchar(60) NOT NULL,
+    email varchar(120) NOT NULL UNIQUE,
+    contrasena varchar(255) NOT NULL,
+    telefono varchar(30),
+    eliminado boolean NOT NULL DEFAULT false,
+    created_at timestamptz NOT NULL DEFAULT now()
+)
+
+La tabla usuario NO tiene una columna de rol de negocio. Los roles LOGIN
+de PostgreSQL son identidades de conexion diferentes de estos usuarios.
+La zona del negocio es America/Argentina/Buenos_Aires.
+No se suministran registros, identificadores reales, hashes ni passwords.
+
+Se necesita una copia independiente en datos_anon.usuario_anon con folio
+correlativo de laboratorio, nombre, apellido, email sinteticos, mes_alta
+de tipo date y eliminado de tipo boolean. No almacenar el id original,
+created_at exacto, contrasena, hash ni telefono real en esa copia.

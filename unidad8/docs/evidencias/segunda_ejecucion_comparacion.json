@@ -1,0 +1,89 @@
+{
+  "started_utc": "2026-11-10T15:41:23.896597+00:00",
+  "finished_utc": "2026-11-10T15:41:53.400617+00:00",
+  "exit_code": 0,
+  "new_postgresql_copy": true,
+  "new_empty_sqlite": true,
+  "same_source_files_sha256": {
+    "movil/schema_sqlite.sql": "8d01ff7a1fd31e3f2de9ff32fb0cb668a7dc7ec65a196819225e9b21453811e2",
+    "movil/pruebas_sqlite.sql": "435789926a9aac766b4fa4610e89e439122c05320c4ba9a07a5aea1d083e067a",
+    "movil/semaforo.sql": "94027db7f224e1298ddbda7b44a55b67efa799cfc9fb1a88082f61412c96bd0d",
+    "postgresql/10_fixture_y_snapshot.sql": "9823f0d34286f01e33a588c299f3d15d431d236bc8ba42e4cc39455fd3eee63f",
+    "postgresql/20_validar_no_ventas.sql": "471b67ead7627f32c8fe2c8dc88cb382211a1b28f3587b42c810a7f3e878c2bb",
+    "postgresql/30_corregir_estado_inicial.sql": "e9b1e08c1c6a1c90e5ee0bd625a1f1f37ecdd11b6b223104d37c5fa17537b58a",
+    "tools/reproducir.py": "11aa1e237fa05e506911e82cef9af1eb211b15ec59144689b035097d741eee3a"
+  },
+  "semantic_comparison_equal": true,
+  "semantic_result": {
+    "C2": [
+      "CONFLICTO",
+      "SIMULADO_APROBADO"
+    ],
+    "C3": "RECHAZADO",
+    "C4": "RECHAZADO",
+    "C5": "SIMULADO_APROBADO",
+    "C6_PK": "SQLITE_CONSTRAINT_PRIMARYKEY",
+    "C6_idempotencia": true,
+    "C7": [
+      "SQLITE_CONSTRAINT_CHECK",
+      "SQLITE_CONSTRAINT_FOREIGNKEY"
+    ],
+    "bordes": 7,
+    "cola_histograma": {
+      "CONFLICTO": 2,
+      "RECHAZADO": 4,
+      "SIMULADO_APROBADO": 3
+    },
+    "esquema": {
+      "foreign_keys": 1,
+      "integrity_check": "ok",
+      "tablas": [
+        [
+          "cola_sync"
+        ],
+        [
+          "item_borrador"
+        ],
+        [
+          "pedido_borrador"
+        ],
+        [
+          "producto_cache"
+        ],
+        [
+          "snapshot_servidor"
+        ]
+      ],
+      "indice": "CREATE UNIQUE INDEX uq_cola_sync_pendiente\n    ON cola_sync(id_local)\n    WHERE estado = 'PENDIENTE'"
+    },
+    "integridad": {
+      "integrity_check": [
+        "ok"
+      ],
+      "foreign_key_check": [],
+      "foreign_keys": 1
+    },
+    "conservacion": {
+      "cinco_tablas_fuente_filas_bytes_sha256_identicos": true,
+      "pedidos_copia_identicos": true,
+      "detalles_copia_identicos": true,
+      "vector_stock_copia_identico": true,
+      "stock_catalogo_completo_identico": true,
+      "cambios_administrativos_solo_C2_C4": true,
+      "ventas_creadas_por_simulacion": 0
+    },
+    "pedidos": 225000,
+    "stock_global": 5000038
+  },
+  "five_source_fingerprints_equal_between_runs": true,
+  "allowed_differences": [
+    "UUID aleatorios",
+    "fechas de captura y evaluación",
+    "bytes/hash SQLite"
+  ],
+  "original_operational_sqlite_unchanged": true,
+  "first_copy_retained_as": "foodstore_u8_run01_conservada",
+  "new_canonical_copy": "foodstore_u8_arancibia_romero",
+  "tp2_guard_still_to_apply_to_second_copy": false,
+  "tp2_guard_applied_to_final_canonical_copy": true
+}

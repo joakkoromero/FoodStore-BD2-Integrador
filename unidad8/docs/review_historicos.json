@@ -1,0 +1,1513 @@
+{
+  "version_matriz": 3,
+  "actualizado_utc": "2026-11-10T15:51:35.015959+00:00",
+  "estado": "completa",
+  "responsable_tecnico": "agente unidad7",
+  "alcance_total_fuentes_asignadas": 51,
+  "fuentes_revisadas_completas": 51,
+  "cobertura_total_cumplida": true,
+  "unidades_pendientes": [],
+  "consultas_completas": [
+    {
+      "prefix": "review_tp1",
+      "status": "completed",
+      "archivos": 2,
+      "adjunto_bytes": 7302,
+      "prompt_y_respuesta_y_snapshot_sha256_verificados": true,
+      "tool_event_count": 0
+    },
+    {
+      "prefix": "review_tp2",
+      "status": "completed",
+      "archivos": 12,
+      "adjunto_bytes": 17609,
+      "prompt_y_respuesta_y_snapshot_sha256_verificados": true,
+      "tool_event_count": 0
+    },
+    {
+      "prefix": "review_tp3",
+      "status": "completed",
+      "archivos": 10,
+      "adjunto_bytes": 23632,
+      "prompt_y_respuesta_y_snapshot_sha256_verificados": true,
+      "tool_event_count": 0
+    },
+    {
+      "prefix": "review_tp4",
+      "status": "completed",
+      "archivos": 10,
+      "adjunto_bytes": 27862,
+      "prompt_y_respuesta_y_snapshot_sha256_verificados": true,
+      "tool_event_count": 0
+    },
+    {
+      "prefix": "review_tp5",
+      "status": "completed",
+      "archivos": 7,
+      "adjunto_bytes": 17932,
+      "prompt_y_respuesta_y_snapshot_sha256_verificados": true,
+      "tool_event_count": 0
+    },
+    {
+      "prefix": "review_u4_p1",
+      "status": "completed",
+      "archivos": 6,
+      "adjunto_bytes": 29129,
+      "prompt_y_respuesta_y_snapshot_sha256_verificados": true,
+      "tool_event_count": 0
+    },
+    {
+      "prefix": "review_u4_p2",
+      "status": "completed",
+      "archivos": 2,
+      "adjunto_bytes": 32062,
+      "prompt_y_respuesta_y_snapshot_sha256_verificados": true,
+      "tool_event_count": 0
+    },
+    {
+      "prefix": "review_u4_p3",
+      "status": "completed",
+      "archivos": 2,
+      "adjunto_bytes": 22638,
+      "prompt_y_respuesta_y_snapshot_sha256_verificados": true,
+      "tool_event_count": 0
+    }
+  ],
+  "cobertura_archivos": [
+    {
+      "unidad": "TP1",
+      "archivo": "work/antecedentes/TP1/data.sql",
+      "consulta": "review_tp1",
+      "revisado_completo": true,
+      "metadatos": "docs/ia/review_tp1_metadatos.json"
+    },
+    {
+      "unidad": "TP1",
+      "archivo": "work/antecedentes/TP1/schema.sql",
+      "consulta": "review_tp1",
+      "revisado_completo": true,
+      "metadatos": "docs/ia/review_tp1_metadatos.json"
+    },
+    {
+      "unidad": "TP2",
+      "archivo": "work/antecedentes/TP2/Arancibia_Romero_TP2/concurrencia/01_no_repetible_A.sql",
+      "consulta": "review_tp2",
+      "revisado_completo": true,
+      "metadatos": "docs/ia/review_tp2_metadatos.json"
+    },
+    {
+      "unidad": "TP2",
+      "archivo": "work/antecedentes/TP2/Arancibia_Romero_TP2/concurrencia/01_no_repetible_B.sql",
+      "consulta": "review_tp2",
+      "revisado_completo": true,
+      "metadatos": "docs/ia/review_tp2_metadatos.json"
+    },
+    {
+      "unidad": "TP2",
+      "archivo": "work/antecedentes/TP2/Arancibia_Romero_TP2/concurrencia/02_fantasma_A.sql",
+      "consulta": "review_tp2",
+      "revisado_completo": true,
+      "metadatos": "docs/ia/review_tp2_metadatos.json"
+    },
+    {
+      "unidad": "TP2",
+      "archivo": "work/antecedentes/TP2/Arancibia_Romero_TP2/concurrencia/02_fantasma_B.sql",
+      "consulta": "review_tp2",
+      "revisado_completo": true,
+      "metadatos": "docs/ia/review_tp2_metadatos.json"
+    },
+    {
+      "unidad": "TP2",
+      "archivo": "work/antecedentes/TP2/Arancibia_Romero_TP2/concurrencia/03_bloqueo_A.sql",
+      "consulta": "review_tp2",
+      "revisado_completo": true,
+      "metadatos": "docs/ia/review_tp2_metadatos.json"
+    },
+    {
+      "unidad": "TP2",
+      "archivo": "work/antecedentes/TP2/Arancibia_Romero_TP2/concurrencia/03_bloqueo_B.sql",
+      "consulta": "review_tp2",
+      "revisado_completo": true,
+      "metadatos": "docs/ia/review_tp2_metadatos.json"
+    },
+    {
+      "unidad": "TP2",
+      "archivo": "work/antecedentes/TP2/Arancibia_Romero_TP2/concurrencia/04_deadlock_A.sql",
+      "consulta": "review_tp2",
+      "revisado_completo": true,
+      "metadatos": "docs/ia/review_tp2_metadatos.json"
+    },
+    {
+      "unidad": "TP2",
+      "archivo": "work/antecedentes/TP2/Arancibia_Romero_TP2/concurrencia/04_deadlock_B.sql",
+      "consulta": "review_tp2",
+      "revisado_completo": true,
+      "metadatos": "docs/ia/review_tp2_metadatos.json"
+    },
+    {
+      "unidad": "TP2",
+      "archivo": "work/antecedentes/TP2/Arancibia_Romero_TP2/data.sql",
+      "consulta": "review_tp2",
+      "revisado_completo": true,
+      "metadatos": "docs/ia/review_tp2_metadatos.json"
+    },
+    {
+      "unidad": "TP2",
+      "archivo": "work/antecedentes/TP2/Arancibia_Romero_TP2/pruebas_restricciones.sql",
+      "consulta": "review_tp2",
+      "revisado_completo": true,
+      "metadatos": "docs/ia/review_tp2_metadatos.json"
+    },
+    {
+      "unidad": "TP2",
+      "archivo": "work/antecedentes/TP2/Arancibia_Romero_TP2/restricciones.sql",
+      "consulta": "review_tp2",
+      "revisado_completo": true,
+      "metadatos": "docs/ia/review_tp2_metadatos.json"
+    },
+    {
+      "unidad": "TP2",
+      "archivo": "work/antecedentes/TP2/Arancibia_Romero_TP2/schema.sql",
+      "consulta": "review_tp2",
+      "revisado_completo": true,
+      "metadatos": "docs/ia/review_tp2_metadatos.json"
+    },
+    {
+      "unidad": "TP3",
+      "archivo": "work/antecedentes/TP3/Arancibia_Romero_TP3/carga_masiva.sql",
+      "consulta": "review_tp3",
+      "revisado_completo": true,
+      "metadatos": "docs/ia/review_tp3_metadatos.json"
+    },
+    {
+      "unidad": "TP3",
+      "archivo": "work/antecedentes/TP3/Arancibia_Romero_TP3/consultas_lentas.sql",
+      "consulta": "review_tp3",
+      "revisado_completo": true,
+      "metadatos": "docs/ia/review_tp3_metadatos.json"
+    },
+    {
+      "unidad": "TP3",
+      "archivo": "work/antecedentes/TP3/Arancibia_Romero_TP3/consultas_parte4.sql",
+      "consulta": "review_tp3",
+      "revisado_completo": true,
+      "metadatos": "docs/ia/review_tp3_metadatos.json"
+    },
+    {
+      "unidad": "TP3",
+      "archivo": "work/antecedentes/TP3/Arancibia_Romero_TP3/data.sql",
+      "consulta": "review_tp3",
+      "revisado_completo": true,
+      "metadatos": "docs/ia/review_tp3_metadatos.json"
+    },
+    {
+      "unidad": "TP3",
+      "archivo": "work/antecedentes/TP3/Arancibia_Romero_TP3/indices_optimizacion.sql",
+      "consulta": "review_tp3",
+      "revisado_completo": true,
+      "metadatos": "docs/ia/review_tp3_metadatos.json"
+    },
+    {
+      "unidad": "TP3",
+      "archivo": "work/antecedentes/TP3/Arancibia_Romero_TP3/medir_antes.sql",
+      "consulta": "review_tp3",
+      "revisado_completo": true,
+      "metadatos": "docs/ia/review_tp3_metadatos.json"
+    },
+    {
+      "unidad": "TP3",
+      "archivo": "work/antecedentes/TP3/Arancibia_Romero_TP3/medir_despues.sql",
+      "consulta": "review_tp3",
+      "revisado_completo": true,
+      "metadatos": "docs/ia/review_tp3_metadatos.json"
+    },
+    {
+      "unidad": "TP3",
+      "archivo": "work/antecedentes/TP3/Arancibia_Romero_TP3/preparar_linea_base.sql",
+      "consulta": "review_tp3",
+      "revisado_completo": true,
+      "metadatos": "docs/ia/review_tp3_metadatos.json"
+    },
+    {
+      "unidad": "TP3",
+      "archivo": "work/antecedentes/TP3/Arancibia_Romero_TP3/restricciones.sql",
+      "consulta": "review_tp3",
+      "revisado_completo": true,
+      "metadatos": "docs/ia/review_tp3_metadatos.json"
+    },
+    {
+      "unidad": "TP3",
+      "archivo": "work/antecedentes/TP3/Arancibia_Romero_TP3/schema.sql",
+      "consulta": "review_tp3",
+      "revisado_completo": true,
+      "metadatos": "docs/ia/review_tp3_metadatos.json"
+    },
+    {
+      "unidad": "TP4",
+      "archivo": "work/antecedentes/TP4/Arancibia_Romero_TP4/carga_masiva_tp3.sql",
+      "consulta": "review_tp4",
+      "revisado_completo": true,
+      "metadatos": "docs/ia/review_tp4_metadatos.json"
+    },
+    {
+      "unidad": "TP4",
+      "archivo": "work/antecedentes/TP4/Arancibia_Romero_TP4/consultas_analiticas.sql",
+      "consulta": "review_tp4",
+      "revisado_completo": true,
+      "metadatos": "docs/ia/review_tp4_metadatos.json"
+    },
+    {
+      "unidad": "TP4",
+      "archivo": "work/antecedentes/TP4/Arancibia_Romero_TP4/consultas_parte3.sql",
+      "consulta": "review_tp4",
+      "revisado_completo": true,
+      "metadatos": "docs/ia/review_tp4_metadatos.json"
+    },
+    {
+      "unidad": "TP4",
+      "archivo": "work/antecedentes/TP4/Arancibia_Romero_TP4/data.sql",
+      "consulta": "review_tp4",
+      "revisado_completo": true,
+      "metadatos": "docs/ia/review_tp4_metadatos.json"
+    },
+    {
+      "unidad": "TP4",
+      "archivo": "work/antecedentes/TP4/Arancibia_Romero_TP4/indices_optimizacion.sql",
+      "consulta": "review_tp4",
+      "revisado_completo": true,
+      "metadatos": "docs/ia/review_tp4_metadatos.json"
+    },
+    {
+      "unidad": "TP4",
+      "archivo": "work/antecedentes/TP4/Arancibia_Romero_TP4/medir_antes.sql",
+      "consulta": "review_tp4",
+      "revisado_completo": true,
+      "metadatos": "docs/ia/review_tp4_metadatos.json"
+    },
+    {
+      "unidad": "TP4",
+      "archivo": "work/antecedentes/TP4/Arancibia_Romero_TP4/medir_despues.sql",
+      "consulta": "review_tp4",
+      "revisado_completo": true,
+      "metadatos": "docs/ia/review_tp4_metadatos.json"
+    },
+    {
+      "unidad": "TP4",
+      "archivo": "work/antecedentes/TP4/Arancibia_Romero_TP4/preparar_linea_base.sql",
+      "consulta": "review_tp4",
+      "revisado_completo": true,
+      "metadatos": "docs/ia/review_tp4_metadatos.json"
+    },
+    {
+      "unidad": "TP4",
+      "archivo": "work/antecedentes/TP4/Arancibia_Romero_TP4/restricciones.sql",
+      "consulta": "review_tp4",
+      "revisado_completo": true,
+      "metadatos": "docs/ia/review_tp4_metadatos.json"
+    },
+    {
+      "unidad": "TP4",
+      "archivo": "work/antecedentes/TP4/Arancibia_Romero_TP4/schema.sql",
+      "consulta": "review_tp4",
+      "revisado_completo": true,
+      "metadatos": "docs/ia/review_tp4_metadatos.json"
+    },
+    {
+      "unidad": "TP5",
+      "archivo": "work/antecedentes/TP5/Arancibia_Romero_TP5/benchmark_escrituras.sql",
+      "consulta": "review_tp5",
+      "revisado_completo": true,
+      "metadatos": "docs/ia/review_tp5_metadatos.json"
+    },
+    {
+      "unidad": "TP5",
+      "archivo": "work/antecedentes/TP5/Arancibia_Romero_TP5/carga_masiva.sql",
+      "consulta": "review_tp5",
+      "revisado_completo": true,
+      "metadatos": "docs/ia/review_tp5_metadatos.json"
+    },
+    {
+      "unidad": "TP5",
+      "archivo": "work/antecedentes/TP5/Arancibia_Romero_TP5/data.sql",
+      "consulta": "review_tp5",
+      "revisado_completo": true,
+      "metadatos": "docs/ia/review_tp5_metadatos.json"
+    },
+    {
+      "unidad": "TP5",
+      "archivo": "work/antecedentes/TP5/Arancibia_Romero_TP5/indices.sql",
+      "consulta": "review_tp5",
+      "revisado_completo": true,
+      "metadatos": "docs/ia/review_tp5_metadatos.json"
+    },
+    {
+      "unidad": "TP5",
+      "archivo": "work/antecedentes/TP5/Arancibia_Romero_TP5/queries.sql",
+      "consulta": "review_tp5",
+      "revisado_completo": true,
+      "metadatos": "docs/ia/review_tp5_metadatos.json"
+    },
+    {
+      "unidad": "TP5",
+      "archivo": "work/antecedentes/TP5/Arancibia_Romero_TP5/schema.sql",
+      "consulta": "review_tp5",
+      "revisado_completo": true,
+      "metadatos": "docs/ia/review_tp5_metadatos.json"
+    },
+    {
+      "unidad": "TP5",
+      "archivo": "work/antecedentes/TP5/Arancibia_Romero_TP5/views.sql",
+      "consulta": "review_tp5",
+      "revisado_completo": true,
+      "metadatos": "docs/ia/review_tp5_metadatos.json"
+    },
+    {
+      "unidad": "Unidad4_p1",
+      "archivo": "outputs/Arancibia_Romero_U4/00_reconstruir_base.ps1",
+      "consulta": "review_u4_p1",
+      "revisado_completo": true,
+      "metadatos": "docs/ia/review_u4_p1_metadatos.json"
+    },
+    {
+      "unidad": "Unidad4_p1",
+      "archivo": "outputs/Arancibia_Romero_U4/01_actividad_del_dia.sql",
+      "consulta": "review_u4_p1",
+      "revisado_completo": true,
+      "metadatos": "docs/ia/review_u4_p1_metadatos.json"
+    },
+    {
+      "unidad": "Unidad4_p1",
+      "archivo": "outputs/Arancibia_Romero_U4/antecedentes/indices_tp4.sql",
+      "consulta": "review_u4_p1",
+      "revisado_completo": true,
+      "metadatos": "docs/ia/review_u4_p1_metadatos.json"
+    },
+    {
+      "unidad": "Unidad4_p1",
+      "archivo": "outputs/Arancibia_Romero_U4/antecedentes/indices_tp5.sql",
+      "consulta": "review_u4_p1",
+      "revisado_completo": true,
+      "metadatos": "docs/ia/review_u4_p1_metadatos.json"
+    },
+    {
+      "unidad": "Unidad4_p1",
+      "archivo": "outputs/Arancibia_Romero_U4/antecedentes/views_tp5.sql",
+      "consulta": "review_u4_p1",
+      "revisado_completo": true,
+      "metadatos": "docs/ia/review_u4_p1_metadatos.json"
+    },
+    {
+      "unidad": "Unidad4_p1",
+      "archivo": "outputs/Arancibia_Romero_U4/reproduccion/verify_fnbc.py",
+      "consulta": "review_u4_p1",
+      "revisado_completo": true,
+      "metadatos": "docs/ia/review_u4_p1_metadatos.json"
+    },
+    {
+      "unidad": "Unidad4_p2",
+      "archivo": "outputs/Arancibia_Romero_U4/reproduccion/verify_foodstore.py",
+      "consulta": "review_u4_p2",
+      "revisado_completo": true,
+      "metadatos": "docs/ia/review_u4_p2_metadatos.json"
+    },
+    {
+      "unidad": "Unidad4_p2",
+      "archivo": "outputs/Arancibia_Romero_U4/reversion_desnormalizacion.sql",
+      "consulta": "review_u4_p2",
+      "revisado_completo": true,
+      "metadatos": "docs/ia/review_u4_p2_metadatos.json"
+    },
+    {
+      "unidad": "Unidad4_p3",
+      "archivo": "outputs/Arancibia_Romero_U4/tp_desnormalizacion_top_categorias.sql",
+      "consulta": "review_u4_p3",
+      "revisado_completo": true,
+      "metadatos": "docs/ia/review_u4_p3_metadatos.json"
+    },
+    {
+      "unidad": "Unidad4_p3",
+      "archivo": "outputs/Arancibia_Romero_U4/tp_fnbc_control_lote.sql",
+      "consulta": "review_u4_p3",
+      "revisado_completo": true,
+      "metadatos": "docs/ia/review_u4_p3_metadatos.json"
+    }
+  ],
+  "hallazgos_consolidados": [
+    {
+      "id_consolidado": "RH01",
+      "titulo": "Borrado del último detalle de un pedido cerrado en esquemas históricos",
+      "clase": "hallazgo",
+      "ids_originales": [
+        "review_tp1:H1",
+        "review_tp5:H1"
+      ],
+      "referencias": [
+        {
+          "id_original": "review_tp1:H1",
+          "queryprefix": "review_tp1",
+          "id_en_respuesta": "H1",
+          "id_asignado_por_matriz": false,
+          "fuente": "work/antecedentes/TP1/schema.sql",
+          "lineas_aproximadas": "100-115; relacionado con 75-98",
+          "lineas_reconstruidas_por_ia_no_verificadas_con_original": true,
+          "resumen_literal_ia": "Después de confirmarlo, se puede borrar su último detalle.",
+          "respuesta_fiel": "docs/ia/review_tp1_respuesta.md",
+          "fuentes_relacionadas": []
+        },
+        {
+          "id_original": "review_tp5:H1",
+          "queryprefix": "review_tp5",
+          "id_en_respuesta": "H1",
+          "id_asignado_por_matriz": false,
+          "fuente": "work/antecedentes/TP5/Arancibia_Romero_TP5/schema.sql",
+          "lineas_aproximadas": "75-116; especialmente105-116",
+          "lineas_reconstruidas_por_ia_no_verificadas_con_original": true,
+          "resumen_literal_ia": "No controla la eliminación o el traslado de sus líneas.",
+          "respuesta_fiel": "docs/ia/review_tp5_respuesta.md",
+          "fuentes_relacionadas": []
+        }
+      ],
+      "decision_propuesta": "corregido",
+      "decision_final": null,
+      "decision_propuesta_no_aplicada": true,
+      "alcance": [
+        "historico_TP1_y_TP5_esquemas_base",
+        "acumulado_por_confirmar"
+      ],
+      "fundamento_propuesta": "Propuesta descriptiva: el código de restricciones TP2 añade validar_detalle_pendiente y exige PENDIENTE antes de modificar/borrar. Eso corrige por lectura la configuración histórica base; no se afirma aún el resultado de una prueba del acumulado.",
+      "prueba": {
+        "estado": "pendiente_de_ejecucion_o_enlace_por_equipo_u8",
+        "procedimiento": "En copia U8, crear/usar un pedido confirmado con líneas e intentar borrar o trasladar su último detalle. Registrar rol, SQLSTATE, estado y recuento final; no probar en la principal.",
+        "evidencias_motor": []
+      },
+      "fuentes_previas_modificadas": false
+    },
+    {
+      "id_consolidado": "RH02",
+      "titulo": "Total almacenado escribible directamente",
+      "clase": "hallazgo",
+      "ids_originales": [
+        "review_tp1:H2",
+        "review_tp2:H2",
+        "review_tp3:H3",
+        "review_tp4:H2",
+        "review_tp5:H2"
+      ],
+      "referencias": [
+        {
+          "id_original": "review_tp1:H2",
+          "queryprefix": "review_tp1",
+          "id_en_respuesta": "H2",
+          "id_asignado_por_matriz": false,
+          "fuente": "work/antecedentes/TP1/schema.sql",
+          "lineas_aproximadas": "54-57; 74-98",
+          "lineas_reconstruidas_por_ia_no_verificadas_con_original": true,
+          "resumen_literal_ia": "Una escritura directa sobre pedido.total puede dejar un importe positivo que no coincida con la suma de sus líneas.",
+          "respuesta_fiel": "docs/ia/review_tp1_respuesta.md",
+          "fuentes_relacionadas": []
+        },
+        {
+          "id_original": "review_tp2:H2",
+          "queryprefix": "review_tp2",
+          "id_en_respuesta": "H2",
+          "id_asignado_por_matriz": false,
+          "fuente": "work/antecedentes/TP2/Arancibia_Romero_TP2/schema.sql",
+          "lineas_aproximadas": "54-57; 74-98",
+          "lineas_reconstruidas_por_ia_no_verificadas_con_original": true,
+          "resumen_literal_ia": "El trigger recalcula el total cuando cambian los detalles, pero no protege una escritura directa en pedido.total.",
+          "respuesta_fiel": "docs/ia/review_tp2_respuesta.md",
+          "fuentes_relacionadas": []
+        },
+        {
+          "id_original": "review_tp3:H3",
+          "queryprefix": "review_tp3",
+          "id_en_respuesta": "H3",
+          "id_asignado_por_matriz": false,
+          "fuente": "work/antecedentes/TP3/Arancibia_Romero_TP3/schema.sql",
+          "lineas_aproximadas": "48-59; 75-99",
+          "lineas_reconstruidas_por_ia_no_verificadas_con_original": true,
+          "resumen_literal_ia": "Ninguna regla adjunta valida una modificación directa de pedido.total.",
+          "respuesta_fiel": "docs/ia/review_tp3_respuesta.md",
+          "fuentes_relacionadas": [
+            "carga_masiva.sql:63-71"
+          ]
+        },
+        {
+          "id_original": "review_tp4:H2",
+          "queryprefix": "review_tp4",
+          "id_en_respuesta": "H2",
+          "id_asignado_por_matriz": false,
+          "fuente": "work/antecedentes/TP4/Arancibia_Romero_TP4/schema.sql",
+          "lineas_aproximadas": "57-60;77-101 (copia saneada; restar2 para original)",
+          "lineas_reconstruidas_por_ia_no_verificadas_con_original": true,
+          "resumen_literal_ia": "Nada comprueba las escrituras directas sobre pedido.total.",
+          "respuesta_fiel": "docs/ia/review_tp4_respuesta.md",
+          "fuentes_relacionadas": [],
+          "base_lineas_ia": "TP4 cuenta los dos comentarios iniciales de saneamiento; se declara ajuste aproximado cuando corresponde."
+        },
+        {
+          "id_original": "review_tp5:H2",
+          "queryprefix": "review_tp5",
+          "id_en_respuesta": "H2",
+          "id_asignado_por_matriz": false,
+          "fuente": "work/antecedentes/TP5/Arancibia_Romero_TP5/schema.sql",
+          "lineas_aproximadas": "48-59;75-99",
+          "lineas_reconstruidas_por_ia_no_verificadas_con_original": true,
+          "resumen_literal_ia": "Es una brecha de integridad del esquema, no evidencia de explotación externa.",
+          "respuesta_fiel": "docs/ia/review_tp5_respuesta.md",
+          "fuentes_relacionadas": []
+        }
+      ],
+      "decision_propuesta": "aceptado",
+      "decision_final": null,
+      "decision_propuesta_no_aplicada": true,
+      "alcance": [
+        "historico_TP1_TP2_TP3_TP4_TP5",
+        "actual_condicionado_por_rol_y_columnas"
+      ],
+      "fundamento_propuesta": "Aceptar la observación estructural histórica, no una explotación de la aplicación. Requiere INSERT/UPDATE sobre total. El equipo U8 informó metadatos de UPDATE total=false para app_web; hasta enlazar la evidencia y probar la operación no se considera decisión final sobre exposición actual.",
+      "prueba": {
+        "estado": "pendiente_de_ejecucion_o_enlace_por_equipo_u8",
+        "procedimiento": "En una copia y dentro de transacciones revertidas, contrastar escritura arbitraria de total como propietario y SET LOCAL ROLE app_web; comparar total/suma y SQLSTATE, sin conceder permisos nuevos.",
+        "evidencias_motor": []
+      },
+      "fuentes_previas_modificadas": false
+    },
+    {
+      "id_consolidado": "RH03",
+      "titulo": "Hipótesis de total perdido por concurrencia en esquema base",
+      "clase": "hallazgo",
+      "ids_originales": [
+        "review_tp1:H3",
+        "review_tp2:H3",
+        "review_tp3:H4",
+        "review_tp4:H4",
+        "review_tp5:H3"
+      ],
+      "referencias": [
+        {
+          "id_original": "review_tp1:H3",
+          "queryprefix": "review_tp1",
+          "id_en_respuesta": "H3",
+          "id_asignado_por_matriz": false,
+          "fuente": "work/antecedentes/TP1/schema.sql",
+          "lineas_aproximadas": "75-98; especialmente 80-84",
+          "lineas_reconstruidas_por_ia_no_verificadas_con_original": true,
+          "resumen_literal_ia": "No debe suponerse que por sí solo garantiza una suma actualizada tras la espera.",
+          "respuesta_fiel": "docs/ia/review_tp1_respuesta.md",
+          "fuentes_relacionadas": []
+        },
+        {
+          "id_original": "review_tp2:H3",
+          "queryprefix": "review_tp2",
+          "id_en_respuesta": "H3",
+          "id_asignado_por_matriz": false,
+          "fuente": "work/antecedentes/TP2/Arancibia_Romero_TP2/schema.sql",
+          "lineas_aproximadas": "75-98; especialmente 80-84",
+          "lineas_reconstruidas_por_ia_no_verificadas_con_original": true,
+          "resumen_literal_ia": "No identifico aquí una carrera equivalente demostrada con esas restricciones activas.",
+          "respuesta_fiel": "docs/ia/review_tp2_respuesta.md",
+          "fuentes_relacionadas": [
+            "restricciones.sql:39-69"
+          ]
+        },
+        {
+          "id_original": "review_tp3:H4",
+          "queryprefix": "review_tp3",
+          "id_en_respuesta": "H4",
+          "id_asignado_por_matriz": false,
+          "fuente": "work/antecedentes/TP3/Arancibia_Romero_TP3/schema.sql",
+          "lineas_aproximadas": "80-85; 97-99",
+          "lineas_reconstruidas_por_ia_no_verificadas_con_original": true,
+          "resumen_literal_ia": "No traslado automáticamente la hipótesis al conjunto final con restricciones instaladas.",
+          "respuesta_fiel": "docs/ia/review_tp3_respuesta.md",
+          "fuentes_relacionadas": [
+            "restricciones.sql:39-59"
+          ]
+        },
+        {
+          "id_original": "review_tp4:H4",
+          "queryprefix": "review_tp4",
+          "id_en_respuesta": "H4",
+          "id_asignado_por_matriz": false,
+          "fuente": "work/antecedentes/TP4/Arancibia_Romero_TP4/schema.sql",
+          "lineas_aproximadas": "78-101 (copia saneada; original aprox.76-99)",
+          "lineas_reconstruidas_por_ia_no_verificadas_con_original": true,
+          "resumen_literal_ia": "No hay evidencia suficiente para atribuir esta anomalía a la instalación completa bajo READ COMMITTED.",
+          "respuesta_fiel": "docs/ia/review_tp4_respuesta.md",
+          "fuentes_relacionadas": [
+            "restricciones.sql:41-61 (copia saneada)"
+          ],
+          "base_lineas_ia": "TP4 cuenta los dos comentarios iniciales de saneamiento; se declara ajuste aproximado cuando corresponde."
+        },
+        {
+          "id_original": "review_tp5:H3",
+          "queryprefix": "review_tp5",
+          "id_en_respuesta": "H3",
+          "id_asignado_por_matriz": false,
+          "fuente": "work/antecedentes/TP5/Arancibia_Romero_TP5/schema.sql",
+          "lineas_aproximadas": "80-91",
+          "lineas_reconstruidas_por_ia_no_verificadas_con_original": true,
+          "resumen_literal_ia": "No presento este escenario como una reproducción realizada.",
+          "respuesta_fiel": "docs/ia/review_tp5_respuesta.md",
+          "fuentes_relacionadas": []
+        }
+      ],
+      "decision_propuesta": "aceptado",
+      "decision_final": null,
+      "decision_propuesta_no_aplicada": true,
+      "alcance": [
+        "hipotesis_historica_esquema_base",
+        "acumulado_no_demostrado"
+      ],
+      "fundamento_propuesta": "Aceptar únicamente como hipótesis que merece contraste, no como fallo reproducido. El BEFORE FOR UPDATE de TP2 serializa por pedido antes de cambiar detalles y modifica el escenario del AFTER aislado; una evaluación que lo ignore produciría una extrapolación injustificada.",
+      "prueba": {
+        "estado": "pendiente_de_ejecucion_o_enlace_por_equipo_u8",
+        "procedimiento": "Dos sesiones coordinadas READ COMMITTED modifican líneas distintas del mismo pedido PENDIENTE. Esperar/confirmar en orden controlado y comparar total/suma desde otra sentencia. Contrastar esquema solo y conjunto con BEFORE si se pretende una afirmación histórica.",
+        "evidencias_motor": []
+      },
+      "fuentes_previas_modificadas": false
+    },
+    {
+      "id_consolidado": "RH04",
+      "titulo": "Inserción directa de CONFIRMADO/ENTREGADO sin líneas",
+      "clase": "hallazgo",
+      "ids_originales": [
+        "review_tp2:H1",
+        "review_tp3:H1",
+        "review_tp4:H1"
+      ],
+      "referencias": [
+        {
+          "id_original": "review_tp2:H1",
+          "queryprefix": "review_tp2",
+          "id_en_respuesta": "H1",
+          "id_asignado_por_matriz": false,
+          "fuente": "work/antecedentes/TP2/Arancibia_Romero_TP2/restricciones.sql",
+          "lineas_aproximadas": "29-33; contraste schema.sql:113-115",
+          "lineas_reconstruidas_por_ia_no_verificadas_con_original": true,
+          "resumen_literal_ia": "El reemplazo elimina ese trigger y crea uno que solamente atiende UPDATE.",
+          "respuesta_fiel": "docs/ia/review_tp2_respuesta.md",
+          "fuentes_relacionadas": []
+        },
+        {
+          "id_original": "review_tp3:H1",
+          "queryprefix": "review_tp3",
+          "id_en_respuesta": "H1",
+          "id_asignado_por_matriz": false,
+          "fuente": "work/antecedentes/TP3/Arancibia_Romero_TP3/restricciones.sql",
+          "lineas_aproximadas": "29-33; contraste schema.sql:101-116",
+          "lineas_reconstruidas_por_ia_no_verificadas_con_original": true,
+          "resumen_literal_ia": "Su reemplazo controla únicamente actualizaciones.",
+          "respuesta_fiel": "docs/ia/review_tp3_respuesta.md",
+          "fuentes_relacionadas": []
+        },
+        {
+          "id_original": "review_tp4:H1",
+          "queryprefix": "review_tp4",
+          "id_en_respuesta": "H1",
+          "id_asignado_por_matriz": false,
+          "fuente": "work/antecedentes/TP4/Arancibia_Romero_TP4/restricciones.sql",
+          "lineas_aproximadas": "31-35 (copia saneada; original aprox.29-33)",
+          "lineas_reconstruidas_por_ia_no_verificadas_con_original": true,
+          "resumen_literal_ia": "solamente interviene en actualizaciones",
+          "respuesta_fiel": "docs/ia/review_tp4_respuesta.md",
+          "fuentes_relacionadas": [],
+          "base_lineas_ia": "TP4 cuenta los dos comentarios iniciales de saneamiento; se declara ajuste aproximado cuando corresponde."
+        }
+      ],
+      "decision_propuesta": "aceptado",
+      "decision_final": null,
+      "decision_propuesta_no_aplicada": true,
+      "alcance": [
+        "historico_con_restricciones",
+        "actual_condicionado_a_INSERT_estado"
+      ],
+      "fundamento_propuesta": "Aceptar la brecha de cobertura INSERT/UPDATE que se ve en el código histórico. No convertirla en vulnerabilidad actual sin comprobar los privilegios por columna del rol efectivo: un rol que no puede insertar estado queda limitado al valor PENDIENTE por defecto.",
+      "prueba": {
+        "estado": "pendiente_de_ejecucion_o_enlace_por_equipo_u8",
+        "procedimiento": "En copia U8 intentar INSERT de pedido CONFIRMADO y ENTREGADO sin líneas primero con propietario y luego con app_web; comprobar INSERT privilege sobre estado y SQLSTATE. Registrar también el control PENDIENTE permitido.",
+        "evidencias_motor": []
+      },
+      "fuentes_previas_modificadas": false
+    },
+    {
+      "id_consolidado": "RH05",
+      "titulo": "Orden de seed y restricciones estrictas",
+      "clase": "hallazgo",
+      "ids_originales": [
+        "review_tp3:H2",
+        "review_tp4:H3"
+      ],
+      "referencias": [
+        {
+          "id_original": "review_tp3:H2",
+          "queryprefix": "review_tp3",
+          "id_en_respuesta": "H2",
+          "id_asignado_por_matriz": false,
+          "fuente": "work/antecedentes/TP3/Arancibia_Romero_TP3/data.sql",
+          "lineas_aproximadas": "27-29; restricciones.sql:11-16",
+          "lineas_reconstruidas_por_ia_no_verificadas_con_original": true,
+          "resumen_literal_ia": "No afirmo que la reconstrucción utilizada efectivamente haya fallado.",
+          "respuesta_fiel": "docs/ia/review_tp3_respuesta.md",
+          "fuentes_relacionadas": []
+        },
+        {
+          "id_original": "review_tp4:H3",
+          "queryprefix": "review_tp4",
+          "id_en_respuesta": "H3",
+          "id_asignado_por_matriz": false,
+          "fuente": "work/antecedentes/TP4/Arancibia_Romero_TP4/data.sql",
+          "lineas_aproximadas": "29-31 (copia saneada; original aprox.27-29)",
+          "lineas_reconstruidas_por_ia_no_verificadas_con_original": true,
+          "resumen_literal_ia": "No es un fallo incondicional de la entrega.",
+          "respuesta_fiel": "docs/ia/review_tp4_respuesta.md",
+          "fuentes_relacionadas": [
+            "restricciones.sql:13-19 (copia saneada)"
+          ],
+          "base_lineas_ia": "TP4 cuenta los dos comentarios iniciales de saneamiento; se declara ajuste aproximado cuando corresponde."
+        }
+      ],
+      "decision_propuesta": "descartado",
+      "decision_final": null,
+      "decision_propuesta_no_aplicada": true,
+      "alcance": [
+        "condicional_historico",
+        "no_defecto_de_entrega_demostrado"
+      ],
+      "fundamento_propuesta": "Proponer descartar la afirmación de que la entrega histórica estaba rota: falta su procedimiento de instalación. Mantener la observación como precondición real: schema→restricciones→data rechaza el salto PENDIENTE→ENTREGADO, mientras schema→data→restricciones es compatible. TP2 ya lo presenta como dependencia, no defecto confirmado.",
+      "prueba": {
+        "estado": "pendiente_de_ejecucion_o_enlace_por_equipo_u8",
+        "procedimiento": "Si se necesita certificar reconstrucción histórica, ejecutar ambos órdenes sólo en copias desechables y registrar primer SQLSTATE. Si no se realiza, dejar explícita la precondición sin inventar resultado.",
+        "evidencias_motor": []
+      },
+      "fuentes_previas_modificadas": false
+    },
+    {
+      "id_consolidado": "RH06",
+      "titulo": "Cobertura de índice Q3 incompleta para id",
+      "clase": "mejora_opcional",
+      "ids_originales": [
+        "review_tp3:M1"
+      ],
+      "referencias": [
+        {
+          "id_original": "review_tp3:M1",
+          "queryprefix": "review_tp3",
+          "id_en_respuesta": "M1",
+          "id_asignado_por_matriz": false,
+          "fuente": "work/antecedentes/TP3/Arancibia_Romero_TP3/indices_optimizacion.sql",
+          "lineas_aproximadas": "12-16",
+          "lineas_reconstruidas_por_ia_no_verificadas_con_original": true,
+          "resumen_literal_ia": "El índice sigue siendo útil para filtro y orden; no es incorrecto.",
+          "respuesta_fiel": "docs/ia/review_tp3_respuesta.md",
+          "fuentes_relacionadas": []
+        }
+      ],
+      "decision_propuesta": "aceptado",
+      "decision_final": null,
+      "decision_propuesta_no_aplicada": true,
+      "alcance": [
+        "mejora_opcional_historica",
+        "rendimiento_actual_no_medido"
+      ],
+      "fundamento_propuesta": "Aceptar como candidato de medición, no defecto lógico ni promesa de mayor velocidad. El índice incluye usuario_id/total pero Q3 también devuelve id; un Index Only Scan depende además del mapa de visibilidad.",
+      "prueba": {
+        "estado": "pendiente_de_ejecucion_o_enlace_por_equipo_u8",
+        "procedimiento": "En copia y con carga equivalente, registrar EXPLAIN ANALYZE BUFFERS de Q3 y los índices presentes. Sólo si la medición justifica un INCLUDE adicional proponer el cambio; no tocar índices de la principal.",
+        "evidencias_motor": []
+      },
+      "fuentes_previas_modificadas": false
+    },
+    {
+      "id_consolidado": "RH07",
+      "titulo": "Alcance de mediciones antes/después de una corrida",
+      "clase": "mejora_opcional",
+      "ids_originales": [
+        "review_tp3:M2",
+        "review_tp4:OBS02",
+        "review_tp5:OBS03"
+      ],
+      "referencias": [
+        {
+          "id_original": "review_tp3:M2",
+          "queryprefix": "review_tp3",
+          "id_en_respuesta": "M2",
+          "id_asignado_por_matriz": false,
+          "fuente": "work/antecedentes/TP3/Arancibia_Romero_TP3/medir_antes.sql y medir_despues.sql",
+          "lineas_aproximadas": "archivo completo; sin rango más preciso en la respuesta",
+          "lineas_reconstruidas_por_ia_no_verificadas_con_original": true,
+          "resumen_literal_ia": "Son capturas válidas, pero aisladas no separan bien el efecto del índice de otras variaciones.",
+          "respuesta_fiel": "docs/ia/review_tp3_respuesta.md",
+          "fuentes_relacionadas": []
+        },
+        {
+          "id_original": "review_tp4:OBS02",
+          "queryprefix": "review_tp4",
+          "id_en_respuesta": "OBS02",
+          "id_asignado_por_matriz": true,
+          "fuente": "work/antecedentes/TP4/Arancibia_Romero_TP4/medir_antes.sql y medir_despues.sql",
+          "lineas_aproximadas": "archivos completos; sin rango preciso en la respuesta",
+          "lineas_reconstruidas_por_ia_no_verificadas_con_original": true,
+          "resumen_literal_ia": "No es posible afirmar mejoras, regresiones ni tiempos.",
+          "respuesta_fiel": "docs/ia/review_tp4_respuesta.md",
+          "fuentes_relacionadas": [],
+          "base_lineas_ia": "TP4 cuenta los dos comentarios iniciales de saneamiento; se declara ajuste aproximado cuando corresponde."
+        },
+        {
+          "id_original": "review_tp5:OBS03",
+          "queryprefix": "review_tp5",
+          "id_en_respuesta": "OBS03",
+          "id_asignado_por_matriz": true,
+          "fuente": "work/antecedentes/TP5/Arancibia_Romero_TP5/benchmark_escrituras.sql",
+          "lineas_aproximadas": "archivo completo; sin rango preciso en la observación",
+          "lineas_reconstruidas_por_ia_no_verificadas_con_original": true,
+          "resumen_literal_ia": "Sus resultados no representarían el costo completo de una operación ordinaria con esos triggers activos.",
+          "respuesta_fiel": "docs/ia/review_tp5_respuesta.md",
+          "fuentes_relacionadas": []
+        }
+      ],
+      "decision_propuesta": "aceptado",
+      "decision_final": null,
+      "decision_propuesta_no_aplicada": true,
+      "alcance": [
+        "limitacion_de_evidencia_historica",
+        "no_resultado_funcional_incorrecto"
+      ],
+      "fundamento_propuesta": "Aceptar la limitación de generalización: una captura antes/después es evidencia del ensayo, pero no establece por sí sola causalidad universal ni rendimientos futuros. La revisión no contiene planes o tiempos adicionales que puedan inventarse.",
+      "prueba": {
+        "estado": "pendiente_de_ejecucion_o_enlace_por_equipo_u8",
+        "procedimiento": "Para una afirmación de rendimiento, repetir consultas equivalentes con condiciones documentadas de caché/carga y comparar mediana/variación, planes y buffers; conservar las capturas históricas sin reescribir sus resultados.",
+        "evidencias_motor": []
+      },
+      "fuentes_previas_modificadas": false
+    },
+    {
+      "id_consolidado": "RH08",
+      "titulo": "Comentario de equivalencia: contadores cero, no cero filas",
+      "clase": "mejora_documental",
+      "ids_originales": [
+        "review_tp3:M3"
+      ],
+      "referencias": [
+        {
+          "id_original": "review_tp3:M3",
+          "queryprefix": "review_tp3",
+          "id_en_respuesta": "M3",
+          "id_asignado_por_matriz": false,
+          "fuente": "work/antecedentes/TP3/Arancibia_Romero_TP3/consultas_parte4.sql",
+          "lineas_aproximadas": "27-41",
+          "lineas_reconstruidas_por_ia_no_verificadas_con_original": true,
+          "resumen_literal_ia": "El criterio correcto es cero diferencias en ambos contadores.",
+          "respuesta_fiel": "docs/ia/review_tp3_respuesta.md",
+          "fuentes_relacionadas": []
+        }
+      ],
+      "decision_propuesta": "corregido",
+      "decision_final": null,
+      "decision_propuesta_no_aplicada": true,
+      "alcance": [
+        "aclaracion_documental_historica",
+        "sin_diferencia_logica_observada"
+      ],
+      "fundamento_propuesta": "Propuesta de corrección documental en U8: interpretar las dos filas como contadores y exigir valor cero en ambos. No modificar retrospectivamente la entrega TP3 ni afirmar que las consultas eran diferentes por un comentario impreciso.",
+      "prueba": {
+        "estado": "pendiente_de_ejecucion_o_enlace_por_equipo_u8",
+        "procedimiento": "En la documentación U8 aclarar el criterio; si se reproduce, adjuntar los dos contadores reales. Mientras no haya ejecución enlazada, la aclaración es estática y propuesta.",
+        "evidencias_motor": []
+      },
+      "fuentes_previas_modificadas": false
+    },
+    {
+      "id_consolidado": "RH09",
+      "titulo": "Índice adicional por producto_id como oportunidad de medición",
+      "clase": "mejora_opcional",
+      "ids_originales": [
+        "review_tp1:OBS01"
+      ],
+      "referencias": [
+        {
+          "id_original": "review_tp1:OBS01",
+          "queryprefix": "review_tp1",
+          "id_en_respuesta": "OBS01",
+          "id_asignado_por_matriz": true,
+          "fuente": "work/antecedentes/TP1/schema.sql",
+          "lineas_aproximadas": "69 y sección de índices; referencia aproximada de IA",
+          "lineas_reconstruidas_por_ia_no_verificadas_con_original": true,
+          "resumen_literal_ia": "Es una oportunidad de medición, no un problema de rendimiento demostrado.",
+          "respuesta_fiel": "docs/ia/review_tp1_respuesta.md",
+          "fuentes_relacionadas": []
+        }
+      ],
+      "decision_propuesta": "aceptado",
+      "decision_final": null,
+      "decision_propuesta_no_aplicada": true,
+      "alcance": [
+        "observacion_opcional_sin_ID_en_respuesta",
+        "historico_TP1"
+      ],
+      "fundamento_propuesta": "OBS01 es un identificador asignado por esta matriz a una observación sin H/M propio. La PK comienza por pedido_id; consultas sólo por producto_id podrían beneficiarse de otro índice. No se conoce un plan lento ni la necesidad actual; versiones posteriores ya agregan índices.",
+      "prueba": {
+        "estado": "pendiente_de_ejecucion_o_enlace_por_equipo_u8",
+        "procedimiento": "Revisar índices presentes en copia y medir una consulta por producto_id antes de proponer cambios. No duplicar un índice existente ni presentar la oportunidad como regresión confirmada.",
+        "evidencias_motor": []
+      },
+      "fuentes_previas_modificadas": false
+    },
+    {
+      "id_consolidado": "RH10",
+      "titulo": "Instalación de restricciones no atómica ante interrupción",
+      "clase": "mejora_opcional",
+      "ids_originales": [
+        "review_tp4:OBS01"
+      ],
+      "referencias": [
+        {
+          "id_original": "review_tp4:OBS01",
+          "queryprefix": "review_tp4",
+          "id_en_respuesta": "OBS01",
+          "id_asignado_por_matriz": true,
+          "fuente": "work/antecedentes/TP4/Arancibia_Romero_TP4/restricciones.sql",
+          "lineas_aproximadas": "archivo completo; sin rango más preciso en la respuesta",
+          "lineas_reconstruidas_por_ia_no_verificadas_con_original": true,
+          "resumen_literal_ia": "Una interrupción o fallo entre esas instrucciones puede dejar una instalación parcial.",
+          "respuesta_fiel": "docs/ia/review_tp4_respuesta.md",
+          "fuentes_relacionadas": []
+        }
+      ],
+      "decision_propuesta": "aceptado",
+      "decision_final": null,
+      "decision_propuesta_no_aplicada": true,
+      "alcance": [
+        "mejora_opcional_historica",
+        "fallo_de_instalacion_no_reproducido"
+      ],
+      "fundamento_propuesta": "Aceptar como mejora de reproducción: el archivo elimina y vuelve a crear triggers sin una transacción envolvente propia. No se afirma que haya ocurrido una interrupción. El invocador puede aportar ON_ERROR_STOP o una transacción, y no se adjunta aquí dicho procedimiento. OBS01 se asigna por la matriz a la observación sin ID propio.",
+      "prueba": {
+        "estado": "pendiente_de_ejecucion_o_enlace_por_equipo_u8",
+        "procedimiento": "En la documentación U8 proponer aplicación atómica y detención ante error en copia; una prueba de fallo, si se realiza, debe inyectarse sólo en un script de prueba y una copia, nunca en las fuentes históricas ni la principal.",
+        "evidencias_motor": []
+      },
+      "fuentes_previas_modificadas": false
+    },
+    {
+      "id_consolidado": "RH11",
+      "titulo": "Agrupación mensual TIMESTAMPTZ dependiente de TimeZone",
+      "clase": "riesgo_condicional",
+      "ids_originales": [
+        "review_tp5:H4",
+        "review_u4_p1:H4"
+      ],
+      "referencias": [
+        {
+          "id_original": "review_tp5:H4",
+          "queryprefix": "review_tp5",
+          "id_en_respuesta": "H4",
+          "id_asignado_por_matriz": false,
+          "fuente": "work/antecedentes/TP5/Arancibia_Romero_TP5/views.sql",
+          "lineas_aproximadas": "48-60; especialmente51y60",
+          "lineas_reconstruidas_por_ia_no_verificadas_con_original": true,
+          "resumen_literal_ia": "Esta forma de date_trunc utiliza la zona horaria de la sesión.",
+          "respuesta_fiel": "docs/ia/review_tp5_respuesta.md",
+          "fuentes_relacionadas": []
+        },
+        {
+          "id_original": "review_u4_p1:H4",
+          "queryprefix": "review_u4_p1",
+          "id_en_respuesta": "H4",
+          "id_asignado_por_matriz": false,
+          "fuente": "outputs/Arancibia_Romero_U4/antecedentes/views_tp5.sql",
+          "lineas_aproximadas": "53y62; actividad_del_dia9y78 (copia saneada)",
+          "lineas_reconstruidas_por_ia_no_verificadas_con_original": true,
+          "resumen_literal_ia": "El script de vistas no fija esa zona; la carga U4 sí la fija antes del refresco.",
+          "respuesta_fiel": "docs/ia/review_u4_p1_respuesta.md",
+          "fuentes_relacionadas": []
+        }
+      ],
+      "decision_propuesta": "aceptado",
+      "decision_final": null,
+      "decision_propuesta_no_aplicada": true,
+      "alcance": [
+        "riesgo_temporal_historico",
+        "actual_condicionado_al_contrato_y_definicion_de_vista"
+      ],
+      "fundamento_propuesta": "Aceptar el riesgo de reproducción temporal y pedir contrato explícito. date_trunc('month', TIMESTAMPTZ) sin zona fija depende de la sesión del refresh. No se afirma que un reporte concreto haya estado errado ni que deba usarse Buenos Aires sin definir mes de negocio. U4 añade una caché diaria distinta: no asumir que eso cambia automáticamente la materializada mensual heredada.",
+      "prueba": {
+        "estado": "pendiente_de_ejecucion_o_enlace_por_equipo_u8",
+        "procedimiento": "En copia, inspeccionar pg_get_viewdef y comparar agrupaciones explícitas UTC y America/Argentina/Buenos_Aires con pedidos próximos al borde de mes. Si se prueba refresh, hacerlo sólo en copia con transacción revertida y registrar TimeZone. En las fuentes nuevas U8, fijar la zona elegida y no reescribir las entregas históricas.",
+        "evidencias_motor": []
+      },
+      "fuentes_previas_modificadas": false
+    },
+    {
+      "id_consolidado": "RH12",
+      "titulo": "Proyecciones históricas no plenamente cubiertas por índices",
+      "clase": "mejora_opcional",
+      "ids_originales": [
+        "review_tp5:OBS01"
+      ],
+      "referencias": [
+        {
+          "id_original": "review_tp5:OBS01",
+          "queryprefix": "review_tp5",
+          "id_en_respuesta": "OBS01",
+          "id_asignado_por_matriz": true,
+          "fuente": "work/antecedentes/TP5/Arancibia_Romero_TP5/indices.sql",
+          "lineas_aproximadas": "8-11;22-24; contraste queries.sql5-11;20-23",
+          "lineas_reconstruidas_por_ia_no_verificadas_con_original": true,
+          "resumen_literal_ia": "No afecta la correctitud y no justifica ampliar índices sin medir tamaño, lecturas y costo de escritura.",
+          "respuesta_fiel": "docs/ia/review_tp5_respuesta.md",
+          "fuentes_relacionadas": []
+        }
+      ],
+      "decision_propuesta": "aceptado",
+      "decision_final": null,
+      "decision_propuesta_no_aplicada": true,
+      "alcance": [
+        "mejora_opcional_TP5",
+        "sin_regresion_demostrada"
+      ],
+      "fundamento_propuesta": "Aceptar como oportunidad de medición, no como índice incorrecto. Q1 devuelve fecha original, ausente de su índice de expresión local; Q3 devuelve subtotal, ausente de su índice complementario. La visibilidad y el plan también intervienen: un INCLUDE adicional no garantiza Index Only Scan ni una mejora neta.",
+      "prueba": {
+        "estado": "pendiente_de_ejecucion_o_enlace_por_equipo_u8",
+        "procedimiento": "Registrar planes, buffers, heap fetches, tamaño y costo de escritura en copia antes de decidir ampliar un índice. No duplicar índices ya presentes en el acumulado ni cambiar la principal.",
+        "evidencias_motor": []
+      },
+      "fuentes_previas_modificadas": false
+    },
+    {
+      "id_consolidado": "RH13",
+      "titulo": "Detención del invocador psql ante errores de reconstrucción",
+      "clase": "mejora_opcional",
+      "ids_originales": [
+        "review_tp5:OBS02"
+      ],
+      "referencias": [
+        {
+          "id_original": "review_tp5:OBS02",
+          "queryprefix": "review_tp5",
+          "id_en_respuesta": "OBS02",
+          "id_asignado_por_matriz": true,
+          "fuente": "work/antecedentes/TP5/Arancibia_Romero_TP5/schema.sql y data.sql",
+          "lineas_aproximadas": "archivos completos; sin rango preciso en la observación",
+          "lineas_reconstruidas_por_ia_no_verificadas_con_original": true,
+          "resumen_literal_ia": "Es una mejora de reproducción condicionada al comando de ejecución, no un fallo probado del proceso completo.",
+          "respuesta_fiel": "docs/ia/review_tp5_respuesta.md",
+          "fuentes_relacionadas": []
+        }
+      ],
+      "decision_propuesta": "aceptado",
+      "decision_final": null,
+      "decision_propuesta_no_aplicada": true,
+      "alcance": [
+        "mejora_opcional_historica",
+        "dependencia_del_invocador"
+      ],
+      "fundamento_propuesta": "Proponer ON_ERROR_STOP en el invocador/documentación reproducible. Las transacciones de los scripts protegen persistencia parcial por errores SQL ordinarios, pero el código de salida esperado depende también del comando psql. El wrapper U4 puede ya aportar esa opción: no afirmar fallo sin leerlo.",
+      "prueba": {
+        "estado": "pendiente_de_ejecucion_o_enlace_por_equipo_u8",
+        "procedimiento": "En una copia de prueba y un script sintético de fallo, registrar código de salida con el invocador documentado; inspeccionar el wrapper U4 antes de clasificar la mejora como pendiente del acumulado. No modificar fuentes históricas.",
+        "evidencias_motor": []
+      },
+      "fuentes_previas_modificadas": false
+    },
+    {
+      "id_consolidado": "RH14",
+      "titulo": "Aserciones de verificadores eliminables con Python optimizado",
+      "clase": "fiabilidad_condicional",
+      "ids_originales": [
+        "review_u4_p1:H2",
+        "review_u4_p2:H1"
+      ],
+      "referencias": [
+        {
+          "id_original": "review_u4_p1:H2",
+          "queryprefix": "review_u4_p1",
+          "id_en_respuesta": "H2",
+          "id_asignado_por_matriz": false,
+          "fuente": "outputs/Arancibia_Romero_U4/reproduccion/verify_fnbc.py",
+          "lineas_aproximadas": "132-141;399-400;485-487 (copia saneada)",
+          "lineas_reconstruidas_por_ia_no_verificadas_con_original": true,
+          "resumen_literal_ia": "Python elimina los assert al activar optimización.",
+          "respuesta_fiel": "docs/ia/review_u4_p1_respuesta.md",
+          "fuentes_relacionadas": []
+        },
+        {
+          "id_original": "review_u4_p2:H1",
+          "queryprefix": "review_u4_p2",
+          "id_en_respuesta": "H1",
+          "id_asignado_por_matriz": false,
+          "fuente": "outputs/Arancibia_Romero_U4/reproduccion/verify_foodstore.py",
+          "lineas_aproximadas": "202-206;239-240;410-425;503-531 (copia saneada)",
+          "lineas_reconstruidas_por_ia_no_verificadas_con_original": true,
+          "resumen_literal_ia": "El estado de aprobación deja de garantizar las condiciones que el verificador pretende comprobar.",
+          "respuesta_fiel": "docs/ia/review_u4_p2_respuesta.md",
+          "fuentes_relacionadas": []
+        }
+      ],
+      "decision_propuesta": "aceptado",
+      "decision_final": null,
+      "decision_propuesta_no_aplicada": true,
+      "alcance": [
+        "fiabilidad_de_verificacion",
+        "condicional_a_O_OO_o_PYTHONOPTIMIZE",
+        "no_invalida_ejecucion_normal"
+      ],
+      "fundamento_propuesta": "Aceptar el riesgo condicionado de ejecutar estos verificadores con optimización, no afirmar que las evidencias históricas ya sean falsas. Se hizo comprobación offline real: compilar sin importar/ejecutar fuentes produce13y30 LOAD_ASSERTION_ERROR con optimize0 y0conoptimize1/2. El falso aprobado integral sugerido por IA no fue reproducido por esta prueba estática.",
+      "prueba": {
+        "estado": "compilacion_offline_confirmada; falso_aprobado_integral_no_ejecutado",
+        "procedimiento": "En nuevas herramientas U8 usar comprobaciones explícitas o rechazar sys.flags.optimize. La compilación estática está enlazada; si se ensaya el fallo integral, hacerlo en copia de verificador y base, sin alterar fuentes entregadas.",
+        "evidencias_motor": [],
+        "evidencias_sin_motor": [
+          {
+            "ruta": "docs/evidencias/review_historicos_asserts_offline.json",
+            "alcance": "Compilación sin importar/ejecutar verificadores:13/30instruccionesassert normales,0conoptimize1/2. No es prueba SQL ni falso aprobado integral."
+          }
+        ]
+      },
+      "fuentes_previas_modificadas": false
+    },
+    {
+      "id_consolidado": "RH15",
+      "titulo": "Carga inicial confirmada antes de refresco que puede fallar",
+      "clase": "riesgo_condicional",
+      "ids_originales": [
+        "review_u4_p1:H1"
+      ],
+      "referencias": [
+        {
+          "id_original": "review_u4_p1:H1",
+          "queryprefix": "review_u4_p1",
+          "id_en_respuesta": "H1",
+          "id_asignado_por_matriz": false,
+          "fuente": "outputs/Arancibia_Romero_U4/01_actividad_del_dia.sql",
+          "lineas_aproximadas": "13-22;74-78 (copia saneada)",
+          "lineas_reconstruidas_por_ia_no_verificadas_con_original": true,
+          "resumen_literal_ia": "Una recuperación manual sigue siendo posible; no es pérdida irreversible.",
+          "respuesta_fiel": "docs/ia/review_u4_p1_respuesta.md",
+          "fuentes_relacionadas": []
+        }
+      ],
+      "decision_propuesta": "aceptado",
+      "decision_final": null,
+      "decision_propuesta_no_aplicada": true,
+      "alcance": [
+        "recuperacion_de_laboratorio_U4",
+        "condicional_a_fallo_posterior_al_COMMIT"
+      ],
+      "fundamento_propuesta": "Aceptar una mejora de recuperación: el REFRESH explícito posterior al COMMIT no revierte carga si falla, y la guarda inicial impide repetir el archivo completo. No llamar incorrecta a la política deliberada de instantánea TP5 ni afirmar que el fallo ocurrió. La ejecución limpia documentada puede ser totalmente correcta.",
+      "prueba": {
+        "estado": "pendiente_de_ejecucion_o_enlace_por_equipo_u8",
+        "procedimiento": "Documentar completar sólo el REFRESH cuando la carga se confirmó y falla ese paso. Para demostrar el escenario, usar lock_timeout y bloqueo únicamente en copia; registrar que filas persisten e instantánea conserva antigüedad, nunca hacerlo en principal.",
+        "evidencias_motor": []
+      },
+      "fuentes_previas_modificadas": false
+    },
+    {
+      "id_consolidado": "RH16",
+      "titulo": "Carga por rango fijo depende del siguiente valor de identidad",
+      "clase": "riesgo_condicional",
+      "ids_originales": [
+        "review_u4_p1:H3"
+      ],
+      "referencias": [
+        {
+          "id_original": "review_u4_p1:H3",
+          "queryprefix": "review_u4_p1",
+          "id_en_respuesta": "H3",
+          "id_asignado_por_matriz": false,
+          "fuente": "outputs/Arancibia_Romero_U4/01_actividad_del_dia.sql",
+          "lineas_aproximadas": "16-20;30-35;47;63-71 (copia saneada)",
+          "lineas_reconstruidas_por_ia_no_verificadas_con_original": true,
+          "resumen_literal_ia": "Esto no demuestra que el respaldo adjunto tenga una secuencia incorrecta.",
+          "respuesta_fiel": "docs/ia/review_u4_p1_respuesta.md",
+          "fuentes_relacionadas": []
+        }
+      ],
+      "decision_propuesta": "aceptado",
+      "decision_final": null,
+      "decision_propuesta_no_aplicada": true,
+      "alcance": [
+        "precondicion_de_carga_U4",
+        "condicional_a_consumo_previo_de_secuencia"
+      ],
+      "fundamento_propuesta": "Aceptar como precondición y riesgo de reintento tras fallo: cantidad/máximo no prueban el siguiente valor de identidad y rollback no recupera secuencias. No afirmar que el respaldo original estuviera mal ni que las filas históricas cambien; los controles finales normalmente rechazan la carga incoherente.",
+      "prueba": {
+        "estado": "pendiente_de_ejecucion_o_enlace_por_equipo_u8",
+        "procedimiento": "En copia restaurada, observar secuencia/identidad y el caso limpio; en otra copia consumir un ID y revertir antes de repetir. Proponer recuperar desde copia limpia o usar IDs realmente devueltos en una versión futura, sin corregir secuencias de la principal.",
+        "evidencias_motor": []
+      },
+      "fuentes_previas_modificadas": false
+    },
+    {
+      "id_consolidado": "RH17",
+      "titulo": "Observación concurrente dependiente de pausa fija de dos segundos",
+      "clase": "fiabilidad_condicional",
+      "ids_originales": [
+        "review_u4_p2:H2"
+      ],
+      "referencias": [
+        {
+          "id_original": "review_u4_p2:H2",
+          "queryprefix": "review_u4_p2",
+          "id_en_respuesta": "H2",
+          "id_asignado_por_matriz": false,
+          "fuente": "outputs/Arancibia_Romero_U4/reproduccion/verify_foodstore.py",
+          "lineas_aproximadas": "349-354;386-410 (copia saneada)",
+          "lineas_reconstruidas_por_ia_no_verificadas_con_original": true,
+          "resumen_literal_ia": "La prueba falla aunque la serialización de la base sea correcta.",
+          "respuesta_fiel": "docs/ia/review_u4_p2_respuesta.md",
+          "fuentes_relacionadas": []
+        }
+      ],
+      "decision_propuesta": "aceptado",
+      "decision_final": null,
+      "decision_propuesta_no_aplicada": true,
+      "alcance": [
+        "fiabilidad_de_prueba",
+        "falso_negativo_condicional_a_demora_del_controlador"
+      ],
+      "fundamento_propuesta": "Aceptar como oportunidad de coordinación determinista: un controlador lento puede no observar A en pg_sleep2 o iniciar B tarde. No demuestra una carrera de la MV ni invalida una corrida histórica que sí observó bloqueos y verificó datos. El verificador FNBC usa una coordinación distinta y no debe confundirse.",
+      "prueba": {
+        "estado": "pendiente_de_ejecucion_o_enlace_por_equipo_u8",
+        "procedimiento": "En arnés externo/copia introducir demora>2s antes del sondeo o entre observarA e iniciarB, y contrastar fallo de observación con auditoría independiente limpia. Proponer barrera explícita para herramientas nuevas, sin reescribir evidencia anterior.",
+        "evidencias_motor": []
+      },
+      "fuentes_previas_modificadas": false
+    },
+    {
+      "id_consolidado": "RH18",
+      "titulo": "Matar cliente no confirma que su backend haya terminado",
+      "clase": "riesgo_condicional",
+      "ids_originales": [
+        "review_u4_p2:H3"
+      ],
+      "referencias": [
+        {
+          "id_original": "review_u4_p2:H3",
+          "queryprefix": "review_u4_p2",
+          "id_en_respuesta": "H3",
+          "id_asignado_por_matriz": false,
+          "fuente": "outputs/Arancibia_Romero_U4/reproduccion/verify_foodstore.py",
+          "lineas_aproximadas": "436-451; relacionado119-123 (copia saneada)",
+          "lineas_reconstruidas_por_ia_no_verificadas_con_original": true,
+          "resumen_literal_ia": "No hay evidencia suficiente para afirmar que los precios queden alterados en una ejecución normal.",
+          "respuesta_fiel": "docs/ia/review_u4_p2_respuesta.md",
+          "fuentes_relacionadas": []
+        }
+      ],
+      "decision_propuesta": "aceptado",
+      "decision_final": null,
+      "decision_propuesta_no_aplicada": true,
+      "alcance": [
+        "hipotesis_de_recuperacion_ante_interrupcion",
+        "laboratorio_no_principal"
+      ],
+      "fundamento_propuesta": "Aceptar sólo como hipótesis de recuperación: process.kill finaliza psql y no confirma directamente el rollback/cierre del backend. El finally y la adquisición del bloqueo asesor son mitigaciones reales. No afirmar pérdida de restauración ni cambios persistentes sin ejecutar el escenario de fallo.",
+      "prueba": {
+        "estado": "pendiente_de_ejecucion_o_enlace_por_equipo_u8",
+        "procedimiento": "Si se prueba, forzar timeout sólo en copia y observar desde otra conexión backend, bloqueos y auditoría final. Confirmar terminación de sesiones propias antes de declarar recuperación; no conceder permisos ni terminar sesiones ajenas.",
+        "evidencias_motor": []
+      },
+      "fuentes_previas_modificadas": false
+    },
+    {
+      "id_consolidado": "RH19",
+      "titulo": "Índices parcialmente solapados con distintos INCLUDE",
+      "clase": "mejora_opcional",
+      "ids_originales": [
+        "review_u4_p1:OBS01"
+      ],
+      "referencias": [
+        {
+          "id_original": "review_u4_p1:OBS01",
+          "queryprefix": "review_u4_p1",
+          "id_en_respuesta": "OBS01",
+          "id_asignado_por_matriz": true,
+          "fuente": "outputs/Arancibia_Romero_U4/antecedentes/indices_tp4.sql y antecedentes/indices_tp5.sql",
+          "lineas_aproximadas": "5-7y24-26 (copia saneada)",
+          "lineas_reconstruidas_por_ia_no_verificadas_con_original": true,
+          "resumen_literal_ia": "No demuestra que alguno sea innecesario.",
+          "respuesta_fiel": "docs/ia/review_u4_p1_respuesta.md",
+          "fuentes_relacionadas": []
+        }
+      ],
+      "decision_propuesta": "aceptado",
+      "decision_final": null,
+      "decision_propuesta_no_aplicada": true,
+      "alcance": [
+        "mejora_opcional",
+        "costo_de_mantenimiento_sin_regresion_medida"
+      ],
+      "fundamento_propuesta": "Aceptar como medición opcional, no como duplicación semántica completa: comparten(producto_id,pedido_id) pero INCLUDE difiere(cantidad/subtotal frente a cantidad/precio_unitario). Cada cobertura puede servir consultas distintas y fusionarlas tiene costos propios.",
+      "prueba": {
+        "estado": "pendiente_de_ejecucion_o_enlace_por_equipo_u8",
+        "procedimiento": "En copia comparar tamaño, planes, uso y costo de escritura con las consultas originales antes de proponer consolidación. No eliminar índices de la principal ni prometer mejoras sin medición.",
+        "evidencias_motor": []
+      },
+      "fuentes_previas_modificadas": false
+    },
+    {
+      "id_consolidado": "RH20",
+      "titulo": "Excepción por profundidad de trigger admite otros orígenes anidados",
+      "clase": "riesgo_condicional",
+      "ids_originales": [
+        "review_u4_p3:H1"
+      ],
+      "referencias": [
+        {
+          "id_original": "review_u4_p3:H1",
+          "queryprefix": "review_u4_p3",
+          "id_en_respuesta": "H1",
+          "id_asignado_por_matriz": false,
+          "fuente": "outputs/Arancibia_Romero_U4/tp_desnormalizacion_top_categorias.sql",
+          "lineas_aproximadas": "109-119 (copia saneada)",
+          "lineas_reconstruidas_por_ia_no_verificadas_con_original": true,
+          "resumen_literal_ia": "Una prueba con un trigger auxiliar únicamente demostraría la limitación del diseño, no que el proyecto actual la ejerza.",
+          "respuesta_fiel": "docs/ia/review_u4_p3_respuesta.md",
+          "fuentes_relacionadas": []
+        }
+      ],
+      "decision_propuesta": "descartado",
+      "decision_final": null,
+      "decision_propuesta_no_aplicada": true,
+      "alcance": [
+        "sin_camino_problematico_demostrado_en_proyecto",
+        "limite_condicional_a_extensiones"
+      ],
+      "fundamento_propuesta": "Proponer descartar la etiqueta de defecto actual por falta de un origen externo que lo ejerza; conservar la limitación: pg_trigger_depth>1 no identifica detalle_pedido como origen. Antes de decisión final, inventariar triggers heredados que escriben pedido. Un trigger auxiliar nuevo no prueba que la entrega actual ya falle.",
+      "prueba": {
+        "estado": "pendiente_de_ejecucion_o_enlace_por_equipo_u8",
+        "procedimiento": "Inspeccionar definiciones e inventario reales en copia. Si existe un camino externo a las cuatro fuentes instrumentadas que actualice fecha/eliminado, probar ese camino y auditar bilateralmente; no inventar una extensión y atribuir su fallo al proyecto original.",
+        "evidencias_motor": []
+      },
+      "fuentes_previas_modificadas": false
+    },
+    {
+      "id_consolidado": "RH21",
+      "titulo": "Permisos del invocador para refrescar materializada desde un trigger",
+      "clase": "riesgo_condicional",
+      "ids_originales": [
+        "review_u4_p3:H2"
+      ],
+      "referencias": [
+        {
+          "id_original": "review_u4_p3:H2",
+          "queryprefix": "review_u4_p3",
+          "id_en_respuesta": "H2",
+          "id_asignado_por_matriz": false,
+          "fuente": "outputs/Arancibia_Romero_U4/tp_desnormalizacion_top_categorias.sql",
+          "lineas_aproximadas": "105-122;124-150 (copia saneada)",
+          "lineas_reconstruidas_por_ia_no_verificadas_con_original": true,
+          "resumen_literal_ia": "Tener autorización para modificar una tabla fuente no implica disponer de ese privilegio.",
+          "respuesta_fiel": "docs/ia/review_u4_p3_respuesta.md",
+          "fuentes_relacionadas": []
+        }
+      ],
+      "decision_propuesta": "corregido",
+      "decision_final": null,
+      "decision_propuesta_no_aplicada": true,
+      "alcance": [
+        "condicion_de_U4_aislada",
+        "mitigacion_estatica_explicita_en_U5",
+        "operacion_actual_por_confirmar"
+      ],
+      "fundamento_propuesta": "Propuesta de corrección ya incorporada en la etapa U5: sql/roles.sql285-310 redefine u4_refrescar_ventas como SECURITY DEFINER, dueño rol_funciones, search_path fijo y GRANT MAINTAIN sólo sobre la MV diaria a ese rol. Esto se verificó por lectura local; no aconseja ampliar privilegios globales ni implica ejecutar nuevo cambio. Confirmar que la copia efectiva conserve esa política.",
+      "prueba": {
+        "estado": "pendiente_de_ejecucion_o_enlace_por_equipo_u8",
+        "procedimiento": "En copia inspeccionar SECURITY DEFINER/owner/search_path/MAINTAIN y realizar DML válido como rol real de aplicación, dentro de rollback. Enlazar evidencia U8 o U5 pertinente antes de decisión final sobre comportamiento efectivo.",
+        "evidencias_motor": []
+      },
+      "fuentes_previas_modificadas": false
+    },
+    {
+      "id_consolidado": "RH22",
+      "titulo": "Consumo del reporte diario requiere conservar la zona de negocio",
+      "clase": "riesgo_condicional",
+      "ids_originales": [
+        "review_u4_p3:H3"
+      ],
+      "referencias": [
+        {
+          "id_original": "review_u4_p3:H3",
+          "queryprefix": "review_u4_p3",
+          "id_en_respuesta": "H3",
+          "id_asignado_por_matriz": false,
+          "fuente": "outputs/Arancibia_Romero_U4/tp_desnormalizacion_top_categorias.sql",
+          "lineas_aproximadas": "9;55-56;67-75;154-166 (copia saneada)",
+          "lineas_reconstruidas_por_ia_no_verificadas_con_original": true,
+          "resumen_literal_ia": "El script completo sí configura la zona adecuada.",
+          "respuesta_fiel": "docs/ia/review_u4_p3_respuesta.md",
+          "fuentes_relacionadas": []
+        }
+      ],
+      "decision_propuesta": "descartado",
+      "decision_final": null,
+      "decision_propuesta_no_aplicada": true,
+      "alcance": [
+        "sin_error_demostrado_al_ejecutar_script_completo",
+        "precondicion_para_consumidores_externos"
+      ],
+      "fundamento_propuesta": "Proponer descartar como bug del script tal como está: configura Buenos Aires y la MV agrupa en esa zona. Mantener explícita la precondición cuando se copian consultas que usan CURRENT_DATE a otras conexiones. No confundir este consumo diario con el riesgo de la materializada mensual heredada RH11.",
+      "prueba": {
+        "estado": "pendiente_de_ejecucion_o_enlace_por_equipo_u8",
+        "procedimiento": "En herramientas nuevas fijar fecha/zona de negocio. Si se comparan consumidores externos, usar parámetros de fecha y pedidos borde en copia; no depender del reloj real ni modificar configuraciones globales.",
+        "evidencias_motor": []
+      },
+      "fuentes_previas_modificadas": false
+    }
+  ],
+  "decisiones_son_propuestas_no_finales": true,
+  "fragmentos_ia_verificados_normalizando_markdown_puntuacion_y_mayusculas": true,
+  "pruebas_motor_ejecutadas_por_este_agente_en_esta_revision": [],
+  "nota_global": "La revisión estática de IA no es prueba de motor ni revisión humana. Unidad8 fusionará evidencia real y decisiones verificadas. No se modifican fuentes previas.",
+  "ids_hm_originales_preservados": [
+    "review_tp1:H1",
+    "review_tp1:H2",
+    "review_tp1:H3",
+    "review_tp2:H1",
+    "review_tp2:H2",
+    "review_tp2:H3",
+    "review_tp3:H1",
+    "review_tp3:H2",
+    "review_tp3:H3",
+    "review_tp3:H4",
+    "review_tp3:M1",
+    "review_tp3:M2",
+    "review_tp3:M3",
+    "review_tp4:H1",
+    "review_tp4:H2",
+    "review_tp4:H3",
+    "review_tp4:H4",
+    "review_tp5:H1",
+    "review_tp5:H2",
+    "review_tp5:H3",
+    "review_tp5:H4",
+    "review_u4_p1:H1",
+    "review_u4_p1:H2",
+    "review_u4_p1:H3",
+    "review_u4_p1:H4",
+    "review_u4_p2:H1",
+    "review_u4_p2:H2",
+    "review_u4_p2:H3",
+    "review_u4_p3:H1",
+    "review_u4_p3:H2",
+    "review_u4_p3:H3"
+  ],
+  "observaciones_sin_id_original_asignadas_por_matriz": [
+    "review_tp1:OBS01",
+    "review_tp4:OBS01",
+    "review_tp4:OBS02",
+    "review_tp5:OBS01",
+    "review_tp5:OBS02",
+    "review_tp5:OBS03",
+    "review_u4_p1:OBS01"
+  ],
+  "particion_unidad4": {
+    "archivos": 10,
+    "cuerpos_completos_identicos_al_bundle_original": true,
+    "maximo_bytes_por_parte": 32062,
+    "sha256_bundle_original": "11a0e775aa1ec4fe32b2a658016a6e2afbaf4cb5dbd155e657ca44bbdb1b60db",
+    "consulta_monolitica_no_enviada": true
+  }
+}

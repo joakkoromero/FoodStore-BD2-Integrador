@@ -1,0 +1,26 @@
+Realizá una revisión estática real como agente Plan de OpenCode de TODO el bundle saneado Unidad4_p1.md adjunto. El usuario autorizó expresamente estos envíos a OpenCode. Los originales y secretos no se comparten. Los literales personales y de carga fueron sustituidos por placeholders deliberadamente: no ejecutar las copias ni inventar fallos de datos por esa sanitización.
+
+CONTEXTO Y ALCANCE
+Food Store usa PostgreSQL 17 en Windows. Esta es la entrega acumulada de Unidad4 posterior a los TP1–TP5 históricos. Puede incluir scripts de antecedente y verificadores. Distinguir preparación de laboratorio/reversión deliberada de un error funcional; no ejecutar nada ni modificar la entrega ya terminada.
+La versión principal posterior tiene usuario como cliente, detalle_pedido con PK(pedido_id,producto_id), precio_unitario histórico numeric y subtotal generado; las reglas concretas de cada entrega deben leerse en sus fuentes. Las diferencias entre versiones no demuestran por sí mismas un bug. Los scripts de reconstrucción o medición se usarían únicamente en una copia aislada del laboratorio, nunca en la base principal. Esta revisión se incorporará a Unidad8 para priorizar comprobaciones reales antes de aceptar o descartar hipótesis.
+
+No ejecutes SQL, shell, herramientas ni acceso de red. No corrijas archivos. No propongas aplicar cambios a la base principal ni alterar permisos globales. El entorno está configurado con permiso deny y la tarea se limita al adjunto aprobado.
+
+REVISIÓN SOLICITADA
+1. Cubrí todos los archivos enumerados abajo. Buscá problemas concretos de integridad/correctitud (incluyendo concurrencia cuando corresponda), rendimiento, seguridad y reproducción. No hace falta inventar hallazgos ni completar una cuota. Un script ilustrativo que provoca una anomalía intencional no es un bug por ese solo motivo.
+2. Para cada hallazgo: identificador H1...; severidad; archivo y líneas aproximadas DEL ARCHIVO (sin contar encabezados del bundle; declaralo si no podés reconstruirlas); fragmento relevante breve; mecanismo y escenario de fallo; si afecta al histórico, al acumulado o no puede determinarse; certeza estática alta/media/baja; y prueba mínima propuesta en una copia aislada para confirmarlo o refutarlo. No afirmes haber ejecutado pruebas.
+3. Separá defectos demostrables por lectura, hipótesis que requieren ejecución y mejoras opcionales. En seguridad, considerá qué permisos/entorno son necesarios antes de afirmar una explotación. En rendimiento, no inventes tiempos ni mejores planes sin medición.
+4. Evitá falsos positivos: distintos ejercicios incluyen copias legítimas de schema/data; ROLLBACK y estados de prueba pueden ser deliberados; una herramienta de revisión no equivale a aprobación humana. Si un dato o dependencia no está disponible, declaralo como incertidumbre.
+5. Cerrá con una tabla de cobertura de TODOS los archivos (revisado; hallazgos asociados o sin problema concreto detectado) y una lista priorizada de hasta 5 pruebas útiles para el laboratorio U8. Si no hay problemas confirmables, decilo claramente.
+
+PARTE 1/3 DE UNIDAD4. El bundle original tenía más de 50KB y se repartió por archivos completos para impedir truncamiento de lectura. No se realizó la consulta del bundle original. Revisá todos los archivos de ESTA parte; las otras partes serán revisadas por separado. Las dependencias que no aparezcan aquí no deben considerarse ausentes del proyecto ni defectuosas sin evidencia.
+
+ARCHIVOS DE ESTA PARTE (6):
+- outputs\Arancibia_Romero_U4\00_reconstruir_base.ps1
+- outputs\Arancibia_Romero_U4\01_actividad_del_dia.sql
+- outputs\Arancibia_Romero_U4\antecedentes\indices_tp4.sql
+- outputs\Arancibia_Romero_U4\antecedentes\indices_tp5.sql
+- outputs\Arancibia_Romero_U4\antecedentes\views_tp5.sql
+- outputs\Arancibia_Romero_U4\reproduccion\verify_fnbc.py
+
+Entregá cobertura de cada archivo adjunto, hallazgos concretos con certeza y pruebas propuestas; si no hay problema material indicarlo. No ejecutar ni usar herramientas. Máximo aproximado 2200palabras.

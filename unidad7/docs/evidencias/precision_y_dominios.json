@@ -1,0 +1,44 @@
+{
+  "utc": "2026-11-10T14:37:33.088427+00:00",
+  "consulta_precision": "SELECT count(*)::text,bool_and(mod(extract(microseconds FROM fecha),1000)=0)::text FROM public.pedido WHERE id IN (1,2,3,4,5)",
+  "muestra_ids": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "cantidad": 5,
+  "sin_fracciones_submilisegundo": true,
+  "server_version": "17.11",
+  "enums_reales": [
+    [
+      "estado_pedido",
+      "PENDIENTE"
+    ],
+    [
+      "estado_pedido",
+      "CONFIRMADO"
+    ],
+    [
+      "estado_pedido",
+      "ENTREGADO"
+    ],
+    [
+      "estado_pedido",
+      "CANCELADO"
+    ],
+    [
+      "forma_pago",
+      "EFECTIVO"
+    ],
+    [
+      "forma_pago",
+      "TARJETA"
+    ],
+    [
+      "forma_pago",
+      "TRANSFERENCIA"
+    ]
+  ]
+}

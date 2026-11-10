@@ -1,0 +1,18 @@
+{
+  "validated_after_runs_utc": "2026-11-10T15:45:47.583478+00:00",
+  "runner": "tools/reproducir.py",
+  "runner_sha256": "11aa1e237fa05e506911e82cef9af1eb211b15ec59144689b035097d741eee3a",
+  "runner_bytes": 42147,
+  "pre_execution_git_commit": "49d5fb36a00268aee40b5e6a34ca964c7920facb",
+  "git_commit_timestamp": "2026-11-10T12:31:37-03:00",
+  "current_runner_equals_pre_execution_git_blob": true,
+  "second_run_runner_byte_identical": true,
+  "hash_recording_scope": "El hash del runner se acredita después de las ejecuciones cotejando bytes con un commit anterior inmutable y con la copia usada en la segunda ejecución. No se afirma que el launcher de la primera captura lo registrara al inicio. El runner no se editó durante ninguna ejecución.",
+  "first_run_started_utc": "2026-11-10T15:32:22.420699+00:00",
+  "first_run_finished_utc": "2026-11-10T15:32:55.992037+00:00",
+  "first_run_exit_code": 0,
+  "second_run_started_utc": "2026-11-10T15:41:23.896597+00:00",
+  "second_run_finished_utc": "2026-11-10T15:41:53.400617+00:00",
+  "second_run_exit_code": 0,
+  "native_script_hashes_scope": "Los cinco SQL del runner sí fueron registrados por él al iniciar cada ejecución; SQL30 tiene su propio manifiesto de ejecución posterior."
+}

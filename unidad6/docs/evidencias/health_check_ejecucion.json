@@ -1,0 +1,8 @@
+{
+  "script": "health_check.sql",
+  "started_utc": "2026-11-03T21:39:49.660871+00:00",
+  "finished_utc": "2026-11-03T21:39:50.067358+00:00",
+  "exit_code": 0,
+  "succeeded": true,
+  "business_rows_exported": false
+}

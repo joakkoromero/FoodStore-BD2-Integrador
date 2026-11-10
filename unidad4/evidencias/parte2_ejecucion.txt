@@ -1,0 +1,102 @@
+SET
+SET
+SET
+SET
+DO
+                                                                                         QUERY PLAN                                                                                         
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Limit  (cost=21566.94..21566.94 rows=2 width=170) (actual time=201.036..201.041 rows=2 loops=1)
+   Buffers: shared hit=6874
+   ->  Sort  (cost=21566.94..21566.94 rows=2 width=170) (actual time=201.033..201.038 rows=2 loops=1)
+         Sort Key: (sum(dp.subtotal)) DESC
+         Sort Method: quicksort  Memory: 25kB
+         Buffers: shared hit=6874
+         ->  HashAggregate  (cost=21566.90..21566.93 rows=2 width=170) (actual time=201.002..201.007 rows=2 loops=1)
+               Group Key: c.nombre
+               Batches: 1  Memory Usage: 24kB
+               Buffers: shared hit=6871
+               ->  Hash Join  (cost=10787.53..21317.14 rows=49953 width=143) (actual time=120.456..182.885 rows=100000 loops=1)
+                     Hash Cond: (pr.categoria_id = c.id)
+                     Buffers: shared hit=6871
+                     ->  Hash Join  (cost=10786.49..20907.11 rows=49953 width=13) (actual time=120.425..169.546 rows=100000 loops=1)
+                           Hash Cond: (dp.producto_id = pr.id)
+                           Buffers: shared hit=6870
+                           ->  Hash Join  (cost=8805.49..18794.97 rows=49953 width=13) (actual time=109.262..138.854 rows=100000 loops=1)
+                                 Hash Cond: (dp.pedido_id = ped.id)
+                                 Buffers: shared hit=6014
+                                 ->  Seq Scan on detalle_pedido dp  (cost=0.00..8676.97 rows=499997 width=21) (actual time=0.015..37.389 rows=499997 loops=1)
+                                       Buffers: shared hit=3677
+                                 ->  Hash  (cost=8524.50..8524.50 rows=22479 width=8) (actual time=36.094..36.094 rows=25000 loops=1)
+                                       Buckets: 32768  Batches: 1  Memory Usage: 1233kB
+                                       Buffers: shared hit=2337
+                                       ->  Seq Scan on pedido ped  (cost=0.00..8524.50 rows=22479 width=8) (actual time=28.538..33.579 rows=25000 loops=1)
+                                             Filter: ((NOT eliminado) AND (fecha >= (CURRENT_DATE)::timestamp with time zone) AND (fecha < ((CURRENT_DATE + 1))::timestamp with time zone))
+                                             Rows Removed by Filter: 200000
+                                             Buffers: shared hit=2337
+                           ->  Hash  (cost=1356.00..1356.00 rows=50000 width=16) (actual time=11.030..11.031 rows=50000 loops=1)
+                                 Buckets: 65536  Batches: 1  Memory Usage: 2856kB
+                                 Buffers: shared hit=856
+                                 ->  Seq Scan on producto pr  (cost=0.00..1356.00 rows=50000 width=16) (actual time=0.008..6.477 rows=50000 loops=1)
+                                       Buffers: shared hit=856
+                     ->  Hash  (cost=1.02..1.02 rows=2 width=146) (actual time=0.020..0.021 rows=2 loops=1)
+                           Buckets: 1024  Batches: 1  Memory Usage: 9kB
+                           Buffers: shared hit=1
+                           ->  Seq Scan on categoria c  (cost=0.00..1.02 rows=2 width=146) (actual time=0.016..0.017 rows=2 loops=1)
+                                 Buffers: shared hit=1
+ Planning:
+   Buffers: shared hit=480 read=1
+ Planning Time: 16.847 ms
+ Execution Time: 201.488 ms
+(42 rows)
+
+BEGIN
+LOCK TABLE
+SELECT 286
+CREATE INDEX
+CREATE FUNCTION
+CREATE FUNCTION
+CREATE TRIGGER
+CREATE TRIGGER
+CREATE TRIGGER
+CREATE TRIGGER
+CREATE TRIGGER
+CREATE TRIGGER
+CREATE TRIGGER
+CREATE TRIGGER
+COMMIT
+ANALYZE
+                                                           QUERY PLAN                                                            
+---------------------------------------------------------------------------------------------------------------------------------
+ Limit  (cost=6.30..6.30 rows=2 width=13) (actual time=0.076..0.078 rows=2 loops=1)
+   Buffers: shared hit=2
+   ->  Sort  (cost=6.30..6.30 rows=2 width=13) (actual time=0.075..0.076 rows=2 loops=1)
+         Sort Key: total_vendido DESC
+         Sort Method: quicksort  Memory: 25kB
+         Buffers: shared hit=2
+         ->  Seq Scan on mv_u4_ventas_categoria_dia  (cost=0.00..6.29 rows=2 width=13) (actual time=0.038..0.058 rows=2 loops=1)
+               Filter: (fecha = CURRENT_DATE)
+               Rows Removed by Filter: 284
+               Buffers: shared hit=2
+ Planning:
+   Buffers: shared hit=11 read=1
+ Planning Time: 0.282 ms
+ Execution Time: 0.097 ms
+(14 rows)
+
+ categoria | total_vendido 
+-----------+---------------
+ Pizzas    |  137506401.00
+ Bebidas   |  137503654.00
+(2 rows)
+
+BEGIN
+DO
+ sentido | fecha | categoria | total_vendido 
+---------+-------+-----------+---------------
+(0 rows)
+
+COMMIT
+ id | almacenado | calculado 
+----+------------+-----------
+(0 rows)
+

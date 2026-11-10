@@ -1,0 +1,32 @@
+{
+  "filas_historicas_identicas": true,
+  "antes": {
+    "categoria": "543e85da87fbf1ac777a6ecdcbb9f80b",
+    "producto": "6312fdbdc6e501553dfd909e2a1581bd",
+    "usuario": "a0d606fadf9ed5cfa025b6564ddbd7a1",
+    "pedido_historico": "09017f0cf235dd0d5613eca6ebd74d83",
+    "detalle_historico": "bf908752f5cfe0e6645787ef576a1695",
+    "conteos": {
+      "categoria": 2,
+      "producto": 50000,
+      "usuario": 20000,
+      "pedido_historico": 200000,
+      "detalle_historico": 399997
+    }
+  },
+  "despues": {
+    "categoria": "543e85da87fbf1ac777a6ecdcbb9f80b",
+    "producto": "6312fdbdc6e501553dfd909e2a1581bd",
+    "usuario": "a0d606fadf9ed5cfa025b6564ddbd7a1",
+    "pedido_historico": "09017f0cf235dd0d5613eca6ebd74d83",
+    "detalle_historico": "bf908752f5cfe0e6645787ef576a1695",
+    "conteos": {
+      "categoria": 2,
+      "producto": 50000,
+      "usuario": 20000,
+      "pedido_historico": 200000,
+      "detalle_historico": 399997
+    }
+  },
+  "metodo": "MD5 agregado ordenado de MD5 de cada fila completa serializada a JSON; mismos valores y conteos"
+}

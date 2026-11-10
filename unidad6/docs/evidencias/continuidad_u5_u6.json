@@ -1,0 +1,327 @@
+{
+  "captured_utc": "2026-11-03T21:32:12.254235+00:00",
+  "server_version": "17.11",
+  "source": "Actual accumulated U5 database, retained unchanged",
+  "primary_database": "foodstore",
+  "restore_database": "foodstore_restore_test",
+  "source_unchanged": true,
+  "primary_exact_copy": true,
+  "source_snapshot": {
+    "tables": {
+      "categoria": {
+        "rows": 2,
+        "ordered_complete_row_md5": "25255e04281b38e69a0639239f903ec1"
+      },
+      "producto": {
+        "rows": 50000,
+        "ordered_complete_row_md5": "b7c392f36c79d7b070017310be9ebe61"
+      },
+      "usuario": {
+        "rows": 20001,
+        "ordered_complete_row_md5": "757779fa0dc72a031cfeccbe105a63f7"
+      },
+      "pedido": {
+        "rows": 225000,
+        "ordered_complete_row_md5": "929d9a0e8f52627628d709f82bf09fc5"
+      },
+      "detalle_pedido": {
+        "rows": 499997,
+        "ordered_complete_row_md5": "1047260be5b676fbca32f99b435d5361"
+      }
+    },
+    "object_owners": [
+      [
+        "datos_anon",
+        "usuario_anon",
+        "r",
+        "rol_propietario"
+      ],
+      [
+        "public",
+        "categoria",
+        "r",
+        "rol_propietario"
+      ],
+      [
+        "public",
+        "categoria_id_seq",
+        "S",
+        "rol_propietario"
+      ],
+      [
+        "public",
+        "control_lote_almacen",
+        "v",
+        "rol_propietario"
+      ],
+      [
+        "public",
+        "control_lote_almacen_original",
+        "r",
+        "rol_propietario"
+      ],
+      [
+        "public",
+        "deposito",
+        "r",
+        "rol_propietario"
+      ],
+      [
+        "public",
+        "detalle_pedido",
+        "r",
+        "rol_propietario"
+      ],
+      [
+        "public",
+        "guardia_control_lote",
+        "r",
+        "rol_propietario"
+      ],
+      [
+        "public",
+        "lote",
+        "r",
+        "rol_propietario"
+      ],
+      [
+        "public",
+        "lote_responsable",
+        "r",
+        "rol_propietario"
+      ],
+      [
+        "public",
+        "mv_facturacion_categoria_mes",
+        "m",
+        "rol_propietario"
+      ],
+      [
+        "public",
+        "mv_u4_ventas_categoria_dia",
+        "m",
+        "rol_propietario"
+      ],
+      [
+        "public",
+        "pedido",
+        "r",
+        "rol_propietario"
+      ],
+      [
+        "public",
+        "pedido_id_seq",
+        "S",
+        "rol_propietario"
+      ],
+      [
+        "public",
+        "producto",
+        "r",
+        "rol_propietario"
+      ],
+      [
+        "public",
+        "producto_id_seq",
+        "S",
+        "rol_propietario"
+      ],
+      [
+        "public",
+        "responsable_deposito",
+        "r",
+        "rol_propietario"
+      ],
+      [
+        "public",
+        "usuario",
+        "r",
+        "rol_propietario"
+      ],
+      [
+        "public",
+        "usuario_id_seq",
+        "S",
+        "rol_propietario"
+      ],
+      [
+        "public",
+        "v_detalle_pedido_producto",
+        "v",
+        "rol_propietario"
+      ],
+      [
+        "public",
+        "v_pedidos_usuario",
+        "v",
+        "rol_propietario"
+      ],
+      [
+        "public",
+        "v_productos_vigentes_categoria",
+        "v",
+        "rol_propietario"
+      ]
+    ]
+  },
+  "primary_snapshot": {
+    "tables": {
+      "categoria": {
+        "rows": 2,
+        "ordered_complete_row_md5": "25255e04281b38e69a0639239f903ec1"
+      },
+      "producto": {
+        "rows": 50000,
+        "ordered_complete_row_md5": "b7c392f36c79d7b070017310be9ebe61"
+      },
+      "usuario": {
+        "rows": 20001,
+        "ordered_complete_row_md5": "757779fa0dc72a031cfeccbe105a63f7"
+      },
+      "pedido": {
+        "rows": 225000,
+        "ordered_complete_row_md5": "929d9a0e8f52627628d709f82bf09fc5"
+      },
+      "detalle_pedido": {
+        "rows": 499997,
+        "ordered_complete_row_md5": "1047260be5b676fbca32f99b435d5361"
+      }
+    },
+    "object_owners": [
+      [
+        "datos_anon",
+        "usuario_anon",
+        "r",
+        "rol_propietario"
+      ],
+      [
+        "public",
+        "categoria",
+        "r",
+        "rol_propietario"
+      ],
+      [
+        "public",
+        "categoria_id_seq",
+        "S",
+        "rol_propietario"
+      ],
+      [
+        "public",
+        "control_lote_almacen",
+        "v",
+        "rol_propietario"
+      ],
+      [
+        "public",
+        "control_lote_almacen_original",
+        "r",
+        "rol_propietario"
+      ],
+      [
+        "public",
+        "deposito",
+        "r",
+        "rol_propietario"
+      ],
+      [
+        "public",
+        "detalle_pedido",
+        "r",
+        "rol_propietario"
+      ],
+      [
+        "public",
+        "guardia_control_lote",
+        "r",
+        "rol_propietario"
+      ],
+      [
+        "public",
+        "lote",
+        "r",
+        "rol_propietario"
+      ],
+      [
+        "public",
+        "lote_responsable",
+        "r",
+        "rol_propietario"
+      ],
+      [
+        "public",
+        "mv_facturacion_categoria_mes",
+        "m",
+        "rol_propietario"
+      ],
+      [
+        "public",
+        "mv_u4_ventas_categoria_dia",
+        "m",
+        "rol_propietario"
+      ],
+      [
+        "public",
+        "pedido",
+        "r",
+        "rol_propietario"
+      ],
+      [
+        "public",
+        "pedido_id_seq",
+        "S",
+        "rol_propietario"
+      ],
+      [
+        "public",
+        "producto",
+        "r",
+        "rol_propietario"
+      ],
+      [
+        "public",
+        "producto_id_seq",
+        "S",
+        "rol_propietario"
+      ],
+      [
+        "public",
+        "responsable_deposito",
+        "r",
+        "rol_propietario"
+      ],
+      [
+        "public",
+        "usuario",
+        "r",
+        "rol_propietario"
+      ],
+      [
+        "public",
+        "usuario_id_seq",
+        "S",
+        "rol_propietario"
+      ],
+      [
+        "public",
+        "v_detalle_pedido_producto",
+        "v",
+        "rol_propietario"
+      ],
+      [
+        "public",
+        "v_pedidos_usuario",
+        "v",
+        "rol_propietario"
+      ],
+      [
+        "public",
+        "v_productos_vigentes_categoria",
+        "v",
+        "rol_propietario"
+      ]
+    ]
+  },
+  "private_password_file_protected": true,
+  "personal_rows_exported": false
+}

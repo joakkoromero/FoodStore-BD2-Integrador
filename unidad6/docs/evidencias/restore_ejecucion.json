@@ -1,0 +1,12 @@
+{
+  "phase": "restore",
+  "started_utc": "2026-11-03T21:57:14.242720+00:00",
+  "finished_utc": "2026-11-03T21:57:26.731706+00:00",
+  "script": "restore_test.ps1",
+  "script_sha256": "ab21a4341508d89aacc5fb5479d81f9042704ffb682d8705905ec58baeb7c8e9",
+  "native_process_exit_code": 0,
+  "expected_exit_code": 0,
+  "passed": true,
+  "personal_values_exported": false,
+  "diagnostics": "Private outside deliverable"
+}

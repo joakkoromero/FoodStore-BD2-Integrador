@@ -1,0 +1,43 @@
+{
+  "application_prefix": "u5_incident",
+  "selected_entries": 17,
+  "selected_sessions": [
+    "6ada67f0.ee4"
+  ],
+  "fallback_pid_correlation": false,
+  "matched_application_entries": 14,
+  "replacement_counts": {
+    "auth_quoted_passwords": 0,
+    "reset_quoted_passwords": 0,
+    "password_utility_literals": 0,
+    "known_secret_occurrences": 0,
+    "bcrypt_hashes": 0,
+    "scram_verifiers": 0,
+    "email_occurrences": 0,
+    "email_occurrences_changed": 0,
+    "person_fields": 0,
+    "phone_fields": 0,
+    "database_labels": 18,
+    "windows_user_paths": 1,
+    "unix_user_paths": 1,
+    "private_literal_replacements": 0
+  },
+  "secret_scan_passed": true,
+  "credential_hash_scan_passed": true,
+  "email_scan_passed": true,
+  "raw_selected_contained_known_secrets": false,
+  "raw_selected_contained_quoted_credentials": false,
+  "manual_review_required": true,
+  "manual_review_scope": [
+    "Check names or identifying text outside recognized field formats",
+    "Verify session selection covers the entire executed sequence",
+    "Confirm event order, outcomes, role names, timestamps and loopback topology were preserved"
+  ],
+  "limitations": "Deterministic substitutions reduce disclosure; they do not establish irreversible anonymization or prove the original log was untampered.",
+  "source_file_sha256": "1f1417b0d5686431d98baec213db4bd7466d55ac6004609ea056673a662f125a",
+  "selected_raw_sha256": "1f1417b0d5686431d98baec213db4bd7466d55ac6004609ea056673a662f125a",
+  "sanitized_sha256": "f30499043574aca7554877e118b1f21f8a804740cdbe2039c32f3f3a2b0d162b",
+  "events_invented": false,
+  "retained": "Source ordering, timestamps/time zone, PID/session correlation, service roles and loopback addresses",
+  "sanitized_file_sha256_verified": true
+}

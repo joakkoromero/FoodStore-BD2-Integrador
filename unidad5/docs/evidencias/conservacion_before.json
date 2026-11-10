@@ -1,0 +1,28 @@
+{
+  "phase": "before",
+  "started_at_utc": "2026-10-22T18:08:28.950525+00:00",
+  "method": "count plus MD5 of ordered, complete row JSON digests; no source rows exported",
+  "tables": {
+    "categoria": {
+      "rows": 2,
+      "ordered_complete_row_md5": "25255e04281b38e69a0639239f903ec1"
+    },
+    "producto": {
+      "rows": 50000,
+      "ordered_complete_row_md5": "b7c392f36c79d7b070017310be9ebe61"
+    },
+    "usuario": {
+      "rows": 20001,
+      "ordered_complete_row_md5": "757779fa0dc72a031cfeccbe105a63f7"
+    },
+    "pedido": {
+      "rows": 225000,
+      "ordered_complete_row_md5": "929d9a0e8f52627628d709f82bf09fc5"
+    },
+    "detalle_pedido": {
+      "rows": 499997,
+      "ordered_complete_row_md5": "1047260be5b676fbca32f99b435d5361"
+    }
+  },
+  "finished_at_utc": "2026-10-22T18:08:31.660795+00:00"
+}

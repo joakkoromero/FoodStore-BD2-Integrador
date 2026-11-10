@@ -1,0 +1,63 @@
+{
+  "fecha": "2026-10-22 16:46:53.691798-03",
+  "columnas_agregadas": [
+    "mes_alta",
+    "eliminado",
+    "cantidad"
+  ],
+  "resultado_real": [
+    [
+      "2026-09-01",
+      "f",
+      "20000"
+    ],
+    [
+      "2026-10-01",
+      "f",
+      "1"
+    ]
+  ],
+  "resultado_anon": [
+    [
+      "2026-09-01",
+      "f",
+      "20000"
+    ],
+    [
+      "2026-10-01",
+      "f",
+      "1"
+    ]
+  ],
+  "diferencias_except_all": [
+    [
+      "origen_menos_copia",
+      "0"
+    ],
+    [
+      "copia_menos_origen",
+      "0"
+    ]
+  ],
+  "conteos": [
+    20001,
+    20001
+  ],
+  "columnas_copia": [
+    "folio",
+    "nombre",
+    "apellido",
+    "email",
+    "mes_alta",
+    "eliminado"
+  ],
+  "usuarios_heredados_intactos": true,
+  "equivalencia_verificada": true,
+  "sql_ejecutado_realmente": true,
+  "modo_ejecucion": "propietario",
+  "sql_fuente_sha256": "7e49e29525feecb9914cd8d540dfa32b8f2bef53c7fd6f98464f0158a51150a9",
+  "sql_efectivo_sha256": "7e49e29525feecb9914cd8d540dfa32b8f2bef53c7fd6f98464f0158a51150a9",
+  "propietario_tabla": "rol_propietario",
+  "rol_reportes_existe": true,
+  "rol_reportes_select": true
+}

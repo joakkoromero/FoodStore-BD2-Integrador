@@ -1,0 +1,43 @@
+{
+  "tool": "OpenCode",
+  "installed_version": "1.18.23",
+  "requested_model": "openai/gpt-6.1-sol",
+  "agent": "plan",
+  "pure": true,
+  "permission_config": {
+    "permission": "deny"
+  },
+  "started_at_utc": "2026-10-21T16:55:55.922384+00:00",
+  "finished_at_utc": "2026-10-21T16:56:42.826373+00:00",
+  "prompt_sha256": "2906cb36577571e429ce4125c2021c6a89e5c4445f3d76d9e260fd6fff0633fc",
+  "attachments": [
+    {
+      "name": "auditoria_test.sql",
+      "sha256": "727b0fbaee7f63a6da398bc083668792714f5fa1e07fa540947e2cc3d4301e2f",
+      "repository_path": "sql/auditoria_test.sql"
+    },
+    {
+      "name": "simulacro_incidente.sql",
+      "sha256": "59375728dc850427723a4e194d331930040b9da1eb219a2db5a7274c6f87b007",
+      "repository_path": "sql/simulacro_incidente.sql"
+    },
+    {
+      "name": "contexto_proporcionado.txt",
+      "sha256": "e8e182dccd9dbc36eda3e3ddafb825375d03034eb0f0a12f5132d159ec8492a2",
+      "repository_path": "docs/kiro_roles_spec/contexto_proporcionado.txt"
+    }
+  ],
+  "returncode": 0,
+  "timed_out": false,
+  "event_count": 3,
+  "unparsed_line_count": 0,
+  "error_event_count": 0,
+  "tool_event_count": 0,
+  "answer_sha256": "1b8f75f57e3b4c3e8162af6bb738c26325fff4df76ffe7225826d2c47a5a15d0",
+  "raw_jsonl_sha256": "383735da9791327d2deb2863031a107d075cbf1a409d0e979155eb039862885a",
+  "raw_event_storage": "Private work directory outside deliverable repository",
+  "status": "completed",
+  "prior_failed_attempts": [],
+  "sql_executed": false,
+  "human_validation": "Pending; this consultation does not establish human approval"
+}

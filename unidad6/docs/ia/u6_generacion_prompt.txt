@@ -1,0 +1,78 @@
+Leé los dos adjuntos SPEC_U6.md y AGENTS.md como requisitos de este laboratorio.
+Necesito una propuesta REAL de fuentes, no una simulación de su ejecución.
+No uses herramientas, terminal ni conexiones; no accedas a credenciales.
+
+Respondé en español con CINCO secciones, exactamente estos títulos y sus fuentes
+completos en bloques de código: backup_foodstore.ps1, health_check.sql,
+maintenance.sql, restore_test.ps1 y validaciones.sql. Después podés señalar
+decisiones y limitaciones. Operador revisará y ejecutará luego. No inventes
+horarios, métricas, pruebas aprobadas ni autoría humana.
+
+Entorno y alcance:
+- PowerShell 7, PostgreSQL 17 en Windows, loopback 127.0.0.1:55605.
+- Parámetros HostName, Port, DbUser, PgBin y WorkDir; no usar $Host/$HOME.
+- Base literal de trabajo foodstore; destino literal foodstore_restore_test.
+- No DROP, --clean, --create ni programación real de tareas. Si existe destino,
+  abortar. createdb --template=template0 es el único creador de base de prueba.
+- PGPASSFILE ya está configurado fuera de Git con ACL restringida. Usar -w,
+  PGCONNECT_TIMEOUT y psql -X -v ON_ERROR_STOP=1. Nada de contraseñas en SQL/argv.
+- Fuente deriva de U5; preservar datos, funciones, índices, vistas, FNBC,
+  datos_anon y ambas MVs. usuario equivale a cliente: no inventar tabla cliente.
+- Esquema: public.categoria(id bigint), producto(id,precio,stock,categoria_id),
+  usuario(id), pedido(id,usuario_id,fecha timestamptz,total),
+  detalle_pedido(pedido_id,producto_id,cantidad,precio_unitario,subtotal GENERATED).
+  Hay baja lógica en tablas principales; detalle no tiene id ni eliminado.
+  Conteos U5 informativos: 2/50000/20001/225000/499997; verificar U6 realmente.
+
+Diseño verificable y compacto:
+1) backup_foodstore.ps1 aproximadamente <=100 líneas, restore_test.ps1 <=130.
+   Cada invocación nativa comprueba inmediatamente LASTEXITCODE. Fallos terminan
+   con exit 1 y registro FAILED; éxito registra SUCCESS. Rutas entrecomilladas,
+   operaciones de archivo con LiteralPath, sin sobrescribir archivos existentes.
+   No hardcodear datos de ejecución ni dejar TODO/pseudocódigo.
+2) Backup -Fc privado. Nombre UTC único, usar .partial hasta pg_dump exitoso,
+   validar tamaño>0 y TOC mediante pg_restore --list; SHA256 antes de publicar
+   .dump sin sobreescribir. Manifiesto JSON exitoso con inicio/fin UTC, archivo,
+   tamaño, SHA256 y línea base obtenida con validaciones.sql antes del dump.
+   Mantener laboratorio sin escrituras; comparar una segunda línea base al
+   terminar para detectar cambios observables durante el respaldo y abortar si
+   cambia. No afirmar que consultas separadas comparten snapshot de pg_dump.
+3) validaciones.sql devuelve UNA fila/columna JSON, agregados exclusivamente:
+   counts con exactamente categoria/producto/usuario/pedido/detalle_pedido;
+   fingerprints con esas cinco claves (huellas completas y orden estable por PK,
+   usando todas las columnas de cada fila, nunca exportar filas);
+   invalid con productos, detalles y pedidos (todos deben ser 0).
+   Fijar TimeZone UTC y REPEATABLE READ para lecturas coherentes dentro de cada
+   ejecución. Invalidar precio o stock negativo, huérfanos y detalle con cantidad
+   no positiva/precio negativo/subtotal diferente del producto cantidad*precio;
+   pedido.total debe igualar suma(subtotal), COALESCE 0. No asumir nombre/id de
+   detalle inexistente. Evitar usar igualdad de JSON serializado como sustituto
+   de comparar explícitamente todas las claves y valores.
+4) Elegir último backup por manifiesto SUCCESS completado, no por timestamp de
+   cualquier .dump. Verificar ruta dentro WorkDir, archivo, tamaño y SHA256.
+   Preflight fuera del RTO: ejecutables17, PGPASSFILE, conexión, destino ausente,
+   manifiesto y JSON base válidos, invalid todos0. Ningún descarte automático.
+5) Stopwatch justo ANTES de createdb; medir incluye creación, aislamiento,
+   pg_restore y validación/comparación exitosa. pg_restore --no-owner
+   --no-privileges --exit-on-error -d foodstore_restore_test. Validación falsa
+   también exit1, nunca log SUCCESS/RTO exitoso. RPO observado conservador es
+   inicioensayoUTC menos iniciobackupUTC, no finbackup; no es pérdida real/PITR.
+6) Aislar destino: estas restauraciones cambian owners de funciones DEFINER y no
+   recuperan roles/ACL de U5. El operador de este laboratorio es bootstrap
+   administrador; podés exigir/verificar superusuario y crear con connection
+   limit0 para impedir accesos no administrativos desde su creación. Revocar
+   CONNECT/TEMP de PUBLIC y conexiones explícitas de los seis roles de negocio,
+   USAGE/CREATE de esquemas public/datos_anon y EXECUTE público de funciones
+   restauradas; conservar acceso técnico del restaurador. No habilitar app_web
+   ni ejecutar roles.sql U5 en estas bases. Mantener el destino aislado al final.
+7) health_check.sql: tamaño, numbackends, transacciones, pg_stat_user_tables y
+   actividad. No sacar query ni literales; bastan pid/usename/application_name,
+   state, wait_event, antigüedad y query_id. Incluye etiquetas para leer captura.
+8) maintenance.sql: observar primero autovacuum/track_counts/threshold/scale,
+   n_live_tup/n_dead_tup/n_mod_since_analyze y tiempos de vacuum/analyze. No
+   VACUUM FULL ni ALTER SYSTEM. ANALYZE puntual sólo con condición explícita
+   derivada de estadísticas observadas y justificarla en comentarios/salida.
+   Diferenciar estimaciones estadísticas de counts exactos de validaciones.sql.
+
+Priorizá una implementación pequeña y auditable que cumpla las condiciones y
+declare cualquier límite real, sin ampliar permisos de los roles de negocio.

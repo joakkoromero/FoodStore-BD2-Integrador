@@ -1,0 +1,28 @@
+{
+  "utc": "2026-11-10T15:46:38.605103+00:00",
+  "prueba": "compilacion_estatica_python_sin_importar_ni_ejecutar_fuentes",
+  "archivos": [
+    {
+      "archivo": "outputs/Arancibia_Romero_U4/reproduccion/verify_fnbc.py",
+      "sha256_original": "7351b171b790849577b5cbfd18c257b3376d06fc9fcf3fe883206b9179900b58",
+      "asserts_en_ast": 13,
+      "instrucciones_LOAD_ASSERTION_ERROR_por_nivel_optimize": {
+        "0": 13,
+        "1": 0,
+        "2": 0
+      }
+    },
+    {
+      "archivo": "outputs/Arancibia_Romero_U4/reproduccion/verify_foodstore.py",
+      "sha256_original": "85b19a579f48e5ef9dbda148488d86c37a8fea5c88502cbd604cf90d7f322934",
+      "asserts_en_ast": 27,
+      "instrucciones_LOAD_ASSERTION_ERROR_por_nivel_optimize": {
+        "0": 30,
+        "1": 0,
+        "2": 0
+      }
+    }
+  ],
+  "resultado": "Los asserts emitidos normalmente desaparecen en compilacion optimize1y2.",
+  "alcance": "No se ejecutaron verificadores ni SQL, no se reprodujo un falso aprobado integral y no se afirma que ejecuciones historicas usaran optimizacion."
+}

@@ -1,0 +1,44 @@
+{
+  "tool": "OpenCode",
+  "installed_version": "1.18.23",
+  "requested_model": "openai/gpt-6.1-sol",
+  "agent": "plan",
+  "pure": true,
+  "permission_config": {
+    "permission": "deny"
+  },
+  "started_at_utc": "2026-10-21T16:51:33.388336+00:00",
+  "finished_at_utc": "2026-10-21T16:52:25.236050+00:00",
+  "prompt_sha256": "f0b55c73b6cb833c2f536c03cdb609d27c9b94eba15c98aa300f8d73c6d2b944",
+  "attachments": [
+    {
+      "name": "d_contexto_esquema.txt",
+      "sha256": "41a94bbe97d5e108e4f7f61a7434311d27c1646251afd1bf63c0e020a1af5890",
+      "repository_path": "docs/ia/d_contexto_esquema.txt"
+    }
+  ],
+  "returncode": 0,
+  "timed_out": false,
+  "event_count": 3,
+  "unparsed_line_count": 0,
+  "error_event_count": 0,
+  "tool_event_count": 0,
+  "answer_sha256": "96f1b76f85fc0a0764f9a7cc470e3b9e1459d142cadf5e5ffa00cbc4f2bd558e",
+  "raw_jsonl_sha256": "682965ec2d4693acb6ca4ce9048620020139aa5770a8785049de5b7d2310d588",
+  "raw_event_storage": "Private work directory outside deliverable repository",
+  "status": "completed",
+  "prior_failed_attempts": [
+    {
+      "started_at_utc": "2026-10-21T16:49:45.594771+00:00",
+      "finished_at_utc": "2026-10-21T16:49:46.348085+00:00",
+      "returncode": 1,
+      "timed_out": false,
+      "event_count": 0,
+      "error_event_count": 0,
+      "raw_jsonl_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "failed"
+    }
+  ],
+  "sql_executed": false,
+  "human_validation": "Pending; this consultation does not establish human approval"
+}

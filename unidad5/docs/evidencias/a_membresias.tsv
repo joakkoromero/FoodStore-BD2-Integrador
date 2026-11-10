@@ -1,0 +1,4 @@
+miembro	rol	admin_option	inherit_option	set_option
+admin_datos	rol_soporte	f	t	f
+app_web	rol_app_escritura	f	t	f
+app_web	rol_app_lectura	f	t	f

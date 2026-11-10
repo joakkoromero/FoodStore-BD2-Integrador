@@ -1,0 +1,30 @@
+{
+  "antecedentes_revisados": [
+    {
+      "archivo": "Arancibia_Romero_TP1 (1).zip",
+      "sha256": "46dc44f193456840626b2fb6495016edc9aad98d38b0dd0ea66c0b14313ce0cd"
+    },
+    {
+      "archivo": "Arancibia_Romero_TP2.zip",
+      "sha256": "cfa512e609f36d7b4a5ba0abc2f19cfa207b0da0539e05878283388322056def"
+    },
+    {
+      "archivo": "Arancibia_Romero_TP3.zip",
+      "sha256": "d63de502f01e1a6e68d0a186ad675841d87331d18785dee080e491444a10758f"
+    },
+    {
+      "archivo": "Arancibia_Romero_TP4.zip",
+      "sha256": "f440430c5bc021b0a2c523804e18929cba4b727c0a5356aa9f517c5884369381"
+    },
+    {
+      "archivo": "Arancibia_Romero_TP5.zip",
+      "sha256": "18c72dd91ea2c7b1876a9c5fa77f1f801f89afe3c766c84b725a54603f9a21af"
+    }
+  ],
+  "respaldo": {
+    "archivo": "respaldo_pre_tp4.dump",
+    "origen": "TP4/Arancibia_Romero_TP4/evidencias/respaldo_pre_tp4.dump",
+    "sha256": "f53af18eac3da8de40114f63daaea8ccddae528db688b68e6740c8e31fc01871"
+  },
+  "secuencia": "respaldo TP4 contiene TP1-TP3; agregar indice TP4 e indices/views TP5; luego Unidad4"
+}

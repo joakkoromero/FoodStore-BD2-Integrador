@@ -1,0 +1,13 @@
+# Material privado de ejecucion: nunca forma parte de la entrega.
+.env
+.env.*
+*secret*
+*password*
+*.dump
+*.raw
+*.pem
+*.key
+__pycache__/
+*.pyc
+runtime/
+logs_privados/

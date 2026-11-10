@@ -1,0 +1,22 @@
+SET
+SET
+BEGIN
+DO
+INSERT 0 25000
+ALTER TABLE
+INSERT 0 100000
+UPDATE 25000
+ALTER TABLE
+DO
+COMMIT
+REFRESH MATERIALIZED VIEW
+ANALYZE
+ANALYZE
+        control         | filas  
+------------------------+--------
+ pedidos_agregados_hoy  |  25000
+ detalles_agregados_hoy | 100000
+ pedidos_heredados      | 200000
+ detalles_heredados     | 399997
+(4 rows)
+

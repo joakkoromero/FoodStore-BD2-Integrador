@@ -1,0 +1,46 @@
+{
+  "tool": "OpenCode",
+  "installed_version": "1.18.23",
+  "requested_model": "openai/gpt-6.1-sol",
+  "agent": "build",
+  "pure": true,
+  "permission_config": {
+    "permission": "deny"
+  },
+  "started_at_utc": "2026-11-10T15:15:36.835500+00:00",
+  "finished_at_utc": "2026-11-10T15:20:36.653592+00:00",
+  "prompt_sha256": "274f343d4bc50f16d905879b70728ea205dc9154d7bc958422a0aad664e9e6b8",
+  "attachments": [
+    {
+      "name": "requirements.md",
+      "sha256": "8345f2d555fc8ea7dd9127c2d5aa9b49f32f2f77340dbd997953e2935522c3a0",
+      "repository_path": "docs/ia/generacion_adjuntos/01_requirements.md",
+      "source_path_at_consultation": "docs/kiro/requirements.md"
+    },
+    {
+      "name": "design.md",
+      "sha256": "e21b0323478346fb453891b5eab5f0a7ba9e911b82dd55ecc06bab67c7a7a89e",
+      "repository_path": "docs/ia/generacion_adjuntos/02_design.md",
+      "source_path_at_consultation": "docs/kiro/design.md"
+    },
+    {
+      "name": "tasks.md",
+      "sha256": "08b1de12b85aadbf31a3323387f580b3e7672ccfda87a7e53a6e695365f82e82",
+      "repository_path": "docs/ia/generacion_adjuntos/03_tasks.md",
+      "source_path_at_consultation": "docs/kiro/tasks.md"
+    }
+  ],
+  "returncode": 0,
+  "timed_out": false,
+  "event_count": 3,
+  "unparsed_line_count": 0,
+  "error_event_count": 0,
+  "tool_event_count": 0,
+  "answer_sha256": "b801493f24ae2916332a74037c968ef54e89f315a4060b4a299bfb0d6bc6d4c5",
+  "raw_jsonl_sha256": "1f881fa47ee24216f2a1cb0d7611b226b9c83367c7964517b76d6f64544e5034",
+  "raw_event_storage": "Private work directory outside deliverable repository",
+  "status": "completed",
+  "prior_failed_attempts": [],
+  "sql_executed": false,
+  "human_validation": "Pending; this consultation does not establish human approval"
+}

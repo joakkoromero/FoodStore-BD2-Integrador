@@ -1,0 +1,11 @@
+{
+  "test": "actual_pg_dump_output_permission_failure",
+  "started_utc": "2026-11-03T21:56:26.8843107+00:00",
+  "finished_utc": "2026-11-03T21:56:30.5406129+00:00",
+  "observed_exit_code": 1,
+  "native_pg_dump_failure_verified": true,
+  "original_acl_restored": true,
+  "completed_dump_count": 0,
+  "successful_manifest_count": 0,
+  "passed": true
+}

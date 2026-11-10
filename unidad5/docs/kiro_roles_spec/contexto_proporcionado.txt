@@ -1,0 +1,77 @@
+Generar SOLO requirements.md y design.md antes de escribir SQL.
+Trabajo Unidad 5, Base de Datos II, Food Store, PostgreSQL 17.
+Autores del trabajo: Exequiel Arancibia y Joaquin Romero.
+No ejecutar SQL, no inspeccionar credenciales ni datos personales.
+
+Base heredada U1-U4: public.categoria(id bigint identity,nombre UNIQUE,
+descripcion,eliminado,created_at); producto(id identity,nombre,descripcion,
+precio,stock,categoria_id,eliminado,created_at); usuario(id identity,nombre,
+apellido,email UNIQUE,contrasena,telefono,eliminado,created_at);
+pedido(id identity,usuario_id,fecha TIMESTAMPTZ,forma_pago enum,estado enum,
+total,eliminado,created_at); detalle_pedido(PK pedido_id/producto_id,cantidad,
+precio_unitario,subtotal GENERATED cantidad*precio_unitario).
+Datos heredados: 20.000 usuarios, 50.000 productos, 225.000 pedidos,
+499.997 detalles y dos categorias. Nunca incluir filas reales en prompts.
+Tambien extension FNBC lote/deposito/responsable_deposito/lote_responsable,
+vista compatible control_lote_almacen y guardia tecnica, sin permisos app.
+Vistas TP5 y materializada mensual, nueva materializada diaria U4.
+Triggers heredados: validar_detalle_pendiente solo permite editar lineas de
+pedidos PENDIENTE; recalcular_total_pedido actualiza pedido.total; trigger
+U4 u4_refrescar_ventas refresca MV diaria y omite refresco anidado de pedido.
+
+Roles obligatorios NOLOGIN: rol_app_lectura, rol_app_escritura, rol_soporte,
+rol_reportes. Logins obligatorios: app_web y admin_datos. Todos sin SUPERUSER,
+CREATEDB, CREATEROLE, REPLICATION, BYPASSRLS. Nunca ADMIN OPTION.
+Agregar rol_propietario NOLOGIN que posee objetos y funciones protegidas;
+NO otorgarle membresia a ningun login de aplicacion.
+
+Agregar tambien rol_funciones NOLOGIN, sin membresia para ningun login.
+Es dueno solamente de funciones SECURITY DEFINER. Concederle accesos internos
+acotados: SELECT(id,email,contrasena,eliminado) y UPDATE(contrasena) en usuario;
+SELECT(pedido_id,subtotal) en detalle; SELECT(id), UPDATE(total) en pedido;
+MAINTAIN solo sobre la MV diaria. rol_propietario conserva las tablas.
+No se abre la extension FNBC a la aplicacion; su guardia queda para su dueno.
+
+Propuesta para discutir y justificar: app_web recibe lectura+escritura,
+admin_datos recibe soporte. Membresias con INHERIT TRUE, SET FALSE,
+ADMIN FALSE. Lectura catalogo/pedidos/detalle y columnas publicas usuario,
+excluir siempre contrasena. Escritura solo columnas de negocio necesarias,
+nunca subtotal/total derivados, nunca UPDATE credenciales ni DELETE usuario.
+Especificar INSERT pedido(usuario_id,fecha,forma_pago) para que estado nazca
+PENDIENTE; UPDATE pedido(estado,forma_pago,eliminado), INSERT detalle con sus
+cuatro columnas de entrada, UPDATE detalle(cantidad,precio_unitario), DELETE
+detalle para correcciones de pendientes. No DELETE pedido: usa baja logica.
+Soporte puede leer columnas de contacto y cambiar telefono; solo admin_datos
+ejecuta fn_resetear_password. Reportes accede solo agregados y usuario_anon.
+fn_autenticar y fn_resetear_password se reconstruyen: SECURITY DEFINER,
+propietario NOLOGIN, search_path pg_catalog, referencias calificadas,
+REVOKE EXECUTE FROM PUBLIC. Auth valida bcrypt con pgcrypto, devuelve id o
+NULL y registra resultado sin email/password/hash. Password reset solo admin.
+No confundir cuentas usuario de negocio con roles LOGIN PostgreSQL.
+
+Integracion minima de seguridad: mantenimiento interno de pedido.total y MV
+diaria se ejecuta por funciones trigger SECURITY DEFINER acotadas, sin dar
+UPDATE total ni MAINTAIN de MV a app_web. No cambiar reglas de negocio.
+No otorgar blanket USAGE a secuencias identity: comprobar INSERT y negar
+nextval/setval directos. Grants explicitos por tabla y por columna.
+Revocar CREATE en esquema public y EXECUTE publico a funciones.
+Default privileges bajo el rol creador correcto: negar acceso futuro por
+defecto en public y permitir SELECT a rol_reportes solo en esquema separado
+datos_anon, destinado exclusivamente a datos desidentificados.
+
+Auditoria: cluster de desarrollo aislado con SCRAM, log_connections on,
+log_disconnections on, log_statement all, prefix timestamp/pid/session/rol/
+db/application_name/origen. Parameters no registrados: ambos max_length=0.
+Simulacro con 3 fallos fn_auth, 1 exito, SELECT real masivo de columnas
+autorizadas usuario (sin credenciales), GRANT admin_datos TO app_web denegado.
+Capturar y anonimizar logs antes de usar IA. Pruebas de permisos positivas y
+negativas, exactitud de columnas y membresias, defaults de tablas futuras,
+conservacion de invariantes previas. No ejecutar contencion automaticamente.
+
+Anonimizacion: copia independiente usuario_anon con datos sinteticos
+deterministas, sin credenciales/id original/telefono real; conservar mes de
+alta local y eliminado. Comparar agregados por mes y eliminado (usuario NO
+tiene rol de negocio). No afirmar irreversibilidad universal.
+
+Entregar especificaciones como planificacion real de Kiro. No atribuir
+validacion humana, decisiones o usos de herramientas que no hayan ocurrido.

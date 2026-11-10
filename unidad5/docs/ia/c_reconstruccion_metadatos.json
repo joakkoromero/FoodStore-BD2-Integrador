@@ -1,0 +1,34 @@
+{
+  "tool": "OpenCode",
+  "installed_version": "1.18.23",
+  "requested_model": "openai/gpt-6.1-sol",
+  "agent": "plan",
+  "pure": true,
+  "permission_config": {
+    "permission": "deny"
+  },
+  "started_at_utc": "2026-10-22T19:49:50.902117+00:00",
+  "finished_at_utc": "2026-10-22T19:50:27.880495+00:00",
+  "prompt_sha256": "43739db6ebcca7a197d6f45f05e3cdb629f0b81190ba4294b3af8361c7e0a39a",
+  "attachments": [
+    {
+      "name": "log_simulacro_anonimizado.txt",
+      "sha256": "f30499043574aca7554877e118b1f21f8a804740cdbe2039c32f3f3a2b0d162b",
+      "repository_path": "docs/ia/c_reconstruccion_adjuntos/01_log_simulacro_anonimizado.txt",
+      "source_path_at_consultation": "docs/log_simulacro_anonimizado.txt"
+    }
+  ],
+  "returncode": 0,
+  "timed_out": false,
+  "event_count": 3,
+  "unparsed_line_count": 0,
+  "error_event_count": 0,
+  "tool_event_count": 0,
+  "answer_sha256": "e02bc55870086a6e72d2f30bc43e65dd15ad06492a0f1e0f397044d342e1769c",
+  "raw_jsonl_sha256": "03a56f4385b204bc816577f3accc8b1d954ecfd690d669401438e6b169b6f1ef",
+  "raw_event_storage": "Private work directory outside deliverable repository",
+  "status": "completed",
+  "prior_failed_attempts": [],
+  "sql_executed": false,
+  "human_validation": "Pending; this consultation does not establish human approval"
+}

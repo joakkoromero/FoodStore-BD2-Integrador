@@ -1,0 +1,40 @@
+{
+  "tool": "OpenCode",
+  "installed_version": "1.18.23",
+  "requested_model": "openai/gpt-6.1-sol",
+  "agent": "plan",
+  "pure": true,
+  "permission_config": {
+    "permission": "deny"
+  },
+  "started_at_utc": "2026-11-03T21:34:15.817456+00:00",
+  "finished_at_utc": "2026-11-03T21:38:41.318865+00:00",
+  "prompt_sha256": "6459e4e622fe3a3773031668aadfd9024bacee67d52591d38d85708614127e3c",
+  "attachments": [
+    {
+      "name": "SPEC_U6.md",
+      "sha256": "0c071839e8565c85b973cb027f7ac08aa493c912ecb7dfd04840a6ec621efaf8",
+      "repository_path": "docs/ia/u6_generacion_adjuntos/01_SPEC_U6.md",
+      "source_path_at_consultation": "SPEC_U6.md"
+    },
+    {
+      "name": "AGENTS.md",
+      "sha256": "9060f3ee7d56e02f754258d70a589a35e560c0054183160085e91fbeff5667a9",
+      "repository_path": "docs/ia/u6_generacion_adjuntos/02_AGENTS.md",
+      "source_path_at_consultation": "AGENTS.md"
+    }
+  ],
+  "returncode": 0,
+  "timed_out": false,
+  "event_count": 3,
+  "unparsed_line_count": 0,
+  "error_event_count": 0,
+  "tool_event_count": 0,
+  "answer_sha256": "b42ff831015a9042354240e9f5f4b567528389f9d3b40f19e11c403c4fc50752",
+  "raw_jsonl_sha256": "a8304b5a842d585c2ab5d97c778fd3179b0e71dc0f2b2cf6c0727384f3f9e698",
+  "raw_event_storage": "Private work directory outside deliverable repository",
+  "status": "completed",
+  "prior_failed_attempts": [],
+  "sql_executed": false,
+  "human_validation": "Pending; this consultation does not establish human approval"
+}

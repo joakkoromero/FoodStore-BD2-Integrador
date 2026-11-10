@@ -1,0 +1,4 @@
+2026-11-03T21:57:14.8772506+00:00 START restore_test
+2026-11-03T21:57:26.6528932+00:00 medicion inicioUTC=2026-11-03T21:57:15.2836191+00:00 RTO_s=11.350 RPO_referencia_s=31.808 inicioUTC03=2026-11-03T18:57:15.2836191-03:00
+2026-11-03T21:57:26.6708710+00:00 agregados={"counts":{"pedido":225000,"usuario":20001,"producto":50000,"categoria":2,"detalle_pedido":499997},"invalid":{"detalles":0,"productos":0},"fingerprints":{"pedido":"929d9a0e8f52627628d709f82bf09fc5","usuario":"757779fa0dc72a031cfeccbe105a63f7","producto":"b7c392f36c79d7b070017310be9ebe61","categoria":"25255e04281b38e69a0639239f903ec1","detalle_pedido":"1047260be5b676fbca32f99b435d5361"}}
+2026-11-03T21:57:26.6866335+00:00 SUCCESS restore_test respaldo=foodstore_20261103T2156409509091Z_fd85fddaeb454d6e8aaa06735a9d316d.dump destino_aislado=foodstore_restore_test

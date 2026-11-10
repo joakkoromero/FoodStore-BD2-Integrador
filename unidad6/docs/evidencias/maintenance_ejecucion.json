@@ -1,0 +1,8 @@
+{
+  "script": "maintenance.sql",
+  "started_utc": "2026-11-03T21:40:09.920782+00:00",
+  "finished_utc": "2026-11-03T21:40:10.319267+00:00",
+  "exit_code": 0,
+  "succeeded": true,
+  "business_rows_exported": false
+}

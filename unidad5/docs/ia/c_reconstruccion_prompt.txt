@@ -1,0 +1,6 @@
+Analizá exclusivamente el log adjunto. Reconstruí qué ocurrió, con una
+cronología que identifique actor, operaciones, resultado y origen cuando
+estén presentes. Separá hechos observados de hipótesis, indicá los límites
+del registro y proponé una hipótesis de contención que una persona deba
+evaluar antes de actuar. No ejecutes herramientas ni acciones; no supongas
+datos, contexto o resultados que el log no contiene.

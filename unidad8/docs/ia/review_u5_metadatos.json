@@ -1,0 +1,33 @@
+{
+  "tool": "OpenCode",
+  "installed_version": "1.18.23",
+  "requested_model": "openai/gpt-6.1-sol",
+  "agent": "plan",
+  "pure": true,
+  "permission_config": {
+    "permission": "deny"
+  },
+  "started_at_utc": "2026-11-10T14:54:24.354429+00:00",
+  "finished_at_utc": "2026-11-10T14:56:13.300804+00:00",
+  "prompt_sha256": "4cccd88a7e82c62a11db7502604e1196c8d1b5495439ded209a48abedf8864ce",
+  "attachments": [
+    {
+      "name": "Unidad5.md",
+      "sha256": "80265c10ce0c77e38ed640907180f8ca59b9b9dd08a42fa7deebf34e85b02df7",
+      "repository_path": "docs/ia/review_u5_adjuntos/01_Unidad5.md"
+    }
+  ],
+  "returncode": 0,
+  "timed_out": false,
+  "event_count": 3,
+  "unparsed_line_count": 0,
+  "error_event_count": 0,
+  "tool_event_count": 0,
+  "answer_sha256": "23478d8f1bc0e2bff442288e394c50f7e4627ca3daa24ce8eda6c6134384fbee",
+  "raw_jsonl_sha256": "3d2e3b2dd293dac9897d01bcbbe3afecb89255ae199d4fe23f781efc7c628cc7",
+  "raw_event_storage": "Private work directory outside deliverable repository",
+  "status": "completed",
+  "prior_failed_attempts": [],
+  "sql_executed": false,
+  "human_validation": "Pending; this consultation does not establish human approval"
+}

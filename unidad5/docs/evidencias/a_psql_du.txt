@@ -1,0 +1,13 @@
+                                 List of roles
+     Role name     |                         Attributes                         
+-------------------+------------------------------------------------------------
+ admin_datos       | 
+ app_web           | 
+ rol_app_escritura | Cannot login
+ rol_app_lectura   | Cannot login
+ rol_funciones     | No inheritance, Cannot login
+ rol_propietario   | No inheritance, Cannot login
+ rol_reportes      | Cannot login
+ rol_soporte       | Cannot login
+ u5_bootstrap      | Superuser, Create role, Create DB, Replication, Bypass RLS
+

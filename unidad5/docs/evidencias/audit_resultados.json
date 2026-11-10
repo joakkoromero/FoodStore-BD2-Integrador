@@ -1,0 +1,116 @@
+{
+  "phase": "audit",
+  "status": "passed",
+  "started_at_utc": "2026-10-22T19:45:41.715+00:00",
+  "events": [
+    {
+      "timestamp_utc": "2026-10-22T19:45:41.770+00:00",
+      "step": "logging_prerequisites_verified",
+      "actor": "u5_bootstrap",
+      "bind_parameters_logged": false,
+      "credential_checks_started": false
+    },
+    {
+      "timestamp_utc": "2026-10-22T19:45:42.086+00:00",
+      "step": "read_catalog",
+      "actor": "app_web",
+      "rows_received": 3,
+      "columns": [
+        "id",
+        "precio",
+        "stock"
+      ]
+    },
+    {
+      "timestamp_utc": "2026-10-22T19:45:42.559+00:00",
+      "step": "insert_pending_order",
+      "actor": "app_web",
+      "successful": true,
+      "rows_inserted": 1,
+      "initial_state_pending": true
+    },
+    {
+      "timestamp_utc": "2026-10-22T19:45:42.913+00:00",
+      "step": "insert_detail",
+      "actor": "app_web",
+      "successful": true,
+      "rows_inserted": 1
+    },
+    {
+      "timestamp_utc": "2026-10-22T19:45:43.283+00:00",
+      "step": "update_pending_detail",
+      "actor": "app_web",
+      "successful": true,
+      "rows_updated": 1
+    },
+    {
+      "timestamp_utc": "2026-10-22T19:45:43.284+00:00",
+      "step": "inherited_total_verified",
+      "actor": "app_web",
+      "invariant_holds": true
+    },
+    {
+      "timestamp_utc": "2026-10-22T19:45:43.614+00:00",
+      "step": "valid_state_transition",
+      "actor": "app_web",
+      "successful": true,
+      "rows_updated": 1
+    },
+    {
+      "timestamp_utc": "2026-10-22T19:45:43.626+00:00",
+      "step": "rollback_test_data",
+      "actor": "app_web",
+      "rolled_back": true
+    },
+    {
+      "timestamp_utc": "2026-10-22T19:45:43.708+00:00",
+      "step": "source_counts_preserved",
+      "actor": "u5_bootstrap",
+      "before": {
+        "usuario": 20001,
+        "pedido": 225000,
+        "detalle_pedido": 499997
+      },
+      "after": {
+        "usuario": 20001,
+        "pedido": 225000,
+        "detalle_pedido": 499997
+      }
+    },
+    {
+      "timestamp_utc": "2026-10-22T19:45:43.743+00:00",
+      "step": "postgresql_login_failed",
+      "actor": "app_web",
+      "failure_type": "ConnectionFailure",
+      "classification": "password_authentication_failed",
+      "observed_sqlstate": null,
+      "sqlstate_source": "No PGresult is available during handshake; inspect the actual server log"
+    }
+  ],
+  "private_values_exported": false,
+  "runtime_logging": {
+    "log_connections": "on",
+    "log_disconnections": "on",
+    "log_min_error_statement": "error",
+    "log_parameter_max_length": "0",
+    "log_parameter_max_length_on_error": "0",
+    "log_statement": "all"
+  },
+  "result": {
+    "counts_before": {
+      "usuario": 20001,
+      "pedido": 225000,
+      "detalle_pedido": 499997
+    },
+    "counts_after": {
+      "usuario": 20001,
+      "pedido": 225000,
+      "detalle_pedido": 499997
+    },
+    "data_rolled_back": true,
+    "postgresql_failed_login_verified": true,
+    "identity_sequence_values_restored": false,
+    "note": "ROLLBACK removes the test rows but does not recover consumed identity values or delete audit logs. Native statement logs record attempts, including rolled-back work. No user rows are exported."
+  },
+  "finished_at_utc": "2026-10-22T19:45:43.743+00:00"
+}

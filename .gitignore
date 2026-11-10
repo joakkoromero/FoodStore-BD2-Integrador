@@ -1,0 +1,12 @@
+# Exclusiones del paquete del integrador
+**/private/
+**/__pycache__/
+*.pyc
+*.pyo
+*.dump
+*.partial
+*.pgpass
+pgpass.conf
+secrets.json
+.env
+.env.*

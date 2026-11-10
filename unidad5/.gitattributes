@@ -1,0 +1,11 @@
+* text=auto eol=lf
+*.pdf binary
+*.png binary
+*.zip binary
+# Preserve the exact bytes whose hashes were recorded at consultation time.
+docs/ia/** -text
+docs/kiro_roles_spec/** -text
+.kiro/specs/** -text
+# Preserve native JSON line endings and the recorded evidence hashes.
+docs/log_auditoria_prueba.txt -text
+docs/log_simulacro_anonimizado.txt -text

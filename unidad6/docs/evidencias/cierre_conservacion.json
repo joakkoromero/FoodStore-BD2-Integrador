@@ -1,0 +1,99 @@
+{
+  "checked_at_utc": "2026-11-03T22:13:01.735781+00:00",
+  "outside_recorded_rto": true,
+  "original_u5_unchanged": true,
+  "primary_foodstore_unchanged": true,
+  "restore_comparisons": {
+    "relations": true,
+    "tables": true,
+    "public_functions": true,
+    "indexes": true,
+    "constraints": true,
+    "view_definitions": true,
+    "triggers": true
+  },
+  "restored_base_tables": 12,
+  "base_tables": {
+    "datos_anon.usuario_anon": {
+      "rows": 20001,
+      "ordered_content_md5": "03d6ac5ec80b09791714e3d66d533247"
+    },
+    "public.categoria": {
+      "rows": 2,
+      "ordered_content_md5": "25255e04281b38e69a0639239f903ec1"
+    },
+    "public.control_lote_almacen_original": {
+      "rows": 3,
+      "ordered_content_md5": "8c9383dfbf9cfaaed44df749c9a35d55"
+    },
+    "public.deposito": {
+      "rows": 2,
+      "ordered_content_md5": "d354cdee7d57fb9a74777f3a8ae26400"
+    },
+    "public.detalle_pedido": {
+      "rows": 499997,
+      "ordered_content_md5": "5a4bee0c208fb67a95037badb2ea9676"
+    },
+    "public.guardia_control_lote": {
+      "rows": 1,
+      "ordered_content_md5": "ba6f25166566a44b6c0179849a5cb7b0"
+    },
+    "public.lote": {
+      "rows": 3,
+      "ordered_content_md5": "461d1977234ea54b8b2315c93f2bf7e0"
+    },
+    "public.lote_responsable": {
+      "rows": 3,
+      "ordered_content_md5": "d57ecd1c52c09b795c25201115c17a86"
+    },
+    "public.pedido": {
+      "rows": 225000,
+      "ordered_content_md5": "104e0a410a5f5b19ae5a80314d8f712d"
+    },
+    "public.producto": {
+      "rows": 50000,
+      "ordered_content_md5": "681e270c5b4e292df1ea28986cd5897e"
+    },
+    "public.responsable_deposito": {
+      "rows": 2,
+      "ordered_content_md5": "690a7741b2e27ac85f35121e8428c39a"
+    },
+    "public.usuario": {
+      "rows": 20001,
+      "ordered_content_md5": "10be3422e32ff34a9b525dfa36475c71"
+    }
+  },
+  "restored_relations": 22,
+  "public_functions": 10,
+  "indexes": 25,
+  "constraints": 35,
+  "triggers": 15,
+  "materialized_cache_comparison": {
+    "public.mv_facturacion_categoria_mes": {
+      "source": {
+        "rows": 14,
+        "ordered_content_md5": "95ec532741a40fb70bfd9a0281a7a2b4"
+      },
+      "restored": {
+        "rows": 14,
+        "ordered_content_md5": "95ec532741a40fb70bfd9a0281a7a2b4"
+      },
+      "same_content": true
+    },
+    "public.mv_u4_ventas_categoria_dia": {
+      "source": {
+        "rows": 286,
+        "ordered_content_md5": "f061b77a980e145f7aaffb67180d1636"
+      },
+      "restored": {
+        "rows": 286,
+        "ordered_content_md5": "f061b77a980e145f7aaffb67180d1636"
+      },
+      "same_content": true
+    }
+  },
+  "cache_scope": "Logical pg_restore refreshes materialized views; a stale source cache may legitimately differ. Source unchanged; definitions compared separately.",
+  "role_acl_scope": "Not restored by --no-owner/--no-privileges. Disposable target remains isolated.",
+  "personal_rows_exported": false,
+  "passed": true
+}

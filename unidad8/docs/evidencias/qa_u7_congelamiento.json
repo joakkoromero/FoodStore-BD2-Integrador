@@ -1,0 +1,78 @@
+{
+  "captured_at_utc": "2026-11-10T15:41:23.616300+00:00",
+  "performed_by": "Codex, independent automated QA; not human approval",
+  "read_only": true,
+  "database_connections": 0,
+  "source_commit_declared_by_u7_pdf": "8178b01",
+  "git_checks": [
+    {
+      "arguments": [
+        "diff",
+        "--exit-code",
+        "8178b01",
+        "--",
+        "consultas_mongodb.js",
+        "consultas_postgresql.sql",
+        "pedidos_migrados.ejson"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "arguments": [
+        "status",
+        "--porcelain"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "arguments": [
+        "rev-parse",
+        "--short",
+        "HEAD"
+      ],
+      "returncode": 0,
+      "stdout": "4c136df",
+      "stderr": ""
+    }
+  ],
+  "source_checks": {
+    "consultas_mongodb.js": {
+      "sha256_current": "fea8238c3aa41843372ea294d924cdac18fa02d3cbb5bf2963d8f58c0cc14d91",
+      "sha256_executed": "fea8238c3aa41843372ea294d924cdac18fa02d3cbb5bf2963d8f58c0cc14d91",
+      "sha256_commit_8178b01": "fea8238c3aa41843372ea294d924cdac18fa02d3cbb5bf2963d8f58c0cc14d91",
+      "git_show_returncode": 0,
+      "current_equals_executed": true,
+      "current_equals_commit": true,
+      "current_equals_commit_after_lf_normalization": true,
+      "current_crlf_count": 0,
+      "commit_crlf_count": 0
+    },
+    "consultas_postgresql.sql": {
+      "sha256_current": "5342a39265f560563996766e15f538e8c7ed24f33aa9e534a3e6e27f1ac6661f",
+      "sha256_executed": "5342a39265f560563996766e15f538e8c7ed24f33aa9e534a3e6e27f1ac6661f",
+      "sha256_commit_8178b01": "5342a39265f560563996766e15f538e8c7ed24f33aa9e534a3e6e27f1ac6661f",
+      "git_show_returncode": 0,
+      "current_equals_executed": true,
+      "current_equals_commit": true,
+      "current_equals_commit_after_lf_normalization": true,
+      "current_crlf_count": 0,
+      "commit_crlf_count": 0
+    },
+    "pedidos_migrados.ejson": {
+      "sha256_current": "45b0c85ba048729e95abd701a482d336620d8eff69959914fc0dbc3925b911d6",
+      "sha256_executed": "45b0c85ba048729e95abd701a482d336620d8eff69959914fc0dbc3925b911d6",
+      "sha256_commit_8178b01": "9b0932b9ae67c24f5615d150c2417c951ea09faf62bf2bb40995efa33726dfb0",
+      "git_show_returncode": 0,
+      "current_equals_executed": true,
+      "current_equals_commit": false,
+      "current_equals_commit_after_lf_normalization": true,
+      "current_crlf_count": 212,
+      "commit_crlf_count": 0
+    }
+  },
+  "passed": true
+}

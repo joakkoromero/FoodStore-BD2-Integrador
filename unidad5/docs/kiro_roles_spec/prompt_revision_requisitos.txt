@@ -1,0 +1,44 @@
+Revision tecnica AUTOMATICA de Codex sobre tu borrador real. No representa
+validacion humana de los integrantes. Conservaremos el borrador original.
+El contexto de entrada tenia una frase ambigua sobre funciones protegidas
+de rol_propietario antes de definir rol_funciones: se aclara ahora.
+
+Corrige requirements.md y devuelve el documento FINAL COMPLETO EN EL CHAT,
+en un unico bloque Markdown, sin herramientas, sin terminal y sin SQL.
+Mantenelo breve y verificable (matrices y criterios; evita repetir prosa).
+
+1. Propiedad sin contradicciones: rol_propietario posee esquemas, tablas,
+vistas/MVs, extension FNBC y otras funciones heredadas SECURITY INVOKER.
+rol_funciones posee SOLO CUATRO funciones SECURITY DEFINER: fn_autenticar,
+fn_resetear_password, recalcular_total_pedido y u4_refrescar_ventas.
+No tiene tablas propias ni membresias para logins. Elimina Req7.2 que
+asignaba esas mismas cuatro funciones a rol_propietario; corrige tambien
+la justificacion de roles para que no vuelva a decir lo contrario.
+
+2. Soporte tiene solo SELECT usuario(id,nombre,apellido,email,telefono,
+eliminado) y UPDATE usuario(telefono), a traves de rol_soporte.
+El SELECT de pedido y detalle agregado en Req5.5 y5.6 amplia el alcance
+sin necesidad: se rechaza por minimo privilegio. Tampoco catalogo ni FNBC.
+admin_datos ejecuta fn_resetear_password por permiso puntual propio.
+
+3. Reportes: usuario_anon y SOLO agregados aprobados, concretamente SELECT
+en public.mv_facturacion_categoria_mes y public.mv_u4_ventas_categoria_dia;
+ningun SELECT en tablas fuente public ni datos de contacto. No afirmar
+que solo existe acceso a datos_anon si tambien se permiten estas MVs.
+
+4. SET FALSE significa que esa membresia NO habilita SET ROLE al padre;
+no es simplemente que falta una accion explicita. No existe membresia
+de app_web/admin_datos a propietarios. INHERIT TRUE y ADMIN FALSE.
+
+5. Las pruebas de permisos son PREVISTAS para despues de implementar SQL,
+no ejecutadas ni condicion para redactar design.md antes del codigo.
+La lectura humana queda pendiente para la entrega; no inventes aprobacion
+real ni impongas una aprobacion humana ya ocurrida para este diseno.
+
+Mantener el resto: INSERT pedido solo usuario_id/fecha/forma_pago, UPDATE
+estado/forma_pago/eliminado; detalle INSERT4columnas, UPDATE2yDELETEsolo
+pendiente; sinDELETEpedido/usuario, sincolumna derivada/credencial; TEMP
+solo propietario en DBactual; secuenciasidentity sinacceso directo a logins;
+rol_funciones permisosinternosacotados y MAINTAINdiaria; defaultscreador
+correcto y migracionexplicita Dexistente; humanvalidation pendiente.
+Detente al terminar requirements corregido; despues pediremos design.

@@ -1,0 +1,46 @@
+ANTES 1 - Configuracion efectiva de autovacuum y recoleccion de estadisticas
+         observado_en          | autovacuum | track_counts | umbral_analyze | factor_analyze | umbral_vacuum | factor_vacuum 
+-------------------------------+------------+--------------+----------------+----------------+---------------+---------------
+ 2026-11-03 18:40:10.035464-03 | on         | on           | 50             | 0.1            | 50            | 0.2
+(1 row)
+
+ANTES 2 - Tablas de la copia: estimaciones e historiales, con opciones por tabla
+  esquema   |             tabla             | filas_vivas_estimadas | tuplas_muertas_estimadas | cambios_estimados_desde_analyze | last_vacuum | last_autovacuum | last_analyze | last_autoanalyze | opciones_de_tabla 
+------------+-------------------------------+-----------------------+--------------------------+---------------------------------+-------------+-----------------+--------------+------------------+-------------------
+ datos_anon | usuario_anon                  |                     0 |                        0 |                               0 | (NULL)      | (NULL)          | (NULL)       | (NULL)           | (NULL)
+ public     | categoria                     |                     0 |                        0 |                               0 | (NULL)      | (NULL)          | (NULL)       | (NULL)           | (NULL)
+ public     | control_lote_almacen_original |                     0 |                        0 |                               0 | (NULL)      | (NULL)          | (NULL)       | (NULL)           | (NULL)
+ public     | deposito                      |                     0 |                        0 |                               0 | (NULL)      | (NULL)          | (NULL)       | (NULL)           | (NULL)
+ public     | detalle_pedido                |                     0 |                        0 |                               0 | (NULL)      | (NULL)          | (NULL)       | (NULL)           | (NULL)
+ public     | guardia_control_lote          |                     0 |                        0 |                               0 | (NULL)      | (NULL)          | (NULL)       | (NULL)           | (NULL)
+ public     | lote                          |                     0 |                        0 |                               0 | (NULL)      | (NULL)          | (NULL)       | (NULL)           | (NULL)
+ public     | lote_responsable              |                     0 |                        0 |                               0 | (NULL)      | (NULL)          | (NULL)       | (NULL)           | (NULL)
+ public     | mv_facturacion_categoria_mes  |                     0 |                        0 |                               0 | (NULL)      | (NULL)          | (NULL)       | (NULL)           | (NULL)
+ public     | mv_u4_ventas_categoria_dia    |                     0 |                        0 |                               0 | (NULL)      | (NULL)          | (NULL)       | (NULL)           | (NULL)
+ public     | pedido                        |                     0 |                        0 |                               0 | (NULL)      | (NULL)          | (NULL)       | (NULL)           | (NULL)
+ public     | producto                      |                     0 |                        0 |                               0 | (NULL)      | (NULL)          | (NULL)       | (NULL)           | (NULL)
+ public     | responsable_deposito          |                     0 |                        0 |                               0 | (NULL)      | (NULL)          | (NULL)       | (NULL)           | (NULL)
+ public     | usuario                       |                     0 |                        0 |                               0 | (NULL)      | (NULL)          | (NULL)       | (NULL)           | (NULL)
+(14 rows)
+
+ANTES 3 - Conteos reales de las dos tablas elegidas; no inferir vaciado de una estimacion 0
+     tabla      | filas_reales 
+----------------+--------------
+ pedido         |       225000
+ detalle_pedido |       499997
+(2 rows)
+
+DECISION - ANALYZE puntual si last_analyze y last_autoanalyze son ambos NULL por tabla
+     tabla      |                      decision                      
+----------------+----------------------------------------------------
+ detalle_pedido | ANALYZE puntual: establecer linea base de la copia
+ pedido         | ANALYZE puntual: establecer linea base de la copia
+(2 rows)
+
+DESPUES - Valores realmente visibles, sin sustituir NULL por un resultado inventado
+ esquema |     tabla      | filas_vivas_estimadas | tuplas_muertas_estimadas | cambios_estimados_desde_analyze |         last_analyze          | last_autoanalyze | analyze_manuales_registrados 
+---------+----------------+-----------------------+--------------------------+---------------------------------+-------------------------------+------------------+------------------------------
+ public  | detalle_pedido |                499997 |                        2 |                               0 | 2026-11-03 18:40:10.301649-03 | (NULL)           |                            1
+ public  | pedido         |                225000 |                        4 |                               0 | 2026-11-03 18:40:10.232276-03 | (NULL)           |                            1
+(2 rows)
+

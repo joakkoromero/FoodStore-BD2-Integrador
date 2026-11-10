@@ -1,0 +1,54 @@
+{
+  "success": true,
+  "checks": [
+    {
+      "file": "requirements_borrador_original.md",
+      "sha256": "20842f1231e8c4eaa46a64d3b4c1d74acd7c2452343be90ee10b6c06cfebe36e",
+      "matches_provenance": true
+    },
+    {
+      "file": "requirements_borrador_original_respuesta_completa.md",
+      "sha256": "f33a03dcdb51225d07fa33bf4a3480aa4f590023fee52cb54973f210e2084097",
+      "matches_provenance": true
+    },
+    {
+      "file": "requirements_revision_intermedia.md",
+      "sha256": "6374d939501fb1ba1c68a5efe8acfd41f90890cab6a3cc0f0f9020e37203593f",
+      "matches_provenance": true
+    },
+    {
+      "file": "requirements_revision_intermedia_respuesta_completa.md",
+      "sha256": "c09a12737c6df86075c8d2fbccb95762e70569d777ab7fc536864353bdbb0163",
+      "matches_provenance": true
+    },
+    {
+      "file": "requirements.md",
+      "sha256": "fb8a001b6254d827adf5cfe9d72c95890d8136ccfbdb9d7559f8cd32c8b78628",
+      "matches_provenance": true
+    },
+    {
+      "file": "requirements_respuesta_completa.md",
+      "sha256": "278cdac403ee0b56338f9533fdb92b5c37295d81c996e629578ea70bff54ea5d",
+      "matches_provenance": true
+    },
+    {
+      "file": "design.md",
+      "sha256": "6aa497f8f17f66dd31f8f7f8d80512cd93e1536b916d9c11eaf6988a5ffa2503",
+      "matches_provenance": true
+    },
+    {
+      "file": "design_respuesta_completa.md",
+      "sha256": "8dad93d15fbc6ba166f63f92ea056e7f9d8caa8a5015e8d197e21539dab801bd",
+      "matches_provenance": true
+    },
+    {
+      "file": ".kiro/specs/seguridad-roles-foodstore/requirements.md",
+      "identical_to_document": true
+    },
+    {
+      "file": ".kiro/specs/seguridad-roles-foodstore/design.md",
+      "identical_to_document": true
+    }
+  ],
+  "scope": "Byte hashes and faithful copies; not human content validation"
+}

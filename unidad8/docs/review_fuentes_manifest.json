@@ -1,0 +1,596 @@
+{
+  "authoritative_review_context": "manifest_saneamiento final y snapshots revisados, no inventario preliminar",
+  "preliminary_inventory_preserved_as_historical": true,
+  "preliminary_differences": [
+    {
+      "original": "outputs\\Arancibia_Romero_U7\\tools\\generar_informe.py",
+      "preliminary_hash": "748fcb0f5e825f95bff1d120b87a4dbd166084d912e461f0fad81278e49778ac",
+      "authoritative_original_hash": "5ecb107f01fbd77b7f9ab9905a48e4b11fe837982b24e501fd764a1a6a544768",
+      "reason": "Pulido del generador PDF U7 anterior al contexto saneado y a su review; no se cambió la entrega después de revisada."
+    }
+  ],
+  "source_files": [
+    {
+      "original": "work\\antecedentes\\TP1\\data.sql",
+      "original_sha256": "f3bb3c791dddc83909f51206e18c8ddcf6cea54c7a8062ec56865b9e39dfeeb0",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Antecedentes_TP1_TP5/work/antecedentes/TP1/data.sql",
+      "sanitized_sha256": "7314fecd345a1e0c4fd347b47024b2f38b543f602ce2cf8532e6b9718c3c56ae",
+      "unit": "Antecedentes_TP1_TP5"
+    },
+    {
+      "original": "work\\antecedentes\\TP1\\schema.sql",
+      "original_sha256": "e12158c2dc979a8e30b6da2f35670d635d4df834db6b529cf08b70d908f9c739",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Antecedentes_TP1_TP5/work/antecedentes/TP1/schema.sql",
+      "sanitized_sha256": "6908a058bbf2d56e8a52a8b452a34b5b9a3369f993ab80afdc2a8b2c42d164c3",
+      "unit": "Antecedentes_TP1_TP5"
+    },
+    {
+      "original": "work\\antecedentes\\TP2\\Arancibia_Romero_TP2\\concurrencia\\01_no_repetible_A.sql",
+      "original_sha256": "3a63b606c3c52ea0e120d611803aa651953cd8ff0ef7d2e5427bea55ed397790",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Antecedentes_TP1_TP5/work/antecedentes/TP2/Arancibia_Romero_TP2/concurrencia/01_no_repetible_A.sql",
+      "sanitized_sha256": "a64ec0dd9de95d6ef6285952094d727e77ccc8efd48696309b82ebf25d3d065d",
+      "unit": "Antecedentes_TP1_TP5"
+    },
+    {
+      "original": "work\\antecedentes\\TP2\\Arancibia_Romero_TP2\\concurrencia\\01_no_repetible_B.sql",
+      "original_sha256": "e0abc3e364d96b915a11589e0419112de0435352db6908b653ffd784b8bfec2b",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Antecedentes_TP1_TP5/work/antecedentes/TP2/Arancibia_Romero_TP2/concurrencia/01_no_repetible_B.sql",
+      "sanitized_sha256": "fd2498ca8a651253fb9b7c1f74bba3c188710c0c74f68f985600b7318b4f2c3d",
+      "unit": "Antecedentes_TP1_TP5"
+    },
+    {
+      "original": "work\\antecedentes\\TP2\\Arancibia_Romero_TP2\\concurrencia\\02_fantasma_A.sql",
+      "original_sha256": "d31c6f86d5fb1baa58ca352c840192db90f8cc4a5b6a541b09597021d51bdea1",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Antecedentes_TP1_TP5/work/antecedentes/TP2/Arancibia_Romero_TP2/concurrencia/02_fantasma_A.sql",
+      "sanitized_sha256": "cdd0851f13224bac99d585c452ce39610d79b713100fd4c6c8760fc939b89347",
+      "unit": "Antecedentes_TP1_TP5"
+    },
+    {
+      "original": "work\\antecedentes\\TP2\\Arancibia_Romero_TP2\\concurrencia\\02_fantasma_B.sql",
+      "original_sha256": "454c4983ebb2ad534a8cf9f2f78073680bafa3ec0ee1534337df906f253a8644",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Antecedentes_TP1_TP5/work/antecedentes/TP2/Arancibia_Romero_TP2/concurrencia/02_fantasma_B.sql",
+      "sanitized_sha256": "88415b336abede497f80deaa775d57153283742c52cff246a308f672e13d7147",
+      "unit": "Antecedentes_TP1_TP5"
+    },
+    {
+      "original": "work\\antecedentes\\TP2\\Arancibia_Romero_TP2\\concurrencia\\03_bloqueo_A.sql",
+      "original_sha256": "9f5c666f780fe9a856e3170e0d1ec7a6b9476aa44c48c02bd8eb7bc8a596e12d",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Antecedentes_TP1_TP5/work/antecedentes/TP2/Arancibia_Romero_TP2/concurrencia/03_bloqueo_A.sql",
+      "sanitized_sha256": "d6d5c720f5edd78145832359d2329ea6a5745abbee5d1017133eaa86fad79c71",
+      "unit": "Antecedentes_TP1_TP5"
+    },
+    {
+      "original": "work\\antecedentes\\TP2\\Arancibia_Romero_TP2\\concurrencia\\03_bloqueo_B.sql",
+      "original_sha256": "8f68b4f7569d993702acb823ce16fd59f36cd24874f3eabf09e19d8d2a895f66",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Antecedentes_TP1_TP5/work/antecedentes/TP2/Arancibia_Romero_TP2/concurrencia/03_bloqueo_B.sql",
+      "sanitized_sha256": "97f9584373722225a6d4a386273347e8cba72f09efe78f96331a936fb1e51414",
+      "unit": "Antecedentes_TP1_TP5"
+    },
+    {
+      "original": "work\\antecedentes\\TP2\\Arancibia_Romero_TP2\\concurrencia\\04_deadlock_A.sql",
+      "original_sha256": "9b7634050954f40601ce309fb5a991d1cd2d85c2ee948e81c5ace4f1e8610c50",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Antecedentes_TP1_TP5/work/antecedentes/TP2/Arancibia_Romero_TP2/concurrencia/04_deadlock_A.sql",
+      "sanitized_sha256": "0798b32cdbb8dec5b90eb9c261c90fc57c5f6cdb22bd3fd56c0f82c43a334371",
+      "unit": "Antecedentes_TP1_TP5"
+    },
+    {
+      "original": "work\\antecedentes\\TP2\\Arancibia_Romero_TP2\\concurrencia\\04_deadlock_B.sql",
+      "original_sha256": "b460654801b41a86c5d7695e3be81c619142ebfb8320c3228603c0407b3a2305",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Antecedentes_TP1_TP5/work/antecedentes/TP2/Arancibia_Romero_TP2/concurrencia/04_deadlock_B.sql",
+      "sanitized_sha256": "c6e68e5b3d84f3dd1a4ffc757372049730bc2f99db6bff5f53965f90384238cc",
+      "unit": "Antecedentes_TP1_TP5"
+    },
+    {
+      "original": "work\\antecedentes\\TP2\\Arancibia_Romero_TP2\\data.sql",
+      "original_sha256": "f3bb3c791dddc83909f51206e18c8ddcf6cea54c7a8062ec56865b9e39dfeeb0",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Antecedentes_TP1_TP5/work/antecedentes/TP2/Arancibia_Romero_TP2/data.sql",
+      "sanitized_sha256": "7314fecd345a1e0c4fd347b47024b2f38b543f602ce2cf8532e6b9718c3c56ae",
+      "unit": "Antecedentes_TP1_TP5"
+    },
+    {
+      "original": "work\\antecedentes\\TP2\\Arancibia_Romero_TP2\\pruebas_restricciones.sql",
+      "original_sha256": "c52a4f98639ba54560e4e1c97fb71ad9355e0d2f77620a1e8173b5ab4e2a8586",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Antecedentes_TP1_TP5/work/antecedentes/TP2/Arancibia_Romero_TP2/pruebas_restricciones.sql",
+      "sanitized_sha256": "30477ef125a54cce3cdf68ef4e9ecde3fe2bfcae4a6057285ea7b0ca3cd71e50",
+      "unit": "Antecedentes_TP1_TP5"
+    },
+    {
+      "original": "work\\antecedentes\\TP2\\Arancibia_Romero_TP2\\restricciones.sql",
+      "original_sha256": "e642ce08837587068a5fb827472f5b24c01e264e23f9881891b0b97c76b60e7d",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Antecedentes_TP1_TP5/work/antecedentes/TP2/Arancibia_Romero_TP2/restricciones.sql",
+      "sanitized_sha256": "7430c35fceba9c862f105084bd71484aa721eec59d77fa665aac76626652403f",
+      "unit": "Antecedentes_TP1_TP5"
+    },
+    {
+      "original": "work\\antecedentes\\TP2\\Arancibia_Romero_TP2\\schema.sql",
+      "original_sha256": "e12158c2dc979a8e30b6da2f35670d635d4df834db6b529cf08b70d908f9c739",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Antecedentes_TP1_TP5/work/antecedentes/TP2/Arancibia_Romero_TP2/schema.sql",
+      "sanitized_sha256": "6908a058bbf2d56e8a52a8b452a34b5b9a3369f993ab80afdc2a8b2c42d164c3",
+      "unit": "Antecedentes_TP1_TP5"
+    },
+    {
+      "original": "work\\antecedentes\\TP3\\Arancibia_Romero_TP3\\carga_masiva.sql",
+      "original_sha256": "fda629cd125f0898c3618f8d881a4c2ace1990c9951b4cbf0ff4ed813eb30080",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Antecedentes_TP1_TP5/work/antecedentes/TP3/Arancibia_Romero_TP3/carga_masiva.sql",
+      "sanitized_sha256": "8ce8729ba7942d0ed872ed0aa4a5227958932db7d2a2fbd539553811d54575b0",
+      "unit": "Antecedentes_TP1_TP5"
+    },
+    {
+      "original": "work\\antecedentes\\TP3\\Arancibia_Romero_TP3\\consultas_lentas.sql",
+      "original_sha256": "e71f396408ef1a4712d6e271b54b2a6c0ab7cd1c62db1f2fc9dddad100c81d90",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Antecedentes_TP1_TP5/work/antecedentes/TP3/Arancibia_Romero_TP3/consultas_lentas.sql",
+      "sanitized_sha256": "05c7473e8746047a7ad6225493c807555eaca4b9f476ad513e8a45d4182f51e7",
+      "unit": "Antecedentes_TP1_TP5"
+    },
+    {
+      "original": "work\\antecedentes\\TP3\\Arancibia_Romero_TP3\\consultas_parte4.sql",
+      "original_sha256": "670e0e1ceb43c08769f62120700e63b7b6c291134e9c4ee659a389b35359dc48",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Antecedentes_TP1_TP5/work/antecedentes/TP3/Arancibia_Romero_TP3/consultas_parte4.sql",
+      "sanitized_sha256": "de39712eef009e6168af53a56eaf27b7865fa28698af7a34eb7141b95327d806",
+      "unit": "Antecedentes_TP1_TP5"
+    },
+    {
+      "original": "work\\antecedentes\\TP3\\Arancibia_Romero_TP3\\data.sql",
+      "original_sha256": "8b472d750c154bcb33937544a096463e78540d0bf29c66845ffba70be9830647",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Antecedentes_TP1_TP5/work/antecedentes/TP3/Arancibia_Romero_TP3/data.sql",
+      "sanitized_sha256": "d200c6fdcdc78ca0cfce2633cf938e0938708c484f6ec9138b703068cea85452",
+      "unit": "Antecedentes_TP1_TP5"
+    },
+    {
+      "original": "work\\antecedentes\\TP3\\Arancibia_Romero_TP3\\indices_optimizacion.sql",
+      "original_sha256": "6fa9052b116d6a208f2bf9e676cc289173c844474b15a08b80503b7843a30e57",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Antecedentes_TP1_TP5/work/antecedentes/TP3/Arancibia_Romero_TP3/indices_optimizacion.sql",
+      "sanitized_sha256": "7c520c95f0ff69e15686f3b692ce371fd6c613187bd84e673d3fecc3767fd036",
+      "unit": "Antecedentes_TP1_TP5"
+    },
+    {
+      "original": "work\\antecedentes\\TP3\\Arancibia_Romero_TP3\\medir_antes.sql",
+      "original_sha256": "854209fda9ea8deb9815dcc04f6d4f6104eef0bde27aeab3e3df62dfad084655",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Antecedentes_TP1_TP5/work/antecedentes/TP3/Arancibia_Romero_TP3/medir_antes.sql",
+      "sanitized_sha256": "a94ae01da625c710ad36ffadfa8bcddc4acee1354891546d025e44b3af65bf2f",
+      "unit": "Antecedentes_TP1_TP5"
+    },
+    {
+      "original": "work\\antecedentes\\TP3\\Arancibia_Romero_TP3\\medir_despues.sql",
+      "original_sha256": "94e4bee317c053e8ea174663d854e7b1d47399228ba8a5e157168ef8495c8ece",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Antecedentes_TP1_TP5/work/antecedentes/TP3/Arancibia_Romero_TP3/medir_despues.sql",
+      "sanitized_sha256": "6a8e78149fd450aa5780cc8bed1f95549714cc0c197bf70f967e796829947101",
+      "unit": "Antecedentes_TP1_TP5"
+    },
+    {
+      "original": "work\\antecedentes\\TP3\\Arancibia_Romero_TP3\\preparar_linea_base.sql",
+      "original_sha256": "879d7c0427be73bff9300f22c3eb8896d8c461d4564ace3847ee83858daf54c6",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Antecedentes_TP1_TP5/work/antecedentes/TP3/Arancibia_Romero_TP3/preparar_linea_base.sql",
+      "sanitized_sha256": "fb47d6463189f60c1b80764e19ecdf8fcd31b57aad45b3f15e1648e28d47edc4",
+      "unit": "Antecedentes_TP1_TP5"
+    },
+    {
+      "original": "work\\antecedentes\\TP3\\Arancibia_Romero_TP3\\restricciones.sql",
+      "original_sha256": "9682c8d60f74ee8682a4ce4831e04f8e0d01a951b5e6e95bab7b4c368e3132b8",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Antecedentes_TP1_TP5/work/antecedentes/TP3/Arancibia_Romero_TP3/restricciones.sql",
+      "sanitized_sha256": "0d55fa45a744a9f62cb75c81fb5eb1c6e08ecf244ba26a02a391c865a8d789bd",
+      "unit": "Antecedentes_TP1_TP5"
+    },
+    {
+      "original": "work\\antecedentes\\TP3\\Arancibia_Romero_TP3\\schema.sql",
+      "original_sha256": "f54b3fabda20d97dfaa26a45fbf389a6859f4e03a66a7ac5510bd8cca87de669",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Antecedentes_TP1_TP5/work/antecedentes/TP3/Arancibia_Romero_TP3/schema.sql",
+      "sanitized_sha256": "11cfc7dc911a7752624ef019a0dd6803238e6b528063559a0cd4785f626cb157",
+      "unit": "Antecedentes_TP1_TP5"
+    },
+    {
+      "original": "work\\antecedentes\\TP4\\Arancibia_Romero_TP4\\carga_masiva_tp3.sql",
+      "original_sha256": "bd42336bb18d9cec33c8bbdafa0714f591d882a5cac9a38f34fba04552e19534",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Antecedentes_TP1_TP5/work/antecedentes/TP4/Arancibia_Romero_TP4/carga_masiva_tp3.sql",
+      "sanitized_sha256": "b9edb6cab0bb4e668960362879a1a6e87463792e19c162950dd48ba73ce8df76",
+      "unit": "Antecedentes_TP1_TP5"
+    },
+    {
+      "original": "work\\antecedentes\\TP4\\Arancibia_Romero_TP4\\consultas_analiticas.sql",
+      "original_sha256": "cb60d2c27785e5498af315815b20e0b99a4fe16f80de61d20efa243ca0ea167e",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Antecedentes_TP1_TP5/work/antecedentes/TP4/Arancibia_Romero_TP4/consultas_analiticas.sql",
+      "sanitized_sha256": "aafaf7451ae4bd1ad5533f3eb043a3d2b6b717db5ea44e564f8aa506fae5e6a5",
+      "unit": "Antecedentes_TP1_TP5"
+    },
+    {
+      "original": "work\\antecedentes\\TP4\\Arancibia_Romero_TP4\\consultas_parte3.sql",
+      "original_sha256": "be5b377ad5badb258f84854956bdce9c85eb862ef0013f5bbf80022adf93a08f",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Antecedentes_TP1_TP5/work/antecedentes/TP4/Arancibia_Romero_TP4/consultas_parte3.sql",
+      "sanitized_sha256": "ff7b9c3098a2a92a96b81093bd098de8c6ecb8eceda4bc0b2602b93845babde7",
+      "unit": "Antecedentes_TP1_TP5"
+    },
+    {
+      "original": "work\\antecedentes\\TP4\\Arancibia_Romero_TP4\\data.sql",
+      "original_sha256": "8b472d750c154bcb33937544a096463e78540d0bf29c66845ffba70be9830647",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Antecedentes_TP1_TP5/work/antecedentes/TP4/Arancibia_Romero_TP4/data.sql",
+      "sanitized_sha256": "d200c6fdcdc78ca0cfce2633cf938e0938708c484f6ec9138b703068cea85452",
+      "unit": "Antecedentes_TP1_TP5"
+    },
+    {
+      "original": "work\\antecedentes\\TP4\\Arancibia_Romero_TP4\\indices_optimizacion.sql",
+      "original_sha256": "faa93dd80e418ec49464b76db3dcc575f8741a4bc976fcf9b5ab4f1857ed1e8b",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Antecedentes_TP1_TP5/work/antecedentes/TP4/Arancibia_Romero_TP4/indices_optimizacion.sql",
+      "sanitized_sha256": "cba7d1d69e5e3d192a6e6de1a52f1e736fb4f1f24c2f1fff64d236c6e5910d72",
+      "unit": "Antecedentes_TP1_TP5"
+    },
+    {
+      "original": "work\\antecedentes\\TP4\\Arancibia_Romero_TP4\\medir_antes.sql",
+      "original_sha256": "7e06a7e96b221beaf123377acf707e963736cdea65c539b59bfd2680e72f4fa7",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Antecedentes_TP1_TP5/work/antecedentes/TP4/Arancibia_Romero_TP4/medir_antes.sql",
+      "sanitized_sha256": "6dc34de2f36fa16d22217d548ec3387f099fa53f376635c0c4659c17bc4be3f1",
+      "unit": "Antecedentes_TP1_TP5"
+    },
+    {
+      "original": "work\\antecedentes\\TP4\\Arancibia_Romero_TP4\\medir_despues.sql",
+      "original_sha256": "7ae27f34f6b67d5895cfcb84dd6dfd3ca4623ee1ded12d077c76b0896444b015",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Antecedentes_TP1_TP5/work/antecedentes/TP4/Arancibia_Romero_TP4/medir_despues.sql",
+      "sanitized_sha256": "64a40fbeb1bce4c461645d40a341259b011aafc9601d393b25f848942ca89c10",
+      "unit": "Antecedentes_TP1_TP5"
+    },
+    {
+      "original": "work\\antecedentes\\TP4\\Arancibia_Romero_TP4\\preparar_linea_base.sql",
+      "original_sha256": "edf797c2d5c7eb1705d280575e1b91174a4f7a750bc81f6b49298a823ed35c60",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Antecedentes_TP1_TP5/work/antecedentes/TP4/Arancibia_Romero_TP4/preparar_linea_base.sql",
+      "sanitized_sha256": "23844db3ffe7fb4db78f20eadea8c7d140cd7abb03b7c5d73adffef027712c16",
+      "unit": "Antecedentes_TP1_TP5"
+    },
+    {
+      "original": "work\\antecedentes\\TP4\\Arancibia_Romero_TP4\\restricciones.sql",
+      "original_sha256": "9682c8d60f74ee8682a4ce4831e04f8e0d01a951b5e6e95bab7b4c368e3132b8",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Antecedentes_TP1_TP5/work/antecedentes/TP4/Arancibia_Romero_TP4/restricciones.sql",
+      "sanitized_sha256": "0d55fa45a744a9f62cb75c81fb5eb1c6e08ecf244ba26a02a391c865a8d789bd",
+      "unit": "Antecedentes_TP1_TP5"
+    },
+    {
+      "original": "work\\antecedentes\\TP4\\Arancibia_Romero_TP4\\schema.sql",
+      "original_sha256": "f8452ee30197b9bc0c9b99dec806b580d43061c34cf9f449f42711e3d81b4eb7",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Antecedentes_TP1_TP5/work/antecedentes/TP4/Arancibia_Romero_TP4/schema.sql",
+      "sanitized_sha256": "830b941bec9767190c6e4fbad7cd0712e9a0f99c01a1cccfa628e7d0d5c0150a",
+      "unit": "Antecedentes_TP1_TP5"
+    },
+    {
+      "original": "work\\antecedentes\\TP5\\Arancibia_Romero_TP5\\benchmark_escrituras.sql",
+      "original_sha256": "305a6162c12128b532f76e64db3e971afcc12ff7f2494068e627b498e4fe295e",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Antecedentes_TP1_TP5/work/antecedentes/TP5/Arancibia_Romero_TP5/benchmark_escrituras.sql",
+      "sanitized_sha256": "984067f2f1a4ac084f2c64da94e383016c3c4e2cdcd4271cd6b8b8a2fae2d447",
+      "unit": "Antecedentes_TP1_TP5"
+    },
+    {
+      "original": "work\\antecedentes\\TP5\\Arancibia_Romero_TP5\\carga_masiva.sql",
+      "original_sha256": "25cd9117aa6e91d42f96e74f6c330b344e29056915c33d555b80ad96abb58dbe",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Antecedentes_TP1_TP5/work/antecedentes/TP5/Arancibia_Romero_TP5/carga_masiva.sql",
+      "sanitized_sha256": "a681f07a9f4f7809854b99d4aedde178bef6c793b4f4c7db5aafa5a0ba9ba567",
+      "unit": "Antecedentes_TP1_TP5"
+    },
+    {
+      "original": "work\\antecedentes\\TP5\\Arancibia_Romero_TP5\\data.sql",
+      "original_sha256": "a7a40d007102e1740a6b37a8d006e5f42c88be927e93592f0b07601133fc6f46",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Antecedentes_TP1_TP5/work/antecedentes/TP5/Arancibia_Romero_TP5/data.sql",
+      "sanitized_sha256": "95d42214d804d616f4ec86b8353111a6f674f132fe35f59ddad8e666583c3041",
+      "unit": "Antecedentes_TP1_TP5"
+    },
+    {
+      "original": "work\\antecedentes\\TP5\\Arancibia_Romero_TP5\\indices.sql",
+      "original_sha256": "5dc9d9b749360693fe945d38f23cb93b7c8bfcfbb0f2c258e257dda2a9357ac9",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Antecedentes_TP1_TP5/work/antecedentes/TP5/Arancibia_Romero_TP5/indices.sql",
+      "sanitized_sha256": "2e7757c18ca03070662e267a13f3d3660947af4b428705d3a61a4f51248495c8",
+      "unit": "Antecedentes_TP1_TP5"
+    },
+    {
+      "original": "work\\antecedentes\\TP5\\Arancibia_Romero_TP5\\queries.sql",
+      "original_sha256": "860ddca6a820da635222ffb8fb2b317d945c3c67363454d2d65642de7b4d4f34",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Antecedentes_TP1_TP5/work/antecedentes/TP5/Arancibia_Romero_TP5/queries.sql",
+      "sanitized_sha256": "4d8c74b1abe41d2787e7c12db3120f34f76c92cc82bbd01609c93017680eaa65",
+      "unit": "Antecedentes_TP1_TP5"
+    },
+    {
+      "original": "work\\antecedentes\\TP5\\Arancibia_Romero_TP5\\schema.sql",
+      "original_sha256": "ed57d609065054e8c53d415336f05d8bdfaf922066a9f256ccd7725e54a8d100",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Antecedentes_TP1_TP5/work/antecedentes/TP5/Arancibia_Romero_TP5/schema.sql",
+      "sanitized_sha256": "12825b9ef38359b3169cc60bd76ed017f250ef36021fea1d28af908bcefa2e34",
+      "unit": "Antecedentes_TP1_TP5"
+    },
+    {
+      "original": "work\\antecedentes\\TP5\\Arancibia_Romero_TP5\\views.sql",
+      "original_sha256": "7c4aa415da587e7a4e6d076d151cadac5374ccb2a03153c32a45bad5738a6ccd",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Antecedentes_TP1_TP5/work/antecedentes/TP5/Arancibia_Romero_TP5/views.sql",
+      "sanitized_sha256": "472d8dda34a43f6359a8650b53d7334b393840e877981249f8bc962d73d3fadb",
+      "unit": "Antecedentes_TP1_TP5"
+    },
+    {
+      "original": "outputs\\Arancibia_Romero_U4\\00_reconstruir_base.ps1",
+      "original_sha256": "cc83d932d15a12a139db847b331cc422dc388c160463e20258b6234cf8ee47ba",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Unidad4/outputs/Arancibia_Romero_U4/00_reconstruir_base.ps1",
+      "sanitized_sha256": "e7419dbbf67465fc9cb15e64e930fe0caea0e2fa07e5d72f4de354b44d30bca3",
+      "unit": "Unidad4"
+    },
+    {
+      "original": "outputs\\Arancibia_Romero_U4\\01_actividad_del_dia.sql",
+      "original_sha256": "ff0dc5d863f46d7e81d5317536ee1c1f58640a8e9e70d8bf1cf91596b2c9f03a",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Unidad4/outputs/Arancibia_Romero_U4/01_actividad_del_dia.sql",
+      "sanitized_sha256": "1e06df06d14125034800b922ede649a7eba11ef6a785cef3eef1e106deda3247",
+      "unit": "Unidad4"
+    },
+    {
+      "original": "outputs\\Arancibia_Romero_U4\\antecedentes\\indices_tp4.sql",
+      "original_sha256": "faa93dd80e418ec49464b76db3dcc575f8741a4bc976fcf9b5ab4f1857ed1e8b",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Unidad4/outputs/Arancibia_Romero_U4/antecedentes/indices_tp4.sql",
+      "sanitized_sha256": "cba7d1d69e5e3d192a6e6de1a52f1e736fb4f1f24c2f1fff64d236c6e5910d72",
+      "unit": "Unidad4"
+    },
+    {
+      "original": "outputs\\Arancibia_Romero_U4\\antecedentes\\indices_tp5.sql",
+      "original_sha256": "5dc9d9b749360693fe945d38f23cb93b7c8bfcfbb0f2c258e257dda2a9357ac9",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Unidad4/outputs/Arancibia_Romero_U4/antecedentes/indices_tp5.sql",
+      "sanitized_sha256": "2e7757c18ca03070662e267a13f3d3660947af4b428705d3a61a4f51248495c8",
+      "unit": "Unidad4"
+    },
+    {
+      "original": "outputs\\Arancibia_Romero_U4\\antecedentes\\views_tp5.sql",
+      "original_sha256": "7c4aa415da587e7a4e6d076d151cadac5374ccb2a03153c32a45bad5738a6ccd",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Unidad4/outputs/Arancibia_Romero_U4/antecedentes/views_tp5.sql",
+      "sanitized_sha256": "472d8dda34a43f6359a8650b53d7334b393840e877981249f8bc962d73d3fadb",
+      "unit": "Unidad4"
+    },
+    {
+      "original": "outputs\\Arancibia_Romero_U4\\reproduccion\\verify_fnbc.py",
+      "original_sha256": "7351b171b790849577b5cbfd18c257b3376d06fc9fcf3fe883206b9179900b58",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Unidad4/outputs/Arancibia_Romero_U4/reproduccion/verify_fnbc.py",
+      "sanitized_sha256": "7efd63a8ad8a2edf37167c51ce25c38d8166d55fb63e737bcb138ef1438d202f",
+      "unit": "Unidad4"
+    },
+    {
+      "original": "outputs\\Arancibia_Romero_U4\\reproduccion\\verify_foodstore.py",
+      "original_sha256": "85b19a579f48e5ef9dbda148488d86c37a8fea5c88502cbd604cf90d7f322934",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Unidad4/outputs/Arancibia_Romero_U4/reproduccion/verify_foodstore.py",
+      "sanitized_sha256": "7545b5a97f2db1dc406bb45a634a636363aed09f263d1c963b113e92c1410d4d",
+      "unit": "Unidad4"
+    },
+    {
+      "original": "outputs\\Arancibia_Romero_U4\\reversion_desnormalizacion.sql",
+      "original_sha256": "040184f390ce2579d2d5e2ae09ab508c6cba5994baa4fe8f52cfcbad21e39015",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Unidad4/outputs/Arancibia_Romero_U4/reversion_desnormalizacion.sql",
+      "sanitized_sha256": "27f5dcda57112382231013a8b39d839ad13935e8710b0f2785fa832d26133f4f",
+      "unit": "Unidad4"
+    },
+    {
+      "original": "outputs\\Arancibia_Romero_U4\\tp_desnormalizacion_top_categorias.sql",
+      "original_sha256": "5c06fb6f8d6afa1fac703646a1955c136e125c68ecc27a481173d1bc7548d0fc",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Unidad4/outputs/Arancibia_Romero_U4/tp_desnormalizacion_top_categorias.sql",
+      "sanitized_sha256": "2870684202858c4708f3dfb1cc84a66c396244453dfb3c30ff3296c304877cbd",
+      "unit": "Unidad4"
+    },
+    {
+      "original": "outputs\\Arancibia_Romero_U4\\tp_fnbc_control_lote.sql",
+      "original_sha256": "77272ebc71a8b24b3b807acf755a9f968c40d504f0e4846e926031632a3dcc94",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Unidad4/outputs/Arancibia_Romero_U4/tp_fnbc_control_lote.sql",
+      "sanitized_sha256": "7ab224e7ace7b1d3d3152a920e440fc1708f6f996741044bcfa84aeaa22e6c04",
+      "unit": "Unidad4"
+    },
+    {
+      "original": "outputs\\Arancibia_Romero_U5\\food-store-tp-u5\\sql\\auditoria_test.sql",
+      "original_sha256": "8c74fa1ad63bd079a0dd1c4937ce04a8bb74989285a2e509ec83bf62338ec076",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Unidad5/outputs/Arancibia_Romero_U5/food-store-tp-u5/sql/auditoria_test.sql",
+      "sanitized_sha256": "62e621f663188b26f88d81be76c6bde360b8b890b97cdd773cf08d8a623b4998",
+      "unit": "Unidad5"
+    },
+    {
+      "original": "outputs\\Arancibia_Romero_U5\\food-store-tp-u5\\sql\\configurar_auditoria.sql",
+      "original_sha256": "2c2a4654bdd60b3c29b9b9a1233404604049fc9021bd1ab68ea69f74bb8dfd5f",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Unidad5/outputs/Arancibia_Romero_U5/food-store-tp-u5/sql/configurar_auditoria.sql",
+      "sanitized_sha256": "68aa301fe68c30d6bab3959bd4cc9b394ec702bae7fd5edf039ce2373565b55d",
+      "unit": "Unidad5"
+    },
+    {
+      "original": "outputs\\Arancibia_Romero_U5\\food-store-tp-u5\\sql\\roles.sql",
+      "original_sha256": "916b8b4e9d9b59abc5bc6edef4d3d35d27007dcd7c875cc1ec62d791197f75f5",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Unidad5/outputs/Arancibia_Romero_U5/food-store-tp-u5/sql/roles.sql",
+      "sanitized_sha256": "010591b7d7900b013295bad84acdd623b67df3bf6e90576f1cf58c33b73c8899",
+      "unit": "Unidad5"
+    },
+    {
+      "original": "outputs\\Arancibia_Romero_U5\\food-store-tp-u5\\sql\\simulacro_incidente.sql",
+      "original_sha256": "bf96bb1e1f629967ee7e0febe12c2911a6c6516688b90683f330024db86847b1",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Unidad5/outputs/Arancibia_Romero_U5/food-store-tp-u5/sql/simulacro_incidente.sql",
+      "sanitized_sha256": "a04eb0edcfc7a480866f0294aa0e21104ef90f8bce56809a83b84b26d9b3f69d",
+      "unit": "Unidad5"
+    },
+    {
+      "original": "outputs\\Arancibia_Romero_U5\\food-store-tp-u5\\sql\\usuario_anon.sql",
+      "original_sha256": "7e49e29525feecb9914cd8d540dfa32b8f2bef53c7fd6f98464f0158a51150a9",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Unidad5/outputs/Arancibia_Romero_U5/food-store-tp-u5/sql/usuario_anon.sql",
+      "sanitized_sha256": "60375c5ee66472060a1f4ef5cfefa61cf2b98255e66f78ee75ca7efa6ecdd248",
+      "unit": "Unidad5"
+    },
+    {
+      "original": "outputs\\Arancibia_Romero_U5\\food-store-tp-u5\\tools\\activar_auditoria.py",
+      "original_sha256": "e9d7a1e6f8915e742f5e22a47fd706787421c8da26a822f4c53b7356e1535351",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Unidad5/outputs/Arancibia_Romero_U5/food-store-tp-u5/tools/activar_auditoria.py",
+      "sanitized_sha256": "65e062204cef0e6f4976ab142dbd1bba3f6a8d908117d412ce6e6e5c30af3076",
+      "unit": "Unidad5"
+    },
+    {
+      "original": "outputs\\Arancibia_Romero_U5\\food-store-tp-u5\\tools\\anonimizar_log.py",
+      "original_sha256": "96f9ea2743492ccf9e3e697b6ae63a3c3734ef4755cc7fbe787e1ce585130a7a",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Unidad5/outputs/Arancibia_Romero_U5/food-store-tp-u5/tools/anonimizar_log.py",
+      "sanitized_sha256": "1b8b08d1e5f4d8b4a8404a4441b05b843e3d2378ce2f5445d058e395646450c4",
+      "unit": "Unidad5"
+    },
+    {
+      "original": "outputs\\Arancibia_Romero_U5\\food-store-tp-u5\\tools\\capturar_permisos.py",
+      "original_sha256": "f7836ae8c389dfc0a0b596da333f3551985a537f577cca64319ff5cc404f1e52",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Unidad5/outputs/Arancibia_Romero_U5/food-store-tp-u5/tools/capturar_permisos.py",
+      "sanitized_sha256": "ac9424b927c142bdcd8d399cfd4cd0bd3201444850d360b078b796ac850db4a2",
+      "unit": "Unidad5"
+    },
+    {
+      "original": "outputs\\Arancibia_Romero_U5\\food-store-tp-u5\\tools\\crear_cuenta_prueba.py",
+      "original_sha256": "30c4d0c5724830691c0b8bdd6b14b5dcf0d99ec268f8e8620beb2546b537e664",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Unidad5/outputs/Arancibia_Romero_U5/food-store-tp-u5/tools/crear_cuenta_prueba.py",
+      "sanitized_sha256": "7ea96340b8e774165167d49bff33a0b73b492c88113254420c4e1463ce48584b",
+      "unit": "Unidad5"
+    },
+    {
+      "original": "outputs\\Arancibia_Romero_U5\\food-store-tp-u5\\tools\\ejecutar_anonimizacion.py",
+      "original_sha256": "f3673a1526c29ee348b5af191d7beb9230c44817ccb8ee3754119bf9c2adfe36",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Unidad5/outputs/Arancibia_Romero_U5/food-store-tp-u5/tools/ejecutar_anonimizacion.py",
+      "sanitized_sha256": "32e309c32bb073189dc328693adca0454be6b0eaf883936c00765ff1660148c8",
+      "unit": "Unidad5"
+    },
+    {
+      "original": "outputs\\Arancibia_Romero_U5\\food-store-tp-u5\\tools\\ejecutar_pruebas.py",
+      "original_sha256": "193087d9e0a3a258fe0a3be7a164a742f204088516f3e6e578999e8d13e5fbb6",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Unidad5/outputs/Arancibia_Romero_U5/food-store-tp-u5/tools/ejecutar_pruebas.py",
+      "sanitized_sha256": "aae4901ce7e72f2c416905bc25c115e55c80de6f852471dabc536b9c2d82f3d8",
+      "unit": "Unidad5"
+    },
+    {
+      "original": "outputs\\Arancibia_Romero_U5\\food-store-tp-u5\\tools\\empaquetar_entrega.py",
+      "original_sha256": "f2fcbf7535573d07868bc0155510d1d6928326fcc3a0bab96cef8e834bdd375b",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Unidad5/outputs/Arancibia_Romero_U5/food-store-tp-u5/tools/empaquetar_entrega.py",
+      "sanitized_sha256": "8136677d5b0fde0e68a1850116dc43b48c32b82c1b4fb63a143d9af462316480",
+      "unit": "Unidad5"
+    },
+    {
+      "original": "outputs\\Arancibia_Romero_U5\\food-store-tp-u5\\tools\\generar_informe_pdf.py",
+      "original_sha256": "f5250335e88650fb234aa0f723d8c8d1ca0c2508a9fc0eb10335f064c82102e0",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Unidad5/outputs/Arancibia_Romero_U5/food-store-tp-u5/tools/generar_informe_pdf.py",
+      "sanitized_sha256": "4dbc172245ef001484bbbe4dc6ab5a88225acab8bbb5d92e33b79dc785bba336",
+      "unit": "Unidad5"
+    },
+    {
+      "original": "outputs\\Arancibia_Romero_U5\\food-store-tp-u5\\tools\\instalar_seguridad.py",
+      "original_sha256": "6aa6c76a273693740a8dd5d9f79f6dd363d6999b51ba2640e67ffce1ae1dca3b",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Unidad5/outputs/Arancibia_Romero_U5/food-store-tp-u5/tools/instalar_seguridad.py",
+      "sanitized_sha256": "35dff13d7f32e442b7e390b18f4cd684f307b6ad2aa5e51f3feee4f24e07e82f",
+      "unit": "Unidad5"
+    },
+    {
+      "original": "outputs\\Arancibia_Romero_U5\\food-store-tp-u5\\tools\\libpq_client.py",
+      "original_sha256": "750c981c5d49303301e9a08566daede5f667fdc5afebc0f570013a52e20bd2ef",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Unidad5/outputs/Arancibia_Romero_U5/food-store-tp-u5/tools/libpq_client.py",
+      "sanitized_sha256": "b2c36289f9f3063bcc17d6bf20cf2f962e90a1dd6896344d5c635827358aa97f",
+      "unit": "Unidad5"
+    },
+    {
+      "original": "outputs\\Arancibia_Romero_U5\\food-store-tp-u5\\tools\\opencode_consulta.py",
+      "original_sha256": "28b87af6df59f448d954d1f925988916b7d3fc7e5999d51ab1de2dc25af9cb82",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Unidad5/outputs/Arancibia_Romero_U5/food-store-tp-u5/tools/opencode_consulta.py",
+      "sanitized_sha256": "03f941dc2934cbe99657ebce8d4eb80e67b33a94aff8067644d4254261323f56",
+      "unit": "Unidad5"
+    },
+    {
+      "original": "outputs\\Arancibia_Romero_U5\\food-store-tp-u5\\tools\\preparar_laboratorio.py",
+      "original_sha256": "01114896e1a3af4877f76b8c620569cc74070b5f7d20790b69c620170111f7b4",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Unidad5/outputs/Arancibia_Romero_U5/food-store-tp-u5/tools/preparar_laboratorio.py",
+      "sanitized_sha256": "71f9879d73aa65dda5a9257ec2729742f4d06dde3299c5ea27f3c23903e1d8f0",
+      "unit": "Unidad5"
+    },
+    {
+      "original": "outputs\\Arancibia_Romero_U5\\food-store-tp-u5\\tools\\rotar_log.py",
+      "original_sha256": "09820b3049598d134e859bbff46e14d2dd7287a44a81dbffb6e364af00dbfd47",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Unidad5/outputs/Arancibia_Romero_U5/food-store-tp-u5/tools/rotar_log.py",
+      "sanitized_sha256": "92437126de0ac69d5e171a03ec4582719cc1649c4c763d55f38637003b91f18c",
+      "unit": "Unidad5"
+    },
+    {
+      "original": "outputs\\Arancibia_Romero_U5\\food-store-tp-u5\\tools\\verificar_conservacion.py",
+      "original_sha256": "43032979d45abf5f6aa1f5a512aabfab2e724f654905ffd7ae6c8980e5dfafaa",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Unidad5/outputs/Arancibia_Romero_U5/food-store-tp-u5/tools/verificar_conservacion.py",
+      "sanitized_sha256": "f803e7e85b0b21a04293ce3b46882acd6bea8d86fc8fd9b016a19a895103099a",
+      "unit": "Unidad5"
+    },
+    {
+      "original": "outputs\\Arancibia_Romero_U5\\food-store-tp-u5\\tools\\verificar_matriz.py",
+      "original_sha256": "e15a36d6151f1c11ff82efbc10ca2671f071333fff49617f3e486fae97b35272",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Unidad5/outputs/Arancibia_Romero_U5/food-store-tp-u5/tools/verificar_matriz.py",
+      "sanitized_sha256": "9df98dd1439816f3b784359fa68c65ed99db7bb0b98dc482e674d2223c3659b0",
+      "unit": "Unidad5"
+    },
+    {
+      "original": "outputs\\Arancibia_Romero_U5\\food-store-tp-u5\\tools\\verificar_privacidad.py",
+      "original_sha256": "0aeb0f38f950f5e902d14946483f971aef832f0dc0edb7c84aa82404cee1d1d5",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Unidad5/outputs/Arancibia_Romero_U5/food-store-tp-u5/tools/verificar_privacidad.py",
+      "sanitized_sha256": "ec76a600030458e1a6fcdb643edcae28abe71fb4b9ff40a1a271250b9473621e",
+      "unit": "Unidad5"
+    },
+    {
+      "original": "outputs\\Arancibia_Romero_U6\\food-store-tp-u6\\backup_foodstore.ps1",
+      "original_sha256": "53612efb8f616d8cf1ff763d998d1155dce13d40b6aa1784e634d299404aa9f5",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Unidad6/outputs/Arancibia_Romero_U6/food-store-tp-u6/backup_foodstore.ps1",
+      "sanitized_sha256": "952c9698eec5c238b366ed137c646f018f6d5a7ec332e7f60e97cc6ba0619d3f",
+      "unit": "Unidad6"
+    },
+    {
+      "original": "outputs\\Arancibia_Romero_U6\\food-store-tp-u6\\health_check.sql",
+      "original_sha256": "948cbbb741032238ac6609e65338a6890bf25c0b41fd079a345943ed5f68fede",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Unidad6/outputs/Arancibia_Romero_U6/food-store-tp-u6/health_check.sql",
+      "sanitized_sha256": "c38aa625944aa7a6537b3607fd728888e6d890ef9cb2fd3a6314ddba802648a8",
+      "unit": "Unidad6"
+    },
+    {
+      "original": "outputs\\Arancibia_Romero_U6\\food-store-tp-u6\\maintenance.sql",
+      "original_sha256": "18f3becf82ebf07db6899692dbe7eb1c57838cf1528699a75ca7c0627bf0840b",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Unidad6/outputs/Arancibia_Romero_U6/food-store-tp-u6/maintenance.sql",
+      "sanitized_sha256": "fac7bd5e65ab68d5118adda8230700619126cd019a08ebcb71a406d1b032b1c1",
+      "unit": "Unidad6"
+    },
+    {
+      "original": "outputs\\Arancibia_Romero_U6\\food-store-tp-u6\\restore_test.ps1",
+      "original_sha256": "ab21a4341508d89aacc5fb5479d81f9042704ffb682d8705905ec58baeb7c8e9",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Unidad6/outputs/Arancibia_Romero_U6/food-store-tp-u6/restore_test.ps1",
+      "sanitized_sha256": "7105699ae296c2873cc527a22776d267e5bf4d512ca76f603984ae9185810bcd",
+      "unit": "Unidad6"
+    },
+    {
+      "original": "outputs\\Arancibia_Romero_U6\\food-store-tp-u6\\tools\\generar_informe_u6.py",
+      "original_sha256": "79c67256ea9330ac0b37281c297e49cf5749bc672f531bbabcdce5968ecde3f7",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Unidad6/outputs/Arancibia_Romero_U6/food-store-tp-u6/tools/generar_informe_u6.py",
+      "sanitized_sha256": "9abf217b94875e652ef973425d5c1bbdf888869352c89ce3c009419e1051bade",
+      "unit": "Unidad6"
+    },
+    {
+      "original": "outputs\\Arancibia_Romero_U6\\food-store-tp-u6\\tools\\opencode_consulta.py",
+      "original_sha256": "7baa7379b6d90be470ef62d393744e588b1997e7ae3ab79fa40191690b49b1c6",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Unidad6/outputs/Arancibia_Romero_U6/food-store-tp-u6/tools/opencode_consulta.py",
+      "sanitized_sha256": "8f5ae01928127a6d906190551ef9b8b3539a85c34e57caac20e6226482932d73",
+      "unit": "Unidad6"
+    },
+    {
+      "original": "outputs\\Arancibia_Romero_U6\\food-store-tp-u6\\tools\\ps_common.ps1",
+      "original_sha256": "bc5a4e87493312e4954d2e4849d756576fe6566c0256e902b4d770f1add81392",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Unidad6/outputs/Arancibia_Romero_U6/food-store-tp-u6/tools/ps_common.ps1",
+      "sanitized_sha256": "f2ae054f5a0c31e696a9834978f27b4ff9e0b28d4ebf50c3f88ec5e6e906761b",
+      "unit": "Unidad6"
+    },
+    {
+      "original": "outputs\\Arancibia_Romero_U6\\food-store-tp-u6\\validaciones.sql",
+      "original_sha256": "8198129eaf53a1e96e432a02c0659f5c4eb7d094de2e05ad9deb022e1cb53849",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Unidad6/outputs/Arancibia_Romero_U6/food-store-tp-u6/validaciones.sql",
+      "sanitized_sha256": "e94a54cf47471f2bf6f5ccd2b60ca6d7a4c4ddcb89cdf7622b1b2d1bc3e185e3",
+      "unit": "Unidad6"
+    },
+    {
+      "original": "outputs\\Arancibia_Romero_U7\\consultas_mongodb.js",
+      "original_sha256": "fea8238c3aa41843372ea294d924cdac18fa02d3cbb5bf2963d8f58c0cc14d91",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Unidad7/outputs/Arancibia_Romero_U7/consultas_mongodb.js",
+      "sanitized_sha256": "780f644e29c760e1dabe44529058e51a6bf1937cb925905580184db835993338",
+      "unit": "Unidad7"
+    },
+    {
+      "original": "outputs\\Arancibia_Romero_U7\\consultas_postgresql.sql",
+      "original_sha256": "5342a39265f560563996766e15f538e8c7ed24f33aa9e534a3e6e27f1ac6661f",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Unidad7/outputs/Arancibia_Romero_U7/consultas_postgresql.sql",
+      "sanitized_sha256": "95d665f8cd3ed92c0baaed3c1183835033fa9119b5dd726cc066c3690874db51",
+      "unit": "Unidad7"
+    },
+    {
+      "original": "outputs\\Arancibia_Romero_U7\\tools\\generar_informe.py",
+      "original_sha256": "5ecb107f01fbd77b7f9ab9905a48e4b11fe837982b24e501fd764a1a6a544768",
+      "reviewed_sanitized_copy": "docs/review_fuentes_contexto/Unidad7/outputs/Arancibia_Romero_U7/tools/generar_informe.py",
+      "sanitized_sha256": "8328eccbee0afe01dba4c6e9118f6babb6c3371740e46b64f34efd929bf3bdc4",
+      "unit": "Unidad7"
+    }
+  ],
+  "total": 83
+}

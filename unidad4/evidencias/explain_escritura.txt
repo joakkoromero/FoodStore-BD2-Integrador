@@ -1,0 +1,13 @@
+Update on detalle_pedido  (cost=0.42..8.44 rows=0 width=0) (actual time=4.713..4.713 rows=0 loops=1)
+  Buffers: shared hit=485
+  ->  Index Scan using idx_u3_detalle_producto_pedido on detalle_pedido  (cost=0.42..8.44 rows=1 width=11) (actual time=0.037..0.044 rows=1 loops=1)
+        Index Cond: ((producto_id = 18) AND (pedido_id = 200001))
+        Buffers: shared hit=9
+Planning:
+  Buffers: shared hit=120
+Planning Time: 2.511 ms
+Trigger trg_recalcular_total: time=0.801 calls=1
+Trigger trg_validar_detalle_pendiente: time=3.272 calls=1
+Trigger ventas_bloqueo: time=1.044 calls=1
+Trigger ventas_refresco: time=930.111 calls=1
+Execution Time: 935.817 ms

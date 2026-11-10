@@ -1,0 +1,8 @@
+{
+  "script": "validaciones.sql",
+  "started_utc": "2026-11-03T21:39:53.766301+00:00",
+  "finished_utc": "2026-11-03T21:39:56.244680+00:00",
+  "exit_code": 0,
+  "succeeded": true,
+  "business_rows_exported": false
+}

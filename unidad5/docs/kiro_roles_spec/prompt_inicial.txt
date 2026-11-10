@@ -1,0 +1,48 @@
+Genera una especificacion Feature, Requirements-First, llamada
+seguridad-roles-foodstore. Primero crea requirements.md en la carpeta nativa
+.kiro/specs/ y espera una revision tecnica antes de design.md. Solo vamos a
+planificar roles y permisos: NO IMPLEMENTES SQL, NO crees roles.sql, NO
+ejecutes comandos de terminal ni te conectes a ninguna base de datos.
+
+Lee exclusivamente docs/kiro_roles_spec/contexto_proporcionado.txt como
+contexto sanitizado del esquema y de los ocho roles. No leas credenciales,
+filas de datos, archivos privados ni otras carpetas. Escribe los documentos
+en espanol, como planificacion real generada por Kiro, sin afirmar pruebas
+ejecutadas, aprobaciones humanas o decisiones de los integrantes.
+
+Actualizaciones al contexto preparado: hay 20.001 usuarios actualmente,
+de los que 20.000 heredados permanecen intactos y uno es cuenta de prueba
+U5. Parte D ya construyo datos_anon.usuario_anon; su equivalencia agregada
+fue probada por un proceso tecnico, no por Kiro. La tabla fue creada con
+el rol tecnico bootstrap antes de la Parte A: planifica migrar su propietario
+a rol_propietario y aplicar REVOKE/GRANT explicitos; no basta con defaults.
+Despues se repetira la construccion bajo SET LOCAL ROLE rol_propietario
+para comprobar los defaults del creador correcto.
+
+La especificacion debe tener una matriz explicita por rol/objeto/columna,
+una justificacion breve por cada rol, membresias INHERIT TRUE, SET FALSE,
+ADMIN FALSE, y pruebas previstas de privilegios positivos y negativos.
+app_web INSERT pedido solo usuario_id,fecha,forma_pago; el estado nace
+PENDIENTE por DEFAULT. Nunca escribir directamente total ni subtotal,
+ni permitir DELETE pedido/usuario, UPDATE credenciales o rol propietario.
+FNBC y su guardia son exclusivos del propietario; reportes solo recibe
+agregados aprobados y la copia datos_anon. No concedas tablas fuente en
+bloque ni ALL PRIVILEGES ni permisos amplios a secuencias identity.
+
+rol_funciones NOLOGIN, sin membresias para logins, posee solo los puentes
+SECURITY DEFINER: autenticar/resetear, recalcular pedido.total y refrescar
+MV diaria U4. Debe tener solamente los permisos internos especificados,
+incluido MAINTAIN de la MV diaria en PostgreSQL 17. Mantener reglas y
+triggers heredados; funciones con search_path pg_catalog, nombres
+calificados y EXECUTE revocado a PUBLIC. La mensual TP5 no cambia.
+
+Necesidad tecnica adicional para el diseno: rol_propietario NOLOGIN puede
+tener TEMPORARY solamente en la base actual para la auditoria temporal
+de Parte D. No conceder TEMP a app_web, soporte ni reportes; justificar
+este permiso tecnico por separado de privilegios de negocio. Defaults
+niegan acceso futuro en public y permiten SELECT a reportes solo en
+datos_anon, para objetos creados por rol_propietario.
+
+Detente despues de requirements para revisar su alcance. No programes ni
+ejecutes tareas de implementacion; la validacion humana del equipo sigue
+pendiente y no debe atribuirse a esta conversacion automatizada.

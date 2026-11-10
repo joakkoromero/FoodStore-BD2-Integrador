@@ -1,0 +1,223 @@
+PARTE 1 - VERIFICACIONES REALES DE FNBC Y ANOMALIAS
+Servidor: 127.0.0.1:55439 | Base: foodstore_u4_arancibia_romero | Usuario: tp_admin
+Esquema heredado: public | Integrantes: Exequiel Arancibia - Joaquin Romero
+
+VERSION REAL DEL SERVIDOR
+PostgreSQL 17.11 on x86_64-windows, compiled by msvc-19.44.35228, 64-bit
+
+CALCULO EXHAUSTIVO DE CLAUSURAS MEDIANTE PYTHON
+Dependencias: LD -> R; R -> D
+{}+ = {}
+L+ = L
+D+ = D
+R+ = DR
+LD+ = LDR
+LR+ = LDR
+DR+ = DR
+LDR+ = LDR
+Claves candidatas completas: LD, LR
+Atributos primos: L, D, R; no primos: ninguno.
+R+ = DR no contiene L: R -> D viola FNBC.
+Resultado de todos los asserts matematicos: correcto.
+
+ANOMALIA DE INSERCION
+SQL ejecutado:
+BEGIN;
+DO $$
+DECLARE rechazo BOOLEAN := FALSE;
+BEGIN
+    BEGIN
+        INSERT INTO public.control_lote_almacen_original
+            (lote_id, deposito_id, responsable_control_id)
+        VALUES (NULL, 30, 803);
+    EXCEPTION WHEN not_null_violation THEN
+        rechazo := TRUE;
+        RAISE NOTICE 'Insercion rechazada: SQLSTATE 23502; falta un lote para registrar R803 -> D30';
+    END;
+    IF NOT rechazo THEN
+        RAISE EXCEPTION 'La insercion sin lote debio rechazarse';
+    END IF;
+END $$;
+ROLLBACK;
+SELECT 'insercion_verificada_sin_cambios';
+Salida estandar:
+insercion_verificada_sin_cambios
+Mensajes del servidor:
+NOTICE:  00000: Insercion rechazada: SQLSTATE 23502; falta un lote para registrar R803 -> D30
+LOCATION:  exec_stmt_raise, pl_exec.c:3911
+Codigo de salida de psql: 0
+
+ANOMALIA DE BORRADO
+SQL ejecutado:
+BEGIN;
+DELETE FROM public.control_lote_almacen_original
+WHERE lote_id = 503 AND deposito_id = 31 AND responsable_control_id = 802;
+DO $$
+BEGIN
+    IF EXISTS (
+        SELECT 1 FROM public.control_lote_almacen_original
+        WHERE responsable_control_id = 802
+    ) THEN
+        RAISE EXCEPTION 'La prueba esperaba perder la pertenencia de R802 a D31';
+    END IF;
+    RAISE NOTICE 'Borrado verificado: quedan 0 filas de R802; se pierde el dato maestro R802 -> D31';
+END $$;
+SELECT COUNT(*) AS filas_restantes_de_r802
+FROM public.control_lote_almacen_original
+WHERE responsable_control_id = 802;
+ROLLBACK;
+Salida estandar:
+0
+Mensajes del servidor:
+NOTICE:  00000: Borrado verificado: quedan 0 filas de R802; se pierde el dato maestro R802 -> D31
+LOCATION:  exec_stmt_raise, pl_exec.c:3911
+Codigo de salida de psql: 0
+
+ANOMALIA DE ACTUALIZACION
+SQL ejecutado:
+BEGIN;
+UPDATE public.control_lote_almacen_original
+SET deposito_id = 31
+WHERE lote_id = 501 AND responsable_control_id = 801;
+DO $$
+DECLARE cantidad INTEGER;
+BEGIN
+    SELECT COUNT(DISTINCT deposito_id) INTO cantidad
+    FROM public.control_lote_almacen_original
+    WHERE responsable_control_id = 801;
+    IF cantidad <> 2 THEN
+        RAISE EXCEPTION 'Se esperaban 2 depositos diferentes para R801: %', cantidad;
+    END IF;
+    RAISE NOTICE 'Actualizacion parcial verificada: R801 aparece en D30 y D31; se viola R -> D';
+END $$;
+SELECT responsable_control_id, COUNT(DISTINCT deposito_id) AS depositos_distintos
+FROM public.control_lote_almacen_original
+WHERE responsable_control_id = 801
+GROUP BY responsable_control_id;
+ROLLBACK;
+Salida estandar:
+801|2
+Mensajes del servidor:
+NOTICE:  00000: Actualizacion parcial verificada: R801 aparece en D30 y D31; se viola R -> D
+LOCATION:  exec_stmt_raise, pl_exec.c:3911
+Codigo de salida de psql: 0
+
+PREPARACION DE CONCURRENCIA
+SQL ejecutado:
+BEGIN;
+DO $$
+BEGIN
+    IF EXISTS (SELECT 1 FROM public.responsable_deposito WHERE responsable_control_id = 803)
+       OR EXISTS (SELECT 1 FROM public.lote_responsable WHERE lote_id = 503 AND responsable_control_id = 801)
+    THEN
+        RAISE EXCEPTION 'La preparacion requiere libres las filas auxiliares de esta prueba';
+    END IF;
+END $$;
+INSERT INTO public.responsable_deposito (responsable_control_id, deposito_id)
+VALUES (803, 30);
+COMMIT;
+Salida estandar:
+(vacia)
+Mensajes del servidor:
+(vacios)
+Codigo de salida de psql: 0
+
+CONCURRENCIA REAL DE DOS SESIONES
+A inserta (L503,R801) y conserva BEGIN abierto por un canal stdin.
+B intenta insertar (L503,R803); ambos responsables pertenecen a D30.
+Tras observar B esperando Lock, A duerme 2 segundos y confirma.
+Estado A observado antes de iniciar B: [{'pid': 3660, 'state': 'idle in transaction', 'wait_event_type': 'Client', 'wait_event': 'ClientRead', 'query': "SELECT 'A_CONTROL_INSERTADO';"}]
+Estado B observado durante la espera: [{'pid': 28536, 'state': 'active', 'wait_event_type': 'Lock', 'wait_event': 'transactionid', 'query': "SET application_name = 'tp_fnbc_prueba_B';\n\nBEGIN;\nINSERT INTO public.lote_responsable (lote_id, responsable_control_id)\nVALUES (503, 803);\nCOMMIT;\n"}]
+Tiempo total de B: 2.109000 s
+SQL de A:
+SET application_name = 'tp_fnbc_prueba_A';
+BEGIN;
+INSERT INTO public.lote_responsable (lote_id, responsable_control_id)
+VALUES (503, 801);
+SELECT 'A_CONTROL_INSERTADO';
+
+SELECT pg_sleep(2);
+COMMIT;
+Salida A:
+A_CONTROL_INSERTADO
+
+Codigo psql A: 0
+SQL de B:
+BEGIN;
+INSERT INTO public.lote_responsable (lote_id, responsable_control_id)
+VALUES (503, 803);
+COMMIT;
+Salida B:
+
+ERROR:  23505: Ya existe otro responsable para el mismo lote y depósito
+CONTEXT:  PL/pgSQL function verificar_control_lote() line 11 at RAISE
+LOCATION:  exec_stmt_raise, pl_exec.c:3911
+Codigo psql B: 1
+B debe esperar el bloqueo y terminar con SQLSTATE 23505.
+
+ESTADO POSTERIOR A CONCURRENCIA
+SQL ejecutado:
+DO $$
+BEGIN
+    IF NOT EXISTS (
+        SELECT 1 FROM public.lote_responsable
+        WHERE lote_id = 503 AND responsable_control_id = 801
+    ) OR EXISTS (
+        SELECT 1 FROM public.lote_responsable
+        WHERE lote_id = 503 AND responsable_control_id = 803
+    ) THEN
+        RAISE EXCEPTION 'El estado final no coincide con A confirmada y B rechazada';
+    END IF;
+END $$;
+SELECT 'A_confirmada_B_rechazada';
+Salida estandar:
+A_confirmada_B_rechazada
+Mensajes del servidor:
+(vacios)
+Codigo de salida de psql: 0
+
+LIMPIEZA DE LAS FILAS DE CONCURRENCIA
+SQL ejecutado:
+BEGIN;
+DELETE FROM public.lote_responsable
+WHERE lote_id = 503 AND responsable_control_id IN (801, 803);
+DELETE FROM public.responsable_deposito WHERE responsable_control_id = 803;
+COMMIT;
+Salida estandar:
+(vacia)
+Mensajes del servidor:
+(vacios)
+Codigo de salida de psql: 0
+
+INTEGRIDAD FINAL Y RESTAURACION DE LAS PRUEBAS
+SQL ejecutado:
+DO $$
+DECLARE cantidad INTEGER;
+BEGIN
+    SELECT COUNT(*) INTO cantidad FROM public.control_lote_almacen;
+    IF cantidad <> 3 THEN
+        RAISE EXCEPTION 'La vista final deberia tener 3 filas; tiene %', cantidad;
+    END IF;
+    IF EXISTS (
+        SELECT * FROM public.control_lote_almacen_original
+        EXCEPT ALL SELECT * FROM public.control_lote_almacen
+    ) OR EXISTS (
+        SELECT * FROM public.control_lote_almacen
+        EXCEPT ALL SELECT * FROM public.control_lote_almacen_original
+    ) THEN
+        RAISE EXCEPTION 'La prueba altero la equivalencia de la migracion';
+    END IF;
+END $$;
+SELECT lote_id, deposito_id, responsable_control_id
+FROM public.control_lote_almacen ORDER BY lote_id, deposito_id, responsable_control_id;
+SELECT 'diferencias_bilaterales=0; filas_vista=3; originales_restaurados';
+Salida estandar:
+501|30|801
+502|30|801
+503|31|802
+diferencias_bilaterales=0; filas_vista=3; originales_restaurados
+Mensajes del servidor:
+(vacios)
+Codigo de salida de psql: 0
+
+RESULTADO GLOBAL: todas las pruebas y asserts fueron satisfactorios.

@@ -1,0 +1,9 @@
+                          Default access privileges
+      Owner      |   Schema   |   Type   |         Access privileges         
+-----------------+------------+----------+-----------------------------------
+ rol_funciones   |            | function | rol_funciones=X/rol_funciones
+ rol_propietario | datos_anon | table    | rol_reportes=r/rol_propietario
+ rol_propietario |            | function | rol_propietario=X/rol_propietario
+ u5_bootstrap    |            | function | u5_bootstrap=X/u5_bootstrap
+(4 rows)
+

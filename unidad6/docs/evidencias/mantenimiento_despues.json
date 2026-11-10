@@ -1,0 +1,185 @@
+{
+  "phase": "despues",
+  "captured_utc": "2026-11-03T21:40:13.850754+00:00",
+  "database": "foodstore",
+  "database_size_bytes": 171062963,
+  "settings": {
+    "autovacuum": "on",
+    "autovacuum_analyze_scale_factor": "0.1",
+    "autovacuum_analyze_threshold": "50",
+    "autovacuum_vacuum_scale_factor": "0.2",
+    "autovacuum_vacuum_threshold": "50",
+    "server_version": "17.11",
+    "track_counts": "on"
+  },
+  "table_statistics": {
+    "columns": [
+      "schemaname",
+      "relname",
+      "n_live_tup",
+      "n_dead_tup",
+      "n_mod_since_analyze",
+      "last_vacuum",
+      "last_autovacuum",
+      "last_analyze",
+      "last_autoanalyze"
+    ],
+    "rows": [
+      [
+        "datos_anon",
+        "usuario_anon",
+        "0",
+        "0",
+        "0",
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        "public",
+        "categoria",
+        "0",
+        "0",
+        "0",
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        "public",
+        "control_lote_almacen_original",
+        "0",
+        "0",
+        "0",
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        "public",
+        "deposito",
+        "0",
+        "0",
+        "0",
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        "public",
+        "detalle_pedido",
+        "499997",
+        "2",
+        "0",
+        null,
+        null,
+        "2026-11-03 18:40:10.301649-03",
+        null
+      ],
+      [
+        "public",
+        "guardia_control_lote",
+        "0",
+        "0",
+        "0",
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        "public",
+        "lote",
+        "0",
+        "0",
+        "0",
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        "public",
+        "lote_responsable",
+        "0",
+        "0",
+        "0",
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        "public",
+        "mv_facturacion_categoria_mes",
+        "0",
+        "0",
+        "0",
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        "public",
+        "mv_u4_ventas_categoria_dia",
+        "0",
+        "0",
+        "0",
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        "public",
+        "pedido",
+        "225000",
+        "4",
+        "0",
+        null,
+        null,
+        "2026-11-03 18:40:10.232276-03",
+        null
+      ],
+      [
+        "public",
+        "producto",
+        "0",
+        "0",
+        "0",
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        "public",
+        "responsable_deposito",
+        "0",
+        "0",
+        "0",
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        "public",
+        "usuario",
+        "0",
+        "0",
+        "0",
+        null,
+        null,
+        null,
+        null
+      ]
+    ]
+  },
+  "personal_rows_exported": false
+}

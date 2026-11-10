@@ -1,0 +1,11 @@
+nspname	proname	pg_get_function_identity_arguments	propietario	prosecdef	proconfig	proacl
+public	bloquear_control_lote		rol_propietario	f	NULL	{rol_propietario=X/rol_propietario}
+public	fn_autenticar	p_email text, p_password text	rol_funciones	t	{search_path=pg_catalog}	{rol_funciones=X/rol_funciones,app_web=X/rol_funciones}
+public	fn_resetear_password	p_usuario_id bigint, p_password text	rol_funciones	t	{search_path=pg_catalog}	{rol_funciones=X/rol_funciones,admin_datos=X/rol_funciones}
+public	recalcular_total_pedido		rol_funciones	t	{search_path=pg_catalog}	{rol_funciones=X/rol_funciones}
+public	u4_refrescar_ventas		rol_funciones	t	{search_path=pg_catalog}	{rol_funciones=X/rol_funciones}
+public	u4_serializar_ventas		rol_propietario	f	{search_path=pg_catalog}	{rol_propietario=X/rol_propietario}
+public	validar_confirmacion_pedido		rol_propietario	f	NULL	{rol_propietario=X/rol_propietario}
+public	validar_detalle_pendiente		rol_propietario	f	NULL	{rol_propietario=X/rol_propietario}
+public	validar_estado_pedido		rol_propietario	f	NULL	{rol_propietario=X/rol_propietario}
+public	verificar_control_lote		rol_propietario	f	NULL	{rol_propietario=X/rol_propietario}

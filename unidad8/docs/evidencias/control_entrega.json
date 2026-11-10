@@ -1,0 +1,56 @@
+{
+  "checked_utc": "2026-11-10T16:23:17.104306+00:00",
+  "status": "contenido_verificado_para_entrega",
+  "human_signature_claimed": false,
+  "required_paths_present": [
+    "README.md",
+    "movil/schema_sqlite.sql",
+    "movil/pruebas_sqlite.sql",
+    "movil/semaforo.sql",
+    "movil/servidor_snapshot.csv",
+    "movil/foodstore_movil.db",
+    "docs/informe.pdf",
+    "docs/kiro/requirements.md",
+    "docs/kiro/design.md",
+    "docs/kiro/tasks.md",
+    "docs/bitacora_ia.md",
+    "docs/DUIA.md",
+    "docs/defensa.md",
+    "docs/review_hallazgos.json"
+  ],
+  "pdf": {
+    "pages": 6,
+    "bytes": 119490,
+    "sha256": "a5659bc74f89817cb160de8a93a0569f442191fa7d89f8df5d7ae6dcf396ec8c",
+    "active_open_actions": false
+  },
+  "sqlite": {
+    "bytes": 40960,
+    "sha256": "9384ee48e439fc3323a5cdf8bbde0a7681d77d410e7a69f8747596bbbfc5c0b0",
+    "integrity_check": "ok",
+    "foreign_key_violations": 0,
+    "queue_rows": 9
+  },
+  "laboratory": {
+    "complete_runs": 2,
+    "mandatory_cases_each": 7,
+    "edge_cases_each": 7,
+    "semantic_comparison_equal": true,
+    "official_source_fingerprints_preserved": true,
+    "tp2_fix_applied_to_final_canonical_copy": true
+  },
+  "review": {
+    "previous_sources": 83,
+    "final_u8_sources": 7,
+    "groups": 43,
+    "original_references": 64,
+    "undecided_references": 0
+  },
+  "privacy": {
+    "known_private_values_checked": 5,
+    "known_private_matches": 0,
+    "authentication_verifiers": 0,
+    "dumps_in_package": 0
+  },
+  "zip_note": "El ZIP y su SHA256 se verifican después en el control externo; este control describe su contenido previo a empaquetar."
+}

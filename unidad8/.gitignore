@@ -1,0 +1,10 @@
+*.dump
+*.partial
+*.pgpass
+*secrets*.json
+*.db-wal
+*.db-shm
+*.db-journal
+__pycache__/
+private/
+.env

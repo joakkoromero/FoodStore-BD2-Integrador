@@ -1,0 +1,73 @@
+{
+  "captured_utc": "2026-11-10T16:03:54.954069+00:00",
+  "database": "foodstore_u8_arancibia_romero",
+  "read_only": true,
+  "results": {
+    "usuarios_umbral": {
+      "sql": "SELECT count(*) FILTER(WHERE id<=20000)::text AS heredados,min(id) FILTER(WHERE id<=20000)::text AS minimo_heredado,max(id) FILTER(WHERE id<=20000)::text AS maximo_heredado,count(*) FILTER(WHERE id>20000)::text AS posteriores,min(id) FILTER(WHERE id>20000)::text AS primer_posterior,max(id) FILTER(WHERE id>20000)::text AS ultimo_posterior FROM public.usuario",
+      "columns": [
+        "heredados",
+        "minimo_heredado",
+        "maximo_heredado",
+        "posteriores",
+        "primer_posterior",
+        "ultimo_posterior"
+      ],
+      "rows": [
+        [
+          "20000",
+          "1",
+          "20000",
+          "1",
+          "20001",
+          "20001"
+        ]
+      ]
+    },
+    "huella_heredada": {
+      "sql": "SELECT md5(string_agg(row_to_json(u)::text,'|' ORDER BY id)) FROM public.usuario u WHERE id<=20000",
+      "columns": [
+        "md5"
+      ],
+      "rows": [
+        [
+          "10d08c7a44644392c7cfd0f68827c270"
+        ]
+      ]
+    },
+    "politica_refresh": {
+      "sql": "SELECT p.proname,p.prosecdef::text,pg_get_userbyid(p.proowner),p.proconfig::text,has_table_privilege('rol_funciones','public.mv_u4_ventas_categoria_dia','MAINTAIN')::text FROM pg_proc p JOIN pg_namespace n ON n.oid=p.pronamespace WHERE n.nspname='public' AND p.proname='u4_refrescar_ventas'",
+      "columns": [
+        "proname",
+        "prosecdef",
+        "pg_get_userbyid",
+        "proconfig",
+        "has_table_privilege"
+      ],
+      "rows": [
+        [
+          "u4_refrescar_ventas",
+          "true",
+          "rol_funciones",
+          "{search_path=pg_catalog}",
+          "true"
+        ]
+      ]
+    },
+    "create_public_app": {
+      "sql": "SELECT has_schema_privilege('app_web','public','CREATE')::text",
+      "columns": [
+        "has_schema_privilege"
+      ],
+      "rows": [
+        [
+          "false"
+        ]
+      ]
+    }
+  },
+  "inherited_fingerprint_matches_u5": true,
+  "u5_expected_inherited_fingerprint": "10d08c7a44644392c7cfd0f68827c270",
+  "no_personal_rows_exported": true,
+  "state_changes": 0
+}

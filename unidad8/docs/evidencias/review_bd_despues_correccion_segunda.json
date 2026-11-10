@@ -1,0 +1,128 @@
+{
+  "captured_utc": "2026-11-10T15:43:58.691419+00:00",
+  "tooling": "Codex operational QA with the previously reviewed U5 libpq client",
+  "database_instance": "segunda",
+  "human_review_claimed": false,
+  "scope": "Rollback conserva las cinco tablas; un INSERT con identidad automática puede avanzar sólo la secuencia de la copia, aunque se revierta. La fuente no se escribe.",
+  "final_order_single_detail": {
+    "pedido_id": 2,
+    "estado": "ENTREGADO",
+    "detalles": 1
+  },
+  "app_privileges": {
+    "update_total": "false",
+    "insert_estado": "false",
+    "delete_detalle": "true"
+  },
+  "tests": [
+    {
+      "test": "tp2_insert_final_vacio_corregido",
+      "database": "foodstore_u8_arancibia_romero",
+      "sql": "BEGIN;\nINSERT INTO public.pedido(id,usuario_id,forma_pago,estado) OVERRIDING SYSTEM VALUE VALUES(-80000001,1,'EFECTIVO','CONFIRMADO') RETURNING id,estado::text;\nROLLBACK;",
+      "role": "administrador bootstrap de la copia",
+      "accepted_before_rollback": false,
+      "sqlstate": "23514",
+      "returned_non_personal_rows": [],
+      "explicit_rollback": true,
+      "five_table_fingerprints_unchanged": true,
+      "aggregate_snapshot": {
+        "categoria": {
+          "count": 3,
+          "ordered_full_row_md5": "ee8ff8f0ad01db5c50e599e34979514f"
+        },
+        "producto": {
+          "count": 50004,
+          "ordered_full_row_md5": "1535f0f075f9dce474f2fc6062d29a25"
+        },
+        "usuario": {
+          "count": 20001,
+          "ordered_full_row_md5": "dd716d269420381940a0bb946093208e"
+        },
+        "pedido": {
+          "count": 225000,
+          "ordered_full_row_md5": "d77ec8d04e07297f0e0267d4b16cc342"
+        },
+        "detalle_pedido": {
+          "count": 499997,
+          "ordered_full_row_md5": "1047260be5b676fbca32f99b435d5361"
+        }
+      }
+    },
+    {
+      "test": "tp2_insert_pendiente_valido",
+      "database": "foodstore_u8_arancibia_romero",
+      "sql": "BEGIN;\nINSERT INTO public.pedido(id,usuario_id,forma_pago,estado) OVERRIDING SYSTEM VALUE VALUES(-80000001,1,'EFECTIVO','PENDIENTE') RETURNING id,estado::text;\nROLLBACK;",
+      "role": "administrador bootstrap de la copia",
+      "accepted_before_rollback": true,
+      "sqlstate": null,
+      "returned_non_personal_rows": [
+        [
+          "-80000001",
+          "PENDIENTE"
+        ]
+      ],
+      "explicit_rollback": true,
+      "five_table_fingerprints_unchanged": true,
+      "aggregate_snapshot": {
+        "categoria": {
+          "count": 3,
+          "ordered_full_row_md5": "ee8ff8f0ad01db5c50e599e34979514f"
+        },
+        "producto": {
+          "count": 50004,
+          "ordered_full_row_md5": "1535f0f075f9dce474f2fc6062d29a25"
+        },
+        "usuario": {
+          "count": 20001,
+          "ordered_full_row_md5": "dd716d269420381940a0bb946093208e"
+        },
+        "pedido": {
+          "count": 225000,
+          "ordered_full_row_md5": "d77ec8d04e07297f0e0267d4b16cc342"
+        },
+        "detalle_pedido": {
+          "count": 499997,
+          "ordered_full_row_md5": "1047260be5b676fbca32f99b435d5361"
+        }
+      }
+    },
+    {
+      "test": "u5_insert_pendiente_app_valido",
+      "database": "foodstore_u8_arancibia_romero",
+      "sql": "BEGIN;\nSET LOCAL ROLE app_web;\nINSERT INTO public.pedido(usuario_id,forma_pago) VALUES(1,'EFECTIVO') RETURNING id,estado::text;\nROLLBACK;",
+      "role": "app_web",
+      "accepted_before_rollback": true,
+      "sqlstate": null,
+      "returned_non_personal_rows": [
+        [
+          "225003",
+          "PENDIENTE"
+        ]
+      ],
+      "explicit_rollback": true,
+      "five_table_fingerprints_unchanged": true,
+      "aggregate_snapshot": {
+        "categoria": {
+          "count": 3,
+          "ordered_full_row_md5": "ee8ff8f0ad01db5c50e599e34979514f"
+        },
+        "producto": {
+          "count": 50004,
+          "ordered_full_row_md5": "1535f0f075f9dce474f2fc6062d29a25"
+        },
+        "usuario": {
+          "count": 20001,
+          "ordered_full_row_md5": "dd716d269420381940a0bb946093208e"
+        },
+        "pedido": {
+          "count": 225000,
+          "ordered_full_row_md5": "d77ec8d04e07297f0e0267d4b16cc342"
+        },
+        "detalle_pedido": {
+          "count": 499997,
+          "ordered_full_row_md5": "1047260be5b676fbca32f99b435d5361"
+        }
+      }
+    }
+  ]
+}

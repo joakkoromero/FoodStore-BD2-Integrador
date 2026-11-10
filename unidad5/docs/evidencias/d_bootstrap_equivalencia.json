@@ -1,0 +1,57 @@
+{
+  "fecha": "2026-10-21 13:54:59.20327-03",
+  "columnas_agregadas": [
+    "mes_alta",
+    "eliminado",
+    "cantidad"
+  ],
+  "resultado_real": [
+    [
+      "2026-09-01",
+      "f",
+      "20000"
+    ],
+    [
+      "2026-10-01",
+      "f",
+      "1"
+    ]
+  ],
+  "resultado_anon": [
+    [
+      "2026-09-01",
+      "f",
+      "20000"
+    ],
+    [
+      "2026-10-01",
+      "f",
+      "1"
+    ]
+  ],
+  "diferencias_except_all": [
+    [
+      "origen_menos_copia",
+      "0"
+    ],
+    [
+      "copia_menos_origen",
+      "0"
+    ]
+  ],
+  "conteos": [
+    20001,
+    20001
+  ],
+  "columnas_copia": [
+    "folio",
+    "nombre",
+    "apellido",
+    "email",
+    "mes_alta",
+    "eliminado"
+  ],
+  "usuarios_heredados_intactos": true,
+  "equivalencia_verificada": true,
+  "sql_ejecutado_realmente": true
+}

@@ -1,0 +1,68 @@
+{
+  "tool": "OpenCode",
+  "installed_version": "1.18.23",
+  "requested_model": "openai/gpt-6.1-sol",
+  "agent": "plan",
+  "pure": true,
+  "permission_config": {
+    "permission": "deny"
+  },
+  "started_at_utc": "2026-11-10T15:25:34.629263+00:00",
+  "finished_at_utc": "2026-11-10T15:27:21.245644+00:00",
+  "prompt_sha256": "364ca065d770839efceca097b71144484457a2066407bbc2e30122d24d989f0f",
+  "attachments": [
+    {
+      "name": "schema_sqlite.sql",
+      "sha256": "8d01ff7a1fd31e3f2de9ff32fb0cb668a7dc7ec65a196819225e9b21453811e2",
+      "repository_path": "docs/ia/review_u8_pre_adjuntos/01_schema_sqlite.sql",
+      "source_path_at_consultation": "movil/schema_sqlite.sql"
+    },
+    {
+      "name": "pruebas_sqlite.sql",
+      "sha256": "435789926a9aac766b4fa4610e89e439122c05320c4ba9a07a5aea1d083e067a",
+      "repository_path": "docs/ia/review_u8_pre_adjuntos/02_pruebas_sqlite.sql",
+      "source_path_at_consultation": "movil/pruebas_sqlite.sql"
+    },
+    {
+      "name": "semaforo.sql",
+      "sha256": "94027db7f224e1298ddbda7b44a55b67efa799cfc9fb1a88082f61412c96bd0d",
+      "repository_path": "docs/ia/review_u8_pre_adjuntos/03_semaforo.sql",
+      "source_path_at_consultation": "movil/semaforo.sql"
+    },
+    {
+      "name": "10_fixture_y_snapshot.sql",
+      "sha256": "9823f0d34286f01e33a588c299f3d15d431d236bc8ba42e4cc39455fd3eee63f",
+      "repository_path": "docs/ia/review_u8_pre_adjuntos/04_10_fixture_y_snapshot.sql",
+      "source_path_at_consultation": "postgresql/10_fixture_y_snapshot.sql"
+    },
+    {
+      "name": "20_validar_no_ventas.sql",
+      "sha256": "dd0a3988cc8f6bde7b473f9e207124d391e914c855ba99afe264808030df4f12",
+      "repository_path": "docs/ia/review_u8_pre_adjuntos/05_20_validar_no_ventas.sql",
+      "source_path_at_consultation": "postgresql/20_validar_no_ventas.sql"
+    },
+    {
+      "name": "reproducir_parte_1.md",
+      "sha256": "11de24601fe493fc68f976f75dd5c70824dcb939899c289b224bf3de845592db",
+      "repository_path": "docs/ia/review_u8_pre_adjuntos/06_reproducir_parte_1.md"
+    },
+    {
+      "name": "reproducir_parte_2.md",
+      "sha256": "bf6d5909c73193f8472d6e3d8507b4009353e28505ce32c87aa27320897d7129",
+      "repository_path": "docs/ia/review_u8_pre_adjuntos/07_reproducir_parte_2.md"
+    }
+  ],
+  "returncode": 0,
+  "timed_out": false,
+  "event_count": 3,
+  "unparsed_line_count": 0,
+  "error_event_count": 0,
+  "tool_event_count": 0,
+  "answer_sha256": "ba3cd9901ec54aa7e4ad8df69a87269ee2f3282c5145a908670f3c7a4b89e6b7",
+  "raw_jsonl_sha256": "a99219963fdebed9c8582c10de80b0f3af71ea65818d84672f3691d7b4879908",
+  "raw_event_storage": "Private work directory outside deliverable repository",
+  "status": "completed",
+  "prior_failed_attempts": [],
+  "sql_executed": false,
+  "human_validation": "Pending; this consultation does not establish human approval"
+}

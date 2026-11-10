@@ -1,0 +1,115 @@
+{
+  "phase": "incident",
+  "status": "passed",
+  "started_at_utc": "2026-10-22T19:45:52.288+00:00",
+  "events": [
+    {
+      "timestamp_utc": "2026-10-22T19:45:52.345+00:00",
+      "step": "logging_prerequisites_verified",
+      "actor": "u5_bootstrap",
+      "bind_parameters_logged": false,
+      "credential_checks_started": false
+    },
+    {
+      "timestamp_utc": "2026-10-22T19:45:52.388+00:00",
+      "step": "membership_before",
+      "actor": "u5_bootstrap",
+      "administrative_membership": false
+    },
+    {
+      "timestamp_utc": "2026-10-22T19:45:52.429+00:00",
+      "step": "database_actor_verified",
+      "actor": "app_web",
+      "session_role": "app_web",
+      "current_role": "app_web"
+    },
+    {
+      "timestamp_utc": "2026-10-22T19:45:52.503+00:00",
+      "step": "business_authentication",
+      "actor": "app_web",
+      "attempt": 1,
+      "accepted": false
+    },
+    {
+      "timestamp_utc": "2026-10-22T19:45:52.570+00:00",
+      "step": "business_authentication",
+      "actor": "app_web",
+      "attempt": 2,
+      "accepted": false
+    },
+    {
+      "timestamp_utc": "2026-10-22T19:45:52.638+00:00",
+      "step": "business_authentication",
+      "actor": "app_web",
+      "attempt": 3,
+      "accepted": false
+    },
+    {
+      "timestamp_utc": "2026-10-22T19:45:52.706+00:00",
+      "step": "business_authentication",
+      "actor": "app_web",
+      "attempt": 4,
+      "accepted": true
+    },
+    {
+      "timestamp_utc": "2026-10-22T19:45:52.706+00:00",
+      "step": "database_actor_after_business_auth",
+      "actor": "app_web",
+      "session_role": "app_web",
+      "current_role": "app_web",
+      "role_unchanged": true
+    },
+    {
+      "timestamp_utc": "2026-10-22T19:45:52.920+00:00",
+      "step": "bulk_read_received_and_discarded",
+      "actor": "app_web",
+      "rows_received": 20001,
+      "expected_rows": 20001,
+      "columns": [
+        "id",
+        "nombre",
+        "apellido",
+        "eliminado",
+        "created_at"
+      ],
+      "credential_column_present": false,
+      "user_values_exported": false
+    },
+    {
+      "timestamp_utc": "2026-10-22T19:45:52.922+00:00",
+      "step": "administrative_membership_escalation",
+      "actor": "app_web",
+      "expected_sqlstate": "42501",
+      "observed_sqlstate": "42501",
+      "rejection_verified": true
+    },
+    {
+      "timestamp_utc": "2026-10-22T19:45:52.923+00:00",
+      "step": "membership_after",
+      "actor": "u5_bootstrap",
+      "administrative_membership": false
+    }
+  ],
+  "private_values_exported": false,
+  "runtime_logging": {
+    "log_connections": "on",
+    "log_disconnections": "on",
+    "log_min_error_statement": "error",
+    "log_parameter_max_length": "0",
+    "log_parameter_max_length_on_error": "0",
+    "log_statement": "all"
+  },
+  "result": {
+    "failed_business_authentications": 3,
+    "successful_business_authentications": 1,
+    "rows_received": 20001,
+    "expected_rows": 20001,
+    "escalation_sqlstate": "42501",
+    "membership_before": false,
+    "membership_after": false,
+    "user_values_exported": false,
+    "containment_executed": false,
+    "evidence_limit": "The client proves the received-row count; the native SELECT log alone does not prove row delivery, off-host extraction or malicious intent."
+  },
+  "finished_at_utc": "2026-10-22T19:45:52.923+00:00"
+}

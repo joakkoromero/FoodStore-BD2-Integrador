@@ -1,0 +1,19 @@
+{
+  "utc": "2026-11-10T14:17:23.644152+00:00",
+  "downloads": [
+    {
+      "component": "mongodb",
+      "url": "https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-8.0.34.zip",
+      "archive_bytes": 807616685,
+      "sha256": "6b021a0864494e4decf278b36477a29eb36072432773e4e62c2f42c302630db0",
+      "official_sha256_matches": true
+    },
+    {
+      "component": "mongosh",
+      "url": "https://github.com/mongodb-js/mongosh/releases/download/v2.14.1/mongosh-2.14.1-win32-x64.zip",
+      "archive_bytes": 63438557,
+      "sha256": "be58d3c67a2bca990c790b359c99fa9b5da1b12bb5b01e8442bea5998b1a38e2",
+      "official_sha256_matches": true
+    }
+  ]
+}

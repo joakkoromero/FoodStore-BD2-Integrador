@@ -1,0 +1,235 @@
+{
+  "captured_at_utc": "2026-10-22T19:51:59.502+00:00",
+  "source_filename": "u5-20261022-121336.json",
+  "source_raw_sha256": "de25e590ce9afdc75fef85cd19912e51463af9aae3981ee1df40a86916e45f9d",
+  "source_bytes": 101939,
+  "source_entries": 217,
+  "source_closed_after_operator_rotation": true,
+  "source_unchanged_during_capture": true,
+  "source_private_not_exported": true,
+  "log_timezone": "America/Buenos_Aires",
+  "observed_log_offset": "-03",
+  "client_times_are_utc": true,
+  "selection": "Exact application inside actual client execution window, then every source entry of each session; B adds actual FATAL28P01 session",
+  "events_invented": false,
+  "b": {
+    "anonymized_file": "docs/log_auditoria_prueba.txt",
+    "anonymized_sha256": "9232abae2d5499f4a70e1997e701e81c0dfa55fbd36cb4ac2c7477dbe291b8d5",
+    "selected_raw_sha256": "6f481a76cca7da8db3e6d16b9fa4c650b2dd068306fbf0664231f9fece84777a",
+    "selected_entries": 14,
+    "sessions": [
+      {
+        "session_id": "6ada67e6.80d4",
+        "entries": 12,
+        "line_numbers": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "first_timestamp": "2026-10-22 16:45:42.070 -03",
+        "last_timestamp": "2026-10-22 16:45:43.627 -03",
+        "remote_hosts": [
+          "127.0.0.1"
+        ],
+        "remote_ports": [
+          60562
+        ],
+        "applications": [
+          "u5_audit_test"
+        ]
+      },
+      {
+        "session_id": "6ada67e7.5e60",
+        "entries": 2,
+        "line_numbers": [
+          1,
+          2
+        ],
+        "first_timestamp": "2026-10-22 16:45:43.733 -03",
+        "last_timestamp": "2026-10-22 16:45:43.743 -03",
+        "remote_hosts": [
+          "127.0.0.1"
+        ],
+        "remote_ports": [
+          60563
+        ],
+        "applications": []
+      }
+    ],
+    "phase_started_at_utc": "2026-10-22T19:45:41.715+00:00",
+    "phase_finished_at_utc": "2026-10-22T19:45:43.743+00:00",
+    "modified_json_fields": [
+      "dbname",
+      "detail",
+      "message"
+    ],
+    "preserved_fields": [
+      "timestamp",
+      "pid",
+      "session_id",
+      "line_num",
+      "user",
+      "remote_host",
+      "remote_port",
+      "application_name",
+      "error_severity",
+      "state_code"
+    ],
+    "source_event_order_preserved": true,
+    "json_lines_valid": true,
+    "source_bytes_private_only": true,
+    "scan_report": "docs/evidencias/b_anonimizacion_scan.json",
+    "privacy_scan_passed": true,
+    "facts": {
+      "postgresql_failed_login_sqlstate": "28P01",
+      "failed_login_session": "6ada67e7.5e60",
+      "failed_login_application_name_present": false,
+      "client_events": 10,
+      "client_result": {
+        "counts_before": {
+          "usuario": 20001,
+          "pedido": 225000,
+          "detalle_pedido": 499997
+        },
+        "counts_after": {
+          "usuario": 20001,
+          "pedido": 225000,
+          "detalle_pedido": 499997
+        },
+        "data_rolled_back": true,
+        "postgresql_failed_login_verified": true,
+        "identity_sequence_values_restored": false,
+        "note": "ROLLBACK removes the test rows but does not recover consumed identity values or delete audit logs. Native statement logs record attempts, including rolled-back work. No user rows are exported."
+      }
+    }
+  },
+  "c": {
+    "anonymized_file": "docs/log_simulacro_anonimizado.txt",
+    "anonymized_sha256": "f30499043574aca7554877e118b1f21f8a804740cdbe2039c32f3f3a2b0d162b",
+    "selected_raw_sha256": "1f1417b0d5686431d98baec213db4bd7466d55ac6004609ea056673a662f125a",
+    "selected_entries": 17,
+    "sessions": [
+      {
+        "session_id": "6ada67f0.ee4",
+        "entries": 17,
+        "line_numbers": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17
+        ],
+        "first_timestamp": "2026-10-22 16:45:52.418 -03",
+        "last_timestamp": "2026-10-22 16:45:52.923 -03",
+        "remote_hosts": [
+          "127.0.0.1"
+        ],
+        "remote_ports": [
+          60572
+        ],
+        "applications": [
+          "u5_incident"
+        ]
+      }
+    ],
+    "phase_started_at_utc": "2026-10-22T19:45:52.288+00:00",
+    "phase_finished_at_utc": "2026-10-22T19:45:52.923+00:00",
+    "modified_json_fields": [
+      "dbname",
+      "message"
+    ],
+    "preserved_fields": [
+      "timestamp",
+      "pid",
+      "session_id",
+      "line_num",
+      "user",
+      "remote_host",
+      "remote_port",
+      "application_name",
+      "error_severity",
+      "state_code"
+    ],
+    "source_event_order_preserved": true,
+    "json_lines_valid": true,
+    "source_bytes_private_only": true,
+    "scan_report": "docs/evidencias/c_anonimizacion_scan.json",
+    "privacy_scan_passed": true,
+    "facts": {
+      "business_authentication_events": [
+        {
+          "timestamp": "2026-10-22 16:45:52.502 -03",
+          "line_num": 6,
+          "success": false
+        },
+        {
+          "timestamp": "2026-10-22 16:45:52.570 -03",
+          "line_num": 8,
+          "success": false
+        },
+        {
+          "timestamp": "2026-10-22 16:45:52.638 -03",
+          "line_num": 10,
+          "success": false
+        },
+        {
+          "timestamp": "2026-10-22 16:45:52.707 -03",
+          "line_num": 12,
+          "success": true
+        }
+      ],
+      "bulk_select_line_num": 14,
+      "grant_error_line_num": 16,
+      "grant_error_sqlstate": "42501",
+      "client_events": 11,
+      "client_result": {
+        "failed_business_authentications": 3,
+        "successful_business_authentications": 1,
+        "rows_received": 20001,
+        "expected_rows": 20001,
+        "escalation_sqlstate": "42501",
+        "membership_before": false,
+        "membership_after": false,
+        "user_values_exported": false,
+        "containment_executed": false,
+        "evidence_limit": "The client proves the received-row count; the native SELECT log alone does not prove row delivery, off-host extraction or malicious intent."
+      },
+      "client_facts_not_input_to_ia": true
+    }
+  },
+  "review": {
+    "kind": "Automatic technical/privacy review by Codex; not human validation",
+    "secrets_hashes_non_synthetic_emails_scan_passed": true,
+    "all_delivered_json_parsed": true,
+    "identity_times_origin_order_preserved": true,
+    "full_sanitized_content_inspected_by": "Codex",
+    "inspection_scope": [
+      "Every message/statement/context/detail in both fragments",
+      "No credential values, user-row values or personal path username in delivered logs",
+      "Only synthetic database/path labels substituted; roles and loopback preserved"
+    ],
+    "human_validation": "Pending",
+    "containment_executed": false
+  }
+}

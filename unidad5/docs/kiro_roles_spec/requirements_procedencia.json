@@ -1,0 +1,14 @@
+{
+  "source": "Kiro IDE native Export Chat archive",
+  "message_timestamp_utc": "2026-10-22T17:59:48.630Z",
+  "message_id": "2c48e4eb-93cb-4676-8af0-012c7a8ff125-say",
+  "extraction": "Only displayed assistant Say content; exact Markdown block",
+  "content_generated_by": "Kiro",
+  "files_saved_by": "Codex, from the explicit native session export",
+  "native_file_write_by_kiro": false,
+  "raw_export_storage": "Private work directory outside repository",
+  "raw_export_sha256": "fd510f9ca4137f026ef4a09a0387dda6bc19d0ffcb42f04517d6d3dbb6bb847a",
+  "answer_sha256": "278cdac403ee0b56338f9533fdb92b5c37295d81c996e629578ea70bff54ea5d",
+  "document_sha256": "fb8a001b6254d827adf5cfe9d72c95890d8136ccfbdb9d7559f8cd32c8b78628",
+  "human_validation": "Pending; no human approval inferred"
+}

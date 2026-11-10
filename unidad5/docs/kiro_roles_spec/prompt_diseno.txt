@@ -1,0 +1,60 @@
+Continuamos Requirements-First con el requirements corregido de esta
+conversacion. La revision de Codex es tecnica automatica; NO es aprobacion
+humana de los integrantes. La lectura humana para la entrega sigue pendiente.
+
+Genera ahora TODO el contenido de design.md EN EL CHAT, en un unico bloque
+Markdown que comience con '# Design: seguridad-roles-foodstore'. Sin usar
+herramientas, subagentes ni terminal; no escribas SQL ejecutable, no crees
+roles.sql, no implementes, no te conectes a bases. Codex guardara una copia
+literal del contenido real que produzcas, con su procedencia.
+
+Diseno breve (menos de 1500 palabras), concreto y verificable, derivado de
+los requisitos corregidos. Antes de responder, busca contradicciones sobre
+los cuatro nombres de funciones puente: LAS CUATRO son SECURITY DEFINER
+y propiedad de rol_funciones en todas las secciones. Los demas validadores
+heredados y u4_serializar_ventas son SECURITY INVOKER de rol_propietario.
+No repitas el historial ni una extensa lista EARS.
+
+Contenido esencial:
+- Arquitectura de ocho roles y membresias precisas INHERIT TRUE, SET FALSE,
+  ADMIN FALSE. SET FALSE no habilita SET ROLE al padre. Nunca membresia de
+  logins a rol_propietario o rol_funciones. No convertir rol_reportes en LOGIN.
+- Matriz completa por objeto/columna para lectura, escritura, soporte y
+  reportes, con denegaciones que requieren retirar privilegios previos o de
+  PUBLIC. Reportes puede leer usuario_anon y las dos MVs agregadas aprobadas;
+  soporte solo contacto/telefono, sin pedido/detalle/catalogo/FNBC.
+- Propiedad: rol_propietario para esquemas/tablas/vistas/MVs/FNBC y demas
+  funciones heredadas SECURITY INVOKER. rol_funciones posee SOLO CUATRO
+  puentes SECURITY DEFINER (autenticar, resetear, recalcular total, refrescar
+  diaria), sin tablas propias y con exactamente los permisos internos del
+  contexto. MAINTAIN solo diaria; la mensual TP5 conserva su comportamiento.
+- Contratos de las cuatro funciones, devoluciones/errores, ejecucion por
+  login autorizado, search_path pg_catalog, referencias calificadas, EXECUTE
+  revocado a PUBLIC y sin registrar email/password/hash en auth. Auth valida
+  bcrypt mediante pgcrypto, devuelve id o NULL. Solo admin_datos reset.
+  Los puentes de trigger mantienen las reglas heredadas y no abren UPDATE
+  total, columnas GENERATED ni MAINTAIN de MVs a la aplicacion.
+- INSERT pedido solo usuario_id/fecha/forma_pago: DEFAULT estado PENDIENTE;
+  UPDATE estado/forma_pago/eliminado. Detalle INSERT cuatro columnas de
+  entrada, UPDATE cantidad/precio_unitario, DELETE solo pendientes. Nada de
+  DELETE pedido/usuario ni acceso directo nextval/setval a secuencias identity.
+- Plan ordenado de migracion para objetos existentes y defaults del creador
+  correcto, separando funciones SECURITY DEFINER/INVOKER. usuario_anon YA
+  existe creada por bootstrap: migrar OWNER y REVOKE/GRANT explicitos; luego
+  reconstruir D bajo SET LOCAL ROLE rol_propietario y comprobar defaults.
+  TEMPORARY solo rol_propietario en DBactual para tablas temporales de esa
+  auditoria; no conceder TEMP a logins ni agrupadores de negocio. Defaults
+  public cerrados y SELECT futuro solo datos_anon para rol_reportes.
+- Pruebas POSITIVAS y NEGATIVAS PREVISTAS para despues de implementar, no
+  resultados inventados: columnas/objetos, pertenencias, ownership, identity,
+  triggers y permisos indirectos, defaults con creador real, datos heredados
+  intactos, equivalencia D bajo snapshot y MVs. Indicar limites: grants son
+  por columnas/objetos, no aislamiento por fila o por usuario del negocio.
+- Auditoria del laboratorio: SCRAM, conexiones/desconexiones/sentencias con
+  prefijo de sesion/rol/aplicacion/origen y parametros desactivados; consultas
+  con secretos parametrizadas para no incrustarlos en el texto registrado.
+  Simulacro previsto, logs sanitizados antes de IA, sin contencion automatica.
+
+No anuncies implementacion ni pruebas hechas por Kiro. Termina al entregar
+design.md; no generes tasks.md ni codigo. Si detectas una limitacion tecnica,
+explicala como decision de diseno y prueba pendiente, sin ampliar privilegios.

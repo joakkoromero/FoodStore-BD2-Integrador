@@ -1,0 +1,5 @@
+producto_id,nombre,precio_centavos,stock,disponible,eliminado,capturado_en
+50001,U8 - Muzzarella,900000,10,t,f,2026-11-10 12:32:44.345944-03
+50002,U8 - Empanadas,120000,4,t,f,2026-11-10 12:32:44.345944-03
+50003,U8 - Fugazzeta,800000,5,t,f,2026-11-10 12:32:44.345944-03
+50004,U8 - Agua,150000,20,t,f,2026-11-10 12:32:44.345944-03

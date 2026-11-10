@@ -1,0 +1,12 @@
+{
+  "fecha_utc": "2026-10-22T19:47:13.046272+00:00",
+  "expected_explicit_business_acl_entries": 44,
+  "actual_explicit_business_acl_entries": 44,
+  "missing": [],
+  "unexpected": [],
+  "missing_memberships": [],
+  "unexpected_memberships": [],
+  "source": "Final Kiro requirements/design plus documented Codex precision; actual catalog ACLs",
+  "note": "Owner implicit privileges excluded; column ACLs and table ACLs compared separately. No RLS isolation claimed.",
+  "passed": true
+}

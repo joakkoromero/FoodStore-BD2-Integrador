@@ -1,0 +1,8 @@
+{
+  "captured_utc": "2026-11-10T15:41:23.894576+00:00",
+  "from": "foodstore_u8_arancibia_romero",
+  "to": "foodstore_u8_run01_conservada",
+  "reason": "Conservar íntegra la primera copia antes de repetir desde una copia y una SQLite nuevas",
+  "dropped_databases": 0,
+  "official_source_modified": false
+}

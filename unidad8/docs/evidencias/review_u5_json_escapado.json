@@ -1,0 +1,11 @@
+{
+  "test": "U5: secreto exclusivamente sintético dentro de un mensaje JSON escapado",
+  "real_authentication_data": false,
+  "raw_contains_plain_secret": false,
+  "sanitized_contains_plain_secret": false,
+  "decoded_sanitized_message_contains_synthetic_secret": true,
+  "original_scan_claims_pass": true,
+  "source_sha256": "96f9ea2743492ccf9e3e697b6ae63a3c3734ef4755cc7fbe787e1ce585130a7a",
+  "original_modified": false,
+  "external_transmission": false
+}

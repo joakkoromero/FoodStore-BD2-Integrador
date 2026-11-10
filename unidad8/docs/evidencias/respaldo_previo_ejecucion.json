@@ -1,0 +1,14 @@
+{
+  "source_script": "U6/backup_foodstore.ps1",
+  "source_script_sha256": "53612efb8f616d8cf1ff763d998d1155dce13d40b6aa1784e634d299404aa9f5",
+  "started_utc": "2026-11-10T15:12:08.142635+00:00",
+  "finished_utc": "2026-11-10T15:12:19.747910+00:00",
+  "exit_code": 0,
+  "manifest_status": "SUCCESS",
+  "database": "foodstore",
+  "dump_remains_private": true,
+  "dump_bytes": 8224005,
+  "dump_sha256": "051103a3f2684b15a8a04835943e3753817a58ffbebd0ba598419e1fd942ffad",
+  "baseline_before_after_matched": true,
+  "no_u8_schema_or_simulation_run": true
+}

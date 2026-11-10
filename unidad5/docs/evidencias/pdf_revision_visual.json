@@ -1,0 +1,14 @@
+{
+  "checked_at_utc": "2026-10-22T20:10:11.273502+00:00",
+  "pdf_file": "docs/TP_U5_FoodStore_Arancibia_Romero.pdf",
+  "pdf_sha256": "e81517e81fc80068ed64eaf44f44761d4cc8dab88a508fb6fd80a13126292bd8",
+  "pages": 30,
+  "rendered_pages": 30,
+  "render_engine": "Poppler pdftoppm, 120 DPI",
+  "visual_review": "All final pages 1-30 opened and inspected by Codex agents",
+  "visual_defects_outstanding": 0,
+  "corrections": "Fixed inline SQL span and whole-table-row pagination; removed orphan final paragraph page",
+  "private_server": "Stopped after technical tests, data retained; routine laboratory closure",
+  "human_scope": "Delivery closure requested by user; see validacion_humana.md",
+  "technical_review_is_automated": true
+}

@@ -1,0 +1,48 @@
+BEGIN
+SET
+DO
+CREATE TABLE
+CREATE TABLE
+INSERT 0 3
+INSERT 0 2
+CREATE TABLE
+INSERT 0 3
+DO
+ALTER TABLE
+CREATE TABLE
+CREATE TABLE
+INSERT 0 2
+INSERT 0 3
+CREATE VIEW
+CREATE TABLE
+INSERT 0 1
+CREATE FUNCTION
+CREATE FUNCTION
+CREATE TRIGGER
+CREATE TRIGGER
+CREATE TRIGGER
+CREATE TRIGGER
+DO
+DO
+DO
+COMMIT
+ diferencias 
+-------------
+           0
+(1 row)
+
+ lote_id | deposito_id | responsable_control_id 
+---------+-------------+------------------------
+     501 |          30 |                    801
+     502 |          30 |                    801
+     503 |          31 |                    802
+(3 rows)
+
+ lote_id | deposito_id | cantidad_responsables 
+---------+-------------+-----------------------
+(0 rows)
+
+ responsable_control_id | cantidad_depositos 
+------------------------+--------------------
+(0 rows)
+

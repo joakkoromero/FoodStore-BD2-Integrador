@@ -1,0 +1,671 @@
+{
+  "version": 2,
+  "estado": "revision_estatica_completa_U5_U6_U7",
+  "autor_consolidacion": "Codex, QA automatizada independiente",
+  "decision_humana": "No establecida por esta matriz; son propuestas técnicas para consolidación U8.",
+  "fuentes_historicas_modificadas": false,
+  "conexiones_a_base": 0,
+  "cobertura": {
+    "Unidad5": {
+      "fuentes_totales": 21,
+      "fuentes_completamente_revisadas": 21,
+      "estado": "completa_por_union",
+      "consultas_completadas": [
+        "review_u5",
+        "review_u5_c01",
+        "review_u5_c02",
+        "review_u5_c03",
+        "review_u5_c04",
+        "review_u5_c05"
+      ],
+      "pendientes": [],
+      "fuentes_cubiertas": [
+        "outputs\\Arancibia_Romero_U5\\food-store-tp-u5\\sql\\auditoria_test.sql",
+        "outputs\\Arancibia_Romero_U5\\food-store-tp-u5\\sql\\configurar_auditoria.sql",
+        "outputs\\Arancibia_Romero_U5\\food-store-tp-u5\\sql\\roles.sql",
+        "outputs\\Arancibia_Romero_U5\\food-store-tp-u5\\sql\\simulacro_incidente.sql",
+        "outputs\\Arancibia_Romero_U5\\food-store-tp-u5\\sql\\usuario_anon.sql",
+        "outputs\\Arancibia_Romero_U5\\food-store-tp-u5\\tools\\activar_auditoria.py",
+        "outputs\\Arancibia_Romero_U5\\food-store-tp-u5\\tools\\anonimizar_log.py",
+        "outputs\\Arancibia_Romero_U5\\food-store-tp-u5\\tools\\capturar_permisos.py",
+        "outputs\\Arancibia_Romero_U5\\food-store-tp-u5\\tools\\crear_cuenta_prueba.py",
+        "outputs\\Arancibia_Romero_U5\\food-store-tp-u5\\tools\\ejecutar_anonimizacion.py",
+        "outputs\\Arancibia_Romero_U5\\food-store-tp-u5\\tools\\ejecutar_pruebas.py",
+        "outputs\\Arancibia_Romero_U5\\food-store-tp-u5\\tools\\empaquetar_entrega.py",
+        "outputs\\Arancibia_Romero_U5\\food-store-tp-u5\\tools\\generar_informe_pdf.py",
+        "outputs\\Arancibia_Romero_U5\\food-store-tp-u5\\tools\\instalar_seguridad.py",
+        "outputs\\Arancibia_Romero_U5\\food-store-tp-u5\\tools\\libpq_client.py",
+        "outputs\\Arancibia_Romero_U5\\food-store-tp-u5\\tools\\opencode_consulta.py",
+        "outputs\\Arancibia_Romero_U5\\food-store-tp-u5\\tools\\preparar_laboratorio.py",
+        "outputs\\Arancibia_Romero_U5\\food-store-tp-u5\\tools\\rotar_log.py",
+        "outputs\\Arancibia_Romero_U5\\food-store-tp-u5\\tools\\verificar_conservacion.py",
+        "outputs\\Arancibia_Romero_U5\\food-store-tp-u5\\tools\\verificar_matriz.py",
+        "outputs\\Arancibia_Romero_U5\\food-store-tp-u5\\tools\\verificar_privacidad.py"
+      ],
+      "nota": "Siete archivos completos en la primera consulta; c01-c05 cubren los catorce restantes en adjuntos menores a 40 KB, sin truncamiento. c04 contiene un lapsus textual seis/cinco en su introducción; su tabla y el adjunto contienen los cinco archivos correctos."
+    },
+    "Unidad6": {
+      "fuentes_totales": 8,
+      "fuentes_completamente_revisadas": 8,
+      "estado": "completa_por_union",
+      "consultas_completadas": [
+        "review_u6",
+        "review_u6_c01"
+      ],
+      "nota": "Cinco archivos completos en la primera consulta; wrapper, helper y validaciones completos en la continuación."
+    },
+    "Unidad7": {
+      "fuentes_totales": 3,
+      "fuentes_completamente_revisadas": 3,
+      "estado": "completa",
+      "consultas_completadas": [
+        "review_u7"
+      ]
+    }
+  },
+  "consultas": {
+    "review_u5": {
+      "agent": "plan",
+      "status": "completed",
+      "started_at_utc": "2026-11-10T14:54:24.354429+00:00",
+      "finished_at_utc": "2026-11-10T14:56:13.300804+00:00",
+      "tool_event_count": 0,
+      "unparsed_line_count": 0,
+      "answer_sha256": "23478d8f1bc0e2bff442288e394c50f7e4627ca3daa24ce8eda6c6134384fbee",
+      "contenido_integro": false
+    },
+    "review_u6": {
+      "agent": "plan",
+      "status": "completed",
+      "started_at_utc": "2026-11-10T14:54:20.494646+00:00",
+      "finished_at_utc": "2026-11-10T14:56:08.932969+00:00",
+      "tool_event_count": 0,
+      "unparsed_line_count": 0,
+      "answer_sha256": "365780c74bd902a80115eecea8b51dd31dc6569017995c1caa847ccd368e723f",
+      "contenido_integro": false
+    },
+    "review_u6_c01": {
+      "agent": "plan",
+      "status": "completed",
+      "started_at_utc": "2026-11-10T14:59:25.632786+00:00",
+      "finished_at_utc": "2026-11-10T15:00:28.099265+00:00",
+      "tool_event_count": 0,
+      "unparsed_line_count": 0,
+      "answer_sha256": "8deac2f387d22ad6bf369cc6ada6934d459b35dad89892ca61d8bcbb1a099447",
+      "contenido_integro": true
+    },
+    "review_u7": {
+      "agent": "plan",
+      "status": "completed",
+      "started_at_utc": "2026-11-10T14:56:58.249659+00:00",
+      "finished_at_utc": "2026-11-10T14:58:23.233599+00:00",
+      "tool_event_count": 0,
+      "unparsed_line_count": 0,
+      "answer_sha256": "cc2d8d044412354334740ee8cc11789dc1af8838209e0bc730a596f4e9733f22",
+      "contenido_integro": true
+    },
+    "review_u5_c01": {
+      "agent": "plan",
+      "status": "completed",
+      "started_at_utc": "2026-11-10T15:30:11.814415+00:00",
+      "finished_at_utc": "2026-11-10T15:31:20.821997+00:00",
+      "tool_event_count": 0,
+      "unparsed_line_count": 0,
+      "answer_sha256": "feeb22f91a4984fd5d0e99214ee3d7efe6d5cc246f0ccc18376a895410bd00ed",
+      "contenido_integro": true
+    },
+    "review_u5_c02": {
+      "agent": "plan",
+      "status": "completed",
+      "started_at_utc": "2026-11-10T15:31:22.000547+00:00",
+      "finished_at_utc": "2026-11-10T15:32:38.974049+00:00",
+      "tool_event_count": 0,
+      "unparsed_line_count": 0,
+      "answer_sha256": "2087290facf174b97efbb13608605d67ef701ddf4d644b2d72f6610ca536a1a8",
+      "contenido_integro": true
+    },
+    "review_u5_c03": {
+      "agent": "plan",
+      "status": "completed",
+      "started_at_utc": "2026-11-10T15:32:40.720552+00:00",
+      "finished_at_utc": "2026-11-10T15:34:51.927322+00:00",
+      "tool_event_count": 0,
+      "unparsed_line_count": 0,
+      "answer_sha256": "04b9320fb869b746cbb67179eee81d0bbed4a6e012cf9731128d0330950ade61",
+      "contenido_integro": true
+    },
+    "review_u5_c04": {
+      "agent": "plan",
+      "status": "completed",
+      "started_at_utc": "2026-11-10T15:34:53.074295+00:00",
+      "finished_at_utc": "2026-11-10T15:36:36.442020+00:00",
+      "tool_event_count": 0,
+      "unparsed_line_count": 0,
+      "answer_sha256": "e68e632b1d77cd0404d25135398430587cacf03739e02bd99e35f2109a6c3af8",
+      "contenido_integro": true,
+      "nota_inventario": "La frase inicial dice seis archivos, pero su tabla enumera cinco; los cinco coinciden exactamente con el adjunto y se revisaron completos. Es un error de conteo textual de IA, no una fuente adicional ni truncamiento."
+    },
+    "review_u5_c05": {
+      "agent": "plan",
+      "status": "completed",
+      "started_at_utc": "2026-11-10T15:36:37.597838+00:00",
+      "finished_at_utc": "2026-11-10T15:37:39.569390+00:00",
+      "tool_event_count": 0,
+      "unparsed_line_count": 0,
+      "answer_sha256": "e6291ac0eb9fa951de1e3b2165a241fdcbb161a955885a15266fefedda3cb9f6",
+      "contenido_integro": true
+    }
+  },
+  "hallazgos": [
+    {
+      "id": "review_u5/H-01",
+      "unidad": 5,
+      "origenes": [
+        {
+          "id": "review_u5/H-01",
+          "consulta": "review_u5",
+          "respuesta": "docs/ia/review_u5_respuesta.md",
+          "metadatos": "docs/ia/review_u5_metadatos.json",
+          "fuente": "tools/anonimizar_log.py",
+          "lineas_segun_ia_copia_saneada": "165-166, 192-193; 239-250",
+          "afirmacion_ia": "Las sustituciones y comprobaciones literales de secretos no contemplan su representación escapada en JSON."
+        }
+      ],
+      "resumen": "Una cadena sensible escapada podría sobrevivir en un valor JSON aunque no exista como subcadena literal del texto serializado.",
+      "decision_propuesta": "aceptado",
+      "alcance": "Defecto algorítmico condicionado; no acredita exposición de las evidencias históricas U5.",
+      "fundamento": "El recorrido de sanitize opera sobre texto serializado y la comprobación final repite la misma búsqueda literal. La consulta estática es evidencia del riesgo, no de que una credencial histórica haya aparecido. Se conserva el original y se propone una mejora probada por separado en U8.",
+      "prueba": {
+        "estado": "pendiente",
+        "tipo": "local, memoria; no requiere datos reales",
+        "propuesta": "Serializar un evento JSON con un marcador sintético que contenga comillas y barra inversa; sanearlo con el marcador decodificado en el inventario y comprobar el valor después de json.loads. No usar ni copiar secretos reales."
+      }
+    },
+    {
+      "id": "review_u6/U6-01",
+      "unidad": 6,
+      "origenes": [
+        {
+          "id": "review_u6/U6-01",
+          "consulta": "review_u6",
+          "respuesta": "docs/ia/review_u6_respuesta.md",
+          "metadatos": "docs/ia/review_u6_metadatos.json",
+          "fuente": "backup_foodstore.ps1",
+          "lineas_segun_ia_copia_saneada": "74-85",
+          "afirmacion_ia": "El dump se publica antes del manifiesto y un fallo posterior puede dejar un dump definitivo sin manifiesto."
+        }
+      ],
+      "resumen": "La publicación de dos archivos no es atómica; puede quedar un dump huérfano. El selector no lo considera exitoso.",
+      "decision_propuesta": "aceptado",
+      "alcance": "Limitación operativa residual; no es un falso éxito del selector actual.",
+      "fundamento": "La continuación review_u6_c01 revisó Read-BackupManifest y confirmó que enumera únicamente manifiestos SUCCESS, verifica el dump referenciado y su hash. Esa salvaguarda no vuelve atómica la publicación, pero evita seleccionar sólo un dump huérfano. No se descarta ni se tergiversa la observación original.",
+      "prueba": {
+        "estado": "pendiente",
+        "tipo": "local en carpeta de prueba aislada",
+        "propuesta": "Presentar al selector únicamente un nombre .dump permitido sin manifiesto. Debe fallar con ausencia de manifiesto exitoso sin crear el destino. Una prueba de fallo al publicar manifiesto se limita a copias del flujo, sin tocar backups históricos."
+      }
+    },
+    {
+      "id": "review_u6/U6-02",
+      "unidad": 6,
+      "origenes": [
+        {
+          "id": "review_u6/U6-02",
+          "consulta": "review_u6",
+          "respuesta": "docs/ia/review_u6_respuesta.md",
+          "metadatos": "docs/ia/review_u6_metadatos.json",
+          "fuente": "backup_foodstore.ps1; restore_test.ps1",
+          "lineas_segun_ia_copia_saneada": "87-89; 124-127",
+          "afirmacion_ia": "Los catch conservan sólo la fase y descartan la causa de las excepciones locales."
+        },
+        {
+          "id": "review_u6_c01/U6-C01-02",
+          "consulta": "review_u6_c01",
+          "respuesta": "docs/ia/review_u6_c01_respuesta.md",
+          "metadatos": "docs/ia/review_u6_c01_metadatos.json",
+          "fuente": "tools/ps_common.ps1",
+          "lineas_segun_ia_copia_saneada": "34-38",
+          "afirmacion_ia": "Pg descarta stderr y registra únicamente el ejecutable y su código de error."
+        }
+      ],
+      "resumen": "Dos capas del mismo problema diagnóstico: excepciones locales sin causa detallada y stderr nativo descartado. Los fallos sí producen salida no cero.",
+      "decision_propuesta": "aceptado",
+      "alcance": "Mejora de diagnóstico, sin afirmar éxito falso ni invalidar restauraciones históricas.",
+      "fundamento": "Los códigos de salida se comprueban, se lanza excepción y los llamadores terminan en 1. Capturar la causa permitiría distinguir errores, pero su almacenamiento debe ser privado y no debe publicar credenciales o valores de filas. Se agrupan las observaciones conservando ambos IDs originales.",
+      "prueba": {
+        "estado": "pendiente",
+        "tipo": "local con cliente simulado y marcador inocuo",
+        "propuesta": "Simular un cliente que escriba un marcador no sensible en stderr y devuelva 1; comprobar código/aborto y ausencia del marcador en el log. Simular además una excepción local de archivo. Una corrección U8 deberá conservar diagnóstico únicamente en almacenamiento privado."
+      }
+    },
+    {
+      "id": "review_u6/U6-03",
+      "unidad": 6,
+      "origenes": [
+        {
+          "id": "review_u6/U6-03",
+          "consulta": "review_u6",
+          "respuesta": "docs/ia/review_u6_respuesta.md",
+          "metadatos": "docs/ia/review_u6_metadatos.json",
+          "fuente": "tools/generar_informe_u6.py",
+          "lineas_segun_ia_copia_saneada": "384-391, 406-409; contraste 293-307",
+          "afirmacion_ia": "La prosa Markdown se renderiza sin pasar por el mismo control de patrones sensibles usado para adjuntos."
+        }
+      ],
+      "resumen": "La validación del generador no cubre uniformemente prosa y adjuntos; un literal accidental en un informe podría publicarse.",
+      "decision_propuesta": "aceptado",
+      "alcance": "Cobertura condicional del generador; no indica un secreto encontrado en el PDF U6 entregado.",
+      "fundamento": "La observación distingue correctamente cobertura automática y contenido efectivo. Los controles finales de U6 incluyeron inspección y escaneo de valores privados conocidos sin coincidencias; esta revisión nueva no los reejecutó ni atribuye una exposición actual. Se propone comprobar la mejora con un marcador sintético, preservando el original.",
+      "prueba": {
+        "estado": "pendiente",
+        "tipo": "local sobre copias temporales",
+        "propuesta": "Añadir a una copia descartable de un Markdown un patrón sintético que ya reconoce el filtro y comprobar si el generador lo rechaza. No añadir marcadores a la entrega histórica ni a informes finales."
+      }
+    },
+    {
+      "id": "review_u6_c01/U6-C01-01",
+      "unidad": 6,
+      "origenes": [
+        {
+          "id": "review_u6_c01/U6-C01-01",
+          "consulta": "review_u6_c01",
+          "respuesta": "docs/ia/review_u6_c01_respuesta.md",
+          "metadatos": "docs/ia/review_u6_c01_metadatos.json",
+          "fuente": "tools/opencode_consulta.py",
+          "lineas_segun_ia_copia_saneada": "123-128, 202-204",
+          "afirmacion_ia": "Un fallo con respuesta parcial guarda answer_output, pero --retry-failed rechaza cualquier prefijo con ese archivo existente."
+        },
+        {
+          "id": "review_u5_c04/U5-C04-01",
+          "consulta": "review_u5_c04",
+          "respuesta": "docs/ia/review_u5_c04_respuesta.md",
+          "metadatos": "docs/ia/review_u5_c04_metadatos.json",
+          "fuente": "tools/opencode_consulta.py",
+          "lineas_segun_ia_copia_saneada": "123-128, 202-204",
+          "afirmacion_ia": "El reintento de una consulta fallida queda bloqueado si ya guardó una respuesta parcial."
+        }
+      ],
+      "resumen": "El reintento con igual prefijo sólo funciona si el fallo anterior no dejó respuesta parcial.",
+      "decision_propuesta": "aceptado",
+      "alcance": "Límite funcional del helper histórico; no afecta las consultas completadas conservadas.",
+      "fundamento": "El bloqueo protege evidencia existente frente a sobreescritura, pero la opción de reintento no abarca todos los fallos. Para U8 puede mantenerse la regla explícita de usar un prefijo nuevo cuando hay respuesta parcial o implementarse archivado íntegro antes del reintento. No se afirma una corrección que todavía no se hizo. Se conserva la referencia independiente que revisó el wrapper U5 y se agrupa con el mismo defecto revisado en U6. Una solución futura debe preservar respuesta parcial y metadatos antes de autorizar el reintento.",
+      "prueba": {
+        "estado": "pendiente",
+        "tipo": "local con ejecutable simulado, sin API externa",
+        "propuesta": "El cliente simulado emite un evento text y devuelve 1. Comprobar metadatos failed, respuesta parcial guardada y rechazo de --retry-failed; comprobar también que un prefijo nuevo conserva el intento anterior."
+      },
+      "unidades": [
+        5,
+        6
+      ]
+    },
+    {
+      "id": "review_u6_c01/U6-C01-03",
+      "unidad": 6,
+      "origenes": [
+        {
+          "id": "review_u6_c01/U6-C01-03",
+          "consulta": "review_u6_c01",
+          "respuesta": "docs/ia/review_u6_c01_respuesta.md",
+          "metadatos": "docs/ia/review_u6_c01_metadatos.json",
+          "fuente": "tools/opencode_consulta.py",
+          "lineas_segun_ia_copia_saneada": "48-62, 197-202, 223-228",
+          "afirmacion_ia": "Una captura puede marcarse completed con texto válido, código cero y líneas no interpretables como JSON."
+        }
+      ],
+      "resumen": "El contador de líneas no interpretadas se conserva, pero no condiciona el estado completed.",
+      "decision_propuesta": "aceptado",
+      "alcance": "Mejora de robustez condicionada; las consultas revisadas tienen contador cero.",
+      "fundamento": "No toda línea no JSON demuestra pérdida de una respuesta. Conviene distinguir completed limpio y completed que requiere revisión, sin inventar fallos de las consultas actuales. Los metadatos de las cuatro consultas aquí consolidadas indican unparsed_line_count=0.",
+      "prueba": {
+        "estado": "pendiente",
+        "tipo": "local con cliente simulado",
+        "propuesta": "Emitir un evento text válido y una línea no JSON con salida 0. Comprobar estado y contador; definir una política explícita para ese caso antes de cambiarla."
+      }
+    },
+    {
+      "id": "review_u7/U7-01",
+      "unidad": 7,
+      "origenes": [
+        {
+          "id": "review_u7/U7-01",
+          "consulta": "review_u7",
+          "respuesta": "docs/ia/review_u7_respuesta.md",
+          "metadatos": "docs/ia/review_u7_metadatos.json",
+          "fuente": "consultas_mongodb.js",
+          "lineas_segun_ia_copia_saneada": "78-94, especialmente 89-90",
+          "afirmacion_ia": "Si una inserción negativa fuese aceptada inesperadamente, el script falla pero deja esa escritura en la colección de laboratorio."
+        }
+      ],
+      "resumen": "Un fallo del validador detiene la prueba y conserva el documento inesperado como residuo del laboratorio.",
+      "decision_propuesta": "aceptado",
+      "alcance": "Condición de reutilización ante una regresión; los cuatro casos actuales fueron rechazados.",
+      "fundamento": "Las salidas originales y el cierre prueban cinco documentos y cero inválidos persistidos en esta ejecución. La observación no exige borrar automáticamente la evidencia de una regresión ni cambiar fuentes congeladas. Para futuras pruebas que debiliten el validador debe usarse una colección o copia separada.",
+      "prueba": {
+        "estado": "pendiente",
+        "tipo": "MongoDB de prueba separado",
+        "propuesta": "Sólo en una copia separada, debilitar la validación del caso monetario y comprobar que se detecta la aceptación y queda el documento; no hacerlo sobre foodstore_u7.pedidos ni las fuentes congeladas."
+      }
+    },
+    {
+      "id": "review_u7/U7-02",
+      "unidad": 7,
+      "origenes": [
+        {
+          "id": "review_u7/U7-02",
+          "consulta": "review_u7",
+          "respuesta": "docs/ia/review_u7_respuesta.md",
+          "metadatos": "docs/ia/review_u7_metadatos.json",
+          "fuente": "tools/generar_informe.py",
+          "lineas_segun_ia_copia_saneada": "186-188; 201-217",
+          "afirmacion_ia": "El generador toma HEAD como Commit de fuentes sin comprobar por sí mismo que los adjuntos coincidan con él."
+        }
+      ],
+      "resumen": "El generador no fuerza la limpieza de Git; los controles independientes sí acreditan la correspondencia de esta entrega congelada.",
+      "decision_propuesta": "descartado",
+      "alcance": "Se descarta como discrepancia de la entrega U7 actual, conservando la mejora genérica como recomendación.",
+      "fundamento": "La condición de cambios sin confirmar no ocurre: working tree limpio y git diff contra 8178b01 sin diferencias. JS/SQL coinciden byte a byte con el commit; EJSON conserva el mismo contenido con CRLF en el archivo ejecutado y LF normalizado en Git. Los tres hashes de los bytes ejecutados sí coinciden exactamente con validacion.json y los adjuntos. HEAD posterior incorpora cierre documental. La prueba es local y no se presenta como una prueba de motor.",
+      "prueba": {
+        "estado": "realizada",
+        "tipo": "Git y SHA256 de sólo lectura; no es prueba de motor",
+        "evidencia": "docs/evidencias/qa_u7_congelamiento.json",
+        "resultado": "git diff exit=0, working tree limpio, 3/3 archivos con el mismo contenido Git y SHA256 exactos de la ejecución; EJSON sólo cambia CRLF/LF frente al blob Git."
+      }
+    },
+    {
+      "id": "review_u5_c01/U5-C01-01",
+      "unidad": 5,
+      "origenes": [
+        {
+          "id": "review_u5_c01/U5-C01-01",
+          "consulta": "review_u5_c01",
+          "respuesta": "docs/ia/review_u5_c01_respuesta.md",
+          "metadatos": "docs/ia/review_u5_c01_metadatos.json",
+          "fuente": "tools/ejecutar_anonimizacion.py",
+          "lineas_segun_ia_copia_saneada": "75-76, 85-86, 94",
+          "afirmacion_ia": "La huella original abarca todos los usuarios heredados, pero la comprobación posterior usa id <= 20000."
+        }
+      ],
+      "resumen": "El umbral fija una población concreta y podría divergir si se reutiliza el helper con otro conjunto de IDs.",
+      "decision_propuesta": "descartado",
+      "alcance": "Propuesta de descarte como defecto del dataset histórico concreto, sujeta a corroboración agregada de IDs; el límite de reutilización se conserva.",
+      "fundamento": "La entrega histórica documenta 20.000 usuarios heredados y una cuenta sintética posterior. El umbral no es genérico, pero no se debe presentar como fallo ocurrido en esa población. Falta registrar aquí la comprobación agregada actual antes de cerrar definitivamente este descarte.",
+      "prueba": {
+        "estado": "pendiente",
+        "tipo": "PostgreSQL de pruebas, consulta agregada sin filas personales",
+        "propuesta": "Verificar conteo y rango de los 20.000 usuarios heredados y que la cuenta sintética agregada por U5 está fuera del umbral; contrastar la huella heredada documentada. No publicar emails ni hashes de credenciales."
+      }
+    },
+    {
+      "id": "review_u5_c01/U5-C01-02",
+      "unidad": 5,
+      "origenes": [
+        {
+          "id": "review_u5_c01/U5-C01-02",
+          "consulta": "review_u5_c01",
+          "respuesta": "docs/ia/review_u5_c01_respuesta.md",
+          "metadatos": "docs/ia/review_u5_c01_metadatos.json",
+          "fuente": "tools/crear_cuenta_prueba.py",
+          "lineas_segun_ia_copia_saneada": "5-6, 17-18, 28-32",
+          "afirmacion_ia": "El helper sólo comprueba log_statement aunque su contrato también menciona log_min_error_statement."
+        },
+        {
+          "id": "review_u5_c02/U5-C02-01",
+          "consulta": "review_u5_c02",
+          "respuesta": "docs/ia/review_u5_c02_respuesta.md",
+          "metadatos": "docs/ia/review_u5_c02_metadatos.json",
+          "fuente": "tools/ejecutar_pruebas.py",
+          "lineas_segun_ia_copia_saneada": "116-138, 167, 229, 298, 332",
+          "afirmacion_ia": "Los ajustes de logging se comprueban desde bootstrap y no desde cada login que recibe parámetros sensibles."
+        },
+        {
+          "id": "review_u5_c03/U5-C03-01",
+          "consulta": "review_u5_c03",
+          "respuesta": "docs/ia/review_u5_c03_respuesta.md",
+          "metadatos": "docs/ia/review_u5_c03_metadatos.json",
+          "fuente": "tools/instalar_seguridad.py",
+          "lineas_segun_ia_copia_saneada": "22-26, 30-39",
+          "afirmacion_ia": "La precondición omite vías adicionales como log_min_duration_statement=0 con parámetros habilitados."
+        }
+      ],
+      "resumen": "Tres capas de precondiciones de logging parciales: ajuste de error, configuración por sesión y registro por duración.",
+      "decision_propuesta": "aceptado",
+      "alcance": "Robustez de seguridad condicionada; no demuestra una filtración histórica de U5.",
+      "fundamento": "Se conservan los tres IDs y sus condiciones distintas. La parametrización impide interpolación SQL, pero no garantiza por sí sola que el servidor nunca registre valores. Las comprobaciones deberían incluir las vías y sesiones efectivamente usadas. Una prueba futura debe emplear exclusivamente centinelas sintéticos y guardar el diagnóstico privado.",
+      "prueba": {
+        "estado": "pendiente",
+        "tipo": "PostgreSQL de pruebas, configuración de sesión y centinelas inocuos",
+        "propuesta": "Comparar pg_settings desde los logins usados antes de enviar parámetros; en una instancia descartable preparar los ajustes admitidos más logging de duración y registrar un centinela no secreto. Evaluar separadamente el control omitido de log_min_error_statement, sin tocar configuración de producción ni secretos."
+      }
+    },
+    {
+      "id": "review_u5_c01/U5-C01-03",
+      "unidad": 5,
+      "origenes": [
+        {
+          "id": "review_u5_c01/U5-C01-03",
+          "consulta": "review_u5_c01",
+          "respuesta": "docs/ia/review_u5_c01_respuesta.md",
+          "metadatos": "docs/ia/review_u5_c01_metadatos.json",
+          "fuente": "tools/capturar_permisos.py; tools/ejecutar_anonimizacion.py",
+          "lineas_segun_ia_copia_saneada": "82-101; 61-63, 85-89, 101-106",
+          "afirmacion_ia": "Las salidas con nombres reutilizados se publican por etapas y podrían mezclar intentos si una ejecución posterior falla."
+        },
+        {
+          "id": "review_u5_c05/U5-C05-01",
+          "consulta": "review_u5_c05",
+          "respuesta": "docs/ia/review_u5_c05_respuesta.md",
+          "metadatos": "docs/ia/review_u5_c05_metadatos.json",
+          "fuente": "tools/verificar_privacidad.py",
+          "lineas_segun_ia_copia_saneada": "25-65, especialmente 57-64",
+          "afirmacion_ia": "Si un intento falla antes de publicar el JSON nuevo, puede quedar el resultado passed:true de una ejecución anterior."
+        }
+      ],
+      "resumen": "Una carpeta puede contener artefactos de una corrida fallida junto a un JSON anterior satisfactorio.",
+      "decision_propuesta": "aceptado",
+      "alcance": "Mejora de trazabilidad para reutilización; no invalida evidencias históricas con hashes y fechas comprobados.",
+      "fundamento": "El fallo del proceso sí se comunica. El riesgo reside en consumir archivos aislados sin correlacionar la ejecución. Para procedimientos nuevos se propone una carpeta por corrida y un manifiesto final; no se altera ni se regenera retrospectivamente la evidencia U5. Se agrupa con U5-C01-03 por la vigencia de artefactos. El proceso sí rechaza coincidencias o errores, pero un consumidor no debe interpretar el JSON viejo como estado del intento nuevo. La mejora usa resultados por corrida y marcador final explícito.",
+      "prueba": {
+        "estado": "pendiente",
+        "tipo": "Local con copias de scripts y salidas sintéticas",
+        "propuesta": "Preparar una corrida sintética satisfactoria y una segunda que falle después de escribir un primer archivo; comprobar que los artefactos no deben tratarse como una unidad de éxito sólo por coexistir en el directorio."
+      },
+      "unidades": [
+        5
+      ]
+    },
+    {
+      "id": "review_u5_c02/U5-C02-02",
+      "unidad": 5,
+      "origenes": [
+        {
+          "id": "review_u5_c02/U5-C02-02",
+          "consulta": "review_u5_c02",
+          "respuesta": "docs/ia/review_u5_c02_respuesta.md",
+          "metadatos": "docs/ia/review_u5_c02_metadatos.json",
+          "fuente": "tools/ejecutar_pruebas.py",
+          "lineas_segun_ia_copia_saneada": "140-160, 256-259",
+          "afirmacion_ia": "El intento negativo de GRANT en phase_incident no tiene una contención transaccional explícita si inesperadamente tiene éxito."
+        }
+      ],
+      "resumen": "Una regresión de privilegios podría persistir la membresía justo cuando la prueba detecta el éxito indebido.",
+      "decision_propuesta": "aceptado",
+      "alcance": "Robustez de prueba negativa condicionada a permisos incorrectos; el intento histórico fue rechazado.",
+      "fundamento": "Se debe distinguir el comportamiento correcto probado del catálogo actual de la contención ante una regresión. La comprobación detecta la anomalía, pero debería ensayarse con roles descartables y rollback para no dejar una concesión inesperada. No se propone conceder roles reales de negocio para probarlo.",
+      "prueba": {
+        "estado": "pendiente",
+        "tipo": "PostgreSQL de pruebas, roles exclusivamente descartables",
+        "propuesta": "En una transacción de prueba con roles sintéticos, permitir una operación equivalente y provocar el éxito que la prueba esperaba rechazar; comprobar desde otra conexión la persistencia o reversión. No cambiar membresías de los logins U5."
+      }
+    },
+    {
+      "id": "review_u5_c02/U5-C02-03",
+      "unidad": 5,
+      "origenes": [
+        {
+          "id": "review_u5_c02/U5-C02-03",
+          "consulta": "review_u5_c02",
+          "respuesta": "docs/ia/review_u5_c02_respuesta.md",
+          "metadatos": "docs/ia/review_u5_c02_metadatos.json",
+          "fuente": "tools/ejecutar_pruebas.py",
+          "lineas_segun_ia_copia_saneada": "344-345, 371-378",
+          "afirmacion_ia": "Las pruebas positivas de fn_resetear_password sólo verifican que la llamada devuelva una fila, no que la contraseña nueva autentique."
+        }
+      ],
+      "resumen": "Un helper de reset sin efecto podría superar esas aserciones positivas aunque conserve validaciones de entrada.",
+      "decision_propuesta": "aceptado",
+      "alcance": "Mejora de cobertura de pruebas; no afirma que la función real sea ineficaz.",
+      "fundamento": "La función y los permisos originales tienen otras verificaciones, pero esas llamadas concretas no prueban el efecto de reset. La mejora propuesta es autenticar con el valor temporal dentro de la misma transacción y revertir todo, conservando únicamente el ID booleano de resultado.",
+      "prueba": {
+        "estado": "pendiente",
+        "tipo": "PostgreSQL de pruebas dentro de transacción con rollback",
+        "propuesta": "Restablecer un valor aleatorio sintético válido y autenticar con él para verificar el ID esperado en límites de 12 y 72 bytes; terminar en rollback y no exportar contraseña ni hash."
+      }
+    },
+    {
+      "id": "review_u5_c03/U5-C03-02",
+      "unidad": 5,
+      "origenes": [
+        {
+          "id": "review_u5_c03/U5-C03-02",
+          "consulta": "review_u5_c03",
+          "respuesta": "docs/ia/review_u5_c03_respuesta.md",
+          "metadatos": "docs/ia/review_u5_c03_metadatos.json",
+          "fuente": "tools/libpq_client.py",
+          "lineas_segun_ia_copia_saneada": "115-167, 240-247, 253-301",
+          "afirmacion_ia": "El cliente no instala un receptor de NOTICE y libpq conserva su salida predeterminada a stderr."
+        }
+      ],
+      "resumen": "Un NOTICE con contenido sensible podría salir por una vía distinta del saneamiento de DatabaseError.",
+      "decision_propuesta": "aceptado",
+      "alcance": "Salida diagnóstica condicional; no se observó un NOTICE sensible en las evidencias históricas.",
+      "fundamento": "El saneamiento de errores es un control presente y diferente. En helpers nuevos debe definirse una política explícita de avisos o capturarse su salida sólo en almacenamiento privado. No se atribuye una filtración real a partir de la mera ausencia del callback.",
+      "prueba": {
+        "estado": "pendiente",
+        "tipo": "PostgreSQL de pruebas, centinela no sensible y stderr privado",
+        "propuesta": "Con el cliente en un proceso controlado, emitir RAISE NOTICE con un marcador inocuo y capturar stderr; comprobar su presencia sin usar datos reales. Si se implementa callback ctypes, conservar su referencia durante toda la conexión."
+      }
+    },
+    {
+      "id": "review_u5_c03/U5-C03-03",
+      "unidad": 5,
+      "origenes": [
+        {
+          "id": "review_u5_c03/U5-C03-03",
+          "consulta": "review_u5_c03",
+          "respuesta": "docs/ia/review_u5_c03_respuesta.md",
+          "metadatos": "docs/ia/review_u5_c03_metadatos.json",
+          "fuente": "tools/generar_informe_pdf.py",
+          "lineas_segun_ia_copia_saneada": "81-86",
+          "afirmacion_ia": "markup transforma negritas y enlaces antes de proteger código en línea y puede alterar literales dentro de backticks."
+        }
+      ],
+      "resumen": "Determinadas entradas Markdown pueden perder asteriscos o sintaxis de enlaces en el PDF.",
+      "decision_propuesta": "aceptado",
+      "alcance": "Fidelidad condicionada a una entrada afectada; no acredita un defecto visual en el PDF U5 real.",
+      "fundamento": "La mejora debe proteger primero los fragmentos de código y procesar el resto del marcado después. El informe histórico se conserva; no se necesita regenerarlo para aceptar una mejora del renderizador de uso futuro.",
+      "prueba": {
+        "estado": "pendiente",
+        "tipo": "Local, documento mínimo sintético",
+        "propuesta": "Renderizar una copia mínima con código en línea que contenga **literal** y [x](y); comparar el texto extraído y la imagen con la entrada literal, sin tocar el informe histórico."
+      }
+    },
+    {
+      "id": "review_u5_c03/U5-C03-04",
+      "unidad": 5,
+      "origenes": [
+        {
+          "id": "review_u5_c03/U5-C03-04",
+          "consulta": "review_u5_c03",
+          "respuesta": "docs/ia/review_u5_c03_respuesta.md",
+          "metadatos": "docs/ia/review_u5_c03_metadatos.json",
+          "fuente": "tools/empaquetar_entrega.py",
+          "lineas_segun_ia_copia_saneada": "84-101, 145-146",
+          "afirmacion_ia": "El límite se aplica por objeto Git, pero cat-file --batch acumula todos los objetos en memoria."
+        }
+      ],
+      "resumen": "Un repositorio grande con muchos objetos pequeños puede superar un presupuesto razonable de memoria.",
+      "decision_propuesta": "aceptado",
+      "alcance": "Robustez ante repositorios mayores; no se demostró agotamiento en el ZIP U5 real.",
+      "fundamento": "El empaquetador ya inspecciona objetos, credenciales, CRC, manifiesto y restauración Git. Esta observación propone un límite acumulado o procesamiento incremental, no niega esas garantías ni exige construir grandes archivos para validar un laboratorio pequeño.",
+      "prueba": {
+        "estado": "pendiente",
+        "tipo": "Local con inventario de tamaños o repositorio sintético acotado",
+        "propuesta": "Comprobar por inspección o inventario que no existe presupuesto acumulado antes de recuperar cuerpos; una prueba de mejora puede usar objetos sintéticos pequeños y un presupuesto de prueba reducido, evitando consumo excesivo."
+      }
+    },
+    {
+      "id": "review_u5_c04/U5-C04-02",
+      "unidad": 5,
+      "origenes": [
+        {
+          "id": "review_u5_c04/U5-C04-02",
+          "consulta": "review_u5_c04",
+          "respuesta": "docs/ia/review_u5_c04_respuesta.md",
+          "metadatos": "docs/ia/review_u5_c04_metadatos.json",
+          "fuente": "tools/rotar_log.py; tools/preparar_laboratorio.py",
+          "lineas_segun_ia_copia_saneada": "12-23; 200",
+          "afirmacion_ia": "Dos rotaciones procesadas dentro del mismo segundo pueden mantener la misma ruta de log y el helper sólo espera que cambie."
+        }
+      ],
+      "resumen": "Puede notificarse un fallo aunque la solicitud de rotación haya sido procesada, porque el nombre tiene resolución de segundos.",
+      "decision_propuesta": "aceptado",
+      "alcance": "Robustez condicionada a colisión temporal; no acredita que haya sucedido en la captura histórica.",
+      "fundamento": "El control de cambio de ruta es correcto para exigir una fuente cerrada. La mejora sería solicitar otra rotación al cruzar el segundo, dentro de un plazo acotado, no tomar pg_rotate_logfile()=true como prueba de cierre. Las evidencias originales se conservan.",
+      "prueba": {
+        "estado": "pendiente",
+        "tipo": "PostgreSQL de pruebas, sin datos personales",
+        "propuesta": "Con el patrón de nombre por segundos, emitir rotaciones próximas y comparar pg_current_logfile; registrar por separado aceptación de solicitud y cambio real de ruta. No publicar contenido de los logs."
+      }
+    },
+    {
+      "id": "review_u5_c05/U5-C05-02",
+      "unidad": 5,
+      "origenes": [
+        {
+          "id": "review_u5_c05/U5-C05-02",
+          "consulta": "review_u5_c05",
+          "respuesta": "docs/ia/review_u5_c05_respuesta.md",
+          "metadatos": "docs/ia/review_u5_c05_metadatos.json",
+          "fuente": "tools/verificar_privacidad.py",
+          "lineas_segun_ia_copia_saneada": "46-48",
+          "afirmacion_ia": "Un archivo rastreado eliminado sólo del directorio de trabajo sigue listado por git ls-files y read_bytes provoca FileNotFoundError."
+        }
+      ],
+      "resumen": "La verificación se interrumpe ante ese estado del árbol de trabajo y no genera evidencia nueva.",
+      "decision_propuesta": "aceptado",
+      "alcance": "Diagnóstico de robustez para un árbol modificado; la entrega histórica se empaquetó con Git limpio.",
+      "fundamento": "El proceso no produce un falso éxito. Puede rechazarse explícitamente ese estado con un diagnóstico claro, manteniendo el análisis del contenido todavía conservado en Git. No se interpreta como archivo perdido ni como defecto de la entrega U5 limpia.",
+      "prueba": {
+        "estado": "pendiente",
+        "tipo": "Local en repositorio temporal mínimo",
+        "propuesta": "Registrar un archivo sintético en Git y quitarlo sólo del directorio de trabajo; comprobar la interrupción controlada y no reutilizar un JSON anterior de éxito. No alterar repositorios o archivos históricos."
+      }
+    }
+  ],
+  "decision_propuesta_por_id_original": {
+    "review_u5/H-01": "aceptado",
+    "review_u6/U6-01": "aceptado",
+    "review_u6/U6-02": "aceptado",
+    "review_u6_c01/U6-C01-02": "aceptado",
+    "review_u6/U6-03": "aceptado",
+    "review_u6_c01/U6-C01-01": "aceptado",
+    "review_u5_c04/U5-C04-01": "aceptado",
+    "review_u6_c01/U6-C01-03": "aceptado",
+    "review_u7/U7-01": "aceptado",
+    "review_u7/U7-02": "descartado",
+    "review_u5_c01/U5-C01-01": "descartado",
+    "review_u5_c01/U5-C01-02": "aceptado",
+    "review_u5_c02/U5-C02-01": "aceptado",
+    "review_u5_c03/U5-C03-01": "aceptado",
+    "review_u5_c01/U5-C01-03": "aceptado",
+    "review_u5_c05/U5-C05-01": "aceptado",
+    "review_u5_c02/U5-C02-02": "aceptado",
+    "review_u5_c02/U5-C02-03": "aceptado",
+    "review_u5_c03/U5-C03-02": "aceptado",
+    "review_u5_c03/U5-C03-03": "aceptado",
+    "review_u5_c03/U5-C03-04": "aceptado",
+    "review_u5_c04/U5-C04-02": "aceptado",
+    "review_u5_c05/U5-C05-02": "aceptado"
+  }
+}

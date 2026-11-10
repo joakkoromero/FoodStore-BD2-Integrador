@@ -1,0 +1,46 @@
+TRABAJO PRACTICO - UNIDAD 4 - FOOD STORE
+Exequiel Arancibia - Joaquin Romero
+Base de Datos II - UTN
+
+ENTREGA PRINCIPAL
+TP_U4_FoodStore_Arancibia_Romero.pdf
+Contiene resolucion paso a paso, evidencia real y SQL completo.
+
+BASE DEL TRABAJO
+Copia heredada de los TP1 a TP5 proporcionados. Se restaura el respaldo
+pre-TP4 y se incorporan el indice TP4 y los indices/vistas TP5 originales.
+Se conservan las cinco tablas, los datos historicos y las restricciones.
+La carga 01_actividad_del_dia.sql agrega actividad de prueba identificada;
+no reemplaza el proyecto por un esquema sintetico independiente.
+
+RECONSTRUCCION
+Revisar la conexion del archivo 00_reconstruir_base.ps1 y usar una base nueva
+de practica llamada foodstore_u4_arancibia_romero. El script restaura el
+respaldo, aplica antecedentes y agrega la actividad del dia. Luego ejecutar
+tp_fnbc_control_lote.sql y tp_desnormalizacion_top_categorias.sql.
+No restaurar sobre la base original. Usar ON_ERROR_STOP=1.
+El respaldo y los scripts originales necesarios estan en antecedentes/.
+
+ARTEFACTOS U4
+tp_fnbc_control_lote.sql: Parte 1; reutiliza public.usuario.
+01_actividad_del_dia.sql: pedidos y lineas de prueba del dia local.
+tp_desnormalizacion_top_categorias.sql: Parte 2 y auditoria.
+
+COMPATIBILIDAD
+detalle_pedido no tiene eliminado ni id propio: PK (pedido_id,producto_id).
+subtotal es GENERATED STORED. pedido.fecha es TIMESTAMPTZ.
+La consulta usa el dia local y el filtro pedido.eliminado = FALSE.
+LIMIT 5 devuelve las dos categorias existentes con ventas.
+Las reglas TP2, los totales de pedido y las vistas TP5 se mantienen.
+La vista diaria U4 es independiente de la materializada mensual TP5.
+
+EVIDENCIAS
+evidencias/ conserva planes TXT/PNG/JSON, metricas, auditorias, huellas
+de los registros historicos y pruebas funcionales/concurrentes.
+reproduccion/ conserva los verificadores Python usados; revisar su
+conexion local antes de repetirlos. Las mediciones deben repetirse
+si cambia el dia, la carga, el hardware o la configuracion PostgreSQL.
+
+La plataforma solicita un unico PDF; el ZIP conserva los artefactos
+para repositorio y reproduccion. No se publico un repositorio ni se envio
+la entrega a terceros.

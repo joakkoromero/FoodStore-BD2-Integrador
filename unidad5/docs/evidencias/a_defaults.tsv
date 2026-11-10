@@ -1,0 +1,5 @@
+creador	esquema	defaclobjtype	defaclacl
+rol_funciones	<global>	f	{rol_funciones=X/rol_funciones}
+rol_propietario	<global>	f	{rol_propietario=X/rol_propietario}
+rol_propietario	datos_anon	r	{rol_reportes=r/rol_propietario}
+u5_bootstrap	<global>	f	{u5_bootstrap=X/u5_bootstrap}

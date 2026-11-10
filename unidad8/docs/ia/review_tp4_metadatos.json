@@ -1,0 +1,33 @@
+{
+  "tool": "OpenCode",
+  "installed_version": "1.18.23",
+  "requested_model": "openai/gpt-6.1-sol",
+  "agent": "plan",
+  "pure": true,
+  "permission_config": {
+    "permission": "deny"
+  },
+  "started_at_utc": "2026-11-10T15:22:05.673169+00:00",
+  "finished_at_utc": "2026-11-10T15:24:12.384931+00:00",
+  "prompt_sha256": "ae51f2a50c3ac957ac0a818e4675873f047cee45b3082d1b85484d1440c74564",
+  "attachments": [
+    {
+      "name": "TP4.md",
+      "sha256": "c44f6eab0b800dce88c03327a0330b6050fe50c34055a414e8a98cb17cd11198",
+      "repository_path": "docs/ia/review_tp4_adjuntos/01_TP4.md"
+    }
+  ],
+  "returncode": 0,
+  "timed_out": false,
+  "event_count": 4,
+  "unparsed_line_count": 0,
+  "error_event_count": 0,
+  "tool_event_count": 0,
+  "answer_sha256": "35be5e498d1e08ec5252cb9115c06b5cb2dc291b3ea9a7de384e3fffde3f72ac",
+  "raw_jsonl_sha256": "cde35b1d53a290205090557a31e70647ddd7eea93b2912fbf96357b588001248",
+  "raw_event_storage": "Private work directory outside deliverable repository",
+  "status": "completed",
+  "prior_failed_attempts": [],
+  "sql_executed": false,
+  "human_validation": "Pending; this consultation does not establish human approval"
+}

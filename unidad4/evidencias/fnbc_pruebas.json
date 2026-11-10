@@ -1,0 +1,130 @@
+{
+  "endpoint": "127.0.0.1:55439/foodstore_u4_arancibia_romero",
+  "usuario": "tp_admin",
+  "motor": "PostgreSQL",
+  "success": true,
+  "tests": [
+    {
+      "nombre": "Anomalia de insercion",
+      "ok": true,
+      "codigo_psql": 0,
+      "sql": "BEGIN;\nDO $$\nDECLARE rechazo BOOLEAN := FALSE;\nBEGIN\n    BEGIN\n        INSERT INTO public.control_lote_almacen_original\n            (lote_id, deposito_id, responsable_control_id)\n        VALUES (NULL, 30, 803);\n    EXCEPTION WHEN not_null_violation THEN\n        rechazo := TRUE;\n        RAISE NOTICE 'Insercion rechazada: SQLSTATE 23502; falta un lote para registrar R803 -> D30';\n    END;\n    IF NOT rechazo THEN\n        RAISE EXCEPTION 'La insercion sin lote debio rechazarse';\n    END IF;\nEND $$;\nROLLBACK;\nSELECT 'insercion_verificada_sin_cambios';",
+      "stdout": "insercion_verificada_sin_cambios",
+      "stderr": "NOTICE:  00000: Insercion rechazada: SQLSTATE 23502; falta un lote para registrar R803 -> D30\nLOCATION:  exec_stmt_raise, pl_exec.c:3911",
+      "sqlstate_esperado": "23502"
+    },
+    {
+      "nombre": "Anomalia de borrado",
+      "ok": true,
+      "codigo_psql": 0,
+      "sql": "BEGIN;\nDELETE FROM public.control_lote_almacen_original\nWHERE lote_id = 503 AND deposito_id = 31 AND responsable_control_id = 802;\nDO $$\nBEGIN\n    IF EXISTS (\n        SELECT 1 FROM public.control_lote_almacen_original\n        WHERE responsable_control_id = 802\n    ) THEN\n        RAISE EXCEPTION 'La prueba esperaba perder la pertenencia de R802 a D31';\n    END IF;\n    RAISE NOTICE 'Borrado verificado: quedan 0 filas de R802; se pierde el dato maestro R802 -> D31';\nEND $$;\nSELECT COUNT(*) AS filas_restantes_de_r802\nFROM public.control_lote_almacen_original\nWHERE responsable_control_id = 802;\nROLLBACK;",
+      "stdout": "0",
+      "stderr": "NOTICE:  00000: Borrado verificado: quedan 0 filas de R802; se pierde el dato maestro R802 -> D31\nLOCATION:  exec_stmt_raise, pl_exec.c:3911",
+      "filas_r802_tras_borrado": 0
+    },
+    {
+      "nombre": "Anomalia de actualizacion",
+      "ok": true,
+      "codigo_psql": 0,
+      "sql": "BEGIN;\nUPDATE public.control_lote_almacen_original\nSET deposito_id = 31\nWHERE lote_id = 501 AND responsable_control_id = 801;\nDO $$\nDECLARE cantidad INTEGER;\nBEGIN\n    SELECT COUNT(DISTINCT deposito_id) INTO cantidad\n    FROM public.control_lote_almacen_original\n    WHERE responsable_control_id = 801;\n    IF cantidad <> 2 THEN\n        RAISE EXCEPTION 'Se esperaban 2 depositos diferentes para R801: %', cantidad;\n    END IF;\n    RAISE NOTICE 'Actualizacion parcial verificada: R801 aparece en D30 y D31; se viola R -> D';\nEND $$;\nSELECT responsable_control_id, COUNT(DISTINCT deposito_id) AS depositos_distintos\nFROM public.control_lote_almacen_original\nWHERE responsable_control_id = 801\nGROUP BY responsable_control_id;\nROLLBACK;",
+      "stdout": "801|2",
+      "stderr": "NOTICE:  00000: Actualizacion parcial verificada: R801 aparece en D30 y D31; se viola R -> D\nLOCATION:  exec_stmt_raise, pl_exec.c:3911",
+      "depositos_distintos_r801": 2
+    },
+    {
+      "nombre": "Preparacion de concurrencia",
+      "ok": true,
+      "codigo_psql": 0,
+      "sql": "BEGIN;\nDO $$\nBEGIN\n    IF EXISTS (SELECT 1 FROM public.responsable_deposito WHERE responsable_control_id = 803)\n       OR EXISTS (SELECT 1 FROM public.lote_responsable WHERE lote_id = 503 AND responsable_control_id = 801)\n    THEN\n        RAISE EXCEPTION 'La preparacion requiere libres las filas auxiliares de esta prueba';\n    END IF;\nEND $$;\nINSERT INTO public.responsable_deposito (responsable_control_id, deposito_id)\nVALUES (803, 30);\nCOMMIT;",
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "nombre": "Concurrencia real de dos sesiones",
+      "ok": true,
+      "estado_a_observado": [
+        {
+          "pid": 3660,
+          "state": "idle in transaction",
+          "wait_event_type": "Client",
+          "wait_event": "ClientRead",
+          "query": "SELECT 'A_CONTROL_INSERTADO';"
+        }
+      ],
+      "estado_b_observado": [
+        {
+          "pid": 28536,
+          "state": "active",
+          "wait_event_type": "Lock",
+          "wait_event": "transactionid",
+          "query": "SET application_name = 'tp_fnbc_prueba_B';\n\nBEGIN;\nINSERT INTO public.lote_responsable (lote_id, responsable_control_id)\nVALUES (503, 803);\nCOMMIT;\n"
+        }
+      ],
+      "espera_por_bloqueo_observada": true,
+      "coordinacion": "A conserva BEGIN abierto hasta observar B esperando Lock; luego ejecuta pg_sleep(2) y COMMIT",
+      "duracion_b_segundos": 2.109,
+      "sesion_a": {
+        "sql": "SET application_name = 'tp_fnbc_prueba_A';\nBEGIN;\nINSERT INTO public.lote_responsable (lote_id, responsable_control_id)\nVALUES (503, 801);\nSELECT 'A_CONTROL_INSERTADO';\n\nSELECT pg_sleep(2);\nCOMMIT;",
+        "codigo_psql": 0,
+        "stdout": "A_CONTROL_INSERTADO",
+        "stderr": ""
+      },
+      "sesion_b": {
+        "sql": "BEGIN;\nINSERT INTO public.lote_responsable (lote_id, responsable_control_id)\nVALUES (503, 803);\nCOMMIT;",
+        "codigo_psql": 1,
+        "stdout": "",
+        "stderr": "ERROR:  23505: Ya existe otro responsable para el mismo lote y depósito\nCONTEXT:  PL/pgSQL function verificar_control_lote() line 11 at RAISE\nLOCATION:  exec_stmt_raise, pl_exec.c:3911"
+      },
+      "sqlstate_esperado_b": "23505"
+    },
+    {
+      "nombre": "Estado posterior a concurrencia",
+      "ok": true,
+      "codigo_psql": 0,
+      "sql": "DO $$\nBEGIN\n    IF NOT EXISTS (\n        SELECT 1 FROM public.lote_responsable\n        WHERE lote_id = 503 AND responsable_control_id = 801\n    ) OR EXISTS (\n        SELECT 1 FROM public.lote_responsable\n        WHERE lote_id = 503 AND responsable_control_id = 803\n    ) THEN\n        RAISE EXCEPTION 'El estado final no coincide con A confirmada y B rechazada';\n    END IF;\nEND $$;\nSELECT 'A_confirmada_B_rechazada';",
+      "stdout": "A_confirmada_B_rechazada",
+      "stderr": ""
+    },
+    {
+      "nombre": "Limpieza de las filas de concurrencia",
+      "ok": true,
+      "codigo_psql": 0,
+      "sql": "BEGIN;\nDELETE FROM public.lote_responsable\nWHERE lote_id = 503 AND responsable_control_id IN (801, 803);\nDELETE FROM public.responsable_deposito WHERE responsable_control_id = 803;\nCOMMIT;",
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "nombre": "Integridad final y restauracion de las pruebas",
+      "ok": true,
+      "codigo_psql": 0,
+      "sql": "DO $$\nDECLARE cantidad INTEGER;\nBEGIN\n    SELECT COUNT(*) INTO cantidad FROM public.control_lote_almacen;\n    IF cantidad <> 3 THEN\n        RAISE EXCEPTION 'La vista final deberia tener 3 filas; tiene %', cantidad;\n    END IF;\n    IF EXISTS (\n        SELECT * FROM public.control_lote_almacen_original\n        EXCEPT ALL SELECT * FROM public.control_lote_almacen\n    ) OR EXISTS (\n        SELECT * FROM public.control_lote_almacen\n        EXCEPT ALL SELECT * FROM public.control_lote_almacen_original\n    ) THEN\n        RAISE EXCEPTION 'La prueba altero la equivalencia de la migracion';\n    END IF;\nEND $$;\nSELECT lote_id, deposito_id, responsable_control_id\nFROM public.control_lote_almacen ORDER BY lote_id, deposito_id, responsable_control_id;\nSELECT 'diferencias_bilaterales=0; filas_vista=3; originales_restaurados';",
+      "stdout": "501|30|801\n502|30|801\n503|31|802\ndiferencias_bilaterales=0; filas_vista=3; originales_restaurados",
+      "stderr": ""
+    }
+  ],
+  "version_servidor": "PostgreSQL 17.11 on x86_64-windows, compiled by msvc-19.44.35228, 64-bit",
+  "matematica": {
+    "dependencias": [
+      "LD -> R",
+      "R -> D"
+    ],
+    "clausuras_todos_los_subconjuntos": {
+      "{}": "{}",
+      "L": "L",
+      "D": "D",
+      "R": "DR",
+      "LD": "LDR",
+      "LR": "LDR",
+      "DR": "DR",
+      "LDR": "LDR"
+    },
+    "claves_candidatas": [
+      "LD",
+      "LR"
+    ],
+    "atributos_primos": "LDR",
+    "atributos_no_primos": [],
+    "dependencia_violatoria_fnbc": "R -> D",
+    "ok": true
+  }
+}

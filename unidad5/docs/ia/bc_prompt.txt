@@ -1,0 +1,32 @@
+Revisa los borradores SQL adjuntos de las Partes B y C de un laboratorio
+propio Food Store en PostgreSQL 17. El tercer adjunto contiene solo esquema
+y un diseno propuesto de permisos, sin datos personales ni credenciales.
+No uses herramientas ni ejecutes nada. No supongas que los permisos ya
+fueron implementados ni que hubo resultados de ejecucion.
+
+Genera las versiones finales de auditoria_test.sql y simulacro_incidente.sql
+como catalogos de sentencias parametrizadas con los mismos marcadores
+-- name: y placeholders $1, $2, $3 para PQexecParams. El cliente Python
+orquesta las conexiones reales; no existe una orden SQL para probar un
+fallo de handshake PostgreSQL. La Parte B debe probar SELECT, INSERT,
+UPDATE y transicion de estado valida dentro de BEGIN/ROLLBACK. Los
+IDENTITY generan sus ids; no otorgues permisos directos de secuencia.
+
+La Parte C debe autenticar tres veces con clave incorrecta y una con
+clave correcta mediante fn_autenticar, leer la proyeccion autorizada de
+todos los usuarios sin contrasena y luego intentar GRANT admin_datos TO
+app_web bajo app_web (debe fallar SQLSTATE 42501); verificar membresia
+antes/despues desde una conexion verificadora separada. El cliente cuenta
+y descarta los valores recibidos, compartiendo solo conteos y metadatos.
+No solicites ni propongas copiar contactos o hashes a la IA. Las claves
+se enlazan como parametros y su registro se desactiva, nunca literales.
+
+Explica mejoras necesarias en la orquestacion, los limites del log nativo
+(SELECT no prueba exfiltracion ni numero de filas entregadas), y por que
+la autenticacion de Food Store no cambia session_user/current_user del
+motor. No inventes una IP remota, resultados, validacion humana o una
+contencion aplicada. La decision final quedara a cargo del equipo.
+
+Devuelve ambos archivos completos en bloques SQL separados y luego una
+revision breve de defectos reales si los hay. No generes roles.sql ni
+cambios de permisos: esa parte espera una especificacion real de Kiro.

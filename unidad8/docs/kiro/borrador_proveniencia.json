@@ -1,0 +1,14 @@
+{
+  "recorded_utc": "2026-11-10T15:09:51.379412+00:00",
+  "artifact": "borrador_original_kiro.md",
+  "bytes": 17031,
+  "sha256": "7b5d04fb06f4c3d8b8372e73c8e06f82832ba0d7baf7efbd26f9892309cb541e",
+  "generation_tool": "Kiro",
+  "observed_mode": "Plan",
+  "observed_context_reads": 1,
+  "ui_reported_duration_seconds": 57,
+  "ui_reported_credits": 0.68,
+  "persistence": "Codex usó Copy Message As Markdown en Kiro, pegó en editor y guardó con Save As. Kiro generó el texto; no se atribuye a Kiro escritura automática de archivos.",
+  "status": "Borrador original conservado sin cambios; requiere correcciones antes de generar scripts con OpenCode.",
+  "human_review_by_team": "No establecido por este registro."
+}

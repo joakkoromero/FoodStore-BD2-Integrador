@@ -1,0 +1,14 @@
+Limit  (cost=6.30..6.30 rows=2 width=13) (actual time=0.060..0.060 rows=2 loops=1)
+  Buffers: shared hit=5
+  ->  Sort  (cost=6.30..6.30 rows=2 width=13) (actual time=0.058..0.058 rows=2 loops=1)
+        Sort Key: total_vendido DESC
+        Sort Method: quicksort  Memory: 25kB
+        Buffers: shared hit=5
+        ->  Seq Scan on mv_u4_ventas_categoria_dia  (cost=0.00..6.29 rows=2 width=13) (actual time=0.021..0.031 rows=2 loops=1)
+              Filter: (fecha = CURRENT_DATE)
+              Rows Removed by Filter: 284
+              Buffers: shared hit=2
+Planning:
+  Buffers: shared hit=79
+Planning Time: 1.721 ms
+Execution Time: 0.090 ms

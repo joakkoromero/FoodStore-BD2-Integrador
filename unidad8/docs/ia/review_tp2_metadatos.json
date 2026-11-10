@@ -1,0 +1,44 @@
+{
+  "tool": "OpenCode",
+  "installed_version": "1.18.23",
+  "requested_model": "openai/gpt-6.1-sol",
+  "agent": "plan",
+  "pure": true,
+  "permission_config": {
+    "permission": "deny"
+  },
+  "started_at_utc": "2026-11-10T14:57:54.861396+00:00",
+  "finished_at_utc": "2026-11-10T15:00:23.583064+00:00",
+  "prompt_sha256": "2070078228b96225969b470e0fedeb1f597f72ef2cb6757dab43b7742a42cf5c",
+  "attachments": [
+    {
+      "name": "TP2.md",
+      "sha256": "1852bb5f2722eecf449ea37b0ac8716ddbb8026b82176194b5b008ac4bdeb379",
+      "repository_path": "docs/ia/review_tp2_adjuntos/01_TP2.md"
+    }
+  ],
+  "returncode": 0,
+  "timed_out": false,
+  "event_count": 4,
+  "unparsed_line_count": 0,
+  "error_event_count": 0,
+  "tool_event_count": 0,
+  "answer_sha256": "dca84ecfad3ab9baa2c48cf416d73fee8952b781dc81c9cf3a1521ad8801e0de",
+  "raw_jsonl_sha256": "39757c17a3d0081e8d308ade7e800d0d41d3baaad8ec5c586f2fce95c9c49612",
+  "raw_event_storage": "Private work directory outside deliverable repository",
+  "status": "completed",
+  "prior_failed_attempts": [
+    {
+      "started_at_utc": "2026-11-10T14:54:08.565932+00:00",
+      "finished_at_utc": "2026-11-10T14:54:10.136427+00:00",
+      "returncode": 1,
+      "timed_out": false,
+      "event_count": 0,
+      "error_event_count": 0,
+      "raw_jsonl_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "failed"
+    }
+  ],
+  "sql_executed": false,
+  "human_validation": "Pending; this consultation does not establish human approval"
+}

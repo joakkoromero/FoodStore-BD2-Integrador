@@ -1,0 +1,12 @@
+{
+  "phase": "backup",
+  "started_utc": "2026-11-03T21:56:40.337158+00:00",
+  "finished_utc": "2026-11-03T21:56:47.824682+00:00",
+  "script": "backup_foodstore.ps1",
+  "script_sha256": "53612efb8f616d8cf1ff763d998d1155dce13d40b6aa1784e634d299404aa9f5",
+  "native_process_exit_code": 0,
+  "expected_exit_code": 0,
+  "passed": true,
+  "personal_values_exported": false,
+  "diagnostics": "Private outside deliverable"
+}

@@ -1,0 +1,9 @@
+{
+  "database": "foodstore_u8_arancibia_romero",
+  "script": "postgresql/30_corregir_estado_inicial.sql",
+  "script_sha256": "e9b1e08c1c6a1c90e5ee0bd625a1f1f37ecdd11b6b223104d37c5fa17537b58a",
+  "started_utc": "2026-11-10T15:35:39.502312+00:00",
+  "finished_utc": "2026-11-10T15:35:39.675360+00:00",
+  "exit_code": 0,
+  "official_source_modified": false
+}

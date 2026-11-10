@@ -1,0 +1,30 @@
+BEGIN
+CREATE SCHEMA
+DROP TABLE
+CREATE TABLE
+INSERT 0 20001
+  mes_alta  | eliminado | cantidad 
+------------+-----------+----------
+ 2026-09-01 | f         |    20000
+ 2026-10-01 | f         |        1
+(2 rows)
+
+  mes_alta  | eliminado | cantidad 
+------------+-----------+----------
+ 2026-09-01 | f         |    20000
+ 2026-10-01 | f         |        1
+(2 rows)
+
+  mes_alta  | eliminado | cantidad_origen | cantidad_copia | coincide 
+------------+-----------+-----------------+----------------+----------
+ 2026-09-01 | f         |           20000 |          20000 | t
+ 2026-10-01 | f         |               1 |              1 | t
+(2 rows)
+
+SELECT 0
+ sentido | mes_alta | eliminado | cantidad 
+---------+----------+-----------+----------
+(0 rows)
+
+DO
+COMMIT

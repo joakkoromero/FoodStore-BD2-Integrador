@@ -1,0 +1,9 @@
+rolname	rolcanlogin	rolsuper	rolcreatedb	rolcreaterole	rolreplication	rolbypassrls
+admin_datos	t	f	f	f	f	f
+app_web	t	f	f	f	f	f
+rol_app_escritura	f	f	f	f	f	f
+rol_app_lectura	f	f	f	f	f	f
+rol_funciones	f	f	f	f	f	f
+rol_propietario	f	f	f	f	f	f
+rol_reportes	f	f	f	f	f	f
+rol_soporte	f	f	f	f	f	f

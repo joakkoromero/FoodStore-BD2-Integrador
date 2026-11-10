@@ -1,0 +1,11 @@
+{
+  "test": "U6: un archivo .dump sin manifest SUCCESS no es candidato de restauración",
+  "synthetic_file_only": true,
+  "candidate_manifests": 0,
+  "rejection": "No hay manifiesto exitoso.",
+  "rejected": true,
+  "native_client_calls": 0,
+  "database_connected": false,
+  "original_helper_modified": false,
+  "original_helper_sha256": "bc5a4e87493312e4954d2e4849d756576fe6566c0256e902b4d770f1add81392"
+}

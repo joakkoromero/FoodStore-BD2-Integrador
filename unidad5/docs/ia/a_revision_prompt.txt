@@ -1,0 +1,18 @@
+Auditá el roles.sql adjunto para PostgreSQL17, frente al diseño real de Kiro
+y las precisiones de integración adjuntas. El esquema adjunto no contiene
+datos. Sos auditor: no ejecutes herramientas ni SQL, no afirmes pruebas ni
+aprobación humana. Devolvé hallazgos concretos, gravedad, líneas o bloques,
+SQL de corrección si hace falta y permisos residuales. Revisá roles y
+membresías INHERIT/SET/ADMIN, columnas sensibles, SECURITY DEFINER,
+search_path y permisos internos de los triggers heredados, defaults bajo
+el creador correcto, ownership y diferencia entre permisos de tabla/columna.
+Se exige aplicación por mínimo privilegio y conservar reglas de negocio.
+
+Además compará el mantenimiento del esquema puntual con una alternativa
+operativa que simplifique las concesiones futuras: proponé su SQL y
+explicá exactamente qué acceso adicional recibirían soporte o reportes,
+si lo hubiera. Separá esa alternativa de las correcciones necesarias; el
+equipo la evaluará críticamente y puede rechazarla por exceder el alcance.
+No modifiques la especificación ni supongas que una alternativa ha sido
+aplicada. Esta petición de alternativas queda conservada literalmente para
+que no se presente una sugerencia solicitada como un error espontáneo.

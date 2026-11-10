@@ -1,0 +1,67 @@
+{
+  "informe_paginas": 5,
+  "paginas_totales": 5,
+  "conclusion_palabras": 156,
+  "fuentes_commit": "8178b01",
+  "adjuntos_exactos": [
+    {
+      "nombre": "consultas_mongodb.js",
+      "bytes": 5265,
+      "sha256": "fea8238c3aa41843372ea294d924cdac18fa02d3cbb5bf2963d8f58c0cc14d91"
+    },
+    {
+      "nombre": "consultas_postgresql.sql",
+      "bytes": 2892,
+      "sha256": "5342a39265f560563996766e15f538e8c7ed24f33aa9e534a3e6e27f1ac6661f"
+    },
+    {
+      "nombre": "pedidos_migrados.ejson",
+      "bytes": 4350,
+      "sha256": "45b0c85ba048729e95abd701a482d336620d8eff69959914fc0dbc3925b911d6"
+    },
+    {
+      "nombre": "README.md",
+      "bytes": 2465,
+      "sha256": "ff50816536746bfaff268636c3624757588e452be06f9950ea1070fee226ecb9"
+    },
+    {
+      "nombre": "docs/ia/consulta_respuesta.md",
+      "bytes": 4255,
+      "sha256": "a47cc4ceb1929541412a73cf9149e9944acffc1bb8d13fa76c9b24a406eb44fb"
+    },
+    {
+      "nombre": "docs/evidencias/descargas_verificadas.json",
+      "bytes": 679,
+      "sha256": "07526ca9d7a9f784ab3b36f77512788d9d413be9c928b5fda27d54c8115eec70"
+    },
+    {
+      "nombre": "docs/evidencias/mongodb_salida.jsonl",
+      "bytes": 3395,
+      "sha256": "3b5b5f5d270f7bc61e577fb093d55d0d2962ba6f9be287f0be3e77cb89f1a71e"
+    },
+    {
+      "nombre": "docs/evidencias/postgresql_salida.txt",
+      "bytes": 3011,
+      "sha256": "c846d4fbe04496d0d476767f482a79f543d1b58236bc84fc6c46e13de7ba8742"
+    },
+    {
+      "nombre": "docs/evidencias/precision_y_dominios.json",
+      "bytes": 785,
+      "sha256": "9ce78d1a9af03d200ddf08f6474b9217961194e3dc150ffbd6280669e1ea2806"
+    },
+    {
+      "nombre": "docs/evidencias/validacion.json",
+      "bytes": 3575,
+      "sha256": "e42c984f4fa79fc341e7864155f20559ee2cd723d161db68c8dfb9e751cb8f8f"
+    }
+  ],
+  "sha256_pdf": "239b1e6c8b1f61f37c5096f43ad02e3a55ca59090d63107fd921d21cba699b8a",
+  "visual_qa": "aprobado: cinco paginas renderizadas a 120 dpi y revisadas completas",
+  "hashes_fuentes_ejecucion_coinciden": true,
+  "adjuntos_coinciden_archivos_actuales": true,
+  "passwords_y_verificadores_ausentes": true,
+  "acciones_automaticas_pdf_ausentes": true,
+  "precision_temporal_verificada": true,
+  "qa_utc": "2026-11-10T14:39:30.380179+00:00",
+  "revision_independiente": "Aprobada por agente qa_u7: guia, teoria, fuentes, evidencia y cinco paginas finales completas sin defectos pendientes"
+}

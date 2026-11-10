@@ -1,0 +1,1261 @@
+{
+  "inicio_utc": "2026-11-10T15:41:24.245153+00:00",
+  "estado": "COMPLETADO_CON_VERIFICACIONES",
+  "proteccion_directorio_privado": "Windows ACL: usuario actual, SYSTEM y Administradores; sin herencia",
+  "advertencias": [
+    "SIMULADO_APROBADO no es una venta.",
+    "Aceptacion de precio es una accion sintetica de laboratorio, no humana.",
+    "La hora local es diagnostica; no decide autoridad ni vigencia.",
+    "Tras restaurar servidor se invalidan todas las caches e instantaneas y se reconcilian UUID y colas antes de reenviar.",
+    "El dump y los diagnosticos privados no deben incluirse en el ZIP."
+  ],
+  "scripts_sha256": {
+    "movil\\schema_sqlite.sql": "8d01ff7a1fd31e3f2de9ff32fb0cb668a7dc7ec65a196819225e9b21453811e2",
+    "movil\\pruebas_sqlite.sql": "435789926a9aac766b4fa4610e89e439122c05320c4ba9a07a5aea1d083e067a",
+    "movil\\semaforo.sql": "94027db7f224e1298ddbda7b44a55b67efa799cfc9fb1a88082f61412c96bd0d",
+    "postgresql\\10_fixture_y_snapshot.sql": "9823f0d34286f01e33a588c299f3d15d431d236bc8ba42e4cc39455fd3eee63f",
+    "postgresql\\20_validar_no_ventas.sql": "471b67ead7627f32c8fe2c8dc88cb382211a1b28f3587b42c810a7f3e878c2bb"
+  },
+  "comandos": [
+    {
+      "operacion": "version psql",
+      "herramienta": "psql",
+      "codigo_salida": 0
+    },
+    {
+      "operacion": "version createdb",
+      "herramienta": "createdb",
+      "codigo_salida": 0
+    },
+    {
+      "operacion": "version pg_dump",
+      "herramienta": "pg_dump",
+      "codigo_salida": 0
+    },
+    {
+      "operacion": "version servidor",
+      "herramienta": "psql",
+      "codigo_salida": 0
+    },
+    {
+      "operacion": "verificar ausencia de destino",
+      "herramienta": "psql",
+      "codigo_salida": 0
+    },
+    {
+      "operacion": "huella agregada fuente: categoria",
+      "herramienta": "psql",
+      "codigo_salida": 0
+    },
+    {
+      "operacion": "huella agregada fuente: producto",
+      "herramienta": "psql",
+      "codigo_salida": 0
+    },
+    {
+      "operacion": "huella agregada fuente: usuario",
+      "herramienta": "psql",
+      "codigo_salida": 0
+    },
+    {
+      "operacion": "huella agregada fuente: pedido",
+      "herramienta": "psql",
+      "codigo_salida": 0
+    },
+    {
+      "operacion": "huella agregada fuente: detalle_pedido",
+      "herramienta": "psql",
+      "codigo_salida": 0
+    },
+    {
+      "operacion": "crear copia nueva desde template foodstore",
+      "herramienta": "createdb",
+      "codigo_salida": 0
+    },
+    {
+      "operacion": "respaldo privado custom antes de preparar fixture",
+      "herramienta": "pg_dump",
+      "codigo_salida": 0
+    },
+    {
+      "operacion": "conteo copia previa: categoria",
+      "herramienta": "psql",
+      "codigo_salida": 0
+    },
+    {
+      "operacion": "conteo copia previa: producto",
+      "herramienta": "psql",
+      "codigo_salida": 0
+    },
+    {
+      "operacion": "conteo copia previa: usuario",
+      "herramienta": "psql",
+      "codigo_salida": 0
+    },
+    {
+      "operacion": "conteo copia previa: pedido",
+      "herramienta": "psql",
+      "codigo_salida": 0
+    },
+    {
+      "operacion": "conteo copia previa: detalle_pedido",
+      "herramienta": "psql",
+      "codigo_salida": 0
+    },
+    {
+      "operacion": "preparar fixture y vista limitada",
+      "herramienta": "psql",
+      "codigo_salida": 0
+    },
+    {
+      "operacion": "baseline copia despues del fixture",
+      "herramienta": "psql",
+      "codigo_salida": 0
+    },
+    {
+      "operacion": "exportacion CSV snapshot_inicial.csv",
+      "herramienta": "psql",
+      "codigo_salida": 0
+    },
+    {
+      "operacion": "preparacion administrativa explicita C2",
+      "herramienta": "psql",
+      "codigo_salida": 0
+    },
+    {
+      "operacion": "exportacion CSV snapshot_c2.csv",
+      "herramienta": "psql",
+      "codigo_salida": 0
+    },
+    {
+      "operacion": "preparacion administrativa explicita C4",
+      "herramienta": "psql",
+      "codigo_salida": 0
+    },
+    {
+      "operacion": "exportacion CSV snapshot_c4.csv",
+      "herramienta": "psql",
+      "codigo_salida": 0
+    },
+    {
+      "operacion": "validacion final copia",
+      "herramienta": "psql",
+      "codigo_salida": 0
+    },
+    {
+      "operacion": "huella agregada fuente: categoria",
+      "herramienta": "psql",
+      "codigo_salida": 0
+    },
+    {
+      "operacion": "huella agregada fuente: producto",
+      "herramienta": "psql",
+      "codigo_salida": 0
+    },
+    {
+      "operacion": "huella agregada fuente: usuario",
+      "herramienta": "psql",
+      "codigo_salida": 0
+    },
+    {
+      "operacion": "huella agregada fuente: pedido",
+      "herramienta": "psql",
+      "codigo_salida": 0
+    },
+    {
+      "operacion": "huella agregada fuente: detalle_pedido",
+      "herramienta": "psql",
+      "codigo_salida": 0
+    }
+  ],
+  "local": [
+    {
+      "archivo_sql": "schema_sqlite.sql",
+      "sentencias": [
+        {
+          "sql": "PRAGMA foreign_keys = ON;"
+        },
+        {
+          "sql": "BEGIN;"
+        },
+        {
+          "sql": "CREATE TABLE producto_cache (\n    producto_id INTEGER PRIMARY KEY CHECK (producto_id > 0),\n    nombre TEXT NOT NULL CHECK (length(trim(nombre)) > 0),\n    precio_centavos INTEGER NOT NULL CHECK (precio_centavos >= 0),\n    stock_visto INTEGER NOT NULL CHECK (stock_visto >= 0),\n    disponible_visto INTEGER NOT NULL CHECK (disponible_visto IN (0, 1)),\n    eliminado INTEGER NOT NULL CHECK (eliminado IN (0, 1)),\n    capturado_en TEXT NOT NULL CHECK (length(capturado_en) > 0)\n) STRICT;"
+        },
+        {
+          "sql": "CREATE TABLE pedido_borrador (\n    id_local TEXT PRIMARY KEY NOT NULL CHECK (\n        length(id_local) = 36\n        AND substr(id_local, 9, 1) = '-'\n        AND substr(id_local, 14, 1) = '-'\n        AND substr(id_local, 19, 1) = '-'\n        AND substr(id_local, 24, 1) = '-'\n        AND length(replace(id_local, '-', '')) = 32\n        AND replace(id_local, '-', '') NOT GLOB '*[^0-9a-fA-F]*'\n    ),\n    usuario_id_servidor INTEGER NOT NULL CHECK (usuario_id_servidor > 0),\n    forma_pago TEXT NOT NULL CHECK (\n        forma_pago IN ('EFECTIVO', 'TARJETA', 'TRANSFERENCIA')\n    ),\n    creado_en TEXT NOT NULL CHECK (length(creado_en) > 0)\n) STRICT;"
+        },
+        {
+          "sql": "CREATE TABLE item_borrador (\n    id_local TEXT NOT NULL REFERENCES pedido_borrador(id_local),\n    producto_id INTEGER NOT NULL REFERENCES producto_cache(producto_id),\n    cantidad INTEGER NOT NULL CHECK (cantidad > 0),\n    precio_centavos_visto INTEGER NOT NULL CHECK (precio_centavos_visto >= 0),\n    PRIMARY KEY (id_local, producto_id)\n) STRICT;"
+        },
+        {
+          "sql": "CREATE TABLE cola_sync (\n    solicitud_uuid TEXT PRIMARY KEY NOT NULL CHECK (\n        length(solicitud_uuid) = 36\n        AND substr(solicitud_uuid, 9, 1) = '-'\n        AND substr(solicitud_uuid, 14, 1) = '-'\n        AND substr(solicitud_uuid, 19, 1) = '-'\n        AND substr(solicitud_uuid, 24, 1) = '-'\n        AND length(replace(solicitud_uuid, '-', '')) = 32\n        AND replace(solicitud_uuid, '-', '') NOT GLOB '*[^0-9a-fA-F]*'\n    ),\n    id_local TEXT NOT NULL REFERENCES pedido_borrador(id_local),\n    estado TEXT NOT NULL CHECK (\n        estado IN ('PENDIENTE', 'CONFLICTO', 'RECHAZADO', 'SIMULADO_APROBADO')\n    ),\n    motivo TEXT NOT NULL DEFAULT '',\n    creada_en TEXT NOT NULL CHECK (length(creada_en) > 0),\n    evaluado_en TEXT\n) STRICT;"
+        },
+        {
+          "sql": "CREATE UNIQUE INDEX uq_cola_sync_pendiente\n    ON cola_sync(id_local)\n    WHERE estado = 'PENDIENTE';"
+        },
+        {
+          "sql": "-- Auxiliar no STRICT. El importador valida el CSV y normaliza t/f a 1/0.\nCREATE TABLE snapshot_servidor (\n    producto_id INTEGER PRIMARY KEY CHECK (producto_id > 0),\n    nombre TEXT NOT NULL,\n    precio_centavos INTEGER NOT NULL CHECK (\n        typeof(precio_centavos) = 'integer' AND precio_centavos >= 0\n    ),\n    stock INTEGER NOT NULL CHECK (typeof(stock) = 'integer' AND stock >= 0),\n    disponible INTEGER NOT NULL CHECK (\n        typeof(disponible) = 'integer' AND disponible IN (0, 1)\n    ),\n    eliminado INTEGER NOT NULL CHECK (\n        typeof(eliminado) = 'integer' AND eliminado IN (0, 1)\n    ),\n    capturado_en TEXT NOT NULL CHECK (length(capturado_en) > 0)\n);"
+        },
+        {
+          "sql": "CREATE VIEW v_catalogo_disponible AS\nSELECT producto_id, nombre, precio_centavos, stock_visto, capturado_en\nFROM producto_cache\nWHERE eliminado = 0\n  AND disponible_visto = 1\n  AND stock_visto > 0;"
+        },
+        {
+          "sql": "COMMIT;"
+        }
+      ]
+    },
+    {
+      "importacion_csv": "snapshot_inicial.csv",
+      "sha256": "74492f751b0016a35f2eae60d5db1513f270e028e55715df5ff0f6e520109ade",
+      "filas": 4,
+      "fecha_autoridad": "capturado_en recibido de PostgreSQL"
+    },
+    {
+      "archivo_sql": "pruebas_sqlite.sql",
+      "sentencias": [
+        {
+          "sql": "-- Ejecutar sentencia por sentencia, conservando la conexion.\n-- Los marcadores EXPECT_ERROR corresponden a la sentencia que los contiene.\n-- Despues de cada error esperado se ejecuta el ROLLBACK siguiente.\n-- No ejecutar este archivo mediante executescript().\n\n-- C1: consulta exclusivamente local, sin conexion PostgreSQL.\nSELECT producto_id, nombre, precio_centavos, stock_visto, capturado_en\nFROM v_catalogo_disponible\nORDER BY producto_id;",
+          "columnas": [
+            "producto_id",
+            "nombre",
+            "precio_centavos",
+            "stock_visto",
+            "capturado_en"
+          ],
+          "filas": [
+            [
+              50001,
+              "U8 - Muzzarella",
+              900000,
+              10,
+              "2026-11-10 12:41:41.881193-03"
+            ],
+            [
+              50002,
+              "U8 - Empanadas",
+              120000,
+              4,
+              "2026-11-10 12:41:41.881193-03"
+            ],
+            [
+              50003,
+              "U8 - Fugazzeta",
+              800000,
+              5,
+              "2026-11-10 12:41:41.881193-03"
+            ],
+            [
+              50004,
+              "U8 - Agua",
+              150000,
+              20,
+              "2026-11-10 12:41:41.881193-03"
+            ]
+          ]
+        },
+        {
+          "sql": "-- C1-COMMIT: encabezado, dos items y solicitud en una sola transaccion.\nBEGIN;"
+        },
+        {
+          "sql": "INSERT INTO pedido_borrador\n    (id_local, usuario_id_servidor, forma_pago, creado_en)\nVALUES\n    ('10000000-0000-4000-8000-000000000001', 1, 'EFECTIVO',\n     '2026-01-01T00:00:00Z');"
+        },
+        {
+          "sql": "INSERT INTO item_borrador\n    (id_local, producto_id, cantidad, precio_centavos_visto)\nSELECT '10000000-0000-4000-8000-000000000001',\n       producto_id, 1, precio_centavos\nFROM producto_cache\nWHERE nombre IN ('U8 - Muzzarella', 'U8 - Empanadas');"
+        },
+        {
+          "sql": "INSERT INTO cola_sync\n    (solicitud_uuid, id_local, estado, motivo, creada_en)\nVALUES\n    ('20000000-0000-4000-8000-000000000001',\n     '10000000-0000-4000-8000-000000000001',\n     'PENDIENTE', '', '2026-01-01T00:00:00Z');"
+        },
+        {
+          "sql": "COMMIT;"
+        },
+        {
+          "sql": "SELECT\n    (SELECT count(*) FROM pedido_borrador\n     WHERE id_local = '10000000-0000-4000-8000-000000000001') AS esperado_uno,\n    (SELECT count(*) = 2 FROM item_borrador\n     WHERE id_local = '10000000-0000-4000-8000-000000000001') AS esperado_uno,\n    (SELECT count(*) FROM cola_sync\n     WHERE solicitud_uuid = '20000000-0000-4000-8000-000000000001'\n       AND estado = 'PENDIENTE') AS esperado_uno;",
+          "columnas": [
+            "esperado_uno",
+            "esperado_uno",
+            "esperado_uno"
+          ],
+          "filas": [
+            [
+              1,
+              1,
+              1
+            ]
+          ]
+        },
+        {
+          "sql": "-- C1-ROLLBACK: las mismas cuatro clases de escritura quedan revertidas.\nBEGIN;"
+        },
+        {
+          "sql": "INSERT INTO pedido_borrador\n    (id_local, usuario_id_servidor, forma_pago, creado_en)\nVALUES\n    ('10000000-0000-4000-8000-000000000002', 1, 'TARJETA',\n     '2026-01-01T00:00:00Z');"
+        },
+        {
+          "sql": "INSERT INTO item_borrador\n    (id_local, producto_id, cantidad, precio_centavos_visto)\nSELECT '10000000-0000-4000-8000-000000000002',\n       producto_id, 1, precio_centavos\nFROM producto_cache\nWHERE nombre IN ('U8 - Muzzarella', 'U8 - Empanadas');"
+        },
+        {
+          "sql": "INSERT INTO cola_sync\n    (solicitud_uuid, id_local, estado, motivo, creada_en)\nVALUES\n    ('20000000-0000-4000-8000-000000000002',\n     '10000000-0000-4000-8000-000000000002',\n     'PENDIENTE', '', '2026-01-01T00:00:00Z');"
+        },
+        {
+          "sql": "ROLLBACK;"
+        },
+        {
+          "sql": "SELECT\n    (SELECT count(*) FROM pedido_borrador\n     WHERE id_local = '10000000-0000-4000-8000-000000000002') AS esperado_cero,\n    (SELECT count(*) FROM item_borrador\n     WHERE id_local = '10000000-0000-4000-8000-000000000002') AS esperado_cero,\n    (SELECT count(*) FROM cola_sync\n     WHERE id_local = '10000000-0000-4000-8000-000000000002') AS esperado_cero;",
+          "columnas": [
+            "esperado_cero",
+            "esperado_cero",
+            "esperado_cero"
+          ],
+          "filas": [
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "sql": "-- C7-cantidad: debe fallar CHECK; no basta con revertir solo el INSERT.\nBEGIN;"
+        },
+        {
+          "sql": "INSERT INTO pedido_borrador\n    (id_local, usuario_id_servidor, forma_pago, creado_en)\nVALUES\n    ('10000000-0000-4000-8000-000000000007', 1, 'EFECTIVO',\n     '2026-01-01T00:00:00Z');"
+        },
+        {
+          "sql": "-- EXPECT_ERROR: SQLITE_CONSTRAINT_CHECK\nINSERT INTO item_borrador\n    (id_local, producto_id, cantidad, precio_centavos_visto)\nSELECT '10000000-0000-4000-8000-000000000007',\n       producto_id, 0, precio_centavos\nFROM producto_cache\nWHERE nombre = 'U8 - Muzzarella';",
+          "error": {
+            "nombre": "SQLITE_CONSTRAINT_CHECK",
+            "mensaje": "CHECK constraint failed: cantidad > 0"
+          }
+        },
+        {
+          "sql": "ROLLBACK;"
+        },
+        {
+          "sql": "SELECT\n    (SELECT count(*) FROM pedido_borrador\n     WHERE id_local = '10000000-0000-4000-8000-000000000007') AS esperado_cero,\n    (SELECT count(*) FROM item_borrador\n     WHERE id_local = '10000000-0000-4000-8000-000000000007') AS esperado_cero,\n    (SELECT count(*) FROM cola_sync\n     WHERE id_local = '10000000-0000-4000-8000-000000000007') AS esperado_cero;",
+          "columnas": [
+            "esperado_cero",
+            "esperado_cero",
+            "esperado_cero"
+          ],
+          "filas": [
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "sql": "-- C7-fk: -1 no puede existir en producto_cache por su CHECK producto_id > 0.\nBEGIN;"
+        },
+        {
+          "sql": "INSERT INTO pedido_borrador\n    (id_local, usuario_id_servidor, forma_pago, creado_en)\nVALUES\n    ('10000000-0000-4000-8000-000000000008', 1, 'TRANSFERENCIA',\n     '2026-01-01T00:00:00Z');"
+        },
+        {
+          "sql": "-- EXPECT_ERROR: SQLITE_CONSTRAINT_FOREIGNKEY\nINSERT INTO item_borrador\n    (id_local, producto_id, cantidad, precio_centavos_visto)\nVALUES\n    ('10000000-0000-4000-8000-000000000008', -1, 1, 900000);",
+          "error": {
+            "nombre": "SQLITE_CONSTRAINT_FOREIGNKEY",
+            "mensaje": "FOREIGN KEY constraint failed"
+          }
+        },
+        {
+          "sql": "ROLLBACK;"
+        },
+        {
+          "sql": "SELECT\n    (SELECT count(*) FROM pedido_borrador\n     WHERE id_local = '10000000-0000-4000-8000-000000000008') AS esperado_cero,\n    (SELECT count(*) FROM item_borrador\n     WHERE id_local = '10000000-0000-4000-8000-000000000008') AS esperado_cero,\n    (SELECT count(*) FROM cola_sync\n     WHERE id_local = '10000000-0000-4000-8000-000000000008') AS esperado_cero;",
+          "columnas": [
+            "esperado_cero",
+            "esperado_cero",
+            "esperado_cero"
+          ],
+          "filas": [
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "importacion_csv": "snapshot_c2.csv",
+      "sha256": "36bc1784c69fb02d78dc9562cdf72098819be3f3ccf63c9c7a0851730b3d5ea2",
+      "filas": 4,
+      "fecha_autoridad": "capturado_en recibido de PostgreSQL"
+    },
+    {
+      "importacion_csv": "snapshot_c4.csv",
+      "sha256": "e294d16f24c98f97e8e2a97e29b28aab9cf6c4838db5cfe2a677335e58c304f4",
+      "filas": 4,
+      "fecha_autoridad": "capturado_en recibido de PostgreSQL"
+    },
+    {
+      "archivo_sql": "semaforo.sql",
+      "sentencias": [
+        {
+          "sql": "PRAGMA foreign_keys = ON;"
+        },
+        {
+          "sql": "BEGIN IMMEDIATE;"
+        },
+        {
+          "sql": "-- Solo se consultan tablas SQLite. La fecha local es diagnostica,\n-- nunca determina vigencia, disponibilidad ni autoridad del snapshot.\nWITH\nevaluacion_item AS (\n    SELECT\n        i.id_local,\n        i.producto_id,\n        CASE\n            WHEN s.producto_id IS NULL THEN\n                printf('producto_id=%lld ausente de snapshot_servidor',\n                       i.producto_id)\n            WHEN s.eliminado = 1 THEN\n                printf('producto_id=%lld dado de baja', i.producto_id)\n            WHEN s.stock = 0 THEN\n                printf('producto_id=%lld sin stock: solicitado=%lld disponible=0',\n                       i.producto_id, i.cantidad)\n            WHEN i.cantidad > s.stock THEN\n                printf(\n                    'producto_id=%lld stock insuficiente: solicitado=%lld disponible=%lld',\n                    i.producto_id, i.cantidad, s.stock\n                )\n            WHEN s.disponible <> 1 THEN\n                printf('producto_id=%lld no disponible en snapshot_servidor',\n                       i.producto_id)\n            ELSE NULL\n        END AS rojo,\n        CASE\n            WHEN s.producto_id IS NOT NULL\n             AND i.precio_centavos_visto <> s.precio_centavos THEN\n                printf(\n                    'producto_id=%lld precio distinto: visto=%lld servidor=%lld centavos',\n                    i.producto_id,\n                    i.precio_centavos_visto,\n                    s.precio_centavos\n                )\n            ELSE NULL\n        END AS amarillo\n    FROM item_borrador AS i\n    LEFT JOIN snapshot_servidor AS s\n        ON s.producto_id = i.producto_id\n),\nresumen AS (\n    SELECT\n        b.id_local,\n        count(e.producto_id) AS cantidad_items,\n        count(e.rojo) AS rojos,\n        count(e.amarillo) AS amarillos,\n        group_concat(e.rojo, '; ') AS motivos_rojos,\n        group_concat(e.amarillo, '; ') AS motivos_amarillos\n    FROM pedido_borrador AS b\n    LEFT JOIN evaluacion_item AS e ON e.id_local = b.id_local\n    GROUP BY b.id_local\n),\nresultado AS (\n    SELECT\n        id_local,\n        CASE\n            WHEN cantidad_items = 0 OR rojos > 0 THEN 'RECHAZADO'\n            WHEN amarillos > 0 THEN 'CONFLICTO'\n            ELSE 'SIMULADO_APROBADO'\n        END AS estado,\n        CASE\n            WHEN cantidad_items = 0 THEN 'borrador vacio'\n            WHEN rojos > 0 THEN motivos_rojos\n            WHEN amarillos > 0 THEN motivos_amarillos\n            ELSE 'Sin conflictos en snapshot; simulacion local, no es una venta'\n        END AS motivo\n    FROM resumen\n)\nUPDATE cola_sync\nSET estado = (\n        SELECT r.estado FROM resultado AS r\n        WHERE r.id_local = cola_sync.id_local\n    ),\n    motivo = (\n        SELECT r.motivo FROM resultado AS r\n        WHERE r.id_local = cola_sync.id_local\n    ),\n    evaluado_en = strftime('%Y-%m-%dT%H:%M:%fZ', 'now')\nWHERE estado = 'PENDIENTE';"
+        },
+        {
+          "sql": "COMMIT;"
+        }
+      ]
+    }
+  ],
+  "casos": {
+    "C1_C7": {
+      "archivo_ejecutado": "movil/pruebas_sqlite.sql",
+      "comandos_postgresql_durante_prueba": 0,
+      "resultado": "aserciones SQL verificadas y errores CHECK/FK reales"
+    },
+    "C2": [
+      {
+        "solicitud_uuid": "6486d1fb-d6ec-4b0d-970d-4983336764ca",
+        "antes": {
+          "solicitud_uuid": "6486d1fb-d6ec-4b0d-970d-4983336764ca",
+          "id_local": "73fd9dd6-f7bc-4056-9a14-3f7c84e2b699",
+          "estado": "CONFLICTO",
+          "motivo": "producto_id=50001 precio distinto: visto=900000 servidor=910000 centavos",
+          "creada_en": "2026-01-01T00:00:00Z",
+          "evaluado_en": "2026-11-10T15:41:43.859Z"
+        },
+        "despues": {
+          "solicitud_uuid": "6486d1fb-d6ec-4b0d-970d-4983336764ca",
+          "id_local": "73fd9dd6-f7bc-4056-9a14-3f7c84e2b699",
+          "estado": "CONFLICTO",
+          "motivo": "producto_id=50001 precio distinto: visto=900000 servidor=910000 centavos",
+          "creada_en": "2026-01-01T00:00:00Z",
+          "evaluado_en": "2026-11-10T15:41:43.859Z"
+        },
+        "ejecucion": [
+          {
+            "archivo_sql": "semaforo.sql",
+            "sentencias": [
+              {
+                "sql": "PRAGMA foreign_keys = ON;"
+              },
+              {
+                "sql": "BEGIN IMMEDIATE;"
+              },
+              {
+                "sql": "-- Solo se consultan tablas SQLite. La fecha local es diagnostica,\n-- nunca determina vigencia, disponibilidad ni autoridad del snapshot.\nWITH\nevaluacion_item AS (\n    SELECT\n        i.id_local,\n        i.producto_id,\n        CASE\n            WHEN s.producto_id IS NULL THEN\n                printf('producto_id=%lld ausente de snapshot_servidor',\n                       i.producto_id)\n            WHEN s.eliminado = 1 THEN\n                printf('producto_id=%lld dado de baja', i.producto_id)\n            WHEN s.stock = 0 THEN\n                printf('producto_id=%lld sin stock: solicitado=%lld disponible=0',\n                       i.producto_id, i.cantidad)\n            WHEN i.cantidad > s.stock THEN\n                printf(\n                    'producto_id=%lld stock insuficiente: solicitado=%lld disponible=%lld',\n                    i.producto_id, i.cantidad, s.stock\n                )\n            WHEN s.disponible <> 1 THEN\n                printf('producto_id=%lld no disponible en snapshot_servidor',\n                       i.producto_id)\n            ELSE NULL\n        END AS rojo,\n        CASE\n            WHEN s.producto_id IS NOT NULL\n             AND i.precio_centavos_visto <> s.precio_centavos THEN\n                printf(\n                    'producto_id=%lld precio distinto: visto=%lld servidor=%lld centavos',\n                    i.producto_id,\n                    i.precio_centavos_visto,\n                    s.precio_centavos\n                )\n            ELSE NULL\n        END AS amarillo\n    FROM item_borrador AS i\n    LEFT JOIN snapshot_servidor AS s\n        ON s.producto_id = i.producto_id\n),\nresumen AS (\n    SELECT\n        b.id_local,\n        count(e.producto_id) AS cantidad_items,\n        count(e.rojo) AS rojos,\n        count(e.amarillo) AS amarillos,\n        group_concat(e.rojo, '; ') AS motivos_rojos,\n        group_concat(e.amarillo, '; ') AS motivos_amarillos\n    FROM pedido_borrador AS b\n    LEFT JOIN evaluacion_item AS e ON e.id_local = b.id_local\n    GROUP BY b.id_local\n),\nresultado AS (\n    SELECT\n        id_local,\n        CASE\n            WHEN cantidad_items = 0 OR rojos > 0 THEN 'RECHAZADO'\n            WHEN amarillos > 0 THEN 'CONFLICTO'\n            ELSE 'SIMULADO_APROBADO'\n        END AS estado,\n        CASE\n            WHEN cantidad_items = 0 THEN 'borrador vacio'\n            WHEN rojos > 0 THEN motivos_rojos\n            WHEN amarillos > 0 THEN motivos_amarillos\n            ELSE 'Sin conflictos en snapshot; simulacion local, no es una venta'\n        END AS motivo\n    FROM resumen\n)\nUPDATE cola_sync\nSET estado = (\n        SELECT r.estado FROM resultado AS r\n        WHERE r.id_local = cola_sync.id_local\n    ),\n    motivo = (\n        SELECT r.motivo FROM resultado AS r\n        WHERE r.id_local = cola_sync.id_local\n    ),\n    evaluado_en = strftime('%Y-%m-%dT%H:%M:%fZ', 'now')\nWHERE estado = 'PENDIENTE';"
+              },
+              {
+                "sql": "COMMIT;"
+              }
+            ]
+          }
+        ],
+        "postgresql_en_esta_funcion": false
+      },
+      {
+        "solicitud_uuid": "a3997042-92c7-437a-8339-efed531d28bc",
+        "antes": {
+          "solicitud_uuid": "a3997042-92c7-437a-8339-efed531d28bc",
+          "id_local": "73fd9dd6-f7bc-4056-9a14-3f7c84e2b699",
+          "estado": "PENDIENTE",
+          "motivo": "",
+          "creada_en": "2026-01-01T00:00:00Z",
+          "evaluado_en": null
+        },
+        "despues": {
+          "solicitud_uuid": "a3997042-92c7-437a-8339-efed531d28bc",
+          "id_local": "73fd9dd6-f7bc-4056-9a14-3f7c84e2b699",
+          "estado": "SIMULADO_APROBADO",
+          "motivo": "Sin conflictos en snapshot; simulacion local, no es una venta",
+          "creada_en": "2026-01-01T00:00:00Z",
+          "evaluado_en": "2026-11-10T15:41:43.903Z"
+        },
+        "ejecucion": [
+          {
+            "archivo_sql": "semaforo.sql",
+            "sentencias": [
+              {
+                "sql": "PRAGMA foreign_keys = ON;"
+              },
+              {
+                "sql": "BEGIN IMMEDIATE;"
+              },
+              {
+                "sql": "-- Solo se consultan tablas SQLite. La fecha local es diagnostica,\n-- nunca determina vigencia, disponibilidad ni autoridad del snapshot.\nWITH\nevaluacion_item AS (\n    SELECT\n        i.id_local,\n        i.producto_id,\n        CASE\n            WHEN s.producto_id IS NULL THEN\n                printf('producto_id=%lld ausente de snapshot_servidor',\n                       i.producto_id)\n            WHEN s.eliminado = 1 THEN\n                printf('producto_id=%lld dado de baja', i.producto_id)\n            WHEN s.stock = 0 THEN\n                printf('producto_id=%lld sin stock: solicitado=%lld disponible=0',\n                       i.producto_id, i.cantidad)\n            WHEN i.cantidad > s.stock THEN\n                printf(\n                    'producto_id=%lld stock insuficiente: solicitado=%lld disponible=%lld',\n                    i.producto_id, i.cantidad, s.stock\n                )\n            WHEN s.disponible <> 1 THEN\n                printf('producto_id=%lld no disponible en snapshot_servidor',\n                       i.producto_id)\n            ELSE NULL\n        END AS rojo,\n        CASE\n            WHEN s.producto_id IS NOT NULL\n             AND i.precio_centavos_visto <> s.precio_centavos THEN\n                printf(\n                    'producto_id=%lld precio distinto: visto=%lld servidor=%lld centavos',\n                    i.producto_id,\n                    i.precio_centavos_visto,\n                    s.precio_centavos\n                )\n            ELSE NULL\n        END AS amarillo\n    FROM item_borrador AS i\n    LEFT JOIN snapshot_servidor AS s\n        ON s.producto_id = i.producto_id\n),\nresumen AS (\n    SELECT\n        b.id_local,\n        count(e.producto_id) AS cantidad_items,\n        count(e.rojo) AS rojos,\n        count(e.amarillo) AS amarillos,\n        group_concat(e.rojo, '; ') AS motivos_rojos,\n        group_concat(e.amarillo, '; ') AS motivos_amarillos\n    FROM pedido_borrador AS b\n    LEFT JOIN evaluacion_item AS e ON e.id_local = b.id_local\n    GROUP BY b.id_local\n),\nresultado AS (\n    SELECT\n        id_local,\n        CASE\n            WHEN cantidad_items = 0 OR rojos > 0 THEN 'RECHAZADO'\n            WHEN amarillos > 0 THEN 'CONFLICTO'\n            ELSE 'SIMULADO_APROBADO'\n        END AS estado,\n        CASE\n            WHEN cantidad_items = 0 THEN 'borrador vacio'\n            WHEN rojos > 0 THEN motivos_rojos\n            WHEN amarillos > 0 THEN motivos_amarillos\n            ELSE 'Sin conflictos en snapshot; simulacion local, no es una venta'\n        END AS motivo\n    FROM resumen\n)\nUPDATE cola_sync\nSET estado = (\n        SELECT r.estado FROM resultado AS r\n        WHERE r.id_local = cola_sync.id_local\n    ),\n    motivo = (\n        SELECT r.motivo FROM resultado AS r\n        WHERE r.id_local = cola_sync.id_local\n    ),\n    evaluado_en = strftime('%Y-%m-%dT%H:%M:%fZ', 'now')\nWHERE estado = 'PENDIENTE';"
+              },
+              {
+                "sql": "COMMIT;"
+              }
+            ]
+          }
+        ],
+        "postgresql_en_esta_funcion": false
+      },
+      {
+        "aceptacion": "sintetica de laboratorio, no aprobacion humana",
+        "precio_centavos_visto": 910000,
+        "uuid_anterior": "6486d1fb-d6ec-4b0d-970d-4983336764ca",
+        "uuid_nuevo": "a3997042-92c7-437a-8339-efed531d28bc"
+      }
+    ],
+    "C3": [
+      {
+        "solicitud_uuid": "51e21a59-ffb2-47ba-9422-1c3c09dbb21e",
+        "antes": {
+          "solicitud_uuid": "51e21a59-ffb2-47ba-9422-1c3c09dbb21e",
+          "id_local": "64507add-1767-47cb-8704-e49e6ac27ef7",
+          "estado": "PENDIENTE",
+          "motivo": "",
+          "creada_en": "2026-01-01T00:00:00Z",
+          "evaluado_en": null
+        },
+        "despues": {
+          "solicitud_uuid": "51e21a59-ffb2-47ba-9422-1c3c09dbb21e",
+          "id_local": "64507add-1767-47cb-8704-e49e6ac27ef7",
+          "estado": "RECHAZADO",
+          "motivo": "producto_id=50002 stock insuficiente: solicitado=5 disponible=4",
+          "creada_en": "2026-01-01T00:00:00Z",
+          "evaluado_en": "2026-11-10T15:41:43.859Z"
+        },
+        "ejecucion": [
+          {
+            "archivo_sql": "semaforo.sql",
+            "sentencias": [
+              {
+                "sql": "PRAGMA foreign_keys = ON;"
+              },
+              {
+                "sql": "BEGIN IMMEDIATE;"
+              },
+              {
+                "sql": "-- Solo se consultan tablas SQLite. La fecha local es diagnostica,\n-- nunca determina vigencia, disponibilidad ni autoridad del snapshot.\nWITH\nevaluacion_item AS (\n    SELECT\n        i.id_local,\n        i.producto_id,\n        CASE\n            WHEN s.producto_id IS NULL THEN\n                printf('producto_id=%lld ausente de snapshot_servidor',\n                       i.producto_id)\n            WHEN s.eliminado = 1 THEN\n                printf('producto_id=%lld dado de baja', i.producto_id)\n            WHEN s.stock = 0 THEN\n                printf('producto_id=%lld sin stock: solicitado=%lld disponible=0',\n                       i.producto_id, i.cantidad)\n            WHEN i.cantidad > s.stock THEN\n                printf(\n                    'producto_id=%lld stock insuficiente: solicitado=%lld disponible=%lld',\n                    i.producto_id, i.cantidad, s.stock\n                )\n            WHEN s.disponible <> 1 THEN\n                printf('producto_id=%lld no disponible en snapshot_servidor',\n                       i.producto_id)\n            ELSE NULL\n        END AS rojo,\n        CASE\n            WHEN s.producto_id IS NOT NULL\n             AND i.precio_centavos_visto <> s.precio_centavos THEN\n                printf(\n                    'producto_id=%lld precio distinto: visto=%lld servidor=%lld centavos',\n                    i.producto_id,\n                    i.precio_centavos_visto,\n                    s.precio_centavos\n                )\n            ELSE NULL\n        END AS amarillo\n    FROM item_borrador AS i\n    LEFT JOIN snapshot_servidor AS s\n        ON s.producto_id = i.producto_id\n),\nresumen AS (\n    SELECT\n        b.id_local,\n        count(e.producto_id) AS cantidad_items,\n        count(e.rojo) AS rojos,\n        count(e.amarillo) AS amarillos,\n        group_concat(e.rojo, '; ') AS motivos_rojos,\n        group_concat(e.amarillo, '; ') AS motivos_amarillos\n    FROM pedido_borrador AS b\n    LEFT JOIN evaluacion_item AS e ON e.id_local = b.id_local\n    GROUP BY b.id_local\n),\nresultado AS (\n    SELECT\n        id_local,\n        CASE\n            WHEN cantidad_items = 0 OR rojos > 0 THEN 'RECHAZADO'\n            WHEN amarillos > 0 THEN 'CONFLICTO'\n            ELSE 'SIMULADO_APROBADO'\n        END AS estado,\n        CASE\n            WHEN cantidad_items = 0 THEN 'borrador vacio'\n            WHEN rojos > 0 THEN motivos_rojos\n            WHEN amarillos > 0 THEN motivos_amarillos\n            ELSE 'Sin conflictos en snapshot; simulacion local, no es una venta'\n        END AS motivo\n    FROM resumen\n)\nUPDATE cola_sync\nSET estado = (\n        SELECT r.estado FROM resultado AS r\n        WHERE r.id_local = cola_sync.id_local\n    ),\n    motivo = (\n        SELECT r.motivo FROM resultado AS r\n        WHERE r.id_local = cola_sync.id_local\n    ),\n    evaluado_en = strftime('%Y-%m-%dT%H:%M:%fZ', 'now')\nWHERE estado = 'PENDIENTE';"
+              },
+              {
+                "sql": "COMMIT;"
+              }
+            ]
+          }
+        ],
+        "postgresql_en_esta_funcion": false
+      }
+    ],
+    "C4": [
+      {
+        "solicitud_uuid": "04ca59a1-0b98-4b46-bef0-5ba22972c00a",
+        "antes": {
+          "solicitud_uuid": "04ca59a1-0b98-4b46-bef0-5ba22972c00a",
+          "id_local": "7257eda6-58c5-4a20-a163-98ed83f883c0",
+          "estado": "RECHAZADO",
+          "motivo": "producto_id=50004 dado de baja",
+          "creada_en": "2026-01-01T00:00:00Z",
+          "evaluado_en": "2026-11-10T15:41:43.859Z"
+        },
+        "despues": {
+          "solicitud_uuid": "04ca59a1-0b98-4b46-bef0-5ba22972c00a",
+          "id_local": "7257eda6-58c5-4a20-a163-98ed83f883c0",
+          "estado": "RECHAZADO",
+          "motivo": "producto_id=50004 dado de baja",
+          "creada_en": "2026-01-01T00:00:00Z",
+          "evaluado_en": "2026-11-10T15:41:43.859Z"
+        },
+        "ejecucion": [
+          {
+            "archivo_sql": "semaforo.sql",
+            "sentencias": [
+              {
+                "sql": "PRAGMA foreign_keys = ON;"
+              },
+              {
+                "sql": "BEGIN IMMEDIATE;"
+              },
+              {
+                "sql": "-- Solo se consultan tablas SQLite. La fecha local es diagnostica,\n-- nunca determina vigencia, disponibilidad ni autoridad del snapshot.\nWITH\nevaluacion_item AS (\n    SELECT\n        i.id_local,\n        i.producto_id,\n        CASE\n            WHEN s.producto_id IS NULL THEN\n                printf('producto_id=%lld ausente de snapshot_servidor',\n                       i.producto_id)\n            WHEN s.eliminado = 1 THEN\n                printf('producto_id=%lld dado de baja', i.producto_id)\n            WHEN s.stock = 0 THEN\n                printf('producto_id=%lld sin stock: solicitado=%lld disponible=0',\n                       i.producto_id, i.cantidad)\n            WHEN i.cantidad > s.stock THEN\n                printf(\n                    'producto_id=%lld stock insuficiente: solicitado=%lld disponible=%lld',\n                    i.producto_id, i.cantidad, s.stock\n                )\n            WHEN s.disponible <> 1 THEN\n                printf('producto_id=%lld no disponible en snapshot_servidor',\n                       i.producto_id)\n            ELSE NULL\n        END AS rojo,\n        CASE\n            WHEN s.producto_id IS NOT NULL\n             AND i.precio_centavos_visto <> s.precio_centavos THEN\n                printf(\n                    'producto_id=%lld precio distinto: visto=%lld servidor=%lld centavos',\n                    i.producto_id,\n                    i.precio_centavos_visto,\n                    s.precio_centavos\n                )\n            ELSE NULL\n        END AS amarillo\n    FROM item_borrador AS i\n    LEFT JOIN snapshot_servidor AS s\n        ON s.producto_id = i.producto_id\n),\nresumen AS (\n    SELECT\n        b.id_local,\n        count(e.producto_id) AS cantidad_items,\n        count(e.rojo) AS rojos,\n        count(e.amarillo) AS amarillos,\n        group_concat(e.rojo, '; ') AS motivos_rojos,\n        group_concat(e.amarillo, '; ') AS motivos_amarillos\n    FROM pedido_borrador AS b\n    LEFT JOIN evaluacion_item AS e ON e.id_local = b.id_local\n    GROUP BY b.id_local\n),\nresultado AS (\n    SELECT\n        id_local,\n        CASE\n            WHEN cantidad_items = 0 OR rojos > 0 THEN 'RECHAZADO'\n            WHEN amarillos > 0 THEN 'CONFLICTO'\n            ELSE 'SIMULADO_APROBADO'\n        END AS estado,\n        CASE\n            WHEN cantidad_items = 0 THEN 'borrador vacio'\n            WHEN rojos > 0 THEN motivos_rojos\n            WHEN amarillos > 0 THEN motivos_amarillos\n            ELSE 'Sin conflictos en snapshot; simulacion local, no es una venta'\n        END AS motivo\n    FROM resumen\n)\nUPDATE cola_sync\nSET estado = (\n        SELECT r.estado FROM resultado AS r\n        WHERE r.id_local = cola_sync.id_local\n    ),\n    motivo = (\n        SELECT r.motivo FROM resultado AS r\n        WHERE r.id_local = cola_sync.id_local\n    ),\n    evaluado_en = strftime('%Y-%m-%dT%H:%M:%fZ', 'now')\nWHERE estado = 'PENDIENTE';"
+              },
+              {
+                "sql": "COMMIT;"
+              }
+            ]
+          }
+        ],
+        "postgresql_en_esta_funcion": false
+      },
+      {
+        "producto_id": 50004,
+        "lapida_en_cache": true,
+        "visible_en_catalogo": false
+      }
+    ],
+    "C5": [
+      {
+        "solicitud_uuid": "5e8cc2e8-38b4-4a30-bc01-1324459423bd",
+        "antes": {
+          "solicitud_uuid": "5e8cc2e8-38b4-4a30-bc01-1324459423bd",
+          "id_local": "59afdd5c-b300-4e57-87ee-511b09fb3685",
+          "estado": "SIMULADO_APROBADO",
+          "motivo": "Sin conflictos en snapshot; simulacion local, no es una venta",
+          "creada_en": "2026-01-01T00:00:00Z",
+          "evaluado_en": "2026-11-10T15:41:43.859Z"
+        },
+        "despues": {
+          "solicitud_uuid": "5e8cc2e8-38b4-4a30-bc01-1324459423bd",
+          "id_local": "59afdd5c-b300-4e57-87ee-511b09fb3685",
+          "estado": "SIMULADO_APROBADO",
+          "motivo": "Sin conflictos en snapshot; simulacion local, no es una venta",
+          "creada_en": "2026-01-01T00:00:00Z",
+          "evaluado_en": "2026-11-10T15:41:43.859Z"
+        },
+        "ejecucion": [
+          {
+            "archivo_sql": "semaforo.sql",
+            "sentencias": [
+              {
+                "sql": "PRAGMA foreign_keys = ON;"
+              },
+              {
+                "sql": "BEGIN IMMEDIATE;"
+              },
+              {
+                "sql": "-- Solo se consultan tablas SQLite. La fecha local es diagnostica,\n-- nunca determina vigencia, disponibilidad ni autoridad del snapshot.\nWITH\nevaluacion_item AS (\n    SELECT\n        i.id_local,\n        i.producto_id,\n        CASE\n            WHEN s.producto_id IS NULL THEN\n                printf('producto_id=%lld ausente de snapshot_servidor',\n                       i.producto_id)\n            WHEN s.eliminado = 1 THEN\n                printf('producto_id=%lld dado de baja', i.producto_id)\n            WHEN s.stock = 0 THEN\n                printf('producto_id=%lld sin stock: solicitado=%lld disponible=0',\n                       i.producto_id, i.cantidad)\n            WHEN i.cantidad > s.stock THEN\n                printf(\n                    'producto_id=%lld stock insuficiente: solicitado=%lld disponible=%lld',\n                    i.producto_id, i.cantidad, s.stock\n                )\n            WHEN s.disponible <> 1 THEN\n                printf('producto_id=%lld no disponible en snapshot_servidor',\n                       i.producto_id)\n            ELSE NULL\n        END AS rojo,\n        CASE\n            WHEN s.producto_id IS NOT NULL\n             AND i.precio_centavos_visto <> s.precio_centavos THEN\n                printf(\n                    'producto_id=%lld precio distinto: visto=%lld servidor=%lld centavos',\n                    i.producto_id,\n                    i.precio_centavos_visto,\n                    s.precio_centavos\n                )\n            ELSE NULL\n        END AS amarillo\n    FROM item_borrador AS i\n    LEFT JOIN snapshot_servidor AS s\n        ON s.producto_id = i.producto_id\n),\nresumen AS (\n    SELECT\n        b.id_local,\n        count(e.producto_id) AS cantidad_items,\n        count(e.rojo) AS rojos,\n        count(e.amarillo) AS amarillos,\n        group_concat(e.rojo, '; ') AS motivos_rojos,\n        group_concat(e.amarillo, '; ') AS motivos_amarillos\n    FROM pedido_borrador AS b\n    LEFT JOIN evaluacion_item AS e ON e.id_local = b.id_local\n    GROUP BY b.id_local\n),\nresultado AS (\n    SELECT\n        id_local,\n        CASE\n            WHEN cantidad_items = 0 OR rojos > 0 THEN 'RECHAZADO'\n            WHEN amarillos > 0 THEN 'CONFLICTO'\n            ELSE 'SIMULADO_APROBADO'\n        END AS estado,\n        CASE\n            WHEN cantidad_items = 0 THEN 'borrador vacio'\n            WHEN rojos > 0 THEN motivos_rojos\n            WHEN amarillos > 0 THEN motivos_amarillos\n            ELSE 'Sin conflictos en snapshot; simulacion local, no es una venta'\n        END AS motivo\n    FROM resumen\n)\nUPDATE cola_sync\nSET estado = (\n        SELECT r.estado FROM resultado AS r\n        WHERE r.id_local = cola_sync.id_local\n    ),\n    motivo = (\n        SELECT r.motivo FROM resultado AS r\n        WHERE r.id_local = cola_sync.id_local\n    ),\n    evaluado_en = strftime('%Y-%m-%dT%H:%M:%fZ', 'now')\nWHERE estado = 'PENDIENTE';"
+              },
+              {
+                "sql": "COMMIT;"
+              }
+            ]
+          }
+        ],
+        "postgresql_en_esta_funcion": false
+      }
+    ],
+    "C6": [
+      {
+        "sql": "\n            INSERT INTO cola_sync\n                (solicitud_uuid,id_local,estado,motivo,creada_en)\n            VALUES (?,?,'PENDIENTE','duplicado',?)\n            ",
+        "parametros": [
+          "6486d1fb-d6ec-4b0d-970d-4983336764ca",
+          "73fd9dd6-f7bc-4056-9a14-3f7c84e2b699",
+          "2026-01-01T00:00:00Z"
+        ],
+        "error": "SQLITE_CONSTRAINT_PRIMARYKEY",
+        "mensaje": "UNIQUE constraint failed: cola_sync.solicitud_uuid",
+        "rollback_explicito": true
+      },
+      {
+        "reejecucion_historica_identica": true,
+        "incluye_estado_motivo_y_evaluado_en": true
+      },
+      {
+        "dos_intentos_historicos_C2": true
+      }
+    ],
+    "bordes": [
+      {
+        "sql": "\n            INSERT INTO cola_sync\n                (solicitud_uuid,id_local,estado,motivo,creada_en)\n            VALUES (?,?,'PENDIENTE','',?)\n            ",
+        "parametros": [
+          "04a77272-2b51-44ca-982b-b0de3efafbe5",
+          "e42f24d8-d723-4968-9455-e26fea996932",
+          "2026-01-01T00:00:00Z"
+        ],
+        "error": "SQLITE_CONSTRAINT_UNIQUE",
+        "mensaje": "UNIQUE constraint failed: cola_sync.id_local",
+        "rollback_explicito": true
+      },
+      {
+        "solicitud_uuid": "baf0ac44-2041-4d0b-a2e3-7ffa9a20f7a5",
+        "antes": {
+          "solicitud_uuid": "baf0ac44-2041-4d0b-a2e3-7ffa9a20f7a5",
+          "id_local": "4783a0dd-4577-43d0-9bd4-e0814e46b383",
+          "estado": "RECHAZADO",
+          "motivo": "producto_id=50004 dado de baja",
+          "creada_en": "2026-01-01T00:00:00Z",
+          "evaluado_en": "2026-11-10T15:41:43.859Z"
+        },
+        "despues": {
+          "solicitud_uuid": "baf0ac44-2041-4d0b-a2e3-7ffa9a20f7a5",
+          "id_local": "4783a0dd-4577-43d0-9bd4-e0814e46b383",
+          "estado": "RECHAZADO",
+          "motivo": "producto_id=50004 dado de baja",
+          "creada_en": "2026-01-01T00:00:00Z",
+          "evaluado_en": "2026-11-10T15:41:43.859Z"
+        },
+        "ejecucion": [
+          {
+            "archivo_sql": "semaforo.sql",
+            "sentencias": [
+              {
+                "sql": "PRAGMA foreign_keys = ON;"
+              },
+              {
+                "sql": "BEGIN IMMEDIATE;"
+              },
+              {
+                "sql": "-- Solo se consultan tablas SQLite. La fecha local es diagnostica,\n-- nunca determina vigencia, disponibilidad ni autoridad del snapshot.\nWITH\nevaluacion_item AS (\n    SELECT\n        i.id_local,\n        i.producto_id,\n        CASE\n            WHEN s.producto_id IS NULL THEN\n                printf('producto_id=%lld ausente de snapshot_servidor',\n                       i.producto_id)\n            WHEN s.eliminado = 1 THEN\n                printf('producto_id=%lld dado de baja', i.producto_id)\n            WHEN s.stock = 0 THEN\n                printf('producto_id=%lld sin stock: solicitado=%lld disponible=0',\n                       i.producto_id, i.cantidad)\n            WHEN i.cantidad > s.stock THEN\n                printf(\n                    'producto_id=%lld stock insuficiente: solicitado=%lld disponible=%lld',\n                    i.producto_id, i.cantidad, s.stock\n                )\n            WHEN s.disponible <> 1 THEN\n                printf('producto_id=%lld no disponible en snapshot_servidor',\n                       i.producto_id)\n            ELSE NULL\n        END AS rojo,\n        CASE\n            WHEN s.producto_id IS NOT NULL\n             AND i.precio_centavos_visto <> s.precio_centavos THEN\n                printf(\n                    'producto_id=%lld precio distinto: visto=%lld servidor=%lld centavos',\n                    i.producto_id,\n                    i.precio_centavos_visto,\n                    s.precio_centavos\n                )\n            ELSE NULL\n        END AS amarillo\n    FROM item_borrador AS i\n    LEFT JOIN snapshot_servidor AS s\n        ON s.producto_id = i.producto_id\n),\nresumen AS (\n    SELECT\n        b.id_local,\n        count(e.producto_id) AS cantidad_items,\n        count(e.rojo) AS rojos,\n        count(e.amarillo) AS amarillos,\n        group_concat(e.rojo, '; ') AS motivos_rojos,\n        group_concat(e.amarillo, '; ') AS motivos_amarillos\n    FROM pedido_borrador AS b\n    LEFT JOIN evaluacion_item AS e ON e.id_local = b.id_local\n    GROUP BY b.id_local\n),\nresultado AS (\n    SELECT\n        id_local,\n        CASE\n            WHEN cantidad_items = 0 OR rojos > 0 THEN 'RECHAZADO'\n            WHEN amarillos > 0 THEN 'CONFLICTO'\n            ELSE 'SIMULADO_APROBADO'\n        END AS estado,\n        CASE\n            WHEN cantidad_items = 0 THEN 'borrador vacio'\n            WHEN rojos > 0 THEN motivos_rojos\n            WHEN amarillos > 0 THEN motivos_amarillos\n            ELSE 'Sin conflictos en snapshot; simulacion local, no es una venta'\n        END AS motivo\n    FROM resumen\n)\nUPDATE cola_sync\nSET estado = (\n        SELECT r.estado FROM resultado AS r\n        WHERE r.id_local = cola_sync.id_local\n    ),\n    motivo = (\n        SELECT r.motivo FROM resultado AS r\n        WHERE r.id_local = cola_sync.id_local\n    ),\n    evaluado_en = strftime('%Y-%m-%dT%H:%M:%fZ', 'now')\nWHERE estado = 'PENDIENTE';"
+              },
+              {
+                "sql": "COMMIT;"
+              }
+            ]
+          }
+        ],
+        "postgresql_en_esta_funcion": false
+      },
+      {
+        "solicitud_uuid": "3530bc8e-af11-4ade-959d-a6068311eba0",
+        "antes": {
+          "solicitud_uuid": "3530bc8e-af11-4ade-959d-a6068311eba0",
+          "id_local": "f1545838-9844-4ecf-9fbe-167080536524",
+          "estado": "RECHAZADO",
+          "motivo": "borrador vacio",
+          "creada_en": "2026-01-01T00:00:00Z",
+          "evaluado_en": "2026-11-10T15:41:43.859Z"
+        },
+        "despues": {
+          "solicitud_uuid": "3530bc8e-af11-4ade-959d-a6068311eba0",
+          "id_local": "f1545838-9844-4ecf-9fbe-167080536524",
+          "estado": "RECHAZADO",
+          "motivo": "borrador vacio",
+          "creada_en": "2026-01-01T00:00:00Z",
+          "evaluado_en": "2026-11-10T15:41:43.859Z"
+        },
+        "ejecucion": [
+          {
+            "archivo_sql": "semaforo.sql",
+            "sentencias": [
+              {
+                "sql": "PRAGMA foreign_keys = ON;"
+              },
+              {
+                "sql": "BEGIN IMMEDIATE;"
+              },
+              {
+                "sql": "-- Solo se consultan tablas SQLite. La fecha local es diagnostica,\n-- nunca determina vigencia, disponibilidad ni autoridad del snapshot.\nWITH\nevaluacion_item AS (\n    SELECT\n        i.id_local,\n        i.producto_id,\n        CASE\n            WHEN s.producto_id IS NULL THEN\n                printf('producto_id=%lld ausente de snapshot_servidor',\n                       i.producto_id)\n            WHEN s.eliminado = 1 THEN\n                printf('producto_id=%lld dado de baja', i.producto_id)\n            WHEN s.stock = 0 THEN\n                printf('producto_id=%lld sin stock: solicitado=%lld disponible=0',\n                       i.producto_id, i.cantidad)\n            WHEN i.cantidad > s.stock THEN\n                printf(\n                    'producto_id=%lld stock insuficiente: solicitado=%lld disponible=%lld',\n                    i.producto_id, i.cantidad, s.stock\n                )\n            WHEN s.disponible <> 1 THEN\n                printf('producto_id=%lld no disponible en snapshot_servidor',\n                       i.producto_id)\n            ELSE NULL\n        END AS rojo,\n        CASE\n            WHEN s.producto_id IS NOT NULL\n             AND i.precio_centavos_visto <> s.precio_centavos THEN\n                printf(\n                    'producto_id=%lld precio distinto: visto=%lld servidor=%lld centavos',\n                    i.producto_id,\n                    i.precio_centavos_visto,\n                    s.precio_centavos\n                )\n            ELSE NULL\n        END AS amarillo\n    FROM item_borrador AS i\n    LEFT JOIN snapshot_servidor AS s\n        ON s.producto_id = i.producto_id\n),\nresumen AS (\n    SELECT\n        b.id_local,\n        count(e.producto_id) AS cantidad_items,\n        count(e.rojo) AS rojos,\n        count(e.amarillo) AS amarillos,\n        group_concat(e.rojo, '; ') AS motivos_rojos,\n        group_concat(e.amarillo, '; ') AS motivos_amarillos\n    FROM pedido_borrador AS b\n    LEFT JOIN evaluacion_item AS e ON e.id_local = b.id_local\n    GROUP BY b.id_local\n),\nresultado AS (\n    SELECT\n        id_local,\n        CASE\n            WHEN cantidad_items = 0 OR rojos > 0 THEN 'RECHAZADO'\n            WHEN amarillos > 0 THEN 'CONFLICTO'\n            ELSE 'SIMULADO_APROBADO'\n        END AS estado,\n        CASE\n            WHEN cantidad_items = 0 THEN 'borrador vacio'\n            WHEN rojos > 0 THEN motivos_rojos\n            WHEN amarillos > 0 THEN motivos_amarillos\n            ELSE 'Sin conflictos en snapshot; simulacion local, no es una venta'\n        END AS motivo\n    FROM resumen\n)\nUPDATE cola_sync\nSET estado = (\n        SELECT r.estado FROM resultado AS r\n        WHERE r.id_local = cola_sync.id_local\n    ),\n    motivo = (\n        SELECT r.motivo FROM resultado AS r\n        WHERE r.id_local = cola_sync.id_local\n    ),\n    evaluado_en = strftime('%Y-%m-%dT%H:%M:%fZ', 'now')\nWHERE estado = 'PENDIENTE';"
+              },
+              {
+                "sql": "COMMIT;"
+              }
+            ]
+          }
+        ],
+        "postgresql_en_esta_funcion": false
+      },
+      {
+        "borde": "ausente",
+        "base": "copia efimera en memoria",
+        "alteracion_auxiliar_local": "DELETE FROM snapshot_servidor WHERE producto_id=?",
+        "resultado": [
+          {
+            "solicitud_uuid": "e49ebf1d-2179-4753-984a-47afe8324f0e",
+            "antes": {
+              "solicitud_uuid": "e49ebf1d-2179-4753-984a-47afe8324f0e",
+              "id_local": "e11e455a-cdf8-4f3c-a242-4c957aa2e47f",
+              "estado": "PENDIENTE",
+              "motivo": "",
+              "creada_en": "2026-01-01T00:00:00Z",
+              "evaluado_en": null
+            },
+            "despues": {
+              "solicitud_uuid": "e49ebf1d-2179-4753-984a-47afe8324f0e",
+              "id_local": "e11e455a-cdf8-4f3c-a242-4c957aa2e47f",
+              "estado": "RECHAZADO",
+              "motivo": "producto_id=50003 ausente de snapshot_servidor",
+              "creada_en": "2026-01-01T00:00:00Z",
+              "evaluado_en": "2026-11-10T15:41:43.955Z"
+            },
+            "ejecucion": [
+              {
+                "archivo_sql": "semaforo.sql",
+                "sentencias": [
+                  {
+                    "sql": "PRAGMA foreign_keys = ON;"
+                  },
+                  {
+                    "sql": "BEGIN IMMEDIATE;"
+                  },
+                  {
+                    "sql": "-- Solo se consultan tablas SQLite. La fecha local es diagnostica,\n-- nunca determina vigencia, disponibilidad ni autoridad del snapshot.\nWITH\nevaluacion_item AS (\n    SELECT\n        i.id_local,\n        i.producto_id,\n        CASE\n            WHEN s.producto_id IS NULL THEN\n                printf('producto_id=%lld ausente de snapshot_servidor',\n                       i.producto_id)\n            WHEN s.eliminado = 1 THEN\n                printf('producto_id=%lld dado de baja', i.producto_id)\n            WHEN s.stock = 0 THEN\n                printf('producto_id=%lld sin stock: solicitado=%lld disponible=0',\n                       i.producto_id, i.cantidad)\n            WHEN i.cantidad > s.stock THEN\n                printf(\n                    'producto_id=%lld stock insuficiente: solicitado=%lld disponible=%lld',\n                    i.producto_id, i.cantidad, s.stock\n                )\n            WHEN s.disponible <> 1 THEN\n                printf('producto_id=%lld no disponible en snapshot_servidor',\n                       i.producto_id)\n            ELSE NULL\n        END AS rojo,\n        CASE\n            WHEN s.producto_id IS NOT NULL\n             AND i.precio_centavos_visto <> s.precio_centavos THEN\n                printf(\n                    'producto_id=%lld precio distinto: visto=%lld servidor=%lld centavos',\n                    i.producto_id,\n                    i.precio_centavos_visto,\n                    s.precio_centavos\n                )\n            ELSE NULL\n        END AS amarillo\n    FROM item_borrador AS i\n    LEFT JOIN snapshot_servidor AS s\n        ON s.producto_id = i.producto_id\n),\nresumen AS (\n    SELECT\n        b.id_local,\n        count(e.producto_id) AS cantidad_items,\n        count(e.rojo) AS rojos,\n        count(e.amarillo) AS amarillos,\n        group_concat(e.rojo, '; ') AS motivos_rojos,\n        group_concat(e.amarillo, '; ') AS motivos_amarillos\n    FROM pedido_borrador AS b\n    LEFT JOIN evaluacion_item AS e ON e.id_local = b.id_local\n    GROUP BY b.id_local\n),\nresultado AS (\n    SELECT\n        id_local,\n        CASE\n            WHEN cantidad_items = 0 OR rojos > 0 THEN 'RECHAZADO'\n            WHEN amarillos > 0 THEN 'CONFLICTO'\n            ELSE 'SIMULADO_APROBADO'\n        END AS estado,\n        CASE\n            WHEN cantidad_items = 0 THEN 'borrador vacio'\n            WHEN rojos > 0 THEN motivos_rojos\n            WHEN amarillos > 0 THEN motivos_amarillos\n            ELSE 'Sin conflictos en snapshot; simulacion local, no es una venta'\n        END AS motivo\n    FROM resumen\n)\nUPDATE cola_sync\nSET estado = (\n        SELECT r.estado FROM resultado AS r\n        WHERE r.id_local = cola_sync.id_local\n    ),\n    motivo = (\n        SELECT r.motivo FROM resultado AS r\n        WHERE r.id_local = cola_sync.id_local\n    ),\n    evaluado_en = strftime('%Y-%m-%dT%H:%M:%fZ', 'now')\nWHERE estado = 'PENDIENTE';"
+                  },
+                  {
+                    "sql": "COMMIT;"
+                  }
+                ]
+              }
+            ],
+            "postgresql_en_esta_funcion": false
+          }
+        ]
+      },
+      {
+        "borde": "no_disponible",
+        "base": "copia efimera en memoria",
+        "alteracion_auxiliar_local": "UPDATE snapshot_servidor SET disponible=0 WHERE producto_id=?",
+        "resultado": [
+          {
+            "solicitud_uuid": "0f22c747-4658-42ff-9850-b7fba78a8bf5",
+            "antes": {
+              "solicitud_uuid": "0f22c747-4658-42ff-9850-b7fba78a8bf5",
+              "id_local": "09be5ff8-fbdc-4866-a394-ccff4432c395",
+              "estado": "PENDIENTE",
+              "motivo": "",
+              "creada_en": "2026-01-01T00:00:00Z",
+              "evaluado_en": null
+            },
+            "despues": {
+              "solicitud_uuid": "0f22c747-4658-42ff-9850-b7fba78a8bf5",
+              "id_local": "09be5ff8-fbdc-4866-a394-ccff4432c395",
+              "estado": "RECHAZADO",
+              "motivo": "producto_id=50003 no disponible en snapshot_servidor",
+              "creada_en": "2026-01-01T00:00:00Z",
+              "evaluado_en": "2026-11-10T15:41:43.959Z"
+            },
+            "ejecucion": [
+              {
+                "archivo_sql": "semaforo.sql",
+                "sentencias": [
+                  {
+                    "sql": "PRAGMA foreign_keys = ON;"
+                  },
+                  {
+                    "sql": "BEGIN IMMEDIATE;"
+                  },
+                  {
+                    "sql": "-- Solo se consultan tablas SQLite. La fecha local es diagnostica,\n-- nunca determina vigencia, disponibilidad ni autoridad del snapshot.\nWITH\nevaluacion_item AS (\n    SELECT\n        i.id_local,\n        i.producto_id,\n        CASE\n            WHEN s.producto_id IS NULL THEN\n                printf('producto_id=%lld ausente de snapshot_servidor',\n                       i.producto_id)\n            WHEN s.eliminado = 1 THEN\n                printf('producto_id=%lld dado de baja', i.producto_id)\n            WHEN s.stock = 0 THEN\n                printf('producto_id=%lld sin stock: solicitado=%lld disponible=0',\n                       i.producto_id, i.cantidad)\n            WHEN i.cantidad > s.stock THEN\n                printf(\n                    'producto_id=%lld stock insuficiente: solicitado=%lld disponible=%lld',\n                    i.producto_id, i.cantidad, s.stock\n                )\n            WHEN s.disponible <> 1 THEN\n                printf('producto_id=%lld no disponible en snapshot_servidor',\n                       i.producto_id)\n            ELSE NULL\n        END AS rojo,\n        CASE\n            WHEN s.producto_id IS NOT NULL\n             AND i.precio_centavos_visto <> s.precio_centavos THEN\n                printf(\n                    'producto_id=%lld precio distinto: visto=%lld servidor=%lld centavos',\n                    i.producto_id,\n                    i.precio_centavos_visto,\n                    s.precio_centavos\n                )\n            ELSE NULL\n        END AS amarillo\n    FROM item_borrador AS i\n    LEFT JOIN snapshot_servidor AS s\n        ON s.producto_id = i.producto_id\n),\nresumen AS (\n    SELECT\n        b.id_local,\n        count(e.producto_id) AS cantidad_items,\n        count(e.rojo) AS rojos,\n        count(e.amarillo) AS amarillos,\n        group_concat(e.rojo, '; ') AS motivos_rojos,\n        group_concat(e.amarillo, '; ') AS motivos_amarillos\n    FROM pedido_borrador AS b\n    LEFT JOIN evaluacion_item AS e ON e.id_local = b.id_local\n    GROUP BY b.id_local\n),\nresultado AS (\n    SELECT\n        id_local,\n        CASE\n            WHEN cantidad_items = 0 OR rojos > 0 THEN 'RECHAZADO'\n            WHEN amarillos > 0 THEN 'CONFLICTO'\n            ELSE 'SIMULADO_APROBADO'\n        END AS estado,\n        CASE\n            WHEN cantidad_items = 0 THEN 'borrador vacio'\n            WHEN rojos > 0 THEN motivos_rojos\n            WHEN amarillos > 0 THEN motivos_amarillos\n            ELSE 'Sin conflictos en snapshot; simulacion local, no es una venta'\n        END AS motivo\n    FROM resumen\n)\nUPDATE cola_sync\nSET estado = (\n        SELECT r.estado FROM resultado AS r\n        WHERE r.id_local = cola_sync.id_local\n    ),\n    motivo = (\n        SELECT r.motivo FROM resultado AS r\n        WHERE r.id_local = cola_sync.id_local\n    ),\n    evaluado_en = strftime('%Y-%m-%dT%H:%M:%fZ', 'now')\nWHERE estado = 'PENDIENTE';"
+                  },
+                  {
+                    "sql": "COMMIT;"
+                  }
+                ]
+              }
+            ],
+            "postgresql_en_esta_funcion": false
+          }
+        ]
+      },
+      {
+        "borde": "sin_stock",
+        "base": "copia efimera en memoria",
+        "alteracion_auxiliar_local": "UPDATE snapshot_servidor SET stock=0,disponible=0 WHERE producto_id=?",
+        "resultado": [
+          {
+            "solicitud_uuid": "9d338399-9478-4524-a28b-e8fd31cbe634",
+            "antes": {
+              "solicitud_uuid": "9d338399-9478-4524-a28b-e8fd31cbe634",
+              "id_local": "5b9cf10f-d995-46cb-b6b1-141df4b7e834",
+              "estado": "PENDIENTE",
+              "motivo": "",
+              "creada_en": "2026-01-01T00:00:00Z",
+              "evaluado_en": null
+            },
+            "despues": {
+              "solicitud_uuid": "9d338399-9478-4524-a28b-e8fd31cbe634",
+              "id_local": "5b9cf10f-d995-46cb-b6b1-141df4b7e834",
+              "estado": "RECHAZADO",
+              "motivo": "producto_id=50003 sin stock: solicitado=1 disponible=0",
+              "creada_en": "2026-01-01T00:00:00Z",
+              "evaluado_en": "2026-11-10T15:41:43.961Z"
+            },
+            "ejecucion": [
+              {
+                "archivo_sql": "semaforo.sql",
+                "sentencias": [
+                  {
+                    "sql": "PRAGMA foreign_keys = ON;"
+                  },
+                  {
+                    "sql": "BEGIN IMMEDIATE;"
+                  },
+                  {
+                    "sql": "-- Solo se consultan tablas SQLite. La fecha local es diagnostica,\n-- nunca determina vigencia, disponibilidad ni autoridad del snapshot.\nWITH\nevaluacion_item AS (\n    SELECT\n        i.id_local,\n        i.producto_id,\n        CASE\n            WHEN s.producto_id IS NULL THEN\n                printf('producto_id=%lld ausente de snapshot_servidor',\n                       i.producto_id)\n            WHEN s.eliminado = 1 THEN\n                printf('producto_id=%lld dado de baja', i.producto_id)\n            WHEN s.stock = 0 THEN\n                printf('producto_id=%lld sin stock: solicitado=%lld disponible=0',\n                       i.producto_id, i.cantidad)\n            WHEN i.cantidad > s.stock THEN\n                printf(\n                    'producto_id=%lld stock insuficiente: solicitado=%lld disponible=%lld',\n                    i.producto_id, i.cantidad, s.stock\n                )\n            WHEN s.disponible <> 1 THEN\n                printf('producto_id=%lld no disponible en snapshot_servidor',\n                       i.producto_id)\n            ELSE NULL\n        END AS rojo,\n        CASE\n            WHEN s.producto_id IS NOT NULL\n             AND i.precio_centavos_visto <> s.precio_centavos THEN\n                printf(\n                    'producto_id=%lld precio distinto: visto=%lld servidor=%lld centavos',\n                    i.producto_id,\n                    i.precio_centavos_visto,\n                    s.precio_centavos\n                )\n            ELSE NULL\n        END AS amarillo\n    FROM item_borrador AS i\n    LEFT JOIN snapshot_servidor AS s\n        ON s.producto_id = i.producto_id\n),\nresumen AS (\n    SELECT\n        b.id_local,\n        count(e.producto_id) AS cantidad_items,\n        count(e.rojo) AS rojos,\n        count(e.amarillo) AS amarillos,\n        group_concat(e.rojo, '; ') AS motivos_rojos,\n        group_concat(e.amarillo, '; ') AS motivos_amarillos\n    FROM pedido_borrador AS b\n    LEFT JOIN evaluacion_item AS e ON e.id_local = b.id_local\n    GROUP BY b.id_local\n),\nresultado AS (\n    SELECT\n        id_local,\n        CASE\n            WHEN cantidad_items = 0 OR rojos > 0 THEN 'RECHAZADO'\n            WHEN amarillos > 0 THEN 'CONFLICTO'\n            ELSE 'SIMULADO_APROBADO'\n        END AS estado,\n        CASE\n            WHEN cantidad_items = 0 THEN 'borrador vacio'\n            WHEN rojos > 0 THEN motivos_rojos\n            WHEN amarillos > 0 THEN motivos_amarillos\n            ELSE 'Sin conflictos en snapshot; simulacion local, no es una venta'\n        END AS motivo\n    FROM resumen\n)\nUPDATE cola_sync\nSET estado = (\n        SELECT r.estado FROM resultado AS r\n        WHERE r.id_local = cola_sync.id_local\n    ),\n    motivo = (\n        SELECT r.motivo FROM resultado AS r\n        WHERE r.id_local = cola_sync.id_local\n    ),\n    evaluado_en = strftime('%Y-%m-%dT%H:%M:%fZ', 'now')\nWHERE estado = 'PENDIENTE';"
+                  },
+                  {
+                    "sql": "COMMIT;"
+                  }
+                ]
+              }
+            ],
+            "postgresql_en_esta_funcion": false
+          }
+        ]
+      },
+      {
+        "borde": "rojo_y_precio_mismo_item",
+        "base": "copia efimera en memoria",
+        "alteracion_auxiliar_local": "UPDATE snapshot_servidor SET stock=0,disponible=0,precio_centavos=precio_centavos+1 WHERE producto_id=?",
+        "resultado": [
+          {
+            "solicitud_uuid": "6c2c91d8-f6e9-4dd1-9444-f532b3e4b030",
+            "antes": {
+              "solicitud_uuid": "6c2c91d8-f6e9-4dd1-9444-f532b3e4b030",
+              "id_local": "c6274b51-f1b4-42f1-81f6-92ba625df6e1",
+              "estado": "PENDIENTE",
+              "motivo": "",
+              "creada_en": "2026-01-01T00:00:00Z",
+              "evaluado_en": null
+            },
+            "despues": {
+              "solicitud_uuid": "6c2c91d8-f6e9-4dd1-9444-f532b3e4b030",
+              "id_local": "c6274b51-f1b4-42f1-81f6-92ba625df6e1",
+              "estado": "RECHAZADO",
+              "motivo": "producto_id=50003 sin stock: solicitado=1 disponible=0",
+              "creada_en": "2026-01-01T00:00:00Z",
+              "evaluado_en": "2026-11-10T15:41:43.966Z"
+            },
+            "ejecucion": [
+              {
+                "archivo_sql": "semaforo.sql",
+                "sentencias": [
+                  {
+                    "sql": "PRAGMA foreign_keys = ON;"
+                  },
+                  {
+                    "sql": "BEGIN IMMEDIATE;"
+                  },
+                  {
+                    "sql": "-- Solo se consultan tablas SQLite. La fecha local es diagnostica,\n-- nunca determina vigencia, disponibilidad ni autoridad del snapshot.\nWITH\nevaluacion_item AS (\n    SELECT\n        i.id_local,\n        i.producto_id,\n        CASE\n            WHEN s.producto_id IS NULL THEN\n                printf('producto_id=%lld ausente de snapshot_servidor',\n                       i.producto_id)\n            WHEN s.eliminado = 1 THEN\n                printf('producto_id=%lld dado de baja', i.producto_id)\n            WHEN s.stock = 0 THEN\n                printf('producto_id=%lld sin stock: solicitado=%lld disponible=0',\n                       i.producto_id, i.cantidad)\n            WHEN i.cantidad > s.stock THEN\n                printf(\n                    'producto_id=%lld stock insuficiente: solicitado=%lld disponible=%lld',\n                    i.producto_id, i.cantidad, s.stock\n                )\n            WHEN s.disponible <> 1 THEN\n                printf('producto_id=%lld no disponible en snapshot_servidor',\n                       i.producto_id)\n            ELSE NULL\n        END AS rojo,\n        CASE\n            WHEN s.producto_id IS NOT NULL\n             AND i.precio_centavos_visto <> s.precio_centavos THEN\n                printf(\n                    'producto_id=%lld precio distinto: visto=%lld servidor=%lld centavos',\n                    i.producto_id,\n                    i.precio_centavos_visto,\n                    s.precio_centavos\n                )\n            ELSE NULL\n        END AS amarillo\n    FROM item_borrador AS i\n    LEFT JOIN snapshot_servidor AS s\n        ON s.producto_id = i.producto_id\n),\nresumen AS (\n    SELECT\n        b.id_local,\n        count(e.producto_id) AS cantidad_items,\n        count(e.rojo) AS rojos,\n        count(e.amarillo) AS amarillos,\n        group_concat(e.rojo, '; ') AS motivos_rojos,\n        group_concat(e.amarillo, '; ') AS motivos_amarillos\n    FROM pedido_borrador AS b\n    LEFT JOIN evaluacion_item AS e ON e.id_local = b.id_local\n    GROUP BY b.id_local\n),\nresultado AS (\n    SELECT\n        id_local,\n        CASE\n            WHEN cantidad_items = 0 OR rojos > 0 THEN 'RECHAZADO'\n            WHEN amarillos > 0 THEN 'CONFLICTO'\n            ELSE 'SIMULADO_APROBADO'\n        END AS estado,\n        CASE\n            WHEN cantidad_items = 0 THEN 'borrador vacio'\n            WHEN rojos > 0 THEN motivos_rojos\n            WHEN amarillos > 0 THEN motivos_amarillos\n            ELSE 'Sin conflictos en snapshot; simulacion local, no es una venta'\n        END AS motivo\n    FROM resumen\n)\nUPDATE cola_sync\nSET estado = (\n        SELECT r.estado FROM resultado AS r\n        WHERE r.id_local = cola_sync.id_local\n    ),\n    motivo = (\n        SELECT r.motivo FROM resultado AS r\n        WHERE r.id_local = cola_sync.id_local\n    ),\n    evaluado_en = strftime('%Y-%m-%dT%H:%M:%fZ', 'now')\nWHERE estado = 'PENDIENTE';"
+                  },
+                  {
+                    "sql": "COMMIT;"
+                  }
+                ]
+              }
+            ],
+            "postgresql_en_esta_funcion": false
+          }
+        ]
+      }
+    ]
+  },
+  "versiones": {
+    "psql": "psql (PostgreSQL) 17.11",
+    "createdb": "createdb (PostgreSQL) 17.11",
+    "pg_dump": "pg_dump (PostgreSQL) 17.11",
+    "server_version_num": 170011,
+    "python": "3.12.14",
+    "sqlite": "3.53.1"
+  },
+  "fuente_antes": {
+    "categoria": {
+      "filas": 2,
+      "bytes": 271,
+      "sha256": "66be73b4e7784d5cd69d582d570452338937b7571758dbc71bbfe54ccf86e31a"
+    },
+    "producto": {
+      "filas": 50000,
+      "bytes": 10444747,
+      "sha256": "1c84830633511639a95523dd222422e0401479a565502aff033e92d3ac5f77d8"
+    },
+    "usuario": {
+      "filas": 20001,
+      "bytes": 4744643,
+      "sha256": "2e54d9ecdbc64e166cf905b2d3c3bee19eda9a44b643f8da5897b1c2a1781e8e"
+    },
+    "pedido": {
+      "filas": 225000,
+      "bytes": 44116754,
+      "sha256": "2035fedd8bac6cde4baf92f88c31f022a65c9eda62471e5a5bc2b62b0dc284d1"
+    },
+    "detalle_pedido": {
+      "filas": 499997,
+      "bytes": 48634928,
+      "sha256": "7ea3bdefabcad45a011ffa63fd0a4cfc459d467779a51a02a73a9254b01ad71d"
+    }
+  },
+  "copia_creada": "foodstore_u8_arancibia_romero",
+  "respaldo_privado": {
+    "formato": "custom",
+    "bytes": 8223411,
+    "sha256": "5730f09604f6424530b1164d096f2b12646729f3e8db201cf6957503fceac652",
+    "incluido_en_entregables": false
+  },
+  "conteos_copia_previa": {
+    "categoria": 2,
+    "producto": 50000,
+    "usuario": 20001,
+    "pedido": 225000,
+    "detalle_pedido": 499997
+  },
+  "copia_baseline": {
+    "base": "foodstore_u8_arancibia_romero",
+    "pedidos": 225000,
+    "huella_pedidos": "d77ec8d04e07297f0e0267d4b16cc342",
+    "huella_detalles": "1047260be5b676fbca32f99b435d5361",
+    "stock_total_catalogo": 5000038,
+    "huella_stock_catalogo": "0c04497b37b3959bc60a264fafbf7814",
+    "productos_fixture": 4,
+    "suma_stock": 39,
+    "vector_stock": [
+      {
+        "producto_id": 50001,
+        "stock": 10
+      },
+      {
+        "producto_id": 50002,
+        "stock": 4
+      },
+      {
+        "producto_id": 50003,
+        "stock": 5
+      },
+      {
+        "producto_id": 50004,
+        "stock": 20
+      }
+    ],
+    "estado_administrativo": [
+      {
+        "producto_id": 50001,
+        "precio_centavos": 900000,
+        "eliminado": false
+      },
+      {
+        "producto_id": 50002,
+        "precio_centavos": 120000,
+        "eliminado": false
+      },
+      {
+        "producto_id": 50003,
+        "precio_centavos": 800000,
+        "eliminado": false
+      },
+      {
+        "producto_id": 50004,
+        "precio_centavos": 150000,
+        "eliminado": false
+      }
+    ],
+    "huella_producto_completa": "6427bad8b4d2848900166e6ed582cbba629c12465abd5c56f0aabda9baafbcad",
+    "huella_producto_sin_precio_ni_baja": "2322d422c816cf6d8cd44dd76742c4926899258f3ed09c0c0f754cbdad1a4cf2"
+  },
+  "snapshots": [
+    {
+      "archivo": "docs\\evidencias\\snapshot_inicial.csv",
+      "sha256": "74492f751b0016a35f2eae60d5db1513f270e028e55715df5ff0f6e520109ade",
+      "bytes": 329,
+      "comando": "\\copy (SELECT producto_id,nombre,precio_centavos,stock,disponible,eliminado,capturado_en FROM public.v_snapshot_movil ORDER BY producto_id) TO STDOUT WITH (FORMAT CSV, HEADER true, ENCODING 'UTF8')"
+    },
+    {
+      "archivo": "docs\\evidencias\\snapshot_c2.csv",
+      "sha256": "36bc1784c69fb02d78dc9562cdf72098819be3f3ccf63c9c7a0851730b3d5ea2",
+      "bytes": 329,
+      "comando": "\\copy (SELECT producto_id,nombre,precio_centavos,stock,disponible,eliminado,capturado_en FROM public.v_snapshot_movil ORDER BY producto_id) TO STDOUT WITH (FORMAT CSV, HEADER true, ENCODING 'UTF8')"
+    },
+    {
+      "archivo": "docs\\evidencias\\snapshot_c4.csv",
+      "sha256": "e294d16f24c98f97e8e2a97e29b28aab9cf6c4838db5cfe2a677335e58c304f4",
+      "bytes": 329,
+      "comando": "\\copy (SELECT producto_id,nombre,precio_centavos,stock,disponible,eliminado,capturado_en FROM public.v_snapshot_movil ORDER BY producto_id) TO STDOUT WITH (FORMAT CSV, HEADER true, ENCODING 'UTF8')"
+    }
+  ],
+  "esquema": {
+    "foreign_keys": 1,
+    "integrity_check": "ok",
+    "tablas": [
+      [
+        "cola_sync"
+      ],
+      [
+        "item_borrador"
+      ],
+      [
+        "pedido_borrador"
+      ],
+      [
+        "producto_cache"
+      ],
+      [
+        "snapshot_servidor"
+      ]
+    ],
+    "indice": "CREATE UNIQUE INDEX uq_cola_sync_pendiente\n    ON cola_sync(id_local)\n    WHERE estado = 'PENDIENTE'"
+  },
+  "preparaciones_administrativas": [
+    {
+      "caso": "C2",
+      "sql": "BEGIN;\n        DO $admin$\n        DECLARE\n            afectados integer;\n        BEGIN\n            IF current_database() <> 'foodstore_u8_arancibia_romero' THEN\n                RAISE EXCEPTION 'Copia incorrecta';\n            END IF;\n            UPDATE public.producto AS p\n            SET precio = precio + 100.00::numeric\n            FROM public.categoria AS c\n            WHERE p.categoria_id = c.id\n              AND c.nombre = 'U8-FERIA-Arancibia-Romero'\n              AND p.nombre = 'U8 - Muzzarella';\n            GET DIAGNOSTICS afectados = ROW_COUNT;\n            IF afectados <> 1 THEN\n                RAISE EXCEPTION 'Se esperaba modificar un producto fixture';\n            END IF;\n            IF NOT EXISTS (\n                SELECT 1 FROM public.producto p\n                JOIN public.categoria c ON c.id = p.categoria_id\n                WHERE c.nombre = 'U8-FERIA-Arancibia-Romero'\n                  AND p.nombre = 'U8 - Muzzarella'\n                  AND (p.precio * 100)::bigint = 910000 AND NOT p.eliminado\n            ) THEN\n                RAISE EXCEPTION 'Preparacion administrativa incorrecta';\n            END IF;\n        END\n        $admin$;\n        COMMIT;",
+      "origen": "runner administrativo, nunca semaforo.sql"
+    },
+    {
+      "caso": "C4",
+      "sql": "BEGIN;\n        DO $admin$\n        DECLARE\n            afectados integer;\n        BEGIN\n            IF current_database() <> 'foodstore_u8_arancibia_romero' THEN\n                RAISE EXCEPTION 'Copia incorrecta';\n            END IF;\n            UPDATE public.producto AS p\n            SET eliminado = true\n            FROM public.categoria AS c\n            WHERE p.categoria_id = c.id\n              AND c.nombre = 'U8-FERIA-Arancibia-Romero'\n              AND p.nombre = 'U8 - Agua';\n            GET DIAGNOSTICS afectados = ROW_COUNT;\n            IF afectados <> 1 THEN\n                RAISE EXCEPTION 'Se esperaba modificar un producto fixture';\n            END IF;\n            IF NOT EXISTS (\n                SELECT 1 FROM public.producto p\n                JOIN public.categoria c ON c.id = p.categoria_id\n                WHERE c.nombre = 'U8-FERIA-Arancibia-Romero'\n                  AND p.nombre = 'U8 - Agua'\n                  AND p.eliminado\n            ) THEN\n                RAISE EXCEPTION 'Preparacion administrativa incorrecta';\n            END IF;\n        END\n        $admin$;\n        COMMIT;",
+      "origen": "runner administrativo, nunca semaforo.sql"
+    }
+  ],
+  "fase_semaforo": {
+    "comandos_postgresql": 0,
+    "solo_sqlite": true,
+    "snapshot_final": "servidor_snapshot.csv"
+  },
+  "verificacion_sqlite_final": {
+    "integrity_check": [
+      "ok"
+    ],
+    "foreign_key_check": [],
+    "foreign_keys": 1
+  },
+  "cola_sync_final": [
+    {
+      "solicitud_uuid": "20000000-0000-4000-8000-000000000001",
+      "id_local": "10000000-0000-4000-8000-000000000001",
+      "estado": "CONFLICTO",
+      "motivo": "producto_id=50001 precio distinto: visto=900000 servidor=910000 centavos",
+      "creada_en": "2026-01-01T00:00:00Z",
+      "evaluado_en": "2026-11-10T15:41:43.859Z"
+    },
+    {
+      "solicitud_uuid": "baf0ac44-2041-4d0b-a2e3-7ffa9a20f7a5",
+      "id_local": "4783a0dd-4577-43d0-9bd4-e0814e46b383",
+      "estado": "RECHAZADO",
+      "motivo": "producto_id=50004 dado de baja",
+      "creada_en": "2026-01-01T00:00:00Z",
+      "evaluado_en": "2026-11-10T15:41:43.859Z"
+    },
+    {
+      "solicitud_uuid": "5e8cc2e8-38b4-4a30-bc01-1324459423bd",
+      "id_local": "59afdd5c-b300-4e57-87ee-511b09fb3685",
+      "estado": "SIMULADO_APROBADO",
+      "motivo": "Sin conflictos en snapshot; simulacion local, no es una venta",
+      "creada_en": "2026-01-01T00:00:00Z",
+      "evaluado_en": "2026-11-10T15:41:43.859Z"
+    },
+    {
+      "solicitud_uuid": "51e21a59-ffb2-47ba-9422-1c3c09dbb21e",
+      "id_local": "64507add-1767-47cb-8704-e49e6ac27ef7",
+      "estado": "RECHAZADO",
+      "motivo": "producto_id=50002 stock insuficiente: solicitado=5 disponible=4",
+      "creada_en": "2026-01-01T00:00:00Z",
+      "evaluado_en": "2026-11-10T15:41:43.859Z"
+    },
+    {
+      "solicitud_uuid": "04ca59a1-0b98-4b46-bef0-5ba22972c00a",
+      "id_local": "7257eda6-58c5-4a20-a163-98ed83f883c0",
+      "estado": "RECHAZADO",
+      "motivo": "producto_id=50004 dado de baja",
+      "creada_en": "2026-01-01T00:00:00Z",
+      "evaluado_en": "2026-11-10T15:41:43.859Z"
+    },
+    {
+      "solicitud_uuid": "6486d1fb-d6ec-4b0d-970d-4983336764ca",
+      "id_local": "73fd9dd6-f7bc-4056-9a14-3f7c84e2b699",
+      "estado": "CONFLICTO",
+      "motivo": "producto_id=50001 precio distinto: visto=900000 servidor=910000 centavos",
+      "creada_en": "2026-01-01T00:00:00Z",
+      "evaluado_en": "2026-11-10T15:41:43.859Z"
+    },
+    {
+      "solicitud_uuid": "a3997042-92c7-437a-8339-efed531d28bc",
+      "id_local": "73fd9dd6-f7bc-4056-9a14-3f7c84e2b699",
+      "estado": "SIMULADO_APROBADO",
+      "motivo": "Sin conflictos en snapshot; simulacion local, no es una venta",
+      "creada_en": "2026-01-01T00:00:00Z",
+      "evaluado_en": "2026-11-10T15:41:43.903Z"
+    },
+    {
+      "solicitud_uuid": "92f73918-9565-4dbf-b094-15940cc168ce",
+      "id_local": "e42f24d8-d723-4968-9455-e26fea996932",
+      "estado": "SIMULADO_APROBADO",
+      "motivo": "Sin conflictos en snapshot; simulacion local, no es una venta",
+      "creada_en": "2026-01-01T00:00:00Z",
+      "evaluado_en": "2026-11-10T15:41:43.936Z"
+    },
+    {
+      "solicitud_uuid": "3530bc8e-af11-4ade-959d-a6068311eba0",
+      "id_local": "f1545838-9844-4ecf-9fbe-167080536524",
+      "estado": "RECHAZADO",
+      "motivo": "borrador vacio",
+      "creada_en": "2026-01-01T00:00:00Z",
+      "evaluado_en": "2026-11-10T15:41:43.859Z"
+    }
+  ],
+  "sqlite_final": {
+    "archivo": "movil\\foodstore_movil.db",
+    "bytes": 40960,
+    "sha256": "724f7254336d6dd2bfd88305e85d9c6d0b59cf36245ec89cf85be7e7400022b4"
+  },
+  "copia_despues": {
+    "base": "foodstore_u8_arancibia_romero",
+    "pedidos": 225000,
+    "huella_pedidos": "d77ec8d04e07297f0e0267d4b16cc342",
+    "huella_detalles": "1047260be5b676fbca32f99b435d5361",
+    "stock_total_catalogo": 5000038,
+    "huella_stock_catalogo": "0c04497b37b3959bc60a264fafbf7814",
+    "productos_fixture": 4,
+    "suma_stock": 39,
+    "vector_stock": [
+      {
+        "producto_id": 50001,
+        "stock": 10
+      },
+      {
+        "producto_id": 50002,
+        "stock": 4
+      },
+      {
+        "producto_id": 50003,
+        "stock": 5
+      },
+      {
+        "producto_id": 50004,
+        "stock": 20
+      }
+    ],
+    "estado_administrativo": [
+      {
+        "producto_id": 50001,
+        "precio_centavos": 910000,
+        "eliminado": false
+      },
+      {
+        "producto_id": 50002,
+        "precio_centavos": 120000,
+        "eliminado": false
+      },
+      {
+        "producto_id": 50003,
+        "precio_centavos": 800000,
+        "eliminado": false
+      },
+      {
+        "producto_id": 50004,
+        "precio_centavos": 150000,
+        "eliminado": true
+      }
+    ],
+    "huella_producto_completa": "0a2e7adde968b4b1d3dfefc9cc6bd5859db008ce6a53b406fc463489a499725c",
+    "huella_producto_sin_precio_ni_baja": "2322d422c816cf6d8cd44dd76742c4926899258f3ed09c0c0f754cbdad1a4cf2"
+  },
+  "fuente_despues": {
+    "categoria": {
+      "filas": 2,
+      "bytes": 271,
+      "sha256": "66be73b4e7784d5cd69d582d570452338937b7571758dbc71bbfe54ccf86e31a"
+    },
+    "producto": {
+      "filas": 50000,
+      "bytes": 10444747,
+      "sha256": "1c84830633511639a95523dd222422e0401479a565502aff033e92d3ac5f77d8"
+    },
+    "usuario": {
+      "filas": 20001,
+      "bytes": 4744643,
+      "sha256": "2e54d9ecdbc64e166cf905b2d3c3bee19eda9a44b643f8da5897b1c2a1781e8e"
+    },
+    "pedido": {
+      "filas": 225000,
+      "bytes": 44116754,
+      "sha256": "2035fedd8bac6cde4baf92f88c31f022a65c9eda62471e5a5bc2b62b0dc284d1"
+    },
+    "detalle_pedido": {
+      "filas": 499997,
+      "bytes": 48634928,
+      "sha256": "7ea3bdefabcad45a011ffa63fd0a4cfc459d467779a51a02a73a9254b01ad71d"
+    }
+  },
+  "conservacion": {
+    "cinco_tablas_fuente_filas_bytes_sha256_identicos": true,
+    "pedidos_copia_identicos": true,
+    "detalles_copia_identicos": true,
+    "vector_stock_copia_identico": true,
+    "stock_catalogo_completo_identico": true,
+    "cambios_administrativos_solo_C2_C4": true,
+    "ventas_creadas_por_simulacion": 0
+  },
+  "fin_utc": "2026-11-10T15:41:53.278135+00:00"
+}

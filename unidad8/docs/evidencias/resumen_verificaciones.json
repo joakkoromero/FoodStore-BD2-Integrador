@@ -1,0 +1,153 @@
+{
+  "state": "COMPLETADO_CON_VERIFICACIONES",
+  "versions": {
+    "psql": "psql (PostgreSQL) 17.11",
+    "createdb": "createdb (PostgreSQL) 17.11",
+    "pg_dump": "pg_dump (PostgreSQL) 17.11",
+    "server_version_num": 170011,
+    "python": "3.12.14",
+    "sqlite": "3.53.1"
+  },
+  "cases": {
+    "C1_C7": {
+      "archivo_ejecutado": "movil/pruebas_sqlite.sql",
+      "comandos_postgresql_durante_prueba": 0,
+      "resultado": "aserciones SQL verificadas y errores CHECK/FK reales"
+    },
+    "C2": 3,
+    "C3": 1,
+    "C4": 2,
+    "C5": 1,
+    "C6": 3,
+    "bordes": 7
+  },
+  "mandatory_cases": [
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C5",
+    "C6",
+    "C7"
+  ],
+  "extra_edges": 7,
+  "baseline": {
+    "base": "foodstore_u8_arancibia_romero",
+    "pedidos": 225000,
+    "huella_pedidos": "d77ec8d04e07297f0e0267d4b16cc342",
+    "huella_detalles": "1047260be5b676fbca32f99b435d5361",
+    "stock_total_catalogo": 5000038,
+    "huella_stock_catalogo": "0c04497b37b3959bc60a264fafbf7814",
+    "productos_fixture": 4,
+    "suma_stock": 39,
+    "vector_stock": [
+      {
+        "producto_id": 50001,
+        "stock": 10
+      },
+      {
+        "producto_id": 50002,
+        "stock": 4
+      },
+      {
+        "producto_id": 50003,
+        "stock": 5
+      },
+      {
+        "producto_id": 50004,
+        "stock": 20
+      }
+    ],
+    "estado_administrativo": [
+      {
+        "producto_id": 50001,
+        "precio_centavos": 900000,
+        "eliminado": false
+      },
+      {
+        "producto_id": 50002,
+        "precio_centavos": 120000,
+        "eliminado": false
+      },
+      {
+        "producto_id": 50003,
+        "precio_centavos": 800000,
+        "eliminado": false
+      },
+      {
+        "producto_id": 50004,
+        "precio_centavos": 150000,
+        "eliminado": false
+      }
+    ],
+    "huella_producto_completa": "4da82f2f77e9fa335446a0e1c5bb58d9508a8a440e13a231dfb11f72cfcd8d3f",
+    "huella_producto_sin_precio_ni_baja": "187b0193eacf9d1781cf0f0caac412478a23ef5b673a189807df975e5dafacde"
+  },
+  "after": {
+    "base": "foodstore_u8_arancibia_romero",
+    "pedidos": 225000,
+    "huella_pedidos": "d77ec8d04e07297f0e0267d4b16cc342",
+    "huella_detalles": "1047260be5b676fbca32f99b435d5361",
+    "stock_total_catalogo": 5000038,
+    "huella_stock_catalogo": "0c04497b37b3959bc60a264fafbf7814",
+    "productos_fixture": 4,
+    "suma_stock": 39,
+    "vector_stock": [
+      {
+        "producto_id": 50001,
+        "stock": 10
+      },
+      {
+        "producto_id": 50002,
+        "stock": 4
+      },
+      {
+        "producto_id": 50003,
+        "stock": 5
+      },
+      {
+        "producto_id": 50004,
+        "stock": 20
+      }
+    ],
+    "estado_administrativo": [
+      {
+        "producto_id": 50001,
+        "precio_centavos": 910000,
+        "eliminado": false
+      },
+      {
+        "producto_id": 50002,
+        "precio_centavos": 120000,
+        "eliminado": false
+      },
+      {
+        "producto_id": 50003,
+        "precio_centavos": 800000,
+        "eliminado": false
+      },
+      {
+        "producto_id": 50004,
+        "precio_centavos": 150000,
+        "eliminado": true
+      }
+    ],
+    "huella_producto_completa": "2aacfdb4b6c21fdd166fc1b2a2d01d83541d0808a67896c18a2a5c92adfb7722",
+    "huella_producto_sin_precio_ni_baja": "187b0193eacf9d1781cf0f0caac412478a23ef5b673a189807df975e5dafacde"
+  },
+  "conservation": {
+    "cinco_tablas_fuente_filas_bytes_sha256_identicos": true,
+    "pedidos_copia_identicos": true,
+    "detalles_copia_identicos": true,
+    "vector_stock_copia_identico": true,
+    "stock_catalogo_completo_identico": true,
+    "cambios_administrativos_solo_C2_C4": true,
+    "ventas_creadas_por_simulacion": 0
+  },
+  "sqlite_final": {
+    "archivo": "movil\\foodstore_movil.db",
+    "bytes": 40960,
+    "sha256": "9384ee48e439fc3323a5cdf8bbde0a7681d77d410e7a69f8747596bbbfc5c0b0"
+  },
+  "collection_queue_rows": 9
+}

@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.dump
+*.partial
+*.failed
+pgpass.conf
+*secret*.json
+.env
+private/
+runtime/
+backups/
+logs/

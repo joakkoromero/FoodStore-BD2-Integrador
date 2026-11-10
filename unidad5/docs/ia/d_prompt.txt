@@ -1,0 +1,42 @@
+Parte D del trabajo Food Store, PostgreSQL 17. El unico adjunto es un
+contexto SANITIZADO de esquema; no tiene filas ni credenciales. Responde
+solo con propuesta SQL y explicaciones; no uses herramientas, no leas
+otros archivos, no te conectes a bases y no ejecutes SQL.
+
+Genera un script completo para crear o actualizar una tabla INDEPENDIENTE
+datos_anon.usuario_anon. Debe contener exactamente estas columnas:
+folio bigint como correlativo de laboratorio, nombre sintetico con patron
+Persona00001, apellido constante Laboratorio, email sintetico con patron
+persona00001@example.invalid, mes_alta date y eliminado boolean.
+No copiar el id original ni credenciales, hashes, telefonos o datos de
+contacto reales. Usa row_number() OVER (ORDER BY id) solamente durante
+la construccion; despues no debe persistir ninguna columna de id real.
+El numero se rellena con al menos cinco digitos; evita truncarlo si algun
+dia supera 99999. Mes local exacto requerido:
+date_trunc('month', created_at AT TIME ZONE
+           'America/Argentina/Buenos_Aires')::date.
+
+Especifico la agregacion solicitada sobre la copia:
+SELECT mes_alta, eliminado, count(*) AS cantidad
+FROM datos_anon.usuario_anon
+GROUP BY mes_alta, eliminado
+ORDER BY mes_alta, eliminado;
+Genera tambien la consulta equivalente sobre public.usuario sin mostrar
+datos personales. Usuario NO tiene rol de negocio: agrupar por mes y
+eliminado, no inventar una columna rol.
+
+Presenta las dos consultas, una comparacion de resultados lado a lado y
+una auditoria EXCEPT ALL en AMBOS sentidos que devuelva cero diferencias.
+Incluye una afirmacion ejecutable que falle si hay diferencias. Asegura
+que construccion y verificaciones usan el mismo snapshot (por ejemplo
+REPEATABLE READ en una transaccion). Permite reconstruir solo la copia
+de laboratorio, sin borrar ni modificar public.usuario. No propongas
+GRANTs, propietarios o cambios de roles: eso se gestiona por separado.
+
+Explica los limites: la asignacion correlativa es determinista solamente
+para el mismo snapshot y orden, puede cambiar con altas/bajas, mes_alta y
+eliminado son cuasiidentificadores, y esta tecnica no demuestra una
+anonimizacion irreversible universal. No afirmes validacion humana ni
+resultados de ejecucion: este pedido es para obtener SQL que se probara
+despues. Entrega el script completo en un unico bloque SQL y luego una
+explicacion breve con esas limitaciones.
